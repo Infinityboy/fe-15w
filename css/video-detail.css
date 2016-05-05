@@ -1,0 +1,121 @@
+/**
+ * Desc: 视频详情页样式
+ * User: liangqi
+ * Date: 16/5/5
+ * Time: 下午7:04
+ */
+body {
+    background: #eee;
+}
+
+.color-blue {
+    color: #41adff;
+}
+
+.ml5 {
+    margin-left: .5rem;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: .8rem;
+}
+
+header .title, header .video-meta {
+    padding: 0 .8rem;
+}
+
+header .title {
+    font-size: 1.3rem;
+    padding-top: .8rem;
+}
+
+header .video-meta {
+    color: #999;
+    padding-bottom: .8rem;
+}
+
+header .views {
+    float: right;
+}
+
+header .title {
+    color: #444;
+    font-weight: normal;
+}
+
+header .player img {
+    width: 100%;
+    display: block;
+}
+
+.video-excerpt {
+    padding: .8rem;
+    color: #666;
+}
+
+/**
+ 视频推荐
+ -------*/
+.video-recommend {
+    margin-bottom: .8rem;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.video-recommend h2 {
+    padding: .5rem .8rem;
+    color: #e03131;
+    font-weight: normal;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.video-recommend .video-list a {
+    display: block;
+    padding: .8rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.video-recommend .video-list >:last-child {
+    border-bottom: none;
+}
+
+.video-recommend .video-list a .cover {
+    float: left;
+    width: 7rem;
+    margin-right: .5rem;
+}
+
+.video-recommend .video-list a h3 {
+    color: #444;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.video-recommend .video-list a p {
+    color: #999;
+    font-size: .8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.video-recommend .video-list a .video-item-meta {
+    text-align: right;
+}
+
+.video-recommend .video-list a .video-item-meta .tag {
+    color: #41adff;
+    border: 1px solid #41adff;
+    font-size: 12px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0 3px;
+}
