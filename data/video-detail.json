@@ -1,0 +1,24 @@
+{
+  "code": 10000,
+  "msg": "success",
+  "data": {
+    "title": "若风直播",
+    "time": "2016-05-02",
+    "author": "小智",
+    "content": "<iframe frameborder=\"0\" width=\"384\" height=\"180\" src=\"http://v.qq.com/iframe/player.html?vid=y0020odjtfl&tiny=0&auto=0\" allowfullscreen></iframe>",
+    "views": "12.3万",
+    "excerpt": "【若风风神榜】战争热诚刀妹砍翻全场，是时候削她",
+    "recomendVideos": [
+      {
+        "thumbnail": "http://s2.ppsimg.com/ugc/ugc_pic/f/05/f32cb88eba06d4d215a58cd514521c7c9c50239a/200_150_pps-000.jpg",
+        "title": "伊夫雷亚神级操作",
+        "excerpt": "伊夫雷亚是英雄联盟的著名解说，在刚开始的时候做过刀锋意志艾瑞莉娅的COS，这期精美的COS也是为她吸引了大量的人气，所以接下来的转型解说也是非常的顺利。伊夫雷亚刚刚进入解说圈的时候是以独特的说唱方式，持续稳定高质量的解说视频，让她迅速的在解说圈内打响了自己的名气，在接下来的几个电竞联赛中也是得以担任解说的位置。",
+        "comments": "122评论",
+        "tagName": "比赛",
+        "tagColor": "#ff00ff",
+        "articleType": 2,
+        "extra": "1124"
+      }
+    ]
+  }
+}
