@@ -6,14 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/detail-news.css" />
-    <script>
-        window.onload = function () {
-            document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
-            window.onresize = function () {
-                document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
-            };
-        };
-    </script>
+    <script src="js/zepto.js"></script>
+    <script src="js/detail-news.js"></script>
 </head>
 <body>
 <header>
@@ -22,68 +16,70 @@
 </header>
 <section class="maintext">
     <div class="maintext-title">
-        <p class="maintext-title-h2">国外魔兽玩家跳舞挑战满级</p>
+        <p class="maintext-title-h2" id="maintext-title-h2">国外魔兽玩家跳舞挑战满级</p>
         <div>
-            <span>2015-11-27</span>
-            <span>我要玩</span>
+            <span id="time">2015-11-27</span>
+            <span id="author">我要玩</span>
         </div>
     </div>
-    <P class="indent">轮换模式队列（吉格斯的实验室）在经典的《英雄联盟》规则上提供独特的轮换玩法，每隔若干周的周末会提供至少一种游戏模式。在所有轮换模式队列游戏中，都获得英雄成就点数。</P>
-    <img src="images/news-main.png"/>
-    <P class="indent">国外观众都说国内观众没热情。不过的确是…国外比赛我们都能看到，无论哪个队打的好，都有欢呼。国内除了欢呼国内的，其他都不理。不过这也无可厚非。但还是希望大家更客观看比赛，谁赢谁打的好，都给予肯定。</P>
-    <P class="indent">毕竟你有荣幸宴请他人，不好好尽地主之谊。就当不熬夜看比赛代价。我支持RNG，但客观说clg总体打的很好。</P>
+    <P class="indent" id="indent">
+        轮换模式队列（吉格斯的实验室）在经典的《英雄联盟》规则上提供独特的轮换玩法，每隔若干周的周末会提供至少一种游戏模式。在所有轮换模式队列游戏中，都获得英雄成就点数。
+        <img src="images/news-main.png"/>
+        国外观众都说国内观众没热情。不过的确是…国外比赛我们都能看到，无论哪个队打的好，都有欢呼。国内除了欢呼国内的，其他都不理。不过这也无可厚非。但还是希望大家更客观看比赛，谁赢谁打的好，都给予肯定。
+        毕竟你有荣幸宴请他人，不好好尽地主之谊。就当不熬夜看比赛代价。我支持RNG，但客观说clg总体打的很好。
+    </P>
     <div class="maintext-share">
-        <div class="maintext-share-weixin">
+        <a href="" class="maintext-share-weixin">
             <img src="images/news_btn_weixin_nor.png"/>
             <p class="sharename">微信</p>
-        </div>
-        <div class="maintext-share-weibo">
+        </a>
+        <a href=""  class="maintext-share-weibo">
             <img src="images/news_btn_weibo_nor.png"/>
             <p class="sharename">微博</p>
-        </div>
-        <div class="maintext-share-frident">
+        </a>
+        <a href=""  class="maintext-share-frident">
             <img src="images/news_btn_pyq_nor.png"/>
             <p class="sharename">朋友圈</p>
-        </div>
+        </a>
     </div>
 </section>
 <section class="header-bottomline3"></section>
 <section class="gamenews">
     <h2>相关新闻</h2>
-    <ul>
-        <li class="clearFix">
-            <img class="fl" src="images/gamenews.png"/>
-            <div class="fl gamenews-into">
-                <P class="gamenews-into-title">回放 | RNG vs Snake第二场</P>
-                <p class="gamenews-into-text">作为一名LPL的观众，对于本周比赛来说，欢迎关注。</p>
-            </div>
-            <span>122评论</span>
+    <ul id="news_list">
+        <!--<li class="clearFix">
+            <a href="">
+                <img class="fl thumbnail" src="images/gamenews.png"/>
+                <div class="fl gamenews-into">
+                    <P class="gamenews-into-title">回放 | RNG vs Snake第二场</P>
+                    <p class="gamenews-into-text">作为一名LPL的观众，对于本周比赛来说，欢迎关注。</p>
+                </div>
+                <span>122评论</span>
+            </a>
         </li>
         <li class="clearFix">
-            <img class="fl" src="images/gamenews.png"/>
-            <div class="fl gamenews-into">
-                <P class="gamenews-into-title">回放 | RNG vs Snake第二场</P>
-                <p class="gamenews-into-text">作为一名LPL的观众，对于本周比赛来说，欢迎关注。</p>
-            </div>
-            <span>122评论</span>
+            <a href="">
+                <img class="fl thumbnail" src="images/gamenews.png"/>
+                <div class="fl gamenews-into">
+                    <P class="gamenews-into-title">回放 | RNG vs Snake第二场</P>
+                    <p class="gamenews-into-text">作为一名LPL的观众，对于本周比赛来说，欢迎关注。</p>
+                </div>
+                <span>122评论</span>
+            </a>
         </li>
         <li class="clearFix">
-            <img class="fl" src="images/gamenews.png"/>
-            <div class="fl gamenews-into">
-                <P class="gamenews-into-title">回放 | RNG vs Snake第二场</P>
-                <p class="gamenews-into-text">作为一名LPL的观众，对于本周比赛来说，欢迎关注。</p>
-            </div>
-            <span>122评论</span>
-        </li>
+            <a href="">
+                <img class="fl thumbnail" src="images/gamenews.png"/>
+                <div class="fl gamenews-into">
+                    <P class="gamenews-into-title" >回放 | RNG vs Snake第二场</P>
+                    <p class="gamenews-into-text" >作为一名LPL的观众，对于本周比赛来说，欢迎关注。</p>
+                </div>
+                <span>122评论</span>
+            </a>
+        </li>-->
     </ul>
 </section>
 <section class="header-bottomline3"></section>
-<footer>
-    <div>
-        <span>写评论...</span>
-    </div>
-    <img src="images/footer-mes.png"/>
-</footer>
 </body>
 </html>
 
