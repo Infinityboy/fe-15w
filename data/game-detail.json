@@ -1,0 +1,152 @@
+{
+  "code": 10000,
+  "msg": "success",
+  "data": {
+    "title": "LPL春季常规赛",
+    "gameTime": "03月17日 10:39",
+    "gameType": "BO3",
+    "teamA": {
+      "name": "EDG",
+      "logo": "http://pic2.52pk.com/files/150120/5159504_111548_1_lit.jpg",
+      "support_numbber": "123456",
+      "score": 1
+    },
+    "teamB": {
+      "name": "OMG",
+      "logo": "http://att.bbs.duowan.com/forum/201404/20/00055899yc4pxp77f5p78p.jpg",
+      "support_numbber": "15634",
+      "score": 2
+    },
+    "relateVideos": [
+      {
+        "thumbnail": "http://att.bbs.duowan.com/forum/201404/20/00055899yc4pxp77f5p78p.jpg",
+        "title": "EDG对战OMG强强对话",
+        "excerpt": "是EDG重塑雄风还是OMG异军突起,我们试目以待!",
+        "comments": "99条",
+        "tagName": "爱是",
+        "tagColor": "#ff00ff",
+        "articleType": 0,
+        "extra": "",
+        "time": "12.25"
+      },
+      {
+        "thumbnail": "http://att.bbs.duowan.com/forum/201404/20/00055899yc4pxp77f5p78p.jpg",
+        "title": "EDG对战OMG强强对话",
+        "excerpt": "是EDG重塑雄风还是OMG异军突起,我们试目以待!",
+        "comments": "99条",
+        "tagName": "爱是",
+        "tagColor": "#ff00ff",
+        "articleType": 0,
+        "extra": "",
+        "time": "12.25"
+      },
+      {
+        "thumbnail": "http://att.bbs.duowan.com/forum/201404/20/00055899yc4pxp77f5p78p.jpg",
+        "title": "EDG对战OMG强强对话",
+        "excerpt": "是EDG重塑雄风还是OMG异军突起,我们试目以待!",
+        "comments": "99条",
+        "tagName": "爱是",
+        "tagColor": "#ff00ff",
+        "articleType": 0,
+        "extra": "",
+        "time": "12.25"
+      }
+    ],
+    "relateArticle": [
+        {
+          "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
+          "author": "wangliangliang",
+          "round": "第一场",
+          "time": "30:00",
+          "content": "EDG完胜OMG",
+          "images": [
+            "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg"
+          ]
+        },
+        {
+          "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
+          "author": "wangliangliang",
+          "round": "第2场",
+          "time": "14:00",
+          "content": "EDG完胜OMG",
+          "images": [
+            "http://img5.imgtn.bdimg.com/it/u=3133400843,3596185828&fm=21&gp=0.jpg"
+          ]
+        },
+        {
+          "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
+          "author": "wangliangliang",
+          "round": "第san场",
+          "time": "34:00",
+          "content": "EDG完胜OMG",
+          "images": [
+            "http://img5.imgtn.bdimg.com/it/u=3133400843,3596185828&fm=21&gp=0.jpg"
+          ]
+        }
+    ],
+    "recomendVideos": [
+      {
+        "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+        "title": "OMG未来令人担忧",
+        "excerpt": "OMG再次陷入被动",
+        "comments": "10",
+        "articleType": 0,
+        "extra": ""
+      },
+      {
+        "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+        "title": "OMG未来令人担忧",
+        "excerpt": "OMG再次陷入被动",
+        "comments": "10",
+        "articleType": 0,
+        "extra": ""
+      },
+      {
+        "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+        "title": "OMG未来令人担忧",
+        "excerpt": "OMG再次陷入被动",
+        "comments": "10",
+        "articleType": 0,
+        "extra": ""
+      }
+    ],
+    "gameContent": [
+      {
+        "title": "第一场",
+        "time": "32分02秒",
+        "dataList": {
+          "list": [
+            {
+              "listType": 0,
+              "fieldName": "选择",
+              "fieldData": [
+                [
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
+                ],
+                [
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
+                ]
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "经济",
+              "fieldData": [
+                10,
+                3
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

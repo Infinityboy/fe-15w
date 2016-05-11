@@ -5,7 +5,7 @@
  */
 
 $(function () {
-    $.get('http://localhost:63342/fe-15w-app/data/video-detail.json', function (res) {
+    $.get('data/video-detail.json', function (res) {
         if (res.code == 10000) {
             var data = res.data;
             var htmlStr = '<header><h1 class="title">' + data.title + '</h1>';
