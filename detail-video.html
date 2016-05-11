@@ -6,20 +6,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/video-detail.css" />
+    <script src="js/zepto.js"></script>
+    <script src="js/detail-video.js"></script>
 </head>
 <body>
    <header>
-       <h1 class="title">2016LCK春季赛 LZ vs CJ第一场</h1>
+       <h1 class="title" id="title">2016LCK春季赛 LZ vs CJ第一场</h1>
        <div class="video-meta">
-           <span class="date">03-15 12:37</span>
-           <span class="author color-blue ml5">张三作者</span>
-           <span class="views">12.3万播放</span>
+           <span class="date" id="data">03-15 12:37</span>
+           <span class="author color-blue ml5" id="author">张三作者</span>
+           <span class="views" id="views">12.3万播放</span>
        </div>
        <div class="player">
-           <img src="images/gamevedio.png" alt="">
+           <img id="player" src="images/gamevedio.png" alt="">
        </div>
        <div class="video-excerpt">
-           <p>相信在近日公布了炉石传说新英雄利亚德琳之后，将有一大批新玩家将开始踏上艾泽拉斯的升级之旅升级之旅……</p>
+           <p id="video-excerpt">相信在近日公布了炉石传说新英雄利亚德琳之后，将有一大批新玩家将开始踏上艾泽拉斯的升级之旅升级之旅……</p>
        </div>
    </header>
    <div class="video-recommend">
