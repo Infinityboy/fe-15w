@@ -58,9 +58,9 @@
           "author": "wangliangliang",
           "round": "第一场",
           "time": "30:00",
-          "content": "EDG完胜OMG",
+          "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMG",
           "images": [
-            "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg"
+            "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg"
           ]
         },
         {
@@ -68,9 +68,9 @@
           "author": "wangliangliang",
           "round": "第2场",
           "time": "14:00",
-          "content": "EDG完胜OMG",
+          "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMG",
           "images": [
-            "http://img5.imgtn.bdimg.com/it/u=3133400843,3596185828&fm=21&gp=0.jpg"
+            "http://img5.imgtn.bdimg.com/it/u=3133400843,3596185828&fm=21&gp=0.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg"
           ]
         },
         {
@@ -78,9 +78,9 @@
           "author": "wangliangliang",
           "round": "第san场",
           "time": "34:00",
-          "content": "EDG完胜OMG",
+          "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMG",
           "images": [
-            "http://img5.imgtn.bdimg.com/it/u=3133400843,3596185828&fm=21&gp=0.jpg"
+            "http://img5.imgtn.bdimg.com/it/u=3133400843,3596185828&fm=21&gp=0.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg"
           ]
         }
     ],
@@ -140,8 +140,79 @@
               "listType": 1,
               "fieldName": "经济",
               "fieldData": [
-                10,
+                50,
+                1
+              ]
+            }
+          ]
+        }
+      },{
+        "title": "第一场",
+        "time": "32分77秒",
+        "dataList": {
+          "list": [
+            {
+              "listType": 0,
+              "fieldName": "选择",
+              "fieldData": [
+                [
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
+                ],
+                [
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
+                ]
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "经济",
+              "fieldData": [
+                3,
                 3
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "title": "第一场",
+        "time": "3分9秒",
+        "dataList": {
+          "list": [
+            {
+              "listType": 0,
+              "fieldName": "选择",
+              "fieldData": [
+                [
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
+                ],
+                [
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
+                ]
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "经济",
+              "fieldData": [
+                4,
+                2
               ]
             }
           ]

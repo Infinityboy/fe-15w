@@ -25,7 +25,7 @@ function newsInitDetail(res) {
 $(function () {
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
     $.ajax({
-        url: 'http://localhost:63342/fe-15w-app/data/news.js',
+        url: 'data/news.js',
         type: "GET",
         dataType: 'json',
         success: function (str) {
