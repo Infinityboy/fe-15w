@@ -141,7 +141,7 @@ window.onload = window.onresize =function () {
                     var oldValue=parseInt($('#supporters-leftNumber').html());
                     oldValue++;
                     $('#supporters-leftNumber').html(oldValue);
-                    setCookie('acc',1,1);
+                    
                 });
                 //
                 var oldValue2=parseInt($('#supporters-rightNumber').html());
