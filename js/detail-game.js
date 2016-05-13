@@ -1,8 +1,6 @@
-
 'use strict';
 window.onload = window.onresize =function () {
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
-
 
     $(function () {
         $.get('data/game-detail.json', function (res) {
@@ -17,15 +15,15 @@ window.onload = window.onresize =function () {
                 htmlStr += '</section> <section class="header-teams"> ';
                 htmlStr += '<span class="header-teams-left">' + data.teamA.name + '</span> ';
                 htmlStr += '<div class="header-teams-middle"><span>' + data.gameTime + '</span></div> ';
-                htmlStr += '<span class="header-teams-right">' + data.teamB.name + '</span> </section> <section class="ProgressBar"> ';
-                htmlStr += '<div class="ProgressBar-left"></div> <div class="ProgressBar-tag">';
+                htmlStr += '<span class="header-teams-right">' + data.teamB.name + '</span> </section> <section class="ProgressBar clearFix"> ';
+                htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left"></div></div> <div class="ProgressBar-tag">';
                 htmlStr += '<img src="images/matchdetail_image_redbule.png"/></div>';
-                htmlStr += '<div class="ProgressBar-right"></div> </section>';
+                htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right"></div></div> </section>';
                 htmlStr += '<section class="supporters"> <img class="supporters-leftlogo" ';
                 htmlStr += 'src="images/matchdetail_ic_support_red.png"/> ';
-                htmlStr += '<p class="supporters-leftNumber">' + data.teamA.support_numbber + '</p>';
+                htmlStr += '<p class="supporters-leftNumber supp"id="supporters-leftNumber">' + data.teamA.support_numbber + '</p>';
                 htmlStr += '<p class="supporters-gameintro">' + data.title + '</p> ';
-                htmlStr += '<p class="supporters-rightNumber">' + data.teamB.support_numbber + '</p> ';
+                htmlStr += '<p class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</p> ';
                 htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support_blue.png"/> </section> ';
                 htmlStr += '<section class="header-bottomline"></section> </header>';
 
@@ -35,7 +33,7 @@ window.onload = window.onresize =function () {
                     htmlStr += '<section class="live-byword-listbox"> <ul>';
                     $.each(data.relateArticle, function (index, item) {
                         htmlStr += '<li> <div class="live-byword-list .clearFix"> ';
-                        htmlStr += '<img class="fl" src="' + item.avatar + '"/> ';
+                        htmlStr += '<a href="" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
                         htmlStr += '<div class="fl live-byword-list-games" > ';
                         htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
                         htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>' + item.time + '</span></p></div></div> ';
@@ -44,7 +42,7 @@ window.onload = window.onresize =function () {
 
                         var itemImgs = data.relateArticle[index];
                         if (itemImgs.images.length > 0) {
-                            htmlStr += '<div class="clearFix">';
+                            htmlStr += '<div class="clearFix live-byword-list-words-images">';
                             $.each(itemImgs.images, function (index, item) {
                                 htmlStr += '<img class="fl" src="' + item + '"/>';
                             });
@@ -52,8 +50,7 @@ window.onload = window.onresize =function () {
                         }
                         htmlStr += '</div></li>';
                     });
-                    htmlStr += '</ul> </section><section class="live-byword-listbarbox">';
-                    htmlStr += '<div class="live-byword-listbar"></div> </section> ';
+                    htmlStr += '</ul> </section>';
                     htmlStr += '</section> <section class="header-bottomline2"></section>';
                 }
 
@@ -68,8 +65,8 @@ window.onload = window.onresize =function () {
                         htmlStr += '<span>' + item.comments + '</span><a>' + item.tagName + '</a></li>';
                     });
                     htmlStr += '</ul> </section><section class="header-bottomline2"></section> <section class="gamevedio"> ';
-                    htmlStr += '<a id="gamelive" href=""><h2>比赛视频</h2> <img src="images/gamevedio.png">';
-                    htmlStr += ' <p>LOL春季赛常规赛RNG VS Snake 第三场直播</p> </a></section> ';
+                    htmlStr += '<h2>比赛视频</h2> <img src="images/gamevedio.png">';
+                    htmlStr += ' <p>LOL春季赛常规赛RNG VS Snake 第三场直播</p></section> ';
                     htmlStr += '<section class="header-bottomline2"></section>';
                 }
 
@@ -90,10 +87,21 @@ window.onload = window.onresize =function () {
                 if (data.gameContent.length > 0) {
                     htmlStr += '<section class="header-bottomline2"></section><section class="game-data clearFix">';
                     htmlStr += '<h2>数据</h2>';
+                    htmlStr += '<div  class="clearFix" id="roundlist">' ;
+                    if(data.gameType=="BO3") {
+                        $.each(data.gameContent, function (index, item) {
+                            htmlStr +='<span class="roundspan3">' + item.title + '</span>';
+                        });
+                    }else{
+                        $.each(data.gameContent, function (index, item) {
+                            htmlStr +='<span class="roundspan5">' + item.title + '</span>';
+                        });
+                    }
+                        htmlStr +='</div>';
+                    //$('#roundlist span').css('background','red');
 
                     $.each(data.gameContent, function (index, item) {
-                        htmlStr += '<button>第一场</button>';
-                        htmlStr += '<div class="data-details" style="display:block;"> ' +
+                        htmlStr += '<div class="data-details" style="display:none;"> ' +
                             '<section class="gamedata-teams"> <img class="gamedata-teams-logo1eft" ' +
                             'src="images/game-logo1.png"/> <p class="gamedata-teams-duration">32分05秒</p> ' +
                             '<img class="gamedata-teams-logoright" src="images/game-logo2.png"/></section> ' +
@@ -103,6 +111,7 @@ window.onload = window.onresize =function () {
                         $.each(gamecontentindex[0].fieldData[0], function (index, item) {
                             htmlStr += '<img class="gamedata-select-logo1eft" src="' + item + '"/>';
                         });
+
                         htmlStr += '</div> <p class="gamedata-select-word">' + gamecontentindex[0].fieldName + '</p> <div class="fr clearFix">';
                         $.each(gamecontentindex[0].fieldData[1], function (index, item) {
                             htmlStr += '<img class="gamedata-select-logoright" src="' + item + '"/>';
@@ -117,14 +126,96 @@ window.onload = window.onresize =function () {
                             '<div class="compares-barright"> ' +
                             '<span class="compares-bardetails-rightnum">' + gamecontentindex[1].fieldData[1] + 'k</span> </div> </div></section>';
                         htmlStr += '</div>';
-                        htmlStr += '</section>';
+
                     });
+                    htmlStr += '</section>';
                 }
                 htmlStr += '<section class="header-bottomline3"></section> ';
-                console.log(htmlStr);
+
+
                 $('#box').html(htmlStr);
-            }
+
+
+                //点赞
+                $('.supporters-leftlogo').click(function(){
+                    var oldValue=parseInt($('#supporters-leftNumber').html());
+                    oldValue++;
+                    $('#supporters-leftNumber').html(oldValue);
+                    setCookie('acc',1,1);
+                });
+                //
+                var oldValue2=parseInt($('#supporters-rightNumber').html());
+                $('.supporters-rightlogo').click(function(){
+                    oldValue2++;
+                    $('#supporters-rightNumber').html(oldValue2);
+
+                });
+
+
+
+                //header得分比例
+
+                var iScoreA = $(".header-scores-left b").text();
+                var iScoreB = $(".header-scores-right b").text();
+                var iScoretot=parseInt(iScoreA)+parseInt(iScoreB)*3;
+                var iScaleA = iScoreA / iScoretot;
+                var iScaleB = iScoreB / iScoretot;
+                var oBarlength = parseInt($(".ProgressBar").width()) - parseInt($(".ProgressBar-tag").css("width"));
+                var oProgressBarleft = $(".ProgressBar-left");
+                var oProgressBarright = $(".ProgressBar-right");
+
+                oProgressBarleft.css("width", iScaleA * oBarlength);
+                oProgressBarright.css("width", iScaleB * oBarlength);
+
+                //比赛数据比例
+
+                var iMoneyA = $(".compares-bardetails-leftnum").text();
+                var iMoneyB = $(".compares-bardetails-rightnum").text();
+                var iMoneytot=parseFloat(iMoneyA)+parseFloat(iMoneyB);
+
+                var iMoneyscaleA =parseFloat(iMoneyA) / iMoneytot;
+                var iMoneyscaleB = parseFloat(iMoneyB) / iMoneytot;
+                var oMoneylength = parseInt($('.compares-bardetails').css('width'));
+                var oMoneyleft = $(".compares-barleft");
+                var oRightright = $(".compares-barright");
+
+                oMoneyleft.css("width", iMoneyscaleA * oMoneylength);
+                oRightright.css("width", iMoneyscaleB * oMoneylength);
+
+                $('.roundspan3').eq(0).addClass('on');
+                $('.data-details').eq(0).show();
+
+                //图文直播
+                $('.live-byword').click(function(){
+                    alert('图文直播');
+                });
+
+                //推荐视频
+                $('.gamelist').click(function(){
+                    alert('推荐视频列表');
+                });
+
+                //比赛视频
+                $('.gamevedio').click(function(){
+                    alert('比赛视频');
+                });
+
+                //相关新闻
+                $('.gamenews').click(function(){
+                    alert('相关新闻');
+                });
+          }
         });
+
     });
+
+    $('body').on('click','#roundlist span',function(){
+        $('#roundlist span').removeClass('on');
+        $(this).addClass('on');
+        $('.data-details').hide();
+        $('.data-details').eq($(this).index()).show();
+    });
+
+
 
 }
