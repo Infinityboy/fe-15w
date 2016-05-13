@@ -186,34 +186,41 @@ window.onload = window.onresize =function () {
                 $('.data-details').eq(0).show();
 
                 //图文直播
-                $('.live-byword').click(function(){
-                    alert('图文直播');
-                });
 
+                $(document).on('click', '.live-byword', function(e){
+                    e.preventDefault();
+
+                });
                 //推荐视频
-                $('.gamelist').click(function(){
-                    alert('推荐视频列表');
-                });
 
+                $(document).on('click', '.gamelist', function(e){
+                    e.preventDefault();
+
+                });
                 //比赛视频
-                $('.gamevedio').click(function(){
-                    alert('比赛视频');
-                });
 
+                $(document).on('click', '.gamevedio', function(e){
+                    e.preventDefault();
+
+                });
                 //相关新闻
-                $('.gamenews').click(function(){
-                    alert('相关新闻');
+
+                $(document).on('click', '.gamenews', function(e){
+
+                    e.preventDefault();
+
                 });
           }
         });
 
     });
 
-    $('body').on('click','#roundlist span',function(){
+    $('body').on('click','#roundlist span',function(e){
         $('#roundlist span').removeClass('on');
         $(this).addClass('on');
         $('.data-details').hide();
         $('.data-details').eq($(this).index()).show();
+        e.preventDefault();
     });
 
 

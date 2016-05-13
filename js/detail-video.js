@@ -2,7 +2,7 @@
 window.onload = window.onresize =function () {
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
     $.ajax({
-        url:'http://localhost:63342/work/fe-15w-app/data/video.js',
+        url:'video.js',
         type:"GET",
         dataType:'json',
         success:function(str){
