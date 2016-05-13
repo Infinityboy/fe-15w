@@ -140,8 +140,8 @@
               "listType": 1,
               "fieldName": "经济",
               "fieldData": [
-                10,
-                3
+                50,
+                1
               ]
             }
           ]
@@ -175,7 +175,7 @@
               "listType": 1,
               "fieldName": "经济",
               "fieldData": [
-                10,
+                3,
                 3
               ]
             }
@@ -211,8 +211,8 @@
               "listType": 1,
               "fieldName": "经济",
               "fieldData": [
-                9,
-                3
+                4,
+                2
               ]
             }
           ]

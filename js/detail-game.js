@@ -141,7 +141,7 @@ window.onload = window.onresize =function () {
                     var oldValue=parseInt($('#supporters-leftNumber').html());
                     oldValue++;
                     $('#supporters-leftNumber').html(oldValue);
-                    
+
                 });
                 //
                 var oldValue2=parseInt($('#supporters-rightNumber').html());
@@ -167,17 +167,17 @@ window.onload = window.onresize =function () {
                 oProgressBarleft.css("width", iScaleA * oBarlength);
                 oProgressBarright.css("width", iScaleB * oBarlength);
 
-                //比赛数据比例
+                //比赛数据比例  设置页面加载默认值
 
-                var iMoneyA = $(".compares-bardetails-leftnum").text();
-                var iMoneyB = $(".compares-bardetails-rightnum").text();
+                var iMoneyA = $(".compares-bardetails-leftnum").eq(0).text();
+                var iMoneyB = $(".compares-bardetails-rightnum").eq(0).text();
                 var iMoneytot=parseFloat(iMoneyA)+parseFloat(iMoneyB);
 
                 var iMoneyscaleA =parseFloat(iMoneyA) / iMoneytot;
                 var iMoneyscaleB = parseFloat(iMoneyB) / iMoneytot;
                 var oMoneylength = parseInt($('.compares-bardetails').css('width'));
-                var oMoneyleft = $(".compares-barleft");
-                var oRightright = $(".compares-barright");
+                var oMoneyleft = $(".compares-barleft").eq(0);
+                var oRightright = $(".compares-barright").eq(0);
 
                 oMoneyleft.css("width", iMoneyscaleA * oMoneylength);
                 oRightright.css("width", iMoneyscaleB * oMoneylength);
@@ -220,6 +220,27 @@ window.onload = window.onresize =function () {
         $(this).addClass('on');
         $('.data-details').hide();
         $('.data-details').eq($(this).index()).show();
+
+
+
+        //$.each(, function (index, item) {
+        //
+        //});
+
+        var iMoneyA = $(".compares-bardetails-leftnum").eq($(this).index()).text();
+        var iMoneyB = $(".compares-bardetails-rightnum").eq($(this).index()).text();
+        var iMoneytot=parseFloat(iMoneyA)+parseFloat(iMoneyB);
+
+        var iMoneyscaleA =parseFloat(iMoneyA) / iMoneytot;
+        var iMoneyscaleB = parseFloat(iMoneyB) / iMoneytot;
+        var oMoneylength = parseInt($('.compares-bardetails').css('width'));
+        var oMoneyleft = $(".compares-barleft").eq($(this).index());
+        var oRightright = $(".compares-barright").eq($(this).index());
+
+        oMoneyleft.css("width", iMoneyscaleA * oMoneylength*0.27);
+        oRightright.css("width", iMoneyscaleB * oMoneylength*0.27);
+
+
         e.preventDefault();
     });
 
