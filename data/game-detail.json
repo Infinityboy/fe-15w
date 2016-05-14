@@ -55,7 +55,7 @@
     "relateArticle": [
         {
           "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
-          "author": "wangliangliang",
+          "author": "莱恩",
           "round": "第一场",
           "time": "30:00",
           "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMG",
@@ -65,7 +65,7 @@
         },
         {
           "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
-          "author": "wangliangliang",
+          "author": "巫医",
           "round": "第2场",
           "time": "14:00",
           "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMG",
@@ -75,7 +75,7 @@
         },
         {
           "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
-          "author": "wangliangliang",
+          "author": "冥界亚龙",
           "round": "第san场",
           "time": "34:00",
           "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMG",
@@ -89,7 +89,15 @@
         "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
         "title": "OMG未来令人担忧",
         "excerpt": "OMG再次陷入被动",
-        "comments": "10",
+        "comments": "999评论",
+        "articleType": 0,
+        "extra": ""
+      },
+      {
+        "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
+        "title": "OMG未来令人担忧",
+        "excerpt": "OMG再次陷入被动OMG再次陷入被动OMG再次陷入被动",
+        "comments": "999评论",
         "articleType": 0,
         "extra": ""
       },
@@ -97,15 +105,7 @@
         "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
         "title": "OMG未来令人担忧",
         "excerpt": "OMG再次陷入被动",
-        "comments": "10",
-        "articleType": 0,
-        "extra": ""
-      },
-      {
-        "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-        "title": "OMG未来令人担忧",
-        "excerpt": "OMG再次陷入被动",
-        "comments": "10",
+        "comments": "999评论",
         "articleType": 0,
         "extra": ""
       }
@@ -140,7 +140,7 @@
               "listType": 1,
               "fieldName": "经济",
               "fieldData": [
-                50,
+                10,
                 1
               ]
             }

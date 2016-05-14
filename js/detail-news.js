@@ -51,7 +51,7 @@ $(function () {
                     htmlStr += '<li class="clearFix"><a href="###" class="relate-news" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl thumbnail" src="' + item.thumbnail + '"/><div class="fl gamenews-into"><P class="gamenews-into-title">' + item.title + '</P><p class="gamenews-into-text">' + item.excerpt + '</p></div><span>122评论</span></a></li>';
                 });
 
-                htmlStr += '</ul></section>';
+                htmlStr += '</ul></section><section class="header-bottomline3"></section>';
             }
             $('#newsDetail').html(htmlStr);
         }

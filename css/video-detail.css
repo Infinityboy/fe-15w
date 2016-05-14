@@ -4,45 +4,119 @@
  * Date: 16/5/5
  * Time: 下午7:04
  */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+li
+{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+.fl
+{
+    float:left;
+}
+
+.fr
+{
+    float:right;
+}
+
+.clearFix:after
+{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.clearFix
+{
+    zoom:1;
+}
+
+img
+{
+    vertical-align:top;
+}
 body {
     background: #eee;
-}
-
-.color-blue {
-    color: #41adff;
-}
-
-.ml5 {
-    margin-left: .5rem;
+    overflow-x:hidden;
 }
 
 header {
     background: #fff;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: .8rem;
+}
+header .title
+{
+    width: 100%;
+    height: 1.2rem;
+    font-size: 0.8rem;
+    color: #000;
+    line-height: 1.2rem;
+    margin-top:0.5rem;
+    padding-left:0.8rem;
+    text-align:left;
 }
 
-header .title, header .video-meta {
-    padding: 0 .8rem;
-}
-
-header .title {
-    font-size: 1.3rem;
-    padding-top: .8rem;
-}
-
-header .video-meta {
+.video-meta{
+    width:100%;
+    height:0.8rem;
     color: #999;
-    padding-bottom: .8rem;
+    padding:0.3rem 0 0.6rem 0;
+    position: relative;
 }
 
-header .views {
-    float: right;
+.video-meta .date {
+    font-size:0.6rem;
+    height:0.8rem;
+    width:3.5rem;
+    position:absolute;
+    left:0.8rem;
 }
 
-header .title {
-    color: #444;
-    font-weight: normal;
+.video-meta .author {
+    font-size:0.6rem;
+    height:0.8rem;
+    width:3.5rem;
+    position:absolute;
+    left:4.5rem;
+    color:#41adff;
+}
+.video-meta .views {
+    font-size:0.6rem;
+    height:0.8rem;
+    width:3.5rem;
+    position:absolute;
+    right:0.8rem;
+    text-align:right;
+}
+.video-excerpt p
+{
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:3;
+    overflow: hidden;
+}
+.header-bottomline3
+{
+    width:100%;
+    height:0.3rem;
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
+    background:#eee;
+}
+header .player iframe
+{
+    width:100%;
+    height:9.6rem;
 }
 
 header .player img {
@@ -58,64 +132,96 @@ header .player img {
 /**
  视频推荐
  -------*/
-.video-recommend {
-    margin-bottom: .8rem;
-    background: #fff;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+.gamelist
+{
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    height: 16rem;
+    background:#fff;
 }
-
-.video-recommend h2 {
-    padding: .5rem .8rem;
-    color: #e03131;
-    font-weight: normal;
-    font-size: 1rem;
-    border-bottom: 1px solid #ddd;
+.gamelist h3
+{
+    font-size:0.7rem;
+    color:#e03131;
+    height:2.1rem;
+    line-height:2.1rem;
+    padding-left:0.65rem;
 }
+.gamelist ul
+{
+    width:100%;
 
-.video-recommend .video-list a {
-    display: block;
-    padding: .8rem;
-    border-bottom: 1px solid #ddd;
 }
-
-.video-recommend .video-list >:last-child {
-    border-bottom: none;
+.gamelist ul li
+{
+    height:3.2rem;
+    border-top:1px solid #e1e1e1;
+    padding:0.65rem;
+    position: relative;
 }
-
-.video-recommend .video-list a .cover {
-    float: left;
-    width: 7rem;
-    margin-right: .5rem;
+.gamelist ul li img
+{
+    width:4.26rem;
+    height:100%;
+    margin-right:0.5rem;
+    float:left;
 }
-
-.video-recommend .video-list a h3 {
-    color: #444;
-    font-weight: normal;
-    text-overflow: ellipsis;
+.gamelist-into
+{
+    width:9.52rem;
+    margin-top:0.2rem;
+    margin-bottom:0.2rem;
+    float:left;
+}
+.gamelist-into-title
+{
+    font-size:0.6rem;
+    height:1rem;
+    line-height:1rem;
+    color:#444;
     overflow: hidden;
     white-space: nowrap;
-}
-
-.video-recommend .video-list a p {
-    color: #999;
-    font-size: .8rem;
-    overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+}
+.gamelist-into-text
+{
+    font-size:0.52rem;
+    color:#9a9a9a;
+    line-height:0.8rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
 }
 
-.video-recommend .video-list a .video-item-meta {
-    text-align: right;
+.gamelist ul li a
+{
+    color:#3e9eda;
+    font-size:0.48rem;
+    height:0.7rem;
+    width:1.6rem;
+    border:1px solid #3e9eda;
+    border-radius:3px;
+    text-align: center;
+    line-height:0.74rem;
+    position:absolute;
+    right:0.75rem;
+    bottom:0.68rem;
 }
-
-.video-recommend .video-list a .video-item-meta .tag {
-    color: #41adff;
-    border: 1px solid #41adff;
-    font-size: 12px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    display: inline-block;
-    padding: 0 3px;
+.gamelist ul li span
+{
+    color:#b6b6b6;
+    font-size:0.48rem;
+    height:0.7rem;
+    width:2.4rem;
+    border:1px solid #b6b6b6;
+    border-radius:3px;
+    text-align: center;
+    line-height:0.74rem;
+    position:absolute;
+    right:2.81rem;
+    bottom:0.68rem;
 }

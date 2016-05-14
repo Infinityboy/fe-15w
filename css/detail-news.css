@@ -44,7 +44,7 @@ img {
 html {
     font-size: 20px;
     background: #fcfcfc;
-
+    font-family: "微软雅黑";
 }
 
 header {
@@ -77,31 +77,42 @@ header {
 }
 
 .maintext-title {
-    padding: .8rem;
+    padding:0 0.8rem;
+    border-bottom:1px solid #e1e1e1;
 }
 
 .maintext-title .maintext-title-h2 {
-    widht: 100%;
-    height: 1.8rem;
-    font-size: 1rem;
+    width: 100%;
+    height: 1.2rem;
+    font-size: 0.8rem;
     color: #000;
-    line-height: 1.8rem;
+    line-height: 1.2rem;
+    margin-top:0.5rem;
 }
 
 .maintext-title div {
-    width: 100%;
-    height: 1.2rem;
+    width:100%;
+    height:0.8rem;
     font-size: 0.5rem;
     color: #999;
-    line-height: 1.2rem;
+    line-height: 0.8rem;
+    padding:0.3rem 0 0.6rem 0;
 }
 
 .maintext-title div span {
-    padding-right: 1rem;
+    padding-right: 0.3rem;
+    font-size:0.6rem;
+    display:inline-block;
+    height:100%;
+    width:3.5rem;
 }
 
 .maintext-title span.author{
     color: #41adff;
+    font-size:0.68rem;
+    display:inline-block;
+    height:100%;
+    width:6rem;
 }
 
 .maintext p {
@@ -109,7 +120,7 @@ header {
 }
 
 .indent {
-    text-indent: 1.2rem;
+    padding:0.8rem;
 }
 
 .maintext img {
@@ -119,18 +130,18 @@ header {
 
 .maintext-share {
     width: 100%;
-    height: 5rem;
-    font-size: 0.4rem;
+    height: 4rem;
+    font-size: 0.52rem;
+    line-height:0.52rem;
     color: #999;
     position: relative;
-    margin-top: 1rem;
 }
 
 .maintext-share-weixin {
     width: 2.5rem;
     height: 4rem;
     position: absolute;
-    left: 1.4rem;
+    left: 2.4rem;
     top: 0;
 }
 
@@ -159,46 +170,53 @@ header {
     width: 2.5rem;
     height: 4rem;
     position: absolute;
-    right: 1.4rem;
+    right: 2.4rem;
     top: 0;
 }
 
 .header-bottomline3 {
-    width: 100%;
-    height: 1rem;
-    border-top: 0.02rem solid #e1e1e1;
-    border-bottom: 0.02rem solid #e1e1e1;
-    background: #eee;
-    margin-top: 0.6rem;
-
+    width:100%;
+    height:0.3rem;
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
+    background:#eee;
 }
 
 .gamenews {
     width: 100%;
-    height: 15.68rem;
-    overflow: hidden;
+
 }
 
 .gamenews h2 {
     font-size: 0.7rem;
     color: #e03131;
     height: 2.1rem;
+    border-bottom: 1px solid #e1e1e1;
     line-height: 2.1rem;
     padding-left: 0.65rem;
 }
 
 .gamenews ul {
     width: 100%;
+    padding-bottom: 0.65rem;
 }
 
 .gamenews ul li {
     width: 14.3rem;
     height: 3.2rem;
-    border-top: 0.02rem solid #e1e1e1;
-    padding: 0.65rem;
+
+    padding: 0.65rem 0.65rem 0 0.65rem;
     position: relative;
 }
-
+.gamenews ul li .relate-news
+{
+    width: 14.3rem;
+    height: 3.2rem;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 0.65rem;
+    position: relative;
+    display:block;
+}
 .gamenews ul li img {
     width: 4.26rem;
     height: 100%;
@@ -217,7 +235,7 @@ header {
 }
 
 .gamenews-into-text {
-    font-size: 0.48rem;
+    font-size: 0.52rem;
     color: #9a9a9a;
     line-height: 0.7rem;
     white-space: nowrap;
@@ -230,35 +248,11 @@ header {
     font-size: 0.4rem;
     height: 0.7rem;
     width: 2.4rem;
-    border: 0.02rem solid #b6b6b6;
-    border-radius: 0.06rem;
+    border: 1px solid #b6b6b6;
+    border-radius: 3px;
     text-align: center;
     line-height: 0.74rem;
     position: absolute;
-    right: 0.65rem;
+    right: 0;
     bottom: 1rem;
-}
-
-footer {
-    width: 100%;
-    position: relative;
-}
-
-footer div {
-    width: 12rem;
-    height: 0.8rem;
-    border: 1px solid #999;
-    box-shadow: 0 0 1px rgb(0, 0, 0, 0.5);
-    border-radius: 0.2rem;
-    margin: 0.65rem;
-    font-size: 0.45rem;
-    line-height: 0.8rem;
-}
-
-footer img {
-    width: 1.2rem;
-    height: 1rem;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.1rem;
 }

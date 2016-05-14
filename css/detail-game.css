@@ -43,13 +43,13 @@ img
 html {
     font-size: 20px;
     background: #fcfcfc;
-
+    font-family: "微软雅黑";
 }
 
 header {
     height: 7.6rem;
     width: 100%;
-    border-top: 0.033rem solid #f2ebf3;
+    border-top: 1px solid #f2ebf3;
 }
 
 header .header-scores {
@@ -79,13 +79,13 @@ header .header-scores img {
 
 .header-scores div {
     width: 1.9rem;
-    height: 0.6rem;
+    height: 1rem;
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -0.95rem;
     margin-top: -0.3rem;
-    font-size: 0.6rem;
+    font-size: 0.9rem;
     font-family: "微软雅黑";
 }
 
@@ -107,38 +107,39 @@ header .header-scores img {
     color: #999;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 0;
     margin-left: -0.1rem;
-    margin-top: -0.35rem;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 
 header .header-teams {
     width: 100%;
-    height: 0.6rem;
-    margin-top: 0.45rem;
+    height: 0.7rem;
+    margin-top: 0.35rem;
     position: relative;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
 }
 
 header .header-teams .header-teams-left {
     width: 2.133rem;
     height: 100%;
     text-align: center;
-    line-height: 0.52rem;
+    line-height: 0.7rem;
     position: absolute;
     left: 2.944rem;
     top: 0;
+    font-weight:bold;
 }
 
 header .header-teams .header-teams-right {
     width: 2.133rem;
     height: 100%;
     text-align: center;
-    line-height: 0.52rem;
+    line-height:0.7rem;
     position: absolute;
     right: 2.944rem;
     top: 0;
+    font-weight:bold;
 }
 
 header .header-teams .header-teams-middle {
@@ -149,7 +150,7 @@ header .header-teams .header-teams-middle {
     top: 50%;
     margin-left: -2.93rem;
     margin-top: -0.36rem;
-    font-size: 0.4rem;
+    font-size: 0.5rem;
     color: #9a9a9a;
     text-align: center;
 }
@@ -228,44 +229,42 @@ header .header-teams .header-teams-middle {
 
 .supporters-leftNumber {
     width: 2.6rem;
-    height: 0.4rem;
+    height: 0.8rem;
     position: absolute;
-    top: 50%;
-    margin-top:-0.2rem;
+    top:0.15rem;
     left:1.3rem;
-    font-size:0.4rem;
+    font-size:0.68rem;
     color:#e03030;
     text-align:left;
 }
 .supporters-rightNumber {
     width: 2.6rem;
-    height: 0.4rem;
+    height: 0.8rem;
     position: absolute;
-    top: 50%;
-    margin-top:-0.2rem;
+    top:0.15rem;
     right:1.3rem;
-    font-size:0.4rem;
+    font-size:0.68rem;
     color:#41adff;
     text-align:right;
 }
 .supporters-gameintro
 {
     width:6rem;
-    height:0.45rem;
-    font-size:0.45rem;
+    height:0.6rem;
+    font-size:0.6rem;
     text-align:center;
     color:#999;
     position:absolute;
     left:50%;
-    top:0.333rem;
+    top:0.2rem;
     margin-left:-3rem;
 }
 .header-bottomline
 {
     width:100%;
     height:0.3rem;
-    border-top:0.02rem solid #e1e1e1;
-    border-bottom:0.02rem solid #e1e1e1;
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
     background:#eee;
     margin-top:0.6rem;
 }
@@ -280,7 +279,7 @@ header .header-teams .header-teams-middle {
     height:2.1rem;
     line-height:2.1rem;
     padding-left:0.65rem;
-    border-bottom:0.02rem solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
 }
 .live-byword-listbox
 {
@@ -292,15 +291,22 @@ header .header-teams .header-teams-middle {
 .live-byword-listbox ul
 {
     width:100%;
-    overflow-y: scroll; height: 16rem;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    height: 16rem;
 }
 
 .live-byword-listbox ul li
 {
-    width:100%;
-    padding:0.65rem 0 0.65rem 0;
-    border-bottom:0.02rem solid #e1e1e1;
+    width:14.7rem;
+    padding:0.65rem 0.65rem 0 0.65rem;
 }
+.live-byword-listbox ul li .innerbox
+ {
+     width:14.7rem;
+    padding-bottom:0.65rem;
+     border-bottom:1px solid #e1e1e1;
+ }
 
 .live-byword-list
 {
@@ -322,14 +328,18 @@ header .header-teams .header-teams-middle {
 }
 .live-byword-list-name
 {
-    font-size: 0.58rem;
+    font-size: 0.6rem;
     color: #e03131;
     height: 0.68rem;
+    line-height: 0.68rem;
     margin-top:0.1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .live-byword-list-time
 {
-    font-size:0.42rem;
+    font-size:0.52rem;
     color:#999;
     height:0.58rem;
     line-height:0.58rem;
@@ -337,44 +347,53 @@ header .header-teams .header-teams-middle {
 }
 .live-byword-list-count
 {
-    font-size:0.48rem;
+    font-size:0.52rem;
     color:#999;
-    height:0.48rem;
+    height:0.58rem;
     margin-top:0.15rem;
     display:inline-block;
 }
 
-.live-byword-list-words
-{
-    padding:0 0.65rem;
-}
 .live-byword-listimg
 {
     float:left;
+    width:1.62rem;
+    height:1.62rem;
 }
-
+.live-byword-listimg img
+{
+    float:left;
+    width:1.62rem;
+    height:1.62rem;
+    border-radius: 50%;
+}
 .live-byword-list-words-images
 {
     overflow:hidden;
 }
 .live-byword-list-words-images img
 {
-    margin-right:0.28rem;
+    margin-right:0.4rem;
+    width:4.5rem;
+    height:2.6rem;
+
 }
 .live-byword-list-words p
 {
-    font-size:0.58rem;
+    font-size:0.52rem;
     color:#444;
     line-height:0.84rem;
     margin-top:0.58rem;
     margin-bottom:0.58rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
 }
 
-.live-byword-list-words img
-{
-    width:4.62rem;
-    height:2.74rem;
-}
+
 .live-byword-list-words-img2
 {
     margin-left:0.22rem;
@@ -385,8 +404,8 @@ header .header-teams .header-teams-middle {
 {
     width:100%;
     height:0.3rem;
-    border-top:0.02rem solid #e1e1e1;
-    border-bottom:0.02rem solid #e1e1e1;
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
     background:#eee;
 }
 
@@ -394,6 +413,7 @@ header .header-teams .header-teams-middle {
 {
     width: 100%;
     overflow-y: scroll;
+    overflow-x:hidden;
     height: 16rem;
 }
 .gamelist h2
@@ -411,7 +431,7 @@ header .header-teams .header-teams-middle {
 .gamelist ul li
 {
     height:3.2rem;
-    border-top:0.02rem solid #e1e1e1;
+    border-top:1px solid #e1e1e1;
     padding:0.65rem;
     position: relative;
 }
@@ -424,48 +444,59 @@ header .header-teams .header-teams-middle {
 .gamelist-into
 {
     width:9.52rem;
-    margin-top:0.3rem;
-    margin-bottom:0.3rem;
+    margin-top:0.2rem;
+    margin-bottom:0.2rem;
 }
 .gamelist-into-title
 {
     font-size:0.6rem;
+    height:1rem;
+    line-height:1rem;
     color:#444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .gamelist-into-text
 {
-    font-size:0.48rem;
+    font-size:0.52rem;
     color:#9a9a9a;
-    line-height:0.7rem;
+    line-height:0.8rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
 }
 
 .gamelist ul li a
 {
     color:#3e9eda;
-    font-size:0.4rem;
+    font-size:0.48rem;
     height:0.7rem;
     width:1.6rem;
-    border:0.02rem solid #3e9eda;
-    border-radius:0.06rem;
+    border:1px solid #3e9eda;
+    border-radius:3px;
     text-align: center;
     line-height:0.74rem;
     position:absolute;
-    right:0.65rem;
-    bottom:1rem;
+    right:0.75rem;
+    bottom:0.68rem;
 }
 .gamelist ul li span
 {
     color:#b6b6b6;
-    font-size:0.4rem;
+    font-size:0.48rem;
     height:0.7rem;
     width:2.4rem;
-    border:0.02rem solid #b6b6b6;
-    border-radius:0.06rem;
+    border:1px solid #b6b6b6;
+    border-radius:3px;
     text-align: center;
     line-height:0.74rem;
     position:absolute;
-    right:2.51rem;
-    bottom:1rem;
+    right:2.81rem;
+    bottom:0.68rem;
 }
 .gamevedio
 {
@@ -497,7 +528,7 @@ header .header-teams .header-teams-middle {
     position:absolute;
     left:0.65rem;
     top:11rem;
-    text-align:center;
+    text-align:left;
     width:14.6rem;
 }
 
@@ -505,8 +536,7 @@ header .header-teams .header-teams-middle {
 .gamenews
 {
     width: 100%;
-    overflow-y: scroll;
-    height: 16rem;
+
 }
 .gamenews h2
 {
@@ -515,17 +545,32 @@ header .header-teams .header-teams-middle {
     height:2.1rem;
     line-height:2.1rem;
     padding-left:0.65rem;
+    border-bottom:1px solid #e1e1e1;
 }
 .gamenews ul
 {
     width:100%;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    height: 13.8rem;
 }
 .gamenews ul li
 {
     width:14.3rem;
     height:3.2rem;
-    border-top:0.02rem solid #e1e1e1;
     padding:0.65rem;
+    position: relative;
+}
+.gamenews ul li:last-child div
+{
+    border:none;
+}
+.gamenews ul li .relanews
+{
+    width:14.3rem;
+    height:3.2rem;
+    border-bottom:1px solid #e1e1e1;
+    padding-bottom:0.65rem;
     position: relative;
 }
 .gamenews ul li img
@@ -543,28 +588,41 @@ header .header-teams .header-teams-middle {
 .gamenews-into-title
 {
     font-size:0.6rem;
+    height:1rem;
+    line-height:1rem;
     color:#444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top:0.2rem;
 }
 .gamenews-into-text
 {
-    font-size:0.48rem;
+    font-size:0.52rem;
     color:#9a9a9a;
-    line-height:0.7rem;
+    line-height:0.8rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
+
 }
 
 .gamenews ul li span
 {
     color:#b6b6b6;
-    font-size:0.4rem;
-    height:0.8rem;
-    width:2.5rem;
-    border:0.02rem solid #b6b6b6;
-    border-radius:0.06rem;
+    font-size:0.48rem;
+    height:0.7rem;
+    width:2.4rem;
+    border:1px solid #b6b6b6;
+    border-radius:3px;
     text-align: center;
-    line-height:0.84rem;
+    line-height:0.7rem;
     position:absolute;
-    right:0.65rem;
-    bottom:1rem;
+    right:0.75rem;
+    bottom:0.68rem;
 }
 
 .game-data
@@ -583,33 +641,32 @@ header .header-teams .header-teams-middle {
 
 #roundlist
 {
-    font-size:0.6rem;
+    font-size:0.62rem;
     text-align:center;
+    display:-webkit-box;
+    border-top:1px solid #dfdfdf;
+    border-bottom:1px solid #dfdfdf;
 }
 
 
 .roundspan3
 {
-    display:inline-block;
-    margin:0 0.2rem;
-    height:1.3rem;
-    width:4.5rem;
-    border:0.02rem solid #dfdfdf;
+    -webkit-box-flex:1;
+    height:2rem;
+    border-left:1px solid #dfdfdf;
+    border-right:1px solid #dfdfdf;
     background:#fcfcfc;
     color:#989898;
-    line-height:1.3rem;
+    line-height:2rem;
 }
-.roundspan5
- {
-     display:inline-block;
-     margin:0 0.2rem;
-     height:1.3rem;
-     width:2.5rem;
-     border:0.02rem solid #dfdfdf;
-     background:#fcfcfc;
-     color:#989898;
-     line-height:1.3rem;
- }
+#roundlist div:nth-child(2n+1)
+{
+    border:none;
+}
+#roundlist div:last-child
+{
+    border-right:none;
+}
 
 .on
 {
@@ -623,7 +680,6 @@ header .header-teams .header-teams-middle {
 }
 
 
-
 .gamedata-teams {
     width: 100%;
     height: 2.133rem;
@@ -633,7 +689,7 @@ header .header-teams .header-teams-middle {
 
 .gamedata-teams img {
     width: 2.133rem;
-    height: 2.133rem;
+    height: 100%;
     border-radius:50%;
 }
 
@@ -665,7 +721,7 @@ header .header-teams .header-teams-middle {
     height: 1rem;
     margin-top: 0.65rem;
     position: relative;
-    border-radius:50%;
+
 }
 
 .gamedata-select div
@@ -677,6 +733,7 @@ header .header-teams .header-teams-middle {
 .gamedata-select img {
     width: 1rem;
     height: 1rem;
+    border-radius:50%;
 }
 
 .gamedata-select-logo1eft {
@@ -691,7 +748,7 @@ header .header-teams .header-teams-middle {
 
 .gamedata-select-word
 {
-    font-size:0.55rem;
+    font-size:0.52rem;
     height:100%;
     width:1.6rem;
     line-height:1rem;
@@ -707,7 +764,7 @@ header .header-teams .header-teams-middle {
 .conpares
 {
     width:100%;
-    height:1.25rem;
+    height:0.8rem;
     position:relative;
 }
 .compares-money
@@ -729,19 +786,30 @@ header .header-teams .header-teams-middle {
     height:0.55rem;
     text-align:center;
     color:#9a9a9a;
-
 }
 
 .compares-bardetails
 {
-    position:absolute;
+    position:relative;
     bottom:0;
     width:100%;
     height:0.7rem;
-    margin-top:0.65rem;
+    margin-top:1rem;
 }
 
-
+.compares-bardetails .earnmoney
+{
+    width:4rem;
+    position:absolute;
+    left:50%;
+    top:-0.65rem;
+    margin-left:-2rem;
+    height:0.65rem;
+    line-height:0.65rem;
+    font-size:0.52rem;
+    color:#9a9a9a;
+    text-align:center;
+}
 
 .compares-barleft
 {
@@ -798,16 +866,7 @@ header .header-teams .header-teams-middle {
     color:#41adff;
 }
 
-.header-bottomline3
-{
-    width:100%;
-    height:1rem;
-    border-top:0.02rem solid #e1e1e1;
-    border-bottom:0.02rem solid #e1e1e1;
-    background:#eee;
-    margin-top:0.6rem;
 
-}
 
 
 

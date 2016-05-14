@@ -20,23 +20,25 @@ window.onload = window.onresize =function () {
                 htmlStr += '<img src="images/matchdetail_image_redbule.png"/></div>';
                 htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right"></div></div> </section>';
                 htmlStr += '<section class="supporters"> <img class="supporters-leftlogo" ';
-                htmlStr += 'src="images/matchdetail_ic_support_red.png"/> ';
+                htmlStr += 'src="images/matchdetail_ic_support.png"/> ';
                 htmlStr += '<p class="supporters-leftNumber supp"id="supporters-leftNumber">' + data.teamA.support_numbber + '</p>';
                 htmlStr += '<p class="supporters-gameintro">' + data.title + '</p> ';
                 htmlStr += '<p class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</p> ';
-                htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support_blue.png"/> </section> ';
+                htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/> </section> ';
                 htmlStr += '<section class="header-bottomline"></section> </header>';
+
+
 
                 //图文直播
                 if (data.relateArticle.length > 0) {
                     htmlStr += '<section class="live-byword"> <h2>图文直播</h2> ';
                     htmlStr += '<section class="live-byword-listbox"> <ul>';
                     $.each(data.relateArticle, function (index, item) {
-                        htmlStr += '<li> <div class="live-byword-list .clearFix"> ';
+                        htmlStr += '<li> <div class="innerbox"><div class="live-byword-list .clearFix"> ';
                         htmlStr += '<a href="" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
                         htmlStr += '<div class="fl live-byword-list-games" > ';
                         htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
-                        htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>' + item.time + '</span></p></div></div> ';
+                        htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>'+'&nbsp;'+'' + item.time + '</span></p></div></div> ';
                         htmlStr += '<div class="live-byword-list-words"> ';
                         htmlStr += '<p>' + item.content + '</p>';
 
@@ -48,7 +50,7 @@ window.onload = window.onresize =function () {
                             });
                             htmlStr += '</div> ';
                         }
-                        htmlStr += '</div></li>';
+                        htmlStr += '</div></div></li>';
                     });
                     htmlStr += '</ul> </section>';
                     htmlStr += '</section> <section class="header-bottomline2"></section>';
@@ -74,11 +76,11 @@ window.onload = window.onresize =function () {
                 if (data.recomendVideos.length > 0) {
                     htmlStr += '<section class="gamenews"> <h2>相关新闻</h2><ul>';
                     $.each(data.recomendVideos, function (index, item) {
-                        htmlStr += '<li class="clearFix">';
+                        htmlStr += '<li class="clearFix"><div class="relanews">';
                         htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
                         htmlStr += '<P class="gamenews-into-title">' + item.title + '</P>';
                         htmlStr += '<p class="gamenews-into-text">' + item.excerpt + '</p>';
-                        htmlStr += '</div> <span>' + item.comments + '</span> </li> ';
+                        htmlStr += '</div> <span>' + item.comments + '</span></div> </li> ';
                     });
                     htmlStr += ' </ul></section>';
                 }
@@ -88,22 +90,24 @@ window.onload = window.onresize =function () {
                     htmlStr += '<section class="header-bottomline2"></section><section class="game-data clearFix">';
                     htmlStr += '<h2>数据</h2>';
                     htmlStr += '<div  class="clearFix" id="roundlist">' ;
-                    if(data.gameType=="BO3") {
-                        $.each(data.gameContent, function (index, item) {
-                            htmlStr +='<span class="roundspan3">' + item.title + '</span>';
-                        });
-                    }else{
-                        $.each(data.gameContent, function (index, item) {
-                            htmlStr +='<span class="roundspan5">' + item.title + '</span>';
-                        });
-                    }
+
+                    var len = data.gameContent.length;
+                    var screen = document.documentElement.clientWidth;
+                    var itemWidth = screen / len;
+
+                    $.each(data.gameContent, function (index, item) {
+                        htmlStr +='<div class="roundspan3" style="width:'+itemWidth+'px" >' + item.title + '</div>';
+
+                    });
+
                         htmlStr +='</div>';
                     //$('#roundlist span').css('background','red');
 
                     $.each(data.gameContent, function (index, item) {
                         htmlStr += '<div class="data-details" style="display:none;"> ' +
                             '<section class="gamedata-teams"> <img class="gamedata-teams-logo1eft" ' +
-                            'src="images/game-logo1.png"/> <p class="gamedata-teams-duration">32分05秒</p> ' +
+                            'src="images/game-logo1.png"/> ' +
+                            '<p class="gamedata-teams-duration">' + data.gameContent[index].time + '</p> ' +
                             '<img class="gamedata-teams-logoright" src="images/game-logo2.png"/></section> ' +
                             '<section class="gamedata-select clearFix"> <div class="fl clearFix">';
 
@@ -118,7 +122,7 @@ window.onload = window.onresize =function () {
                         });
                         htmlStr += ' </div></section> ';
                         htmlStr += '<section class="conpares clearFix">' +
-                            ' <div class="compares-bardetails clearFix">' +
+                            ' <div class="compares-bardetails clearFix"><div class="earnmoney">经济</div>' +
                             ' <div class="compares-barleft"> ' +
                             '<span class="compares-bardetails-leftnum">' + gamecontentindex[1].fieldData[0] + 'k</span> </div> ' +
                             '<div class="compares-barmiddle"> ' +
@@ -130,26 +134,39 @@ window.onload = window.onresize =function () {
                     });
                     htmlStr += '</section>';
                 }
-                htmlStr += '<section class="header-bottomline3"></section> ';
+                htmlStr += '<section class="header-bottomline2"></section> ';
 
 
                 $('#box').html(htmlStr);
 
 
+
                 //点赞
-                $('.supporters-leftlogo').click(function(){
-                    var oldValue=parseInt($('#supporters-leftNumber').html());
-                    oldValue++;
-                    $('#supporters-leftNumber').html(oldValue);
+
+                $('.supporters').on('click', 'img', function(e){
+                    if(getCookie('num')){
+                        alert('亲，一天只能顶一次噢~');
+                        return ;
+                    }
+                    var thisindex=parseInt($(this).index());
+                    if(thisindex==0){
+                        $(this).attr('src','images/matchdetail_ic_support_red.png');
+                        var oldValue=parseInt($('#supporters-leftNumber').html());
+                        oldValue++;
+                        $('#supporters-leftNumber').html(oldValue);
+                        setCookie('num','1',1);
+                    }else {
+                        $(this).attr('src','images/matchdetail_ic_support_blue.png');
+                        var oldValue=parseInt($('#supporters-rightNumber').html());
+                        oldValue++;
+                        $('#supporters-rightNumber').html(oldValue);
+                        setCookie('num','1',1);
+                    }
+
+                    e.preventDefault();
 
                 });
-                //
-                var oldValue2=parseInt($('#supporters-rightNumber').html());
-                $('.supporters-rightlogo').click(function(){
-                    oldValue2++;
-                    $('#supporters-rightNumber').html(oldValue2);
 
-                });
 
 
 
@@ -186,46 +203,38 @@ window.onload = window.onresize =function () {
                 $('.data-details').eq(0).show();
 
                 //图文直播
-
-                $(document).on('click', '.live-byword', function(e){
+                $('.live-byword-listbox ul').on('click', 'li', function(e){
+                    console.log($(this).index());
                     e.preventDefault();
 
                 });
                 //推荐视频
-
-                $(document).on('click', '.gamelist', function(e){
+                $('.gamelist ul').on('click', 'li', function(e){
+                    console.log($(this).index());
                     e.preventDefault();
 
                 });
                 //比赛视频
-
-                $(document).on('click', '.gamevedio', function(e){
+                $('document').on('click', '.gamevedio', function(e){
+                    console.log(110);
                     e.preventDefault();
 
                 });
                 //相关新闻
-
-                $(document).on('click', '.gamenews', function(e){
-
+                $('.gamenews ul').on('click', 'li', function(e){
+                    console.log($(this).index());
                     e.preventDefault();
-
                 });
           }
         });
 
     });
 
-    $('body').on('click','#roundlist span',function(e){
-        $('#roundlist span').removeClass('on');
+    $('body').on('click','#roundlist div',function(e){
+        $('#roundlist div').removeClass('on');
         $(this).addClass('on');
         $('.data-details').hide();
         $('.data-details').eq($(this).index()).show();
-
-
-
-        //$.each(, function (index, item) {
-        //
-        //});
 
         var iMoneyA = $(".compares-bardetails-leftnum").eq($(this).index()).text();
         var iMoneyB = $(".compares-bardetails-rightnum").eq($(this).index()).text();
