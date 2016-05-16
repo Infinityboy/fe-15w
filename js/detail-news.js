@@ -1,7 +1,6 @@
 /**
  * Created by admin on 2016/5/6.
  */
-
 'use strict';
 window.Jn = {};
 

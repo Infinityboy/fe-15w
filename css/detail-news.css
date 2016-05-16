@@ -202,15 +202,12 @@ header {
 }
 
 .gamenews ul li {
-    width: 14.3rem;
     height: 3.2rem;
-
     padding: 0.65rem 0.65rem 0 0.65rem;
     position: relative;
 }
 
 .gamenews ul li .relate-news {
-    width: 14.3rem;
     height: 3.2rem;
     border-bottom: 1px solid #e1e1e1;
     padding-bottom: 0.65rem;
@@ -256,9 +253,4 @@ header {
     position: absolute;
     right: 0;
     bottom: 1rem;
-}
-
-.flat-content img {
-    width: 100%;
-    margin: .8rem 0;
 }

@@ -4,40 +4,35 @@
     padding: 0;
     list-style: none;
 }
-li
-{
-    list-style:none;
+
+li {
+    list-style: none;
 }
 
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
 }
 
-.fl
-{
-    float:left;
+.fl {
+    float: left;
 }
 
-.fr
-{
-    float:right;
+.fr {
+    float: right;
 }
 
-.clearFix:after
-{
-    content:'';
-    display:block;
-    clear:both;
+.clearFix:after {
+    content: '';
+    display: block;
+    clear: both;
 }
 
-.clearFix
-{
-    zoom:1;
+.clearFix {
+    zoom: 1;
 }
 
-img
-{
-    vertical-align:top;
+img {
+    vertical-align: top;
 }
 
 html {
@@ -62,7 +57,7 @@ header .header-scores {
 header .header-scores img {
     width: 2.133rem;
     height: 2.133rem;
-    border-radius:50%;
+    border-radius: 50%;
 }
 
 .header-scores-logo1eft {
@@ -128,18 +123,18 @@ header .header-teams .header-teams-left {
     position: absolute;
     left: 2.944rem;
     top: 0;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 header .header-teams .header-teams-right {
     width: 2.133rem;
     height: 100%;
     text-align: center;
-    line-height:0.7rem;
+    line-height: 0.7rem;
     position: absolute;
     right: 2.944rem;
     top: 0;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 header .header-teams .header-teams-middle {
@@ -162,34 +157,35 @@ header .header-teams .header-teams-middle {
     margin-left: 0.65rem;
     margin-top: 0.444rem;
 }
-.ProgressBar-leftbox
-{
+
+.ProgressBar-leftbox {
     width: 7.217rem;
-    height:100%;
+    height: 100%;
     position: absolute;
-    left:0;
-    overflow:hidden;
+    left: 0;
+    overflow: hidden;
 }
-.ProgressBar-rightbox
- {
-     width: 7.217rem;
-     height:100%;
-     position: absolute;
-     right:0;
-    overflow:hidden;
- }
+
+.ProgressBar-rightbox {
+    width: 7.217rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+}
+
 .ProgressBar-left {
     width: 6.567rem;
     height: 100%;
     background: #e03131;
-    float:right;
+    float: right;
 }
 
 .ProgressBar-right {
     width: 6.567rem;
     height: 100%;
     background: #41adff;
-    float:left;
+    float: left;
 }
 
 .ProgressBar-tag {
@@ -231,454 +227,432 @@ header .header-teams .header-teams-middle {
     width: 2.6rem;
     height: 0.8rem;
     position: absolute;
-    top:0.15rem;
-    left:1.3rem;
-    font-size:0.68rem;
-    color:#e03030;
-    text-align:left;
+    top: 0.15rem;
+    left: 1.3rem;
+    font-size: 0.68rem;
+    color: #e03030;
+    text-align: left;
 }
+
 .supporters-rightNumber {
     width: 2.6rem;
     height: 0.8rem;
     position: absolute;
-    top:0.15rem;
-    right:1.3rem;
-    font-size:0.68rem;
-    color:#41adff;
-    text-align:right;
+    top: 0.15rem;
+    right: 1.3rem;
+    font-size: 0.68rem;
+    color: #41adff;
+    text-align: right;
 }
-.supporters-gameintro
-{
-    width:6rem;
-    height:0.6rem;
-    font-size:0.6rem;
-    text-align:center;
-    color:#999;
-    position:absolute;
-    left:50%;
-    top:0.2rem;
-    margin-left:-3rem;
+
+.supporters-gameintro {
+    width: 6rem;
+    height: 0.6rem;
+    font-size: 0.6rem;
+    text-align: center;
+    color: #999;
+    position: absolute;
+    left: 50%;
+    top: 0.2rem;
+    margin-left: -3rem;
 }
-.header-bottomline
-{
-    width:100%;
-    height:0.3rem;
-    border-top:1px solid #e1e1e1;
-    border-bottom:1px solid #e1e1e1;
-    background:#eee;
-    margin-top:0.6rem;
+
+.header-bottomline {
+    width: 100%;
+    height: 0.3rem;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background: #eee;
+    margin-top: 0.6rem;
 }
-.live-byword
-{
+
+.live-byword {
     width: 100%;
 }
-.live-byword h2
-{
-    font-size:0.7rem;
-    color:#e03131;
-    height:2.1rem;
-    line-height:2.1rem;
-    padding-left:0.65rem;
-    border-bottom:1px solid #e1e1e1;
+
+.live-byword h2 {
+    font-size: 0.7rem;
+    color: #e03131;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    padding-left: 0.65rem;
+    border-bottom: 1px solid #e1e1e1;
 }
-.live-byword-listbox
-{
-    width:100%;
-    left:0;
-    top:2.12rem;
-    overflow:hidden;
+
+.live-byword-listbox {
+    width: 100%;
+    left: 0;
+    top: 2.12rem;
+    overflow: hidden;
 }
-.live-byword-listbox ul
-{
-    width:100%;
+
+.live-byword-listbox ul {
+    width: 100%;
     overflow-y: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
     height: 16rem;
 }
 
-.live-byword-listbox ul li
-{
-    width:14.7rem;
-    padding:0.65rem 0.65rem 0 0.65rem;
-}
-.live-byword-listbox ul li .innerbox
- {
-     width:14.7rem;
-    padding-bottom:0.65rem;
-     border-bottom:1px solid #e1e1e1;
- }
-
-.live-byword-list
-{
-    width:100%;
-    height:1.62rem;
-    padding-left:0.65rem;
+.live-byword-listbox ul li {
+    width: 14.7rem;
+    padding: 0.65rem 0.65rem 0 0.65rem;
 }
 
-.live-byword-list img
-{
-    height:1.62rem;
-    width:1.62rem;
+.live-byword-listbox ul li .innerbox {
+    width: 14.7rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid #e1e1e1;
 }
 
-.live-byword-list-games
-{
-    height:1.62rem;
-    margin-left:0.58rem;
+.live-byword-list {
+    width: 100%;
+    height: 1.62rem;
+    padding-left: 0.65rem;
 }
-.live-byword-list-name
-{
+
+.live-byword-list img {
+    height: 1.62rem;
+    width: 1.62rem;
+}
+
+.live-byword-list-games {
+    height: 1.62rem;
+    margin-left: 0.58rem;
+}
+
+.live-byword-list-name {
     font-size: 0.6rem;
     color: #e03131;
     height: 0.68rem;
     line-height: 0.68rem;
-    margin-top:0.1rem;
+    margin-top: 0.1rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.live-byword-list-time
-{
-    font-size:0.52rem;
-    color:#999;
-    height:0.58rem;
-    line-height:0.58rem;
-    margin-top:0.2rem;
-}
-.live-byword-list-count
-{
-    font-size:0.52rem;
-    color:#999;
-    height:0.58rem;
-    margin-top:0.15rem;
-    display:inline-block;
+
+.live-byword-list-time {
+    font-size: 0.52rem;
+    color: #999;
+    height: 0.58rem;
+    line-height: 0.58rem;
+    margin-top: 0.2rem;
 }
 
-.live-byword-listimg
-{
-    float:left;
-    width:1.62rem;
-    height:1.62rem;
+.live-byword-list-count {
+    font-size: 0.52rem;
+    color: #999;
+    height: 0.58rem;
+    margin-top: 0.15rem;
+    display: inline-block;
 }
-.live-byword-listimg img
-{
-    float:left;
-    width:1.62rem;
-    height:1.62rem;
+
+.live-byword-listimg {
+    float: left;
+    width: 1.62rem;
+    height: 1.62rem;
+}
+
+.live-byword-listimg img {
+    float: left;
+    width: 1.62rem;
+    height: 1.62rem;
     border-radius: 50%;
 }
-.live-byword-list-words-images
-{
-    overflow:hidden;
+
+.live-byword-list-words-images {
+    overflow: hidden;
 }
-.live-byword-list-words-images img
-{
-    margin-right:0.4rem;
-    width:4.5rem;
-    height:2.6rem;
+
+.live-byword-list-words-images img {
+    margin-right: 0.4rem;
+    width: 4.5rem;
+    height: 2.6rem;
 
 }
-.live-byword-list-words p
-{
-    font-size:0.52rem;
-    color:#444;
-    line-height:0.84rem;
-    margin-top:0.58rem;
-    margin-bottom:0.58rem;
+
+.live-byword-list-words p {
+    font-size: 0.52rem;
+    color: #444;
+    line-height: 0.84rem;
+    margin-top: 0.58rem;
+    margin-bottom: 0.58rem;
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
     -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
     -webkit-line-clamp: 2; /** 显示的行数 **/
-    overflow: hidden;  /** 隐藏超出的内容 **/
+    overflow: hidden; /** 隐藏超出的内容 **/
 }
 
-
-.live-byword-list-words-img2
-{
-    margin-left:0.22rem;
+.live-byword-list-words-img2 {
+    margin-left: 0.22rem;
 }
 
-
-.header-bottomline2
-{
-    width:100%;
-    height:0.3rem;
-    border-top:1px solid #e1e1e1;
-    border-bottom:1px solid #e1e1e1;
-    background:#eee;
+.header-bottomline2 {
+    width: 100%;
+    height: 0.3rem;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background: #eee;
 }
 
-.gamelist
-{
+.gamelist {
     width: 100%;
     overflow-y: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
     height: 16rem;
 }
-.gamelist h2
-{
-    font-size:0.7rem;
-    color:#e03131;
-    height:2.1rem;
-    line-height:2.1rem;
-    padding-left:0.65rem;
+
+.gamelist h2 {
+    font-size: 0.7rem;
+    color: #e03131;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    padding-left: 0.65rem;
 }
-.gamelist ul
-{
-    width:100%;
+
+.gamelist ul {
+    width: 100%;
 }
-.gamelist ul li
-{
-    height:3.2rem;
-    border-top:1px solid #e1e1e1;
-    padding:0.65rem;
+
+.gamelist ul li {
+    height: 3.2rem;
+    border-top: 1px solid #e1e1e1;
+    padding: 0.65rem;
     position: relative;
 }
-.gamelist ul li img
-{
-    width:4.26rem;
-    height:100%;
-    margin-right:0.5rem;
+
+.gamelist ul li img {
+    width: 4.26rem;
+    height: 100%;
+    margin-right: 0.5rem;
 }
-.gamelist-into
-{
-    width:9.52rem;
-    margin-top:0.2rem;
-    margin-bottom:0.2rem;
+
+.gamelist-into {
+    width: 9.52rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
-.gamelist-into-title
-{
-    font-size:0.6rem;
-    height:1rem;
-    line-height:1rem;
-    color:#444;
+
+.gamelist-into-title {
+    font-size: 0.6rem;
+    height: 1rem;
+    line-height: 1rem;
+    color: #444;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.gamelist-into-text
-{
-    font-size:0.52rem;
-    color:#9a9a9a;
-    line-height:0.8rem;
+
+.gamelist-into-text {
+    font-size: 0.52rem;
+    color: #9a9a9a;
+    line-height: 0.8rem;
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
     -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
     -webkit-line-clamp: 2; /** 显示的行数 **/
-    overflow: hidden;  /** 隐藏超出的内容 **/
+    overflow: hidden; /** 隐藏超出的内容 **/
 }
 
-.gamelist ul li a
-{
-    color:#3e9eda;
-    font-size:0.48rem;
-    height:0.7rem;
-    width:1.6rem;
-    border:1px solid #3e9eda;
-    border-radius:3px;
+.gamelist ul li a {
+    color: #3e9eda;
+    font-size: 0.48rem;
+    height: 0.7rem;
+    width: 1.6rem;
+    border: 1px solid #3e9eda;
+    border-radius: 3px;
     text-align: center;
-    line-height:0.74rem;
-    position:absolute;
-    right:0.75rem;
-    bottom:0.68rem;
+    line-height: 0.74rem;
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.68rem;
 }
-.gamelist ul li span
-{
-    color:#b6b6b6;
-    font-size:0.48rem;
-    height:0.7rem;
-    width:2.4rem;
-    border:1px solid #b6b6b6;
-    border-radius:3px;
+
+.gamelist ul li span {
+    color: #b6b6b6;
+    font-size: 0.48rem;
+    height: 0.7rem;
+    width: 2.4rem;
+    border: 1px solid #b6b6b6;
+    border-radius: 3px;
     text-align: center;
-    line-height:0.74rem;
-    position:absolute;
-    right:2.81rem;
-    bottom:0.68rem;
+    line-height: 0.74rem;
+    position: absolute;
+    right: 2.81rem;
+    bottom: 0.68rem;
 }
-.gamevedio
-{
+
+.gamevedio {
     width: 100%;
-    height:12.36rem;
-    position:relative;
+    height: 12.36rem;
+    position: relative;
 }
 
-.gamevedio h2
-{
-    font-size:0.7rem;
-    color:#e03131;
-    height:2.3rem;
-    line-height:2.3rem;
-    padding-left:0.65rem;
-}
-.gamevedio img
-{
-    width:14.6rem;
-    height:8.2rem;
-    position:absolute;
-    left:0.65rem;
-    top:2.4rem;
-}
-.gamevedio p
-{
-    font-size:0.6rem;
-    color:#444;
-    position:absolute;
-    left:0.65rem;
-    top:11rem;
-    text-align:left;
-    width:14.6rem;
+.gamevedio h2 {
+    font-size: 0.7rem;
+    color: #e03131;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    padding-left: 0.65rem;
 }
 
+.gamevedio img {
+    width: 14.6rem;
+    height: 8.2rem;
+    position: absolute;
+    left: 0.65rem;
+    top: 2.4rem;
+}
 
-.gamenews
-{
+.gamevedio p {
+    font-size: 0.6rem;
+    color: #444;
+    position: absolute;
+    left: 0.65rem;
+    top: 11rem;
+    text-align: left;
+    width: 14.6rem;
+}
+
+.gamenews {
     width: 100%;
 
 }
-.gamenews h2
-{
-    font-size:0.7rem;
-    color:#e03131;
-    height:2.1rem;
-    line-height:2.1rem;
-    padding-left:0.65rem;
-    border-bottom:1px solid #e1e1e1;
+
+.gamenews h2 {
+    font-size: 0.7rem;
+    color: #e03131;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    padding-left: 0.65rem;
+    border-bottom: 1px solid #e1e1e1;
 }
-.gamenews ul
-{
-    width:100%;
+
+.gamenews ul {
+    width: 100%;
     overflow-y: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
     height: 13.8rem;
 }
-.gamenews ul li
-{
-    width:14.3rem;
-    height:3.2rem;
-    padding:0.65rem;
+
+.gamenews ul li {
+    width: 14.3rem;
+    height: 3.2rem;
+    padding: 0.65rem;
     position: relative;
 }
-.gamenews ul li:last-child div
-{
-    border:none;
+
+.gamenews ul li:last-child div {
+    border: none;
 }
-.gamenews ul li .relanews
-{
-    width:14.3rem;
-    height:3.2rem;
-    border-bottom:1px solid #e1e1e1;
-    padding-bottom:0.65rem;
+
+.gamenews ul li .relanews {
+    width: 14.3rem;
+    height: 3.2rem;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 0.65rem;
     position: relative;
 }
-.gamenews ul li img
-{
-    width:4.26rem;
-    height:100%;
-    margin-right:0.5rem;
+
+.gamenews ul li img {
+    width: 4.26rem;
+    height: 100%;
+    margin-right: 0.5rem;
 }
-.gamenews-into
-{
-    width:9.52rem;
-    margin-top:0.3rem;
-    margin-bottom:0.3rem;
+
+.gamenews-into {
+    width: 9.52rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
 }
-.gamenews-into-title
-{
-    font-size:0.6rem;
-    height:1rem;
-    line-height:1rem;
-    color:#444;
+
+.gamenews-into-title {
+    font-size: 0.6rem;
+    height: 1rem;
+    line-height: 1rem;
+    color: #444;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin-top:0.2rem;
+    margin-top: 0.2rem;
 }
-.gamenews-into-text
-{
-    font-size:0.52rem;
-    color:#9a9a9a;
-    line-height:0.8rem;
+
+.gamenews-into-text {
+    font-size: 0.52rem;
+    color: #9a9a9a;
+    line-height: 0.8rem;
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
     -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
     -webkit-line-clamp: 2; /** 显示的行数 **/
-    overflow: hidden;  /** 隐藏超出的内容 **/
+    overflow: hidden; /** 隐藏超出的内容 **/
 
 }
 
-.gamenews ul li span
-{
-    color:#b6b6b6;
-    font-size:0.48rem;
-    height:0.7rem;
-    width:2.4rem;
-    border:1px solid #b6b6b6;
-    border-radius:3px;
+.gamenews ul li span {
+    color: #b6b6b6;
+    font-size: 0.48rem;
+    height: 0.7rem;
+    width: 2.4rem;
+    border: 1px solid #b6b6b6;
+    border-radius: 3px;
     text-align: center;
-    line-height:0.7rem;
-    position:absolute;
-    right:0.75rem;
-    bottom:0.68rem;
+    line-height: 0.7rem;
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.68rem;
 }
 
-.game-data
-{
-    width:100%;
+.game-data {
+    width: 100%;
 }
 
-.game-data h2
-{
-    font-size:0.7rem;
-    color:#e03131;
-    height:2.1rem;
-    line-height:2.1rem;
-    padding-left:0.65rem;
+.game-data h2 {
+    font-size: 0.7rem;
+    color: #e03131;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    padding-left: 0.65rem;
 }
 
-#roundlist
-{
-    font-size:0.62rem;
-    text-align:center;
-    display:-webkit-box;
-    border-top:1px solid #dfdfdf;
-    border-bottom:1px solid #dfdfdf;
+#roundlist {
+    font-size: 0.62rem;
+    text-align: center;
+    display: -webkit-box;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
 }
 
-
-.roundspan3
-{
-    -webkit-box-flex:1;
-    height:2rem;
-    border-left:1px solid #dfdfdf;
-    border-right:1px solid #dfdfdf;
-    background:#fcfcfc;
-    color:#989898;
-    line-height:2rem;
-}
-#roundlist div:nth-child(2n+1)
-{
-    border:none;
-}
-#roundlist div:last-child
-{
-    border-right:none;
+.roundspan3 {
+    -webkit-box-flex: 1;
+    height: 2rem;
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    background: #fcfcfc;
+    color: #989898;
+    line-height: 2rem;
 }
 
-.on
-{
-    background:#eee;
-    color:#454545;
+#roundlist div:nth-child(2n+1) {
+    border: none;
 }
 
-.data-details
-{
-    width:100%;
+#roundlist div:last-child {
+    border-right: none;
 }
 
+.on {
+    background: #eee;
+    color: #454545;
+}
+
+.data-details {
+    width: 100%;
+}
 
 .gamedata-teams {
     width: 100%;
@@ -690,7 +664,7 @@ header .header-teams .header-teams-middle {
 .gamedata-teams img {
     width: 2.133rem;
     height: 100%;
-    border-radius:50%;
+    border-radius: 50%;
 }
 
 .gamedata-teams-logo1eft {
@@ -705,18 +679,15 @@ header .header-teams .header-teams-middle {
     top: 0;
 }
 
-.gamedata-teams-duration
-{
-    font-size:0.55rem;
-    height:100%;
-    line-height:2.133rem;
-    color:#9a9a9a;
-    text-align:center;
+.gamedata-teams-duration {
+    font-size: 0.55rem;
+    height: 100%;
+    line-height: 2.133rem;
+    color: #9a9a9a;
+    text-align: center;
 }
 
-
-.gamedata-select
-{
+.gamedata-select {
     width: 100%;
     height: 1rem;
     margin-top: 0.65rem;
@@ -724,146 +695,135 @@ header .header-teams .header-teams-middle {
 
 }
 
-.gamedata-select div
-{
+.gamedata-select div {
     position: relative;
-    width:7rem;
+    width: 7rem;
 }
 
 .gamedata-select img {
     width: 1rem;
     height: 1rem;
-    border-radius:50%;
+    border-radius: 50%;
 }
 
 .gamedata-select-logo1eft {
-    float:right;
-    margin-left:0.1rem;
+    float: right;
+    margin-left: 0.1rem;
 }
 
 .gamedata-select-logoright {
-    float:left;
-    margin-right:0.1rem;
+    float: left;
+    margin-right: 0.1rem;
 }
 
-.gamedata-select-word
-{
-    font-size:0.52rem;
-    height:100%;
-    width:1.6rem;
-    line-height:1rem;
-    color:#9a9a9a;
-    text-align:center;
-    position:absolute;
-    left:50%;
-    top:50%;
-    margin-left:-0.8rem;
-    margin-top:-0.5rem;
+.gamedata-select-word {
+    font-size: 0.52rem;
+    height: 100%;
+    width: 1.6rem;
+    line-height: 1rem;
+    color: #9a9a9a;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -0.8rem;
+    margin-top: -0.5rem;
 }
 
-.conpares
-{
-    width:100%;
-    height:0.8rem;
-    position:relative;
-}
-.compares-money
-{
-    width:2rem;
-    height:0.5rem;
-    text-align:center;
-    position:absolute;
-    left:50%;
-    top:0;
-    margin-left:-1rem;
-    font-size:0.5rem;
-    color:#999;
-}
-.conpares h2
-{
-    width:100%;
-    font-size:0.55rem;
-    height:0.55rem;
-    text-align:center;
-    color:#9a9a9a;
+.conpares {
+    width: 100%;
+    height: 0.8rem;
+    position: relative;
 }
 
-.compares-bardetails
-{
-    position:relative;
-    bottom:0;
-    width:100%;
-    height:0.7rem;
-    margin-top:1rem;
+.compares-money {
+    width: 2rem;
+    height: 0.5rem;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -1rem;
+    font-size: 0.5rem;
+    color: #999;
 }
 
-.compares-bardetails .earnmoney
-{
-    width:4rem;
-    position:absolute;
-    left:50%;
-    top:-0.65rem;
-    margin-left:-2rem;
-    height:0.65rem;
-    line-height:0.65rem;
-    font-size:0.52rem;
-    color:#9a9a9a;
-    text-align:center;
+.conpares h2 {
+    width: 100%;
+    font-size: 0.55rem;
+    height: 0.55rem;
+    text-align: center;
+    color: #9a9a9a;
 }
 
-.compares-barleft
-{
-    width:1rem;
-    height:0.222rem;
-    background:#e03131;
-    position:absolute;
-    right:8.133rem;
-}
-.compares-barright
-{
-    width:1rem;
-    height:0.222rem;
-    background:#41adff;
-    position:absolute;
-    left:8.133rem;
+.compares-bardetails {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 0.7rem;
+    margin-top: 1rem;
 }
 
-.compares-barmiddle
-{
+.compares-bardetails .earnmoney {
+    width: 4rem;
+    position: absolute;
+    left: 50%;
+    top: -0.65rem;
+    margin-left: -2rem;
+    height: 0.65rem;
+    line-height: 0.65rem;
+    font-size: 0.52rem;
+    color: #9a9a9a;
+    text-align: center;
+}
+
+.compares-barleft {
+    width: 1rem;
+    height: 0.222rem;
+    background: #e03131;
+    position: absolute;
+    right: 8.133rem;
+}
+
+.compares-barright {
+    width: 1rem;
+    height: 0.222rem;
+    background: #41adff;
+    position: absolute;
+    left: 8.133rem;
+}
+
+.compares-barmiddle {
     width: 0.266rem;
     height: 0.222rem;
-    position:absolute;
-    left:50%;
-    top:0;
-    margin-left:-0.133rem;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -0.133rem;
 }
 
-.compares-barmiddle img
-{
-    width:100%;
-    height:100%;
-    position:absolute;
-    left:0;
-    top:0;
+.compares-barmiddle img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
-
-.compares-bardetails-leftnum
-{
-    position:absolute;
-    left:-1.5rem;
-    margin-top:-0.1rem;
-    font-size:0.55rem;
-    color:#e03131;
+.compares-bardetails-leftnum {
+    position: absolute;
+    left: -1.5rem;
+    margin-top: -0.1rem;
+    font-size: 0.55rem;
+    color: #e03131;
 }
 
-.compares-bardetails-rightnum
-{
-    position:absolute;
-    right:-1.5rem;
-    margin-top:-0.1rem;
-    font-size:0.55rem;
-    color:#41adff;
+.compares-bardetails-rightnum {
+    position: absolute;
+    right: -1.5rem;
+    margin-top: -0.1rem;
+    font-size: 0.55rem;
+    color: #41adff;
 }
 
 

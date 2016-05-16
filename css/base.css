@@ -13,7 +13,8 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     color: #000;
 }
 
@@ -91,7 +92,7 @@ input[disabled] {
 
 input[type="search"] {
     -webkit-appearance: textfield;
-    outline:none;
+    outline: none;
     border: none;
 }
 
@@ -124,4 +125,13 @@ body {
 
 a {
     transition: all 0.2s ease;
+}
+
+.flat-content img {
+    width: 100%;
+    margin: .8rem 0;
+}
+
+.flat-content p {
+    margin-bottom: .8rem;
 }
