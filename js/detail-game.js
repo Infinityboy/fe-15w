@@ -141,15 +141,11 @@ function renderData(data) {
     }
     htmlStr += '<section class="header-bottomline2"></section> ';
 
-
     $('#box').html(htmlStr);
 
-
     //点赞
-
     $('.supporters').on('click', 'img', function (e) {
         if (getCookie('num')) {
-            alert('亲，一天只能顶一次噢~');
             return;
         }
         var thisindex = parseInt($(this).index());
@@ -158,6 +154,11 @@ function renderData(data) {
             var oldValue = parseInt($('#supporters-leftNumber').html());
             oldValue++;
             $('#supporters-leftNumber').html(oldValue);
+            try {
+                Jnapp.agree(7,cacheData.dataId,cacheData.teamA.teamId);
+            } catch (e){
+
+            }
             setCookie('num', '1', 1);
         } else {
             $(this).attr('src', 'images/matchdetail_ic_support_blue.png');
@@ -165,6 +166,12 @@ function renderData(data) {
             oldValue++;
             $('#supporters-rightNumber').html(oldValue);
             setCookie('num', '1', 1);
+
+            try {
+                Jnapp.agree(7,cacheData.dataId,cacheData.teamB.teamId);
+            } catch (e){
+
+            }
         }
 
         e.preventDefault();
