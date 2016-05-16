@@ -77,8 +77,8 @@ header {
 }
 
 .maintext-title {
-    padding:0 0.8rem;
-    border-bottom:1px solid #e1e1e1;
+    padding: 0 0.8rem;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .maintext-title .maintext-title-h2 {
@@ -87,32 +87,32 @@ header {
     font-size: 0.8rem;
     color: #000;
     line-height: 1.2rem;
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
 }
 
 .maintext-title div {
-    width:100%;
-    height:0.8rem;
+    width: 100%;
+    height: 0.8rem;
     font-size: 0.5rem;
     color: #999;
     line-height: 0.8rem;
-    padding:0.3rem 0 0.6rem 0;
+    padding: 0.3rem 0 0.6rem 0;
 }
 
 .maintext-title div span {
     padding-right: 0.3rem;
-    font-size:0.6rem;
-    display:inline-block;
-    height:100%;
-    width:3.5rem;
+    font-size: 0.6rem;
+    display: inline-block;
+    height: 100%;
+    width: 3.5rem;
 }
 
-.maintext-title span.author{
+.maintext-title span.author {
     color: #41adff;
-    font-size:0.68rem;
-    display:inline-block;
-    height:100%;
-    width:6rem;
+    font-size: 0.68rem;
+    display: inline-block;
+    height: 100%;
+    width: 6rem;
 }
 
 .maintext p {
@@ -120,7 +120,7 @@ header {
 }
 
 .indent {
-    padding:0.8rem;
+    padding: 0.8rem;
 }
 
 .maintext img {
@@ -132,7 +132,7 @@ header {
     width: 100%;
     height: 4rem;
     font-size: 0.52rem;
-    line-height:0.52rem;
+    line-height: 0.52rem;
     color: #999;
     position: relative;
 }
@@ -175,11 +175,11 @@ header {
 }
 
 .header-bottomline3 {
-    width:100%;
-    height:0.3rem;
-    border-top:1px solid #e1e1e1;
-    border-bottom:1px solid #e1e1e1;
-    background:#eee;
+    width: 100%;
+    height: 0.3rem;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background: #eee;
 }
 
 .gamenews {
@@ -208,15 +208,16 @@ header {
     padding: 0.65rem 0.65rem 0 0.65rem;
     position: relative;
 }
-.gamenews ul li .relate-news
-{
+
+.gamenews ul li .relate-news {
     width: 14.3rem;
     height: 3.2rem;
     border-bottom: 1px solid #e1e1e1;
     padding-bottom: 0.65rem;
     position: relative;
-    display:block;
+    display: block;
 }
+
 .gamenews ul li img {
     width: 4.26rem;
     height: 100%;
@@ -255,4 +256,9 @@ header {
     position: absolute;
     right: 0;
     bottom: 1rem;
+}
+
+.flat-content img {
+    width: 100%;
+    margin: .8rem 0;
 }

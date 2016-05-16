@@ -7,20 +7,21 @@ window.Jn = {};
 
 var cacheData = null;
 
-/**
- * 客户端传递数据到页面
- */
-Jn.setData = function (data) {
+Jn.setData = function(){
     if (data.key == 'newsInitDetail') {
         renderData(data.content);
     }
 };
 
-function renderData(src) {
-    cacheData = src;
+function renderData(data) {
+    cacheData = data;
 
-    var htmlStr = '<div class="maintext-title"><p class="maintext-title-h2">' + data.title + '</p><div><span id="time">' + data.time + '</span><span class="author">' + data.author + '</span></div></div>';
-    htmlStr += '<div class="indent">' + data.content + '</div>';
+    var title = data.title ? data.title : '';
+    var time = data.time ? data.time : '';
+    var content = data.content ? data.content : '';
+
+    var htmlStr = '<div class="maintext-title"><p class="maintext-title-h2">' + title + '</p><div><span id="time">' + time + '</span><span class="author">' + data.author + '</span></div></div>';
+    htmlStr += '<div class="indent flat-content">' + content + '</div>';
 
     htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a></div></section>';
     var news_list = data.relate_news;
@@ -36,13 +37,13 @@ function renderData(src) {
 }
 
 $(function () {
-    document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
+    //document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
     $.ajax({
-        url: 'data/news.js',
+        url: 'data/news.json',
         type: "GET",
         dataType: 'json',
         success: function (str) {
-            renderData(str);
+            renderData(str.data);
         },
         error: function (err) {
             alert('失败:' + err);
@@ -60,17 +61,18 @@ $(function () {
         }
     });
 
+    // 微博
+    $(document).on('click', '.maintext-share-weibo', function(e){
+        e.preventDefault();
+        shareBegin(0)
+    });
+
     // 微信
     $(document).on('click', '.maintext-share-weixin', function(e){
         e.preventDefault();
         shareBegin(1);
     });
 
-    // 微博
-    $(document).on('click', '.maintext-share-weibo', function(e){
-        e.preventDefault();
-        shareBegin(0)
-    });
 
     // 朋友圈
     $(document).on('click', '.maintext-share-frident', function(e){

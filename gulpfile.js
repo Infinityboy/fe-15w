@@ -37,7 +37,12 @@ gulp.task('moveImg', function () {
     return gulp.src('images/*').pipe(gulp.dest(distDir + '/images/'));
 });
 
+// 拷贝图片资源
+gulp.task('moveData', function () {
+    return gulp.src('data/*').pipe(gulp.dest(distDir + '/data/'));
+});
+
 
 // 命令行执行gulp
-gulp.task('default', ['minCss', 'minJs', 'moveHtml', 'moveImg']);
+gulp.task('default', ['minCss', 'minJs', 'moveHtml', 'moveImg', 'moveData']);
 
