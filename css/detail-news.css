@@ -88,6 +88,9 @@ header {
     color: #000;
     line-height: 1.2rem;
     margin-top: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .maintext-title div {
@@ -202,14 +205,22 @@ header {
 }
 
 .gamenews ul li {
-    height: 3.2rem;
-    padding: 0.65rem 0.65rem 0 0.65rem;
+    height: 3.85rem;
+    padding: 0 0.65rem 0 0.65rem;
     position: relative;
+    margin-bottom:0.1rem;
+}
+
+.gamenews ul li:last-child
+{
+    border:none;
 }
 
 .gamenews ul li .relate-news {
-    height: 3.2rem;
+    height: 2.55rem;
+    width:100%;
     border-bottom: 1px solid #e1e1e1;
+    padding-top: 0.65rem;
     padding-bottom: 0.65rem;
     position: relative;
     display: block;
@@ -222,23 +233,29 @@ header {
 }
 
 .gamenews-into {
-    width: 9.52rem;
-    margin-top: 0.3rem;
+    width: 9.92rem;
+    margin-top: 0.1rem;
     margin-bottom: 0.3rem;
 }
 
 .gamenews-into-title {
     font-size: 0.6rem;
     color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .gamenews-into-text {
     font-size: 0.52rem;
     color: #9a9a9a;
     line-height: 0.7rem;
-    white-space: nowrap;
-    overflow: hidden;
+    word-break: break-all;
     text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    overflow: hidden; /** 隐藏超出的内容 **/
 }
 
 .gamenews ul li span {
@@ -252,5 +269,5 @@ header {
     line-height: 0.74rem;
     position: absolute;
     right: 0;
-    bottom: 1rem;
+    bottom: 0.65rem;
 }
