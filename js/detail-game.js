@@ -68,7 +68,7 @@ function renderData(data) {
             htmlStr += '<li class="clearFix video-recommend" data-type="'+item.articleType+'" data-id="'+item.extra+'"> <img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += ' <div class="fl gamelist-into"> <p class="gamelist-into-title">' + item.title + '</p> ';
             htmlStr += '<p class="gamelist-into-text">' + item.excerpt + '</p></div> ';
-            htmlStr += '<span>' + item.comments + '</span><a>' + item.tagName + '</a></li>';
+            htmlStr += '<span>' + item.comments + '</span><a style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</a></li>';
         });
 
         htmlStr += '</ul> </section><section class="header-bottomline2"></section> <section class="gamevedio"> ';

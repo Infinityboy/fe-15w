@@ -26,7 +26,7 @@ function renderData(data) {
     if (news_list.length > 0) {
         htmlStr += '<section class="header-bottomline3"></section><section class="gamenews"><h2>相关新闻</h2><ul id="news_list">';
         $.each(news_list, function (index, item) {
-            htmlStr += '<li class="clearFix"><a href="###" class="relate-news" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl thumbnail" src="' + item.thumbnail + '"/><div class="fl gamenews-into"><P class="gamenews-into-title">' + item.title + '</P><p class="gamenews-into-text">' + item.excerpt + '</p></div><span class="tag" style="color: ' +item.tagColor +';border-color:'+item.tagColor+';">'+item.tagName+'</span></a></li>';
+            htmlStr += '<li class="clearFix"><a href="###" class="relate-news clearfix" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl thumbnail" src="' + item.thumbnail + '"/><div class="fl gamenews-into"><P class="gamenews-into-title">' + item.title + '</P><p class="gamenews-into-text">' + item.excerpt + '</p></div><span " class="tag" style="color:' +item.tagColor +';border-Color:' +item.tagColor +';">'+item.tagName+'</span></a></li>';
         });
 
         htmlStr += '</ul></section><section class="header-bottomline3"></section>';
@@ -35,18 +35,18 @@ function renderData(data) {
 }
 
 $(function () {
-    //document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
-    //$.ajax({
-    //    url: 'data/news.json',
-    //    type: "GET",
-    //    dataType: 'json',
-    //    success: function (str) {
-    //        renderData(str.data);
-    //    },
-    //    error: function (err) {
-    //        alert('失败:' + err);
-    //    }
-    //});
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
+    $.ajax({
+        url: 'data/news.json',
+        type: "GET",
+        dataType: 'json',
+        success: function (str) {
+            renderData(str.data);
+        },
+        error: function (err) {
+            alert('失败:' + err);
+        }
+    });
 
 
     // 相关新闻
