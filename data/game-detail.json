@@ -1,223 +1,149 @@
 {
   "code": 10000,
-  "msg": "success",
+  "message": "success",
   "data": {
-    "title": "LPL春季常规赛",
-    "gameTime": "03月17日 10:39",
-    "gameType": "BO3",
+    "title": "2016MSI\u5b63\u4e2d\u8d5b5\u67086\u65e517\uff1a30 CLG VS SUP",
+    "gameTime": "2016-05-06 17:30",
+    "gameType": "BO1",
+    "changyanSid": "11\/1598",
+    "excerpt": "",
+    "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0429\/14619224049687.jpg",
+    "shareUrl": "http:\/\/lol.15w.com\/match\/5605015844.html",
+    "cover": "http:\/\/files.15w.com\/image\/2016\/0429\/14619224049687.jpg",
+    "orginSrc": "http:\/\/www.quanmin.tv\/static\/act\/msi\/",
     "teamA": {
-      "name": "EDG",
-      "logo": "http://pic2.52pk.com/files/150120/5159504_111548_1_lit.jpg",
-      "support_numbber": "123456",
-      "score": 1
+      "name": "CLG",
+      "logo": "http:\/\/files.15w.com\/image\/2016\/0429\/14619178488625.png",
+      "support_numbber": "0",
+      "score": "1",
+      "teamId": "5604986843"
     },
     "teamB": {
-      "name": "OMG",
-      "logo": "http://att.bbs.duowan.com/forum/201404/20/00055899yc4pxp77f5p78p.jpg",
-      "support_numbber": "15634",
-      "score": 2
+      "name": "SUP",
+      "logo": "http:\/\/files.15w.com\/image\/2016\/0429\/14619104303660.jpg",
+      "support_numbber": "0",
+      "score": "0",
+      "teamId": "5604987883"
     },
     "relateVideos": [
       {
-        "thumbnail": "http://att.bbs.duowan.com/forum/201404/20/00055899yc4pxp77f5p78p.jpg",
-        "title": "EDG对战OMG强强对话",
-        "excerpt": "是EDG重塑雄风还是OMG异军突起,我们试目以待是EDG重塑雄风还是OMG异军突起,我们试目以待!",
-        "comments": "99条",
-        "tagName": "爱是",
-        "tagColor": "#ff99ff",
-        "articleType": 0,
-        "extra": "",
-        "time": "12.25"
-      },
-      {
-        "thumbnail": "http://att.bbs.duowan.com/forum/201404/20/00055899yc4pxp77f5p78p.jpg",
-        "title": "EDG对战OMG强强对话",
-        "excerpt": "是EDG重塑雄风还是OMG异军突起,我们试目以待!",
-        "comments": "99条",
-        "tagName": "爱是",
+        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0506\/14625366392894.jpg",
+        "title": "2016MSI\u5b63\u4e2d\u8d5b\u5c0f\u7ec4\u8d5bCLG VS SUP",
+        "tagName": "\u8d5b\u4e8b",
         "tagColor": "#ff00ff",
-        "articleType": 0,
-        "extra": "",
-        "time": "12.25"
-      },
-      {
-        "thumbnail": "http://att.bbs.duowan.com/forum/201404/20/00055899yc4pxp77f5p78p.jpg",
-        "title": "EDG对战OMG强强对话",
-        "excerpt": "是EDG重塑雄风还是OMG异军突起,我们试目以待!",
-        "comments": "99条",
-        "tagName": "爱是",
-        "tagColor": "#ff00ff",
-        "articleType": 0,
-        "extra": "",
-        "time": "12.25"
+        "articleType": 5,
+        "extra": "http:\/\/lol.15w.com\/saici\/5604990903.html"
       }
     ],
-    "relateArticle": [
-        {
-          "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
-          "author": "莱恩",
-          "round": "第一场",
-          "time": "30:00",
-          "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMG",
-          "images": [
-            "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg"
-          ]
-        },
-        {
-          "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
-          "author": "巫医",
-          "round": "第2场",
-          "time": "14:00",
-          "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMGEDG完胜OMG",
-          "images": [
-            "http://img5.imgtn.bdimg.com/it/u=3133400843,3596185828&fm=21&gp=0.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg"
-          ]
-        },
-        {
-          "avatar": "http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg",
-          "author": "冥界亚龙",
-          "round": "第san场",
-          "time": "34:00",
-          "content": "EDG完胜OMGEDG完胜OMGEDG完胜OMG",
-          "images": [
-            "http://img5.imgtn.bdimg.com/it/u=3133400843,3596185828&fm=21&gp=0.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg","http://www.cntingshu.net/upload/img/oouMhtRPxNaw3hfPpivZJMqvcJYSuPZB7HZ1Wz4DX1FSQNXqOTkoe1WaJJLL6S/-Kfc.jpg"
-          ]
-        }
-    ],
+    "relateArticle": [],
     "recomendVideos": [
       {
-        "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-        "title": "OMG未来令人担忧",
-        "excerpt": "OMG再次陷入被动",
-        "comments": "999评论",
+        "title": "\u4f20SuperCell 50\u4ebf\u7f8e\u5143\u5356\u7ed9\u4e2d\u56fd\u516c\u53f8 \u731c\u6d4b\u5927\u89e3\u6790",
+        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0516\/14633913553365.jpg",
+        "excerpt": "SuperCell\u5356\u7ed9\u4e2d\u56fd\u5de8\u5934\u7684\u6d88\u606f\u4e00\u51fa\uff0c\u5f15\u53d1\u4e1a\u5185\u65e0\u9650\u9050\u60f3\uff0c\u6700\u5177\u6709\u6536\u8d2d\u5b9e\u529b\u7684\u5de8\u5934\u516c\u53f8\uff0c\u53ef\u80fd\u662f\u817e\u8baf\u3001\u7f51\u6613\u3001\u963f\u91cc\u4ee5\u53ca\u6606\u4ed1\u6e38\u620f\u3002",
         "articleType": 0,
-        "extra": "" ,
-        "tagName": "爱是",
-        "tagColor": "#ff00ff"
+        "extra": "64471",
+        "tagName": "\u65b0\u95fb",
+        "tagColor": "#FF0000"
       },
       {
-        "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-        "title": "OMG未来令人担忧",
-        "excerpt": "OMG再次陷入被动OMG再次陷入被动OMG再次陷入被动",
-        "comments": "999评论",
+        "title": "MSI\u6700\u65f6\u523b\uff1aSKT\u89e6\u5e95\u53cd\u5f39\u201c\u610f\u5916\u201d\u593a\u51a0",
+        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0516\/14633674639063.jpg",
+        "excerpt": "\u5b63\u4e2d\u9080\u8bf7\u8d5b\u5df2\u843d\u5e55\uff0c\u516d\u5927\u6218\u961f\u8054\u624b\u7ed9\u89c2\u4f17\u5448\u73b0\u4e86\u7cbe\u5f69\u8fde\u8fde\u7684\u8d5b\u4e8b\uff0c\u4e0d\u77e5\u9053\u662f\u4ed6\u4eec\u5426\u7ed9\u4f60\u4eec\u7559\u4e0b\u5370\u8c61\uff1f\u6700\u540e\u4e00\u671f\u201c\u6700\u65f6\u523b\u201d\u9080\u60a8\u56de\u987e\u672c\u6b21\u8d5b\u4e8b\u3002",
         "articleType": 0,
-        "extra": "",
-        "tagName": "爱是",
-        "tagColor": "#ff00ff"
+        "extra": "64389",
+        "tagName": "\u65b0\u95fb",
+        "tagColor": "#FF0000"
       },
       {
-        "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-        "title": "OMG未来令人担忧",
-        "excerpt": "OMG再次陷入被动",
-        "comments": "999评论",
+        "title": "CSGO-FugLy\u63a8\u7279\u5ba3\u5e03\uff1a\u5df2\u7ecf\u79bb\u5f00CLG.cs\u6218\u961f",
+        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0516\/14633615176967.jpg",
+        "excerpt": "\u5728DH\u5965\u65af\u6c40\u516c\u5f00\u8d5b\u4e2d\uff0cCLG\u4e24\u5ea6\u5bf9\u9635Cloud9\uff0c\u5374\u4e24\u5ea6\u88ab\u540a\u6253\u3002\u8fd9\u5f88\u6709\u53ef\u80fd\u5c31\u662fFugLy\u6b64\u6b21\u79bb\u961f\u7684\u8bf1\u56e0\u3002",
         "articleType": 0,
-        "extra": "" ,
-        "tagName": "爱是",
-        "tagColor": "#ff00ff"
+        "extra": "64358",
+        "tagName": "\u65b0\u95fb",
+        "tagColor": "#FF0000"
       }
     ],
     "gameContent": [
       {
-        "title": "第一场",
-        "time": "32分02秒",
+        "title": "\u7b2c1\u573a",
+        "time": "35\u5206\u949f",
         "dataList": {
           "list": [
             {
               "listType": 0,
-              "fieldName": "选择",
+              "fieldName": "\u9009\u62e9",
               "fieldData": [
                 [
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
+                  "http:\/\/files.15w.com\/lol\/2014\/1023\/1414042808.png",
+                  "http:\/\/files.15w.com\/lol\/2014\/0326\/1395862470.png",
+                  "http:\/\/files.15w.com\/lol\/2015\/1020\/14453287976558.png",
+                  "http:\/\/files.15w.com\/lol\/2015\/0402\/14279364254157.png",
+                  "http:\/\/files.15w.com\/lol\/2016\/0407\/1460005553470.png"
                 ],
                 [
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
+                  "http:\/\/files.15w.com\/lol\/2015\/0518\/14319273262628.jpg",
+                  "http:\/\/files.15w.com\/lol\/2014\/1127\/1417078622.png",
+                  "http:\/\/files.15w.com\/lol\/2014\/0327\/1395892384.png",
+                  "http:\/\/files.15w.com\/lol\/2013\/0826\/331546117410.jpg",
+                  "http:\/\/files.15w.com\/lol\/2016\/0407\/14600159511964.png"
+                ]
+              ]
+            },
+            {
+              "listType": 0,
+              "fieldName": "\u7981\u9009",
+              "fieldData": [
+                [
+                  "http:\/\/files.15w.com\/lol\/2012\/1219\/135591098650.jpg",
+                  "http:\/\/files.15w.com\/lol\/2014\/0326\/1395820761.png",
+                  "http:\/\/files.15w.com\/lol\/2015\/0302\/14252849188420.jpg"
+                ],
+                [
+                  "http:\/\/files.15w.com\/lol\/2014\/0717\/1405632949.png",
+                  "http:\/\/files.15w.com\/lol\/2014\/0326\/1395821070.png",
+                  "http:\/\/files.15w.com\/lol\/2014\/1127\/1417121117.png"
                 ]
               ]
             },
             {
               "listType": 1,
-              "fieldName": "经济",
+              "fieldName": "\u7ecf\u6d4e",
+              "fieldData": [
+                59.9,
+                46.6
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "\u63a8\u5854",
               "fieldData": [
                 10,
-                1
-              ]
-            }
-          ]
-        }
-      },{
-        "title": "第一场",
-        "time": "32分77秒",
-        "dataList": {
-          "list": [
-            {
-              "listType": 0,
-              "fieldName": "选择",
-              "fieldData": [
-                [
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
-                ],
-                [
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
-                ]
+                2
               ]
             },
             {
               "listType": 1,
-              "fieldName": "经济",
+              "fieldName": "\u63a8\u5854",
               "fieldData": [
-                3,
-                3
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "title": "第一场",
-        "time": "3分9秒",
-        "dataList": {
-          "list": [
-            {
-              "listType": 0,
-              "fieldName": "选择",
-              "fieldData": [
-                [
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
-                ],
-                [
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
-                  "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg"
-                ]
+                19,
+                9
               ]
             },
             {
               "listType": 1,
-              "fieldName": "经济",
+              "fieldName": "\u63a8\u5854",
               "fieldData": [
-                4,
+                1,
+                0
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "\u63a8\u5854",
+              "fieldData": [
+                2,
                 2
               ]
             }
