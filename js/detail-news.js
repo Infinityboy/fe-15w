@@ -3,10 +3,9 @@
  */
 'use strict';
 window.Jn = {};
-
 var cacheData = null;
 
-Jn.setData = function(){
+Jn.setData = function(data){
     if (data.key == 'newsInitDetail') {
         renderData(data.content);
     }
@@ -37,17 +36,17 @@ function renderData(data) {
 
 $(function () {
     //document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
-    $.ajax({
-        url: 'data/news.json',
-        type: "GET",
-        dataType: 'json',
-        success: function (str) {
-            renderData(str.data);
-        },
-        error: function (err) {
-            alert('失败:' + err);
-        }
-    });
+    //$.ajax({
+    //    url: 'data/news.json',
+    //    type: "GET",
+    //    dataType: 'json',
+    //    success: function (str) {
+    //        renderData(str.data);
+    //    },
+    //    error: function (err) {
+    //        alert('失败:' + err);
+    //    }
+    //});
 
 
     // 相关新闻
