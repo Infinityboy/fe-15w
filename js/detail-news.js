@@ -48,7 +48,6 @@ $(function () {
         }
     });
 
-
     // 相关新闻
     $(document).on('click', '.relate-news', function (e) {
         e.preventDefault();
@@ -70,7 +69,6 @@ $(function () {
         e.preventDefault();
         shareBegin(1);
     });
-
 
     // 朋友圈
     $(document).on('click', '.maintext-share-frident', function(e){

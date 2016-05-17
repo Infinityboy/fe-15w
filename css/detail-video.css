@@ -9,114 +9,111 @@
     padding: 0;
     list-style: none;
 }
-li
-{
-    list-style:none;
+
+li {
+    list-style: none;
 }
 
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
 }
 
-.fl
-{
-    float:left;
+.fl {
+    float: left;
 }
 
-.fr
-{
-    float:right;
+.fr {
+    float: right;
 }
 
-.clearFix:after
-{
-    content:'';
-    display:block;
-    clear:both;
+.clearFix:after {
+    content: '';
+    display: block;
+    clear: both;
 }
 
-.clearFix
-{
-    zoom:1;
+.clearFix {
+    zoom: 1;
 }
 
-img
-{
-    vertical-align:top;
+img {
+    vertical-align: top;
 }
+
 body {
     background: #eee;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 header {
     background: #fff;
 }
-header .title
-{
+
+header .title {
     width: 100%;
     height: 1.2rem;
     font-size: 0.8rem;
     color: #000;
     line-height: 1.2rem;
-    margin-top:0.5rem;
-    padding-left:0.8rem;
-    text-align:left;
+    margin-top: 0.5rem;
+    padding-left: 0.8rem;
+    text-align: left;
 }
 
-.video-meta{
-    width:100%;
-    height:0.8rem;
+.video-meta {
+    width: 100%;
+    height: 0.8rem;
     color: #999;
-    padding:0.3rem 0 0.6rem 0;
+    padding: 0.3rem 0 0.6rem 0;
     position: relative;
 }
 
 .video-meta .date {
-    font-size:0.6rem;
-    height:0.8rem;
-    width:3.5rem;
-    position:absolute;
-    left:0.8rem;
+    font-size: 0.6rem;
+    height: 0.8rem;
+    width: 3.5rem;
+    position: absolute;
+    left: 0.8rem;
 }
 
 .video-meta .author {
-    font-size:0.6rem;
-    height:0.8rem;
-    width:3.5rem;
-    position:absolute;
-    left:4.5rem;
-    color:#41adff;
+    font-size: 0.6rem;
+    height: 0.8rem;
+    width: 3.5rem;
+    position: absolute;
+    left: 4.5rem;
+    color: #41adff;
 }
+
 .video-meta .views {
-    font-size:0.6rem;
-    height:0.8rem;
-    width:3.5rem;
-    position:absolute;
-    right:0.8rem;
-    text-align:right;
+    font-size: 0.6rem;
+    height: 0.8rem;
+    width: 3.5rem;
+    position: absolute;
+    right: 0.8rem;
+    text-align: right;
 }
-.video-excerpt p
-{
+
+.video-excerpt p {
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp:3;
+    -webkit-line-clamp: 3;
     overflow: hidden;
 }
-.header-bottomline3
-{
-    width:100%;
-    height:0.3rem;
-    border-top:1px solid #e1e1e1;
-    border-bottom:1px solid #e1e1e1;
-    background:#eee;
+
+.header-bottomline3 {
+    width: 100%;
+    height: 0.3rem;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background: #eee;
 }
-header .player iframe
-{
-    width:100%;
-    height:9.6rem;
+
+header .player iframe {
+    width: 100%;
+    height: 9.6rem;
 }
 
 header .player img {
@@ -132,96 +129,75 @@ header .player img {
 /**
  视频推荐
  -------*/
-.gamelist
-{
+.gamelist {
     width: 100%;
-    overflow-y: scroll;
-    overflow-x:hidden;
-    height: 16rem;
-    background:#fff;
+    background: #fff;
 }
-.gamelist h3
-{
-    font-size:0.7rem;
-    color:#e03131;
-    height:2.1rem;
-    line-height:2.1rem;
-    padding-left:0.65rem;
+
+.gamelist h3 {
+    font-size: 0.7rem;
+    color: #e03131;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    padding-left: 0.65rem;
 }
-.gamelist ul
-{
-    width:100%;
+
+.gamelist ul {
+    width: 100%;
 
 }
-.gamelist ul li
-{
-    height:3.2rem;
-    border-top:1px solid #e1e1e1;
-    padding:0.65rem;
+
+.gamelist ul li {
+    border-top: 1px solid #e1e1e1;
+    padding: 0.65rem;
     position: relative;
 }
-.gamelist ul li img
-{
-    width:4.26rem;
-    height:100%;
-    margin-right:0.5rem;
-    float:left;
+
+.gamelist ul li img {
+    width: 4.26rem;
+    height: 3.5rem;
+    margin-right: 0.5rem;
+    float: left;
 }
-.gamelist-into
-{
-    width:9.52rem;
-    margin-top:0.2rem;
-    margin-bottom:0.2rem;
-    float:left;
+
+.gamelist-into {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    float: left;
 }
-.gamelist-into-title
-{
-    font-size:0.6rem;
-    height:1rem;
-    line-height:1rem;
-    color:#444;
+
+.gamelist-into-title {
+    font-size: 0.6rem;
+    height: 1rem;
+    line-height: 1rem;
+    color: #444;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.gamelist-into-text
-{
-    font-size:0.52rem;
-    color:#9a9a9a;
-    line-height:0.8rem;
+
+.gamelist-into-text {
+    font-size: 0.52rem;
+    color: #9a9a9a;
+    line-height: 0.8rem;
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
     -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
     -webkit-line-clamp: 2; /** 显示的行数 **/
-    overflow: hidden;  /** 隐藏超出的内容 **/
+    overflow: hidden; /** 隐藏超出的内容 **/
 }
 
-.gamelist ul li a
-{
-    color:#999;
-    font-size:0.48rem;
-    height:0.7rem;
-    width:1.6rem;
-    border:1px solid #666;
-    border-radius:3px;
+.gamelist ul li a {
+    color: #999;
+    font-size: 0.48rem;
+    height: 0.7rem;
+    width: 1.6rem;
+    border: 1px solid #666;
+    border-radius: 3px;
     text-align: center;
-    line-height:0.74rem;
-    position:absolute;
-    right:0.75rem;
-    bottom:0.68rem;
+    line-height: 0.74rem;
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.68rem;
 }
-/*.gamelist ul li span*/
-/*{*/
-    /*color:#b6b6b6;*/
-    /*font-size:0.48rem;*/
-    /*height:0.7rem;*/
-    /*width:2.4rem;*/
-    /*border:1px solid #b6b6b6;*/
-    /*border-radius:3px;*/
-    /*text-align: center;*/
-    /*line-height:0.74rem;*/
-    /*position:absolute;*/
-    /*right:2.81rem;*/
-    /*bottom:0.68rem;*/
-/*}*/

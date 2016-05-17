@@ -47,7 +47,7 @@ window.onload = window.onresize =function () {
 
                     $.each(data.recomendVideos, function (index, item) {//alert(1);
                         htmlStr += '<li class="clearFix video-rec" data-type="'+item.articleType+'" data-id="'+item.extra+'"><img class="fl" src="' + item.thumbnail + '"/>';
-                        htmlStr += ' <div class="fl gamelist-into"> <P class="gamelist-into-title">' + item.title + '</P> ';
+                        htmlStr += '<p class="gamelist-into-title">' + item.title + '</p>';
                         htmlStr += '<p class="gamelist-into-text">' + item.excerpt + '</p></div> ';
                         htmlStr += '<a class="tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</a></li>';
                     });
