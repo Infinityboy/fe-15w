@@ -30,6 +30,7 @@ function renderData(content){
 }
 
 
+/*
 window.onload = window.onresize =function () {
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
     $(function () {
@@ -44,12 +45,11 @@ window.onload = window.onresize =function () {
                 htmlStr += '<div class="video-excerpt"><p>' + data.excerpt + '</p></div></header>';
                 if (data.recomendVideos.length > 0) {
                     htmlStr += '<section class="header-bottomline3"></section><section class="gamelist"><h3>视频推荐</h3> <ul> ';
-
                     $.each(data.recomendVideos, function (index, item) {//alert(1);
                         htmlStr += '<li class="clearFix video-rec" data-type="'+item.articleType+'" data-id="'+item.extra+'"><img class="fl" src="' + item.thumbnail + '"/>';
                         htmlStr += '<p class="gamelist-into-title">' + item.title + '</p>';
                         htmlStr += '<p class="gamelist-into-text">' + item.excerpt + '</p></div> ';
-                        htmlStr += '<a class="tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</a></li>';
+                        htmlStr += '<span class="tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span></li>';
                     });
                     htmlStr += '</ul> </section>';
                 }
@@ -67,4 +67,4 @@ window.onload = window.onresize =function () {
         });
 
     });
-}
+}*/

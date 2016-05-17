@@ -66,13 +66,13 @@ function renderData(data) {
 
         $.each(data.relateVideos, function (index, item) {
             htmlStr += '<li class="clearFix video-recommend" data-type="'+item.articleType+'" data-id="'+item.extra+'"> <img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += ' <div class="fl gamelist-into"> <p class="gamelist-into-title">' + item.title + '</p> ';
-            htmlStr += '<p class="gamelist-into-text">' + item.excerpt + '</p></div> ';
-            htmlStr += '<span>' + item.comments + '</span><a style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</a></li>';
+            htmlStr += '<p class="gamelist-into-title">' + item.title + '</p> ';
+            htmlStr += '<p class="gamelist-into-text">' + item.excerpt + '</p>';
+            htmlStr += '<a style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</a></li>';
         });
 
         htmlStr += '</ul> </section><section class="header-bottomline2"></section> <section class="gamevedio"> ';
-        htmlStr += '<h2>比赛视频</h2> <img src="images/gamevedio.png">';
+        htmlStr += '<h2>比赛视频</h2><img src="images/gamevedio.png">';
         htmlStr += ' <p>LOL春季赛常规赛RNG VS Snake 第三场直播</p></section> ';
         htmlStr += '<section class="header-bottomline2"></section>';
     }
@@ -83,9 +83,10 @@ function renderData(data) {
         $.each(data.recomendVideos, function (index, item) {
             htmlStr += '<li class="clearFix related-news" data-type="'+item.articleType+'" data-id="'+item.extra+'"><div class="relanews">';
             htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += '<P class="gamenews-into-title">' + item.title + '</P>';
+            htmlStr += '<p class="gamenews-into-title">' + item.title + '</p>';
             htmlStr += '<p class="gamenews-into-text">' + item.excerpt + '</p>';
-            htmlStr += '</div> <span>' + item.comments + '</span></div> </li> ';
+            htmlStr += '<span class="tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span></li>';
+            htmlStr += '</div></div> </li> ';
         });
         htmlStr += ' </ul></section>';
     }
@@ -238,13 +239,13 @@ function renderData(data) {
 window.onload = window.onresize = function () {
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
 
-    $(function () {
+    /*$(function () {
         $.get('data/game-detail.json', function (res) {
             if (res.code == 10000) {
                 renderData(res.data);
             }
         });
-    });
+    });*/
 
     $('body').on('click', '#roundlist div', function (e) {
         $('#roundlist div').removeClass('on');

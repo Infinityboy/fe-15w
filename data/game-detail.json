@@ -91,7 +91,9 @@
         "excerpt": "OMG再次陷入被动",
         "comments": "999评论",
         "articleType": 0,
-        "extra": ""
+        "extra": "" ,
+        "tagName": "爱是",
+        "tagColor": "#ff00ff"
       },
       {
         "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
@@ -99,7 +101,9 @@
         "excerpt": "OMG再次陷入被动OMG再次陷入被动OMG再次陷入被动",
         "comments": "999评论",
         "articleType": 0,
-        "extra": ""
+        "extra": "",
+        "tagName": "爱是",
+        "tagColor": "#ff00ff"
       },
       {
         "thumbnail": "http://pic2.52pk.com/files/wapfiles/150522/3519444_111020_7519_wap.jpg",
@@ -107,7 +111,9 @@
         "excerpt": "OMG再次陷入被动",
         "comments": "999评论",
         "articleType": 0,
-        "extra": ""
+        "extra": "" ,
+        "tagName": "爱是",
+        "tagColor": "#ff00ff"
       }
     ],
     "gameContent": [
