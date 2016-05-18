@@ -34,12 +34,12 @@ function renderData(data) {
 
     htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + 'px"></div></div>';
     htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + 'px"></div></div> </section>';
-    htmlStr += '<section class="supporters"><div class="sp" data-id="'+data.dataId+'" data-team="'+data.teamA.teamId+'"><img class="supporters-leftlogo" src="images/matchdetail_ic_support.png"/>';
+    htmlStr += '<section class="supporters"><a href="##" class="sp sp-left" data-id="'+data.dataId+'" data-team="'+data.teamA.teamId+'"><img class="supporters-leftlogo" src="images/matchdetail_ic_support.png"/>';
 
-    htmlStr += '<span class="supporters-leftNumber supp" id="supporters-leftNumber"> ' + data.teamA.support_numbber + '</span></div>';
+    htmlStr += '<span class="supporters-leftNumber supp" id="supporters-leftNumber"> ' + data.teamA.support_numbber + '</span></a>';
     htmlStr += '<span class="supporters-gameintro">' + data.title + '</span>';
-    htmlStr += '<div class="sp" data-id="'+data.dataId+'" data-team="'+data.teamB.teamId+'"><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span> ';
-    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/></div></section> ';
+    htmlStr += '<a href="##" class="sp sp-right" data-id="'+data.dataId+'" data-team="'+data.teamB.teamId+'"><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span> ';
+    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/></a></section> ';
     htmlStr += '<section class="line"></section></header>';
 
 
@@ -213,11 +213,11 @@ function renderData(data) {
 }
 
 $(function () {
-    //$.get('data/game-detail.json', function (res) {
-    //    if (res.code == 10000) {
-    //        renderData(res.data);
-    //    }
-    //});
+    $.get('data/game-detail.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
@@ -229,12 +229,12 @@ $(function () {
     });
 
     //left 点赞支持
-    $(document).on('click', '.supporters-leftlogo, .supporters-leftNumber', function () {
+    $(document).on('click', '.sp-left', function () {
         var elem = $('#supporters-leftNumber');
         var number = parseInt(elem.html());
-        var parent = $(this).closest('.sp');
-        var dataId = parent.data('id');
-        var teamId = parent.data('team');
+        var dataId = $(this).data('id');
+        var teamId = $(this).data('team');
+
         //if (getCookie("sp-" + cacheData.dataId)) {
         //    return;
         //}
@@ -242,18 +242,17 @@ $(function () {
             number++;
             elem.html(number);
             //setCookie("sp-" + cacheData.dataId, number, 365);
-            Jnapp.jn_agree(7, dataId + "", teamId + "");
+            Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
 
         }
     });
 
     // right 点赞支持
-    $(document).on('click', '.supporters-rightlogo, .supporters-rightNumber', function () {
+    $(document).on('click', '.sp-right', function () {
         var elem = $('#supporters-rightNumber');
-        var parent = $(this).closest('.sp');
-        var dataId = parent.data('id');
-        var teamId = parent.data('team');
+        var dataId = $(this).data('id');
+        var teamId = $(this).data('team');
 
         var number = parseInt(elem.html());
         //if (getCookie("sp-" + cacheData.dataId)) {
@@ -263,15 +262,15 @@ $(function () {
             number++;
             elem.html(number);
             //setCookie("sp-" + cacheData.dataId, number, 365);
-            Jnapp.jn_agree(7, dataId + "", teamId + "");
+            Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
         }
     });
 
 
+    // tab切换
     $(document).on('click', 'a.roundspan3', function (e) {
         e.preventDefault();
-
         if (!$(this).hasClass('on')) {
             var index = $(this).data('id');
             $(this).addClass('on').siblings('a').removeClass('on');

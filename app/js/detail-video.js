@@ -18,7 +18,7 @@ function renderData(content){
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="line"></section><section class="list"><h3>视频推荐</h3><ul> ';
         $.each(data.recomendVideos, function (index, item) {
-            htmlStr += '<li class="clearFix list-item" data-type="'+item.articleType+'" data-id="'+ item.extra +'"><img class="fl" src="' + item.thumbnail + '"/>';
+            htmlStr += '<li class="clearFix"><a href="##" class="list-item"  data-type="'+item.articleType+'" data-id="'+ item.extra +'"> <img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
             htmlStr += '<span class="list-tag" style="color:'+item.tagColor+';border-color:'+item.tagColor+';">' + item.tagName + '</span>';
             var date = new Date();
@@ -30,7 +30,7 @@ function renderData(content){
 
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
 
-            htmlStr += '</li>';
+            htmlStr += '</a></li>';
 
         });
         htmlStr += '</ul></section><section class="line"></section>';
