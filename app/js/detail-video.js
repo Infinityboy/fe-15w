@@ -20,8 +20,9 @@ function renderData(content){
         $.each(data.recomendVideos, function (index, item) {
             htmlStr += '<li class="clearFix list-item" data-type="'+item.articleType+'" data-id="'+ item.extra +'"><img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
-            htmlStr += '<p class="list-excerpt">' + item.excerpt + '</p>';
-            htmlStr += '<span class="list-tag" style="color:'+item.tagColor+';border-color:'+item.tagColor+';">' + item.tagName + '</span></li>';
+            htmlStr += '<span class="list-tag" style="color:'+item.tagColor+';border-color:'+item.tagColor+';">' + item.tagName + '</span>';
+            htmlStr += '<span class="list-time">' + item.time + '</span></li>';
+
         });
         htmlStr += '</ul></section><section class="line"></section>';
     }
@@ -36,9 +37,8 @@ $(function(){
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
-        console.log($(this).data('type') + ':' + $(this).data('id'));
         try {
-            Jnapp.jn_related($(this).data('type'), $(this).data('id'));
+            Jnapp.jn_related($(this).data('type'), $(this).data('id') +"");
         } catch (e) {
 
         }

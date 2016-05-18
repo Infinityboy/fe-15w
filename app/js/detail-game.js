@@ -19,22 +19,27 @@ function renderData(data) {
     htmlStr += '<img class="header-scores-logoright" src="' + data.teamB.logo + '"/> ';
     htmlStr += '</section> <section class="header-teams"> ';
     htmlStr += '<span class="header-teams-left">' + data.teamA.name + '</span> ';
-    htmlStr += '<div class="header-teams-middle"><span>' + data.gameTime + '</span></div> ';
+
+    var time = '';
+    if (data.gameTime) {
+        var date = new Date(data.gameTime);
+        time = date.getHours() + ' : ' + date.getMinutes();
+    }
+    htmlStr += '<div class="header-teams-middle"><span>' + time + '</span></div> ';
     htmlStr += '<span class="header-teams-right">' + data.teamB.name + '</span> </section> <section class="ProgressBar clearFix"> ';
 
     // 单元长度为15px
-    var leftItemLength = data.teamA.score * 15;
-    var rightItemLength = data.teamB.score * 15;
+    var leftItemLength = data.teamA.score * 50;
+    var rightItemLength = Math.max(data.teamB.score * 50, 5);
 
-    htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + 'px"></div></div> <div class="ProgressBar-tag">';
-    htmlStr += '<img src="images/matchdetail_image_redbule.png"/></div>';
-    htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + '"></div></div> </section>';
-    htmlStr += '<section class="supporters"> <img class="supporters-leftlogo" ';
-    htmlStr += 'src="images/matchdetail_ic_support.png"/> ';
-    htmlStr += '<p class="supporters-leftNumber supp"id="supporters-leftNumber">' + data.teamA.support_numbber + '</p>';
-    htmlStr += '<p class="supporters-gameintro">' + data.title + '</p> ';
-    htmlStr += '<p class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</p> ';
-    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/> </section> ';
+    htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + 'px"></div></div>';
+    htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + 'px"></div></div> </section>';
+    htmlStr += '<section class="supporters"><div><img class="supporters-leftlogo" src="images/matchdetail_ic_support.png"/>';
+
+    htmlStr += '<span class="supporters-leftNumber supp" id="supporters-leftNumber"> ' + data.teamA.support_numbber + '</span></div>';
+    htmlStr += '<span class="supporters-gameintro">' + data.title + '</span>';
+    htmlStr += '<div><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span> ';
+    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/></div></section> ';
     htmlStr += '<section class="line"></section></header>';
 
 
@@ -72,8 +77,10 @@ function renderData(data) {
         $.each(data.relateVideos, function (index, item) {
             htmlStr += '<li class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
-            htmlStr += '<p class="list-excerpt">' + item.excerpt + '</p>';
-            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span></li>';
+            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            htmlStr += '<span class="list-time">' + item.time + '</span>';
+            htmlStr += '</li>';
+
         });
 
         htmlStr += '</ul></section><section class="line"></section>';
@@ -91,8 +98,8 @@ function renderData(data) {
             htmlStr += '<li class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
             htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p>';
-            htmlStr += '<p class="list-excerpt">' + item.excerpt + '</p>';
-            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span></li>';
+            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            htmlStr += '<span class="list-time">' + item.time + '</span>';
             htmlStr += '</li> ';
         });
         htmlStr += ' </ul></section>';
@@ -189,16 +196,16 @@ function renderData(data) {
 }
 
 $(function () {
-    $.get('data/game-detail.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });
+    //$.get('data/game-detail.json', function (res) {
+    //    if (res.code == 10000) {
+    //        renderData(res.data);
+    //    }
+    //});
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
         try {
-            Jnapp.jn_related($(this).data('type'), $(this).data('id'));
+            Jnapp.jn_related($(this).data('type'), $(this).data('id') + "");
         } catch (e) {
 
         }
@@ -215,7 +222,7 @@ $(function () {
             number++;
             elem.html(number);
             //setCookie("sp-" + cacheData.dataId, number, 365);
-            Jnapp.jn_agree(7, cacheData.dataId, cacheData.teamB.teamId);
+            Jnapp.jn_agree(7, cacheData.dataId + "", cacheData.teamB.teamId + "");
         } catch (e) {
 
         }
@@ -232,7 +239,7 @@ $(function () {
             number++;
             elem.html(number);
             //setCookie("sp-" + cacheData.dataId, number, 365);
-            Jnapp.jn_agree(7, cacheData.dataId, cacheData.teamB.teamId);
+            Jnapp.jn_agree(7, cacheData.dataId + "", cacheData.teamB.teamId + "");
         } catch (e) {
             alert('')
         }

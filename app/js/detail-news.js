@@ -29,7 +29,10 @@ function renderData(data) {
     if (news_list.length > 0) {
         htmlStr += '<section class="line"></section><section class="list"><h3>相关新闻</h3><ul id="news_list">';
         $.each(news_list, function (index, item) {
-            htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/><p class="list-title">' + item.title + '</p><p class="list-excerpt">' + item.excerpt + '</p><span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span></a></li>';
+            htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/><p class="list-title">' + item.title + '</p><span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            htmlStr += '<span class="list-time">' + item.time + '</span>';
+            htmlStr += '</a></li>';
+
         });
 
         htmlStr += '</ul></section><section class="line"></section>';
@@ -54,7 +57,7 @@ $(function () {
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
         try {
-            Jnapp.jn_related($(this).data('type'), $(this).data('id'));
+            Jnapp.jn_related($(this).data('type'), $(this).data('id') + "");
         } catch (e) {
 
         }

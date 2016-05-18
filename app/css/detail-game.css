@@ -34,9 +34,13 @@ header .header-scores img {
     left: 50%;
     top: 50%;
     margin-left: -0.95rem;
-    margin-top: -0.3rem;
-    font-family: Arial;
+    margin-top: -0.65rem;
+    font-family: "Arial";
     font-size: 1.1rem;
+}
+
+.header-scores div b {
+    font-weight: normal;
 }
 
 .header-scores-left {
@@ -57,7 +61,7 @@ header .header-scores img {
     color: #999;
     position: absolute;
     left: 50%;
-    top: 0;
+    top: 0.15rem;
     margin-left: -0.1rem;
     font-size: 0.8rem;
 }
@@ -94,55 +98,56 @@ header .header-teams .header-teams-right {
 
 header .header-teams .header-teams-middle {
     width: 5.86rem;
-    height: 0.6rem;
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -2.93rem;
-    margin-top: -0.36rem;
-    font-size: 0.5rem;
+    margin-top: -0.65rem;
+    font-size: 0.8rem;
     color: #9a9a9a;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;
 }
 
 .ProgressBar {
-    height: 0.222rem;
+    height: 0.35rem;
     position: relative;
-    margin-left: 0.65rem;
     margin-top: 0.444rem;
+    display: table;
+    width: 100%;
 }
 
 .ProgressBar-leftbox {
-    width: 7.217rem;
+    width: 50%;
     height: 100%;
-    position: absolute;
     left: 0;
     overflow: hidden;
+    display: table-cell;
+    text-align: right;
 }
 
 .ProgressBar-rightbox {
-    width: 7.217rem;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    overflow: hidden;
+    height: .3rem;
+    display: table-cell;
+    text-align: left;
+    width: 50%;
 }
 
 .ProgressBar-left {
-    width: 6.567rem;
-    height: 100%;
+    height: .3rem;
     background: #e03131;
-    float: right;
+    display: inline-block;
+    transform: skew(-30deg);
+    margin-right: .15rem;
 }
 
 .ProgressBar-right {
     width: 6.567rem;
-    height: 100%;
+    height: .3rem;
     background: #41adff;
-    float: left;
+    transform: skewX(-30deg);
+    display: inline-block;
 }
 
 .ProgressBar-tag {
@@ -158,33 +163,20 @@ header .header-teams .header-teams-middle {
 }
 
 .supporters {
-    height: 1.068rem;
+    height: 2rem;
     position: relative;
-    margin-left: 0.65rem;
     margin-top: 0.444rem;
+    text-align: center;
+    margin-bottom: .5rem;
 }
 
 .supporters img {
-    width: 1.068rem;
-    height: 1.068rem;
-    position: absolute;
-    top: 0;
-}
-
-.supporters-leftlogo {
-    left: 0;
-}
-
-.supporters-rightlogo {
-    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .supporters-leftNumber {
     width: 2.6rem;
-    height: 0.8rem;
-    position: absolute;
-    top: 0.15rem;
-    left: 1.3rem;
     font-size: 0.68rem;
     color: #e03030;
     text-align: left;
@@ -193,24 +185,22 @@ header .header-teams .header-teams-middle {
 .supporters-rightNumber {
     width: 2.6rem;
     height: 0.8rem;
-    position: absolute;
-    top: 0.15rem;
-    right: 1.3rem;
     font-size: 0.68rem;
     color: #41adff;
     text-align: right;
 }
 
+.supporters > div {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    display: inline-block;
+}
+
 .supporters-gameintro {
-    width: 6rem;
     height: 0.6rem;
     font-size: 0.6rem;
-    text-align: center;
     color: #999;
-    position: absolute;
-    left: 50%;
-    top: 0.2rem;
-    margin-left: -3rem;
+    margin: 0 .5rem;
 }
 
 .header-bottomline {
