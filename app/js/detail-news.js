@@ -30,7 +30,14 @@ function renderData(data) {
         htmlStr += '<section class="line"></section><section class="list"><h3>相关新闻</h3><ul id="news_list">';
         $.each(news_list, function (index, item) {
             htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/><p class="list-title">' + item.title + '</p><span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
-            htmlStr += '<span class="list-time">' + item.time + '</span>';
+
+            var date = new Date();
+            var dateStr;
+            if (item.updateTime) {
+                date = new Date(item.updateTime);
+            }
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+            htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</a></li>';
 
         });
@@ -41,17 +48,17 @@ function renderData(data) {
 }
 
 $(function () {
-    //$.ajax({
-    //    url: 'data/news.json',
-    //    type: "GET",
-    //    dataType: 'json',
-    //    success: function (str) {
-    //        renderData(str.data);
-    //    },
-    //    error: function (err) {
-    //        alert('失败:' + err);
-    //    }
-    //});
+    /*$.ajax({
+        url: 'data/news.json',
+        type: "GET",
+        dataType: 'json',
+        success: function (str) {
+            renderData(str.data);
+        },
+        error: function (err) {
+            alert('失败:' + err);
+        }
+    });*/
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {

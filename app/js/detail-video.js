@@ -21,7 +21,16 @@ function renderData(content){
             htmlStr += '<li class="clearFix list-item" data-type="'+item.articleType+'" data-id="'+ item.extra +'"><img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
             htmlStr += '<span class="list-tag" style="color:'+item.tagColor+';border-color:'+item.tagColor+';">' + item.tagName + '</span>';
-            htmlStr += '<span class="list-time">' + item.time + '</span></li>';
+            var date = new Date();
+            var dateStr;
+            if (item.updateTime) {
+                date = new Date(item.updateTime);
+            }
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+
+            htmlStr += '<span class="list-time">' + dateStr + '</span>';
+
+            htmlStr += '</li>';
 
         });
         htmlStr += '</ul></section><section class="line"></section>';

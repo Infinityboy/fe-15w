@@ -67,7 +67,7 @@ function renderData(data) {
             htmlStr += '</div></div></li>';
         });
         htmlStr += '</ul> </section>';
-        htmlStr += '</section> <section class="line"></section>';
+        htmlStr += '</section><section class="line"></section>';
     }
 
     //相关视频
@@ -78,17 +78,27 @@ function renderData(data) {
             htmlStr += '<li class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
             htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
-            htmlStr += '<span class="list-time">' + item.time + '</span>';
+
+            var date = new Date();
+            var dateStr;
+            if (item.updateTime) {
+                date = new Date(item.updateTime);
+            }
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+            htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</li>';
 
         });
 
         htmlStr += '</ul></section><section class="line"></section>';
-    } else {
-        htmlStr += '<section class="line"></section><section class="gamevedio"> ';
-        htmlStr += '<h2>比赛视频</h2><img src="'+ data.originSrc +'">';
-        htmlStr += '<p>' + data.title +'</p></section> ';
-        htmlStr += '</section><section class="line"></section>';
+    }
+
+    if (data.originSrc && data.cover) {
+        htmlStr += '<section class="gamevedio"> ';
+        htmlStr += '<h2>比赛视频</h2>';
+        htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="'+data.originSrc+'"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="'+ data.cover +'"><p>' + data.title +'</p></section> ';
+        htmlStr += '</section><section class="line"></section></div>';
     }
 
     //推荐视频
@@ -99,7 +109,15 @@ function renderData(data) {
             htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p>';
             htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
-            htmlStr += '<span class="list-time">' + item.time + '</span>';
+
+            var date = new Date();
+            var dateStr;
+            if (item.updateTime) {
+                date = new Date(item.updateTime);
+            }
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+
+            htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</li> ';
         });
         htmlStr += ' </ul></section>';
@@ -261,5 +279,14 @@ $(function () {
             $(this).addClass('on').siblings('a').removeClass('on');
             $('.data-details > .data-content-item').eq(index).show().siblings().hide();
         }
+    });
+
+    // 直播跳转
+    $(document).on('click', '.play-icon', function(){
+       try{
+           Jnapp.jn_related(5, $(this).data('url'));
+       } catch(e){
+
+       }
     });
 });
