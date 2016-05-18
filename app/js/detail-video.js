@@ -13,7 +13,8 @@ function renderData(content){
     htmlStr += '<div class="video-meta"><span class="date">' + data.time + '</span><span class="author color-blue ml5">';
     htmlStr += data.author + '</span>';
     htmlStr += '<span class="views">' + data.views + '</span></div>';
-    htmlStr += '<div class="player">' + data.content + '</div>';
+    var videoContent = data.content ? data.content : '';
+    htmlStr += '<div class="player">' + videoContent + '</div>';
     htmlStr += '<div class="video-excerpt"><p>' + data.excerpt + '</p></div></header>';
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="line"></section><section class="list"><h3>视频推荐</h3><ul> ';
@@ -26,7 +27,7 @@ function renderData(content){
             if (item.updateTime) {
                 date = new Date(item.updateTime);
             }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
 

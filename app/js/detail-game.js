@@ -10,7 +10,6 @@ Jn.setData = function (data) {
 };
 
 function renderData(data) {
-    cacheData = data;
     var htmlStr = '<header><section class="header-scores">';
     htmlStr += '<img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/>';
     htmlStr += '<div><span class="header-scores-left"><b>' + data.teamA.score + '</b></span>';
