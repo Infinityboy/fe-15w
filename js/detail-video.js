@@ -30,11 +30,11 @@ function renderData(content){
 
 $(function(){
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
-    $.get('data/video-detail.json', function (res) {
-        //if (res.code == 10000) {
-            renderData(res.content);
-        //}
-    });
+    //$.get('data/video-detail.json', function (res) {
+    //    //if (res.code == 10000) {
+    //        renderData(res.content);
+    //    //}
+    //});
 
     $(document).on('click', '.video-rec', function (e) {
         e.preventDefault();

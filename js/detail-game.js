@@ -219,8 +219,7 @@ $(function () {
             number++;
             elem.html(number);
             //setCookie("sp-" + cacheData.dataId, number, 365);
-            //Jnapp.jn_agree(7, cacheData.dataId, cacheData.teamB.teamId);
-            Jnapp.jn_agree(7, 1212, 12);
+            Jnapp.jn_agree(7, cacheData.dataId, cacheData.teamB.teamId);
         } catch (e) {
 
         }
