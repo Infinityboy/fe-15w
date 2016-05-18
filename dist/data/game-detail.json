@@ -2,6 +2,7 @@
   "code": 10000,
   "message": "success",
   "data": {
+    "dataId": "121212",
     "title": "2016MSI\u5b63\u4e2d\u8d5b5\u67086\u65e517\uff1a30 CLG VS SUP",
     "gameTime": "2016-05-06 17:30",
     "gameType": "BO1",
