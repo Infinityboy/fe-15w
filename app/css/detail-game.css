@@ -1,62 +1,18 @@
-@charset "utf-8";
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
-}
-
-.clearFix:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.clearFix {
-    zoom: 1;
-}
-
-img {
-    vertical-align: top;
-}
-
-html {
-    font-size: 20px;
-    background: #fcfcfc;
-    font-family: "微软雅黑";
-}
-
 header {
-    height: 7.6rem;
     width: 100%;
     border-top: 1px solid #f2ebf3;
 }
 
 header .header-scores {
     width: 100%;
-    height: 2.133rem;
+    height: 3rem;
     margin-top: 1.3rem;
     position: relative;
 }
 
 header .header-scores img {
-    width: 2.133rem;
-    height: 2.133rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
 }
 
@@ -148,10 +104,12 @@ header .header-teams .header-teams-middle {
     font-size: 0.5rem;
     color: #9a9a9a;
     text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .ProgressBar {
-    width: 14.7rem;
     height: 0.222rem;
     position: relative;
     margin-left: 0.65rem;
@@ -201,7 +159,6 @@ header .header-teams .header-teams-middle {
 }
 
 .supporters {
-    width: 14.7rem;
     height: 1.068rem;
     position: relative;
     margin-left: 0.65rem;
@@ -572,16 +529,12 @@ header .header-teams .header-teams-middle {
     padding: 0 .3rem;
 }
 
-.game-data {
-    width: 100%;
-}
-
 .game-data h2 {
-    font-size: 0.7rem;
     color: #e03131;
-    height: 2.1rem;
-    line-height: 2.1rem;
-    padding-left: 0.65rem;
+    padding: .65rem .8rem;
+    font-size: 1.1rem;
+    font-weight: normal;
+    line-height: 1;
 }
 
 #roundlist {
@@ -609,6 +562,7 @@ header .header-teams .header-teams-middle {
     color: #989898;
     line-height: 2rem;
     display: block;
+    font-size: .9rem;
 }
 
 #roundlist > a.on {
@@ -617,13 +571,13 @@ header .header-teams .header-teams-middle {
 }
 
 .gamedata-teams {
-    height: 2.133rem;
+    height: 3rem;
     position: relative;
 }
 
 .gamedata-teams img {
-    width: 2.133rem;
-    height: 100%;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
 }
 
@@ -640,9 +594,9 @@ header .header-teams .header-teams-middle {
 }
 
 .gamedata-teams-duration {
-    font-size: 0.55rem;
+    font-size: 0.8rem;
     height: 100%;
-    line-height: 2.133rem;
+    line-height: 3rem;
     color: #9a9a9a;
     text-align: center;
 }
@@ -669,13 +623,14 @@ header .header-teams .header-teams-middle {
 }
 
 .game-data-select img {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
+    margin-right: .1rem;
 }
 
 .game-data-select-word {
-    font-size: 0.52rem;
+    font-size: 0.65rem;
     height: 100%;
     width: 1.6rem;
     line-height: 1rem;
@@ -690,99 +645,67 @@ header .header-teams .header-teams-middle {
 
 .conpares {
     width: 100%;
-    height: 0.8rem;
     position: relative;
-}
-
-.compares-money {
-    width: 2rem;
-    height: 0.5rem;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    margin-left: -1rem;
-    font-size: 0.5rem;
-    color: #999;
-}
-
-.conpares h2 {
-    width: 100%;
-    font-size: 0.55rem;
-    height: 0.55rem;
-    text-align: center;
-    color: #9a9a9a;
-}
-
-.compares-bardetails {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 0.7rem;
-    margin-top: 1rem;
-}
-
-.compares-bardetails .earnmoney {
-    width: 4rem;
-    position: absolute;
-    left: 50%;
-    top: -0.65rem;
-    margin-left: -2rem;
-    height: 0.65rem;
-    line-height: 0.65rem;
-    font-size: 0.52rem;
-    color: #9a9a9a;
     text-align: center;
 }
 
-.compares-barleft {
-    width: 1rem;
-    height: 0.222rem;
-    background: #e03131;
-    position: absolute;
-    right: 8.133rem;
-}
-
-.compares-barright {
-    width: 1rem;
-    height: 0.222rem;
-    background: #41adff;
-    position: absolute;
-    left: 8.133rem;
-}
-
-.compares-barmiddle {
-    width: 0.266rem;
-    height: 0.222rem;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    margin-left: -0.133rem;
-}
-
-.compares-barmiddle img {
+.conpares .bar-inner {
+    display: table;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+    margin-top: -0.6rem;
 }
 
-.compares-bardetails-leftnum {
-    position: absolute;
-    left: -1.5rem;
-    margin-top: -0.1rem;
-    font-size: 0.55rem;
+.conpares .bar-inner .left-bar {
+    width: 45%;
+    text-align: right;
+    display: table-cell;
     color: #e03131;
 }
 
-.compares-bardetails-rightnum {
+.conpares .bar {
+    height: .4rem;
+    display: inline-block;
+    -webkit-transform: skew(-30deg);
+    -moz-transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    -o-transform: skew(-30deg);
+    transform: skew(-30deg);
+}
+
+.conpares > span {
+    font-size: .65rem;
+    color: #9a9a9a;
+}
+
+.conpares > img {
     position: absolute;
-    right: -1.5rem;
-    margin-top: -0.1rem;
-    font-size: 0.55rem;
+    text-align: center;
+    height: .45em;
+    width: .54rem;
+    bottom: 0;
+    left: 50%;
+    margin-left: -0.27rem;
+}
+
+.conpares .bar-inner .left-bar .bar {
+    background: #e03131;
+    margin-left: .3rem;
+    margin-right: 0.15em;
+}
+
+.conpares .bar-inner .right-bar {
+    text-align: left;
+    display: table-cell;
+    width: 45%;
     color: #41adff;
 }
-.data-details{
+
+.conpares .bar-inner .right-bar .bar {
+    background: #41adff;
+    margin-right: .3rem;
+    margin-left: .15rem;
+}
+
+.data-details {
     padding: 1rem 0;
 }

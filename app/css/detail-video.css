@@ -1,0 +1,74 @@
+/**
+ * Desc: 视频详情页样式
+ * User: liangqi
+ * Date: 16/5/5
+ * Time: 下午7:04
+ */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearFix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clearFix {
+    zoom: 1;
+}
+
+img {
+    vertical-align: top;
+}
+
+body {
+    background: #eee;
+    overflow-x: hidden;
+}
+
+
+.video-meta .views {
+    position: absolute;
+    right: 0.8rem;
+    text-align: right;
+}
+
+.video-excerpt p {
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+header .player iframe {
+    width: 100%;
+    min-height: 10rem;
+    display: block;
+}
+
+header .player img {
+    width: 100%;
+    display: block;
+}
+
+.video-excerpt {
+    padding: .8rem;
+    color: #666;
+}

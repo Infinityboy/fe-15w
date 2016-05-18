@@ -35,7 +35,7 @@ function renderData(data) {
     htmlStr += '<p class="supporters-gameintro">' + data.title + '</p> ';
     htmlStr += '<p class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</p> ';
     htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/> </section> ';
-    htmlStr += '<section class="header-bottomline"></section> </header>';
+    htmlStr += '<section class="line"></section></header>';
 
 
     //图文直播
@@ -43,7 +43,7 @@ function renderData(data) {
         htmlStr += '<section class="live-byword"> <h2>图文直播</h2> ';
         htmlStr += '<section class="live-byword-listbox"> <ul>';
         $.each(data.relateArticle, function (index, item) {
-            htmlStr += '<li> <div class="innerbox"><div class="live-byword-list .clearFix"> ';
+            htmlStr += '<li> <div class="innerbox"><div class="live-byword-list clearfix"> ';
             htmlStr += '<a href="##" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
             htmlStr += '<div class="fl live-byword-list-games" > ';
             htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
@@ -62,45 +62,45 @@ function renderData(data) {
             htmlStr += '</div></div></li>';
         });
         htmlStr += '</ul> </section>';
-        htmlStr += '</section> <section class="header-bottomline2"></section>';
+        htmlStr += '</section> <section class="line"></section>';
     }
 
     //相关视频
     if (data.relateVideos.length > 0) {
-        htmlStr += '<section class="gamelist"><h2>比赛视频</h2> <ul> ';
+        htmlStr += '<section class="list"><h3>比赛视频</h3> <ul> ';
 
         $.each(data.relateVideos, function (index, item) {
-            htmlStr += '<li class="clearFix video-recommend" data-type="' + item.articleType + '" data-id="' + item.extra + '"> <img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += '<p class="gamelist-into-title">' + item.title + '</p> ';
-            htmlStr += '<p class="gamelist-into-text">' + item.excerpt + '</p>';
-            htmlStr += '<a style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</a></li>';
+            htmlStr += '<li class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
+            htmlStr += '<p class="list-title">' + item.title + '</p> ';
+            htmlStr += '<p class="list-excerpt">' + item.excerpt + '</p>';
+            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span></li>';
         });
 
-        htmlStr += '</ul></section><section class="header-bottomline2"></section>';
+        htmlStr += '</ul></section><section class="line"></section>';
     } else {
-        htmlStr += '<section class="header-bottomline2"></section><section class="gamevedio"> ';
-        htmlStr += '<h2>比赛视频</h2><img src="images/gamevedio.png">';
-        htmlStr += '<p>LOL春季赛常规赛RNG VS Snake 第三场直播</p></section> ';
-        htmlStr += '</section><section class="header-bottomline2"></section>';
+        htmlStr += '<section class="line"></section><section class="gamevedio"> ';
+        htmlStr += '<h2>比赛视频</h2><img src="'+ data.originSrc +'">';
+        htmlStr += '<p>' + data.title +'</p></section> ';
+        htmlStr += '</section><section class="line"></section>';
     }
 
     //推荐视频
     if (data.recomendVideos.length > 0) {
-        htmlStr += '<section class="gamenews"> <h2>相关新闻</h2><ul>';
+        htmlStr += '<section class="list"> <h3>相关新闻</h3><ul>';
         $.each(data.recomendVideos, function (index, item) {
-            htmlStr += '<li class="clearFix related-news" data-type="' + item.articleType + '" data-id="' + item.extra + '"><div class="relanews clearFix">';
+            htmlStr += '<li class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
             htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += '<p class="gamenews-into-title">' + item.title + '</p>';
-            htmlStr += '<p class="gamenews-into-text">' + item.excerpt + '</p>';
-            htmlStr += '<span class="tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span></li>';
-            htmlStr += '</div></div> </li> ';
+            htmlStr += '<p class="list-title">' + item.title + '</p>';
+            htmlStr += '<p class="list-excerpt">' + item.excerpt + '</p>';
+            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span></li>';
+            htmlStr += '</li> ';
         });
         htmlStr += ' </ul></section>';
     }
 
     //比赛数据
     if (data.gameContent.length > 0) {
-        htmlStr += '<section class="header-bottomline2"></section><section class="game-data clearFix">';
+        htmlStr += '<section class="line"></section><section class="game-data clearFix">';
         htmlStr += '<h2>数据</h2>';
         htmlStr += '<div  class="clearFix" id="roundlist">';
 
@@ -168,14 +168,13 @@ function renderData(data) {
                         rightBarWidth = rightBarLength
                     }
 
-                    htmlStr += '<section class="conpares clearFix">';
-                    htmlStr += '<div class="compares-bardetails clearFix">'
-                    htmlStr += '<div class="earnmoney">' + subItem.fieldName + '</div>';
-                    htmlStr += '<div class="compares-barleft" style="width:' + leftBarWidth + 'px"><span class="compares-bardetails-leftnum">' + subItem.fieldData[0] + '</span> </div>';
-                    htmlStr += '<div class="compares-barmiddle"><img src="images/matchdetail_image_redbule.png"/></div>';
-                    htmlStr += '<div class="compares-barright" style="width:' + rightBarWidth + 'px"><span class="compares-bardetails-rightnum">' + subItem.fieldData[1] + '</span></div>';
+                    htmlStr += '<section class="conpares clearfix">';
+                    htmlStr += '<span>'+subItem.fieldName+'</span>';
+                    htmlStr += '<div class="bar-inner">';
+                    htmlStr += '<div class="left-bar">'+subItem.fieldData[0]+'<span class="bar" style="width:' + leftBarWidth + 'px"></span></div>';
+                    htmlStr += '<div class="right-bar"><span class="bar" style="width:' + rightBarWidth + 'px"></span>' + subItem.fieldData[1] + '</div>';
                     htmlStr += '</div>';
-                    htmlStr += '</section>'
+                    htmlStr += '</section>';
                 }
             });
 
@@ -184,22 +183,19 @@ function renderData(data) {
         });
         htmlStr += '</div></section>';
     }
-    htmlStr += '<section class="header-bottomline2"></section> ';
+    htmlStr += '<section class="line"></section> ';
     $('#box').html(htmlStr);
 
 }
 
 $(function () {
-    document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
-
     $.get('data/game-detail.json', function (res) {
         if (res.code == 10000) {
             renderData(res.data);
         }
     });
 
-
-    $(document).on('click', '.video-recommend, .related-news', function (e) {
+    $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
         try {
             Jnapp.jn_related($(this).data('type'), $(this).data('id'));

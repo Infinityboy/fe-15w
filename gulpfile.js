@@ -15,31 +15,31 @@ var distDir = 'dist'; // 目标目录文件
 
 // 压缩css文件
 gulp.task('minCss', function () {
-    return gulp.src('css/*.css')
+    return gulp.src('app/css/*.css')
         .pipe(cleanCSS())
         .pipe(gulp.dest(distDir + '/css'));
 });
 
 // 压缩js文件
 gulp.task('minJs', function () {
-    return gulp.src('js/*.js')
+    return gulp.src('app/js/*.js')
         .pipe(uglify())
         .pipe(gulp.dest(distDir+'/js'));
 });
 
 // 拷贝html文件
 gulp.task('moveHtml', function () {
-    return gulp.src('*.html').pipe(gulp.dest(distDir));
+    return gulp.src('app/*.html').pipe(gulp.dest(distDir));
 });
 
 // 拷贝图片资源
 gulp.task('moveImg', function () {
-    return gulp.src('images/*').pipe(gulp.dest(distDir + '/images/'));
+    return gulp.src('app/images/*').pipe(gulp.dest(distDir + '/images/'));
 });
 
 // 拷贝图片资源
 gulp.task('moveData', function () {
-    return gulp.src('data/*').pipe(gulp.dest(distDir + '/data/'));
+    return gulp.src('app/data/*').pipe(gulp.dest(distDir + '/data/'));
 });
 
 

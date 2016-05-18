@@ -16,31 +16,30 @@ function renderData(content){
     htmlStr += '<div class="player">' + data.content + '</div>';
     htmlStr += '<div class="video-excerpt"><p>' + data.excerpt + '</p></div></header>';
     if (data.recomendVideos.length > 0) {
-        htmlStr += '<section class="header-bottomline3"></section><section class="gamelist"><h3>视频推荐</h3> <ul> ';
+        htmlStr += '<section class="line"></section><section class="list"><h3>视频推荐</h3><ul> ';
         $.each(data.recomendVideos, function (index, item) {
-            htmlStr += '<li class="clearFix"> <img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += ' <div class="fl gamelist-into"> <P class="gamelist-into-title">' + item.title + '</P> ';
-            htmlStr += '<p class="gamelist-into-text">' + item.excerpt + '</p></div> ';
-            htmlStr += '<span>' + item.extra+ '</span><a>' + item.tagName + '</a></li>';
+            htmlStr += '<li class="clearFix list-item" data-type="'+item.articleType+'" data-id="'+ item.extra +'"><img class="fl" src="' + item.thumbnail + '"/>';
+            htmlStr += '<p class="list-title">' + item.title + '</p> ';
+            htmlStr += '<p class="list-excerpt">' + item.excerpt + '</p>';
+            htmlStr += '<span class="list-tag" style="color:'+item.tagColor+';border-color:'+item.tagColor+';">' + item.tagName + '</span></li>';
         });
-        htmlStr += '</ul> </section>';
+        htmlStr += '</ul></section><section class="line"></section>';
     }
     $('#detail').html(htmlStr);
 }
 
 $(function(){
-    document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 20 + 'px';
     //$.get('data/video-detail.json', function (res) {
-    //    //if (res.code == 10000) {
-    //        renderData(res.content);
-    //    //}
+    //    renderData(res.content);
     //});
 
-    $(document).on('click', '.video-rec', function (e) {
+    // 相关新闻
+    $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
-        try{
+        console.log($(this).data('type') + ':' + $(this).data('id'));
+        try {
             Jnapp.jn_related($(this).data('type'), $(this).data('id'));
-        }catch(e){
+        } catch (e) {
 
         }
     });

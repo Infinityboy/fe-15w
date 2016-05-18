@@ -134,4 +134,129 @@ a {
 
 .flat-content p {
     margin-bottom: .8rem;
+    font-size: 1rem;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+img {
+    vertical-align: top;
+}
+
+
+/**
+ header
+ ------------*/
+
+header {
+    background: #fff;
+}
+
+header .title {
+    font-size: 1.4rem;
+    color: #000;
+    margin-top: 0.8rem;
+    padding-left: 0.8rem;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.video-meta {
+    color: #999;
+    padding: 0 .8rem 0;
+    position: relative;
+    font-size: 1rem;
+    margin: .5rem 0;
+}
+
+.video-meta .date {
+    margin-right: .5rem;
+}
+
+.video-meta .author {
+    color: #41adff;
+}
+
+ /**
+  公用模块
+  ————————————*/
+.line {
+    height: 0.65rem;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background: #eee;
+}
+
+/* 相关推荐模块 */
+.list {
+    background: #fff;
+}
+
+.list h3 {
+    color: #e03131;
+    padding: .65rem .8rem;
+    font-size: 1.1rem;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.list li {
+    border-top: 1px solid #e1e1e1;
+    padding: 0.8rem;
+    position: relative;
+}
+
+.list li a{
+    display: block;
+}
+
+.list li img {
+    width: 6rem;
+    height: 4.5rem;
+    margin-right: .5rem;
+    float: left;
+}
+
+.list-into {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    float: left;
+}
+
+.list-title {
+    font-size: 1rem;
+    color: #444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.list-excerpt {
+    font-size: 0.8rem;
+    color: #9a9a9a;
+    line-height: 1rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.list-tag {
+    color: #b6b6b6;
+    border: 1px solid #b6b6b6;
+    border-radius: 3px;
+    text-align: center;
+    position: absolute;
+    right: 0.65rem;
+    padding: .2rem .3rem .15rem;
+    font-size: .65rem;
+    line-height: 1;
 }
