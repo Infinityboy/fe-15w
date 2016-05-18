@@ -30,14 +30,13 @@ header .header-scores img {
 
 .header-scores div {
     width: 1.9rem;
-    height: 1rem;
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -0.95rem;
     margin-top: -0.3rem;
-    font-size: 0.9rem;
-    font-family: "微软雅黑";
+    font-family: Arial;
+    font-size: 1.1rem;
 }
 
 .header-scores-left {
