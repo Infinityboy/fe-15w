@@ -214,11 +214,11 @@ function renderData(data) {
 }
 
 $(function () {
-    //$.get('data/game-detail.json', function (res) {
-    //    if (res.code == 10000) {
-    //        renderData(res.data);
-    //    }
-    //});
+    $.get('data/game-detail.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
@@ -240,7 +240,7 @@ $(function () {
             number++;
             elem.html(number);
             //setCookie("sp-" + cacheData.dataId, number, 365);
-            Jnapp.jn_agree(7, cacheData.dataId + "", cacheData.teamB.teamId + "");
+            Jnapp.jn_agree(7, cacheData.dataId + "", cacheData.teamA.teamId + "");
         } catch (e) {
 
         }
@@ -259,7 +259,6 @@ $(function () {
             //setCookie("sp-" + cacheData.dataId, number, 365);
             Jnapp.jn_agree(7, cacheData.dataId + "", cacheData.teamB.teamId + "");
         } catch (e) {
-            alert('')
         }
     });
 
