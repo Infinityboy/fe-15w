@@ -75,7 +75,7 @@ function renderData(data) {
         htmlStr += '<section class="list"><h3>比赛视频</h3> <ul> ';
 
         $.each(data.relateVideos, function (index, item) {
-            htmlStr += '<li class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
+            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
             htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
 
@@ -87,7 +87,7 @@ function renderData(data) {
             dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
-            htmlStr += '</li>';
+            htmlStr += '</a></li>';
 
         });
 
@@ -105,7 +105,7 @@ function renderData(data) {
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="list"> <h3>相关新闻</h3><ul>';
         $.each(data.recomendVideos, function (index, item) {
-            htmlStr += '<li class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
+            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
             htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p>';
             htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
@@ -118,7 +118,7 @@ function renderData(data) {
             dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
 
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
-            htmlStr += '</li> ';
+            htmlStr += '</a></li> ';
         });
         htmlStr += ' </ul></section>';
     }
@@ -261,14 +261,6 @@ $(function () {
         } catch (e) {
             alert('')
         }
-    });
-
-
-    //图文直播
-    $('.live-byword-listbox ul').on('click', 'li', function (e) {
-        console.log($(this).index());
-        e.preventDefault();
-
     });
 
 

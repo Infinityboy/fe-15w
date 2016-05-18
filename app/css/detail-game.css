@@ -236,7 +236,7 @@ header .header-teams .header-teams-middle {
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 16rem;
+    height: 8rem;
 }
 
 .live-byword-listbox ul li {
