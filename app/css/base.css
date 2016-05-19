@@ -137,6 +137,7 @@ a {
 .flat-content p {
     margin-bottom: .8rem;
     font-size: 1rem;
+    text-align: justify;
 }
 
 .fl {
@@ -187,15 +188,7 @@ header .title {
 /**
  公用模块
  ————————————*/
-.line {
-    height: 0.65rem;
-    border-top: 1px solid #e1e1e1;
-    border-bottom: 1px solid #e1e1e1;
-    background: #eee;
-}
-body>div .line:last-child, body>section .line:last-child{
-    border-bottom: none;
-}
+
 
 /* 相关推荐模块 */
 .list {
