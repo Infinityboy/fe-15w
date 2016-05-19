@@ -192,6 +192,9 @@ header .title {
     border-bottom: 1px solid #e1e1e1;
     background: #eee;
 }
+body>div .line:last-child, body>section .line:last-child{
+    border-bottom: none;
+}
 
 /* 相关推荐模块 */
 .list {
