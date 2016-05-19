@@ -244,7 +244,8 @@ $(function () {
     });
 
     //left 点赞支持
-    $(document).on('click', '.sp-left', function () {
+    $(document).on('click', '.sp-left', function (e) {
+        e.preventDefault();
         var elem = $('#supporters-leftNumber');
         var number = parseInt(elem.html());
         var dataId = $(this).data('id');
@@ -265,7 +266,8 @@ $(function () {
     });
 
     // right 点赞支持
-    $(document).on('click', '.sp-right', function () {
+    $(document).on('click', '.sp-right', function (e) {
+        e.preventDefault();
         var elem = $('#supporters-rightNumber');
         var dataId = $(this).data('id');
         var teamId = $(this).data('team');
