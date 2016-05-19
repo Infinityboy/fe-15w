@@ -409,6 +409,7 @@ header .header-teams .header-teams-middle {
 .game-video-play > img {
     width: 100%;
     display: block;
+    min-height: 6rem;
 }
 
 .play-icon {

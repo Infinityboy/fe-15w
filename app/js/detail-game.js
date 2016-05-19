@@ -87,7 +87,10 @@ function renderData(data) {
         $.each(data.relateVideos, function (index, item) {
             htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
-            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+
+            if (item.tagColor && item.tagName) {
+                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            }
 
             var date = new Date();
             var dateStr;
@@ -98,7 +101,6 @@ function renderData(data) {
 
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</a></li>';
-
         });
 
         htmlStr += '</ul></section>';
@@ -118,7 +120,11 @@ function renderData(data) {
             htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
             htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p>';
-            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+
+            if (item.tagColor && item.tagName) {
+                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            }
+
 
             var date = new Date();
             var dateStr;
@@ -152,7 +158,6 @@ function renderData(data) {
         });
 
         htmlStr += '</div>';
-
         htmlStr += '<div class="data-details">';
 
         $.each(data.gameContent, function (index, item) {

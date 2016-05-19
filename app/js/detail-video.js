@@ -29,7 +29,10 @@ function renderData(content) {
         $.each(data.recomendVideos, function (index, item) {
             htmlStr += '<li class="clearFix"><a href="##" class="list-item"  data-type="' + item.articleType + '" data-id="' + item.extra + '"> <img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
-            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+
+            if (item.tagColor && item.tagName) {
+                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            }
             var date = new Date();
             var dateStr;
             if (item.updateTime) {
