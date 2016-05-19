@@ -178,57 +178,33 @@ header .header-teams .header-teams-middle {
     margin: 0 .5rem;
 }
 
-.header-bottomline {
-    width: 100%;
-    height: 0.3rem;
-    border-top: 1px solid #e1e1e1;
-    border-bottom: 1px solid #e1e1e1;
-    background: #eee;
-    margin-top: 0.6rem;
-}
-
 .live-byword {
     width: 100%;
 }
 
-.live-byword h2 {
-    font-size: 0.7rem;
-    color: #e03131;
-    height: 2.1rem;
-    line-height: 2.1rem;
-    padding-left: 0.65rem;
-    border-bottom: 1px solid #e1e1e1;
-}
 
 .live-byword-listbox {
-    width: 100%;
-    left: 0;
-    top: 2.12rem;
     overflow: hidden;
+    background: #fff;
 }
 
 .live-byword-listbox ul {
-    width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 8rem;
+    height: 10rem;
 }
 
 .live-byword-listbox ul li {
-    width: 14.7rem;
     padding: 0.65rem 0.65rem 0 0.65rem;
 }
 
 .live-byword-listbox ul li .innerbox {
-    width: 14.7rem;
     padding-bottom: 0.65rem;
     border-bottom: 1px solid #e1e1e1;
 }
 
 .live-byword-list {
     width: 100%;
-    height: 1.62rem;
-    padding-left: 0.65rem;
 }
 
 .live-byword-list img {
@@ -237,15 +213,13 @@ header .header-teams .header-teams-middle {
 }
 
 .live-byword-list-games {
-    height: 1.62rem;
     margin-left: 0.58rem;
 }
 
 .live-byword-list-name {
-    font-size: 0.6rem;
+    font-size: 0.9rem;
     color: #e03131;
-    height: 0.68rem;
-    line-height: 0.68rem;
+    line-height: 0.9rem;
     margin-top: 0.1rem;
     overflow: hidden;
     white-space: nowrap;
@@ -253,11 +227,11 @@ header .header-teams .header-teams-middle {
 }
 
 .live-byword-list-time {
-    font-size: 0.52rem;
+    font-size: 0.65rem;
     color: #999;
-    height: 0.58rem;
-    line-height: 0.58rem;
-    margin-top: 0.2rem;
+    height: 0.65rem;
+    line-height: 0.65rem;
+    margin-top: 0.3rem;
 }
 
 .live-byword-list-count {
@@ -276,8 +250,8 @@ header .header-teams .header-teams-middle {
 
 .live-byword-listimg img {
     float: left;
-    width: 1.62rem;
-    height: 1.62rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
 }
 
@@ -287,15 +261,14 @@ header .header-teams .header-teams-middle {
 
 .live-byword-list-words-images img {
     margin-right: 0.4rem;
-    width: 4.5rem;
-    height: 2.6rem;
-
+    width: 30%;
+    height: auto;
 }
 
 .live-byword-list-words p {
-    font-size: 0.6rem;
+    font-size: 0.95rem;
     color: #444;
-    line-height: 0.84rem;
+    line-height: 1.2;
     margin-top: 0.58rem;
     margin-bottom: 0.58rem;
 }
@@ -392,7 +365,7 @@ header .header-teams .header-teams-middle {
     position: relative;
 }
 
-.gamevedio h2 , .game-data h2{
+.gamevedio h2 , .game-data h2, .live-byword h2{
     color: #e03131;
     padding: .65rem .8rem;
     font-size: 1.1rem;

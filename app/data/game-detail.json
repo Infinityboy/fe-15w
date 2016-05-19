@@ -2,139 +2,271 @@
   "code": 10000,
   "message": "success",
   "data": {
-    "dataId": "121212",
-    "title": "2016MSI\u5b63\u4e2d\u8d5b5\u67086\u65e517\uff1a30 CLG VS SUP",
-    "gameTime": "2016-05-06 17:30",
-    "gameType": "BO1",
-    "changyanSid": "11\/1598",
+    "dataId": "5605015504",
+    "title": "2016年LPL春季赛4月23日15：00 RNG VS EDG",
+    "gameTime": "04月23日 15:00",
+    "gameType": "BO5",
+    "changyanSid": "11/1581",
     "excerpt": "",
-    "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0429\/14619224049687.jpg",
-    "shareUrl": "http:\/\/lol.15w.com\/match\/5605015844.html",
-    "cover": "http:\/\/files.15w.com\/image\/2016\/0429\/14619224049687.jpg",
-    "originSrc": "http:\/\/www.quanmin.tv\/static\/act\/msi\/",
+    "thumbnail": "http://files.15w.com/image/2016/0410/14602378391759.jpg",
+    "shareUrl": "http://lol.15w.com/match/5605015504.html",
+    "cover": "http://files.15w.com/image/2016/0410/14602378391759.jpg",
+    "originSrc": "http://lol.15w.com/zt/2016lplspring/#live",
     "teamA": {
-      "name": "CLG",
-      "logo": "http:\/\/files.15w.com\/image\/2016\/0429\/14619178488625.png",
-      "support_numbber": "0",
-      "score": "1",
-      "teamId": "5604986843"
+      "name": "RNG",
+      "logo": "http://files.15w.com/image/2016/0412/14604504479211.png",
+      "support_numbber": "364",
+      "score": "3",
+      "teamId": "5604985983"
     },
     "teamB": {
-      "name": "SUP",
-      "logo": "http:\/\/files.15w.com\/image\/2016\/0429\/14619104303660.jpg",
-      "support_numbber": "0",
-      "score": "0",
-      "teamId": "5604987883"
+      "name": "EDG",
+      "logo": "http://files.15w.com/image/2016/0412/14604510424738.png",
+      "support_numbber": "520",
+      "score": "1",
+      "teamId": "5604984102"
     },
     "relateVideos": [
       {
-        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0506\/14625366392894.jpg",
-        "title": "2016MSI\u5b63\u4e2d\u8d5b\u5c0f\u7ec4\u8d5bCLG VS SUP",
-        "tagName": "\u8d5b\u4e8b",
+        "thumbnail": "http://files.15w.com/image/2016/0423/14614116384508.jpg",
+        "title": "LPL2016春季赛总决赛RNG VS EDG_1",
+        "tagName": "赛事",
         "tagColor": "#ff00ff",
-        "articleType": 5,
-        "extra": "http:\/\/lol.15w.com\/saici\/5604990903.html"
+        "articleType": 6,
+        "updateTime": 1461411665,
+        "extra": "5604990503"
+      },
+      {
+        "thumbnail": "http://files.15w.com/image/2016/0423/14614116384508.jpg",
+        "title": "LPL2016春季赛总决赛RNG VS EDG_2",
+        "tagName": "赛事",
+        "tagColor": "#ff00ff",
+        "articleType": 6,
+        "updateTime": 1461411679,
+        "extra": "5604990523"
+      },
+      {
+        "thumbnail": "http://files.15w.com/image/2016/0423/14614116384508.jpg",
+        "title": "LPL2016春季赛总决赛RNG VS EDG_3",
+        "tagName": "赛事",
+        "tagColor": "#ff00ff",
+        "articleType": 6,
+        "updateTime": 1461411698,
+        "extra": "5604990543"
+      },
+      {
+        "thumbnail": "http://files.15w.com/image/2016/0423/14614116384508.jpg",
+        "title": "LPL2016春季赛总决赛RNG VS EDG_4",
+        "tagName": "赛事",
+        "tagColor": "#ff00ff",
+        "articleType": 6,
+        "updateTime": 1461660997,
+        "extra": "5604990563"
       }
     ],
-    "relateArticle": [],
+    "relateArticle": [
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "42：00",
+        "content": "段暄在赛场对冠军战队RNG进行采访， RNG全队都处在兴奋的情绪之中。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614110282220.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "41：00",
+        "content": " 恭喜RNG新王加冕3：1击败EDG，获得了LPL春季赛的总冠军，获得了前往季中邀请赛的门票。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/1461410885746.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "40：00",
+        "content": "RNG在EDG只有一个人守家的情况下毅然选择了一波，利用自己的伤害成功推掉了EDG的基地，获得了比赛的胜利。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614108173699.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "38：29",
+        "content": "RNG战队在下路找到了机会击杀了EDG四个人，璐璐在逃跑了之后传送回到基地。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614107481430.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "35：50",
+        "content": "RNG很安全的拿掉了第二条小龙，拿到了两层小龙BUFF，在拥有人头和经济优势的情况下EDG只能被动的防守。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614105913412.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "33：40",
+        "content": "RNG带着大龙BUFF想要推掉EDG的中路外塔， 但是打野艾克的操作失误反而被EDG抓到了机会击杀，拖延了RNG大龙BUFF的时间。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614104328679.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "31：42",
+        "content": "RNG的乐芙兰在上路单杀了EDG的中单璐璐，同时中路老鼠的爆炸输出配合波比击杀了EDG四个人，同时还拿下了大龙。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614103391695.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "29：34",
+        "content": "RNG利用EDG在小龙区视野的缺失，轻松的拿下了自己的第一条小龙，双方目前的小龙数持平。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614102116475.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "28：35",
+        "content": "EDG的巨魔在下路带线，推掉了RNG的下路外塔，给己方补充了一些经济。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614101527316.jpg"
+        ]
+      },
+      {
+        "avatar": "http://files.15w.com/user/mavtar.jpg",
+        "author": "惜夕",
+        "round": "第四场",
+        "time": "27：02",
+        "content": "RNG进行三路分推，妖姬和波比在上下路进行带线，中路老鼠则是在不停在中路带线消耗EDG中路二塔的血量。",
+        "images": [
+          "http://files.15w.com/image/2016/0423/14614100597301.jpg"
+        ]
+      }
+    ],
     "recomendVideos": [
       {
-        "title": "\u4f20SuperCell 50\u4ebf\u7f8e\u5143\u5356\u7ed9\u4e2d\u56fd\u516c\u53f8 \u731c\u6d4b\u5927\u89e3\u6790",
-        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0516\/14633913553365.jpg",
-        "excerpt": "SuperCell\u5356\u7ed9\u4e2d\u56fd\u5de8\u5934\u7684\u6d88\u606f\u4e00\u51fa\uff0c\u5f15\u53d1\u4e1a\u5185\u65e0\u9650\u9050\u60f3\uff0c\u6700\u5177\u6709\u6536\u8d2d\u5b9e\u529b\u7684\u5de8\u5934\u516c\u53f8\uff0c\u53ef\u80fd\u662f\u817e\u8baf\u3001\u7f51\u6613\u3001\u963f\u91cc\u4ee5\u53ca\u6606\u4ed1\u6e38\u620f\u3002",
+        "title": "Saint战队大换血 公布出征LPL夏季赛名单",
+        "thumbnail": "http://files.15w.com/image/2016/0519/1463643923641.jpg",
+        "excerpt": "Saint(原HYG)俱乐部正式公布夏季赛出征名单，之前提及的从LGD转会过来的Acron以及人气主播稳健棍、Styz都在大名单之中。",
         "articleType": 0,
-        "extra": "64471",
-        "tagName": "\u65b0\u95fb",
-        "tagColor": "#FF0000"
+        "updateTime": 1463643930,
+        "extra": "5606279425",
+        "tagName": "",
+        "tagColor": ""
       },
       {
-        "title": "MSI\u6700\u65f6\u523b\uff1aSKT\u89e6\u5e95\u53cd\u5f39\u201c\u610f\u5916\u201d\u593a\u51a0",
-        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0516\/14633674639063.jpg",
-        "excerpt": "\u5b63\u4e2d\u9080\u8bf7\u8d5b\u5df2\u843d\u5e55\uff0c\u516d\u5927\u6218\u961f\u8054\u624b\u7ed9\u89c2\u4f17\u5448\u73b0\u4e86\u7cbe\u5f69\u8fde\u8fde\u7684\u8d5b\u4e8b\uff0c\u4e0d\u77e5\u9053\u662f\u4ed6\u4eec\u5426\u7ed9\u4f60\u4eec\u7559\u4e0b\u5370\u8c61\uff1f\u6700\u540e\u4e00\u671f\u201c\u6700\u65f6\u523b\u201d\u9080\u60a8\u56de\u987e\u672c\u6b21\u8d5b\u4e8b\u3002",
+        "title": "招兵买马谁主沉浮 LPL夏季赛转会汇总",
+        "thumbnail": "http://files.15w.com/image/2016/0519/14636414486632.jpg",
+        "excerpt": "又是一年转会期，几家欢喜几家愁的局面再上演，每年LOL转会期都会为召唤师峡谷带来一阵阵惊涛骇浪。",
         "articleType": 0,
-        "extra": "64389",
-        "tagName": "\u65b0\u95fb",
-        "tagColor": "#FF0000"
+        "updateTime": 1463646585,
+        "extra": "5606279065",
+        "tagName": "",
+        "tagColor": ""
       },
       {
-        "title": "CSGO-FugLy\u63a8\u7279\u5ba3\u5e03\uff1a\u5df2\u7ecf\u79bb\u5f00CLG.cs\u6218\u961f",
-        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0516\/14633615176967.jpg",
-        "excerpt": "\u5728DH\u5965\u65af\u6c40\u516c\u5f00\u8d5b\u4e2d\uff0cCLG\u4e24\u5ea6\u5bf9\u9635Cloud9\uff0c\u5374\u4e24\u5ea6\u88ab\u540a\u6253\u3002\u8fd9\u5f88\u6709\u53ef\u80fd\u5c31\u662fFugLy\u6b64\u6b21\u79bb\u961f\u7684\u8bf1\u56e0\u3002",
+        "title": "LPL夏季赛分组全解析 B组恐陷死亡之组",
+        "thumbnail": "http://files.15w.com/image/2016/0519/14636334649669.jpg",
+        "excerpt": "5月18日晚上7点，LPL夏季赛的分组抽签仪式结束之后，夏季赛的分组情况成埃落定。AB两组实力相近，B组恐陷死亡之组。",
         "articleType": 0,
-        "extra": "64358",
-        "tagName": "\u65b0\u95fb",
-        "tagColor": "#FF0000"
+        "updateTime": 1463645049,
+        "extra": "5606278545",
+        "tagName": "原创",
+        "tagColor": "#e08731"
       }
     ],
     "gameContent": [
       {
-        "title": "\u7b2c1\u573a",
-        "time": "35\u5206\u949f",
+        "title": "第1场",
+        "time": "40分钟",
         "dataList": {
           "list": [
             {
               "listType": 0,
-              "fieldName": "\u9009\u62e9",
+              "fieldName": "选择",
               "fieldData": [
                 [
-                  "http:\/\/files.15w.com\/lol\/2014\/1023\/1414042808.png",
-                  "http:\/\/files.15w.com\/lol\/2014\/0326\/1395862470.png",
-                  "http:\/\/files.15w.com\/lol\/2015\/1020\/14453287976558.png",
-                  "http:\/\/files.15w.com\/lol\/2015\/0402\/14279364254157.png",
-                  "http:\/\/files.15w.com\/lol\/2016\/0407\/1460005553470.png"
+                  "http://files.15w.com/lol/2015/0518/14319273262628.jpg",
+                  "http://files.15w.com/lol/2013/0131/135959936981.png",
+                  "http://files.15w.com/lol/2014/1023/1414042808.png",
+                  "http://files.15w.com/lol/2015/1020/14453287976558.png",
+                  "http://files.15w.com/lol/2013/0826/331546117410.jpg"
                 ],
                 [
-                  "http:\/\/files.15w.com\/lol\/2015\/0518\/14319273262628.jpg",
-                  "http:\/\/files.15w.com\/lol\/2014\/1127\/1417078622.png",
-                  "http:\/\/files.15w.com\/lol\/2014\/0327\/1395892384.png",
-                  "http:\/\/files.15w.com\/lol\/2013\/0826\/331546117410.jpg",
-                  "http:\/\/files.15w.com\/lol\/2016\/0407\/14600159511964.png"
+                  "http://files.15w.com/lol/2014/1204/1417691713.png",
+                  "http://files.15w.com/lol/2014/1127/1417078622.png",
+                  "http://files.15w.com/lol/2014/1127/1417131418.png",
+                  "http://files.15w.com/lol/2014/0326/1395821070.png",
+                  "http://files.15w.com/lol/2015/0302/14252849188420.jpg"
                 ]
               ]
             },
             {
               "listType": 0,
-              "fieldName": "\u7981\u9009",
+              "fieldName": "禁选",
               "fieldData": [
                 [
-                  "http:\/\/files.15w.com\/lol\/2012\/1219\/135591098650.jpg",
-                  "http:\/\/files.15w.com\/lol\/2014\/0326\/1395820761.png",
-                  "http:\/\/files.15w.com\/lol\/2015\/0302\/14252849188420.jpg"
+                  "http://files.15w.com/lol/2014/0326/1395820761.png",
+                  "http://files.15w.com/lol/2016/0410/14602764529245.png",
+                  "http://files.15w.com/lol/2015/0402/14279364254157.png"
                 ],
                 [
-                  "http:\/\/files.15w.com\/lol\/2014\/0717\/1405632949.png",
-                  "http:\/\/files.15w.com\/lol\/2014\/0326\/1395821070.png",
-                  "http:\/\/files.15w.com\/lol\/2014\/1127\/1417121117.png"
+                  "http://files.15w.com/lol/2014/0326/1395813884.png",
+                  "http://files.15w.com/lol/2016/0407/14600159511964.png",
+                  "http://files.15w.com/lol/2014/1023/1414070009.png"
                 ]
               ]
             },
             {
               "listType": 1,
-              "fieldName": "\u7ecf\u6d4e",
+              "fieldName": "经济",
               "fieldData": [
-                59.9,
-                46.6
+                78.3,
+                70.6
               ]
             },
             {
               "listType": 1,
-              "fieldName": "\u63a8\u5854",
+              "fieldName": "推塔",
               "fieldData": [
-                10,
-                2
+                9,
+                3
               ]
             },
             {
               "listType": 1,
-              "fieldName": "\u63a8\u5854",
+              "fieldName": "击杀",
               "fieldData": [
-                19,
-                9
+                23,
+                16
               ]
             },
             {
               "listType": 1,
-              "fieldName": "\u63a8\u5854",
+              "fieldName": "大龙",
               "fieldData": [
                 1,
                 0
@@ -142,10 +274,262 @@
             },
             {
               "listType": 1,
-              "fieldName": "\u63a8\u5854",
+              "fieldName": "小龙",
               "fieldData": [
                 2,
+                3
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "title": "第2场",
+        "time": "41分钟",
+        "dataList": {
+          "list": [
+            {
+              "listType": 0,
+              "fieldName": "选择",
+              "fieldData": [
+                [
+                  "http://files.15w.com/lol/2015/0518/14319273262628.jpg",
+                  "http://files.15w.com/lol/2014/1023/1414070009.png",
+                  "http://files.15w.com/lol/2016/0407/14600122396385.png",
+                  "http://files.15w.com/lol/2014/1127/1417121117.png",
+                  "http://files.15w.com/lol/2013/0826/331546117410.jpg"
+                ],
+                [
+                  "http://files.15w.com/lol/2016/0407/14600159511964.png",
+                  "http://files.15w.com/lol/2014/1127/1417078622.png",
+                  "http://files.15w.com/lol/2014/0619/1403229461.png",
+                  "http://files.15w.com/lol/2014/0326/1395821070.png",
+                  "http://files.15w.com/lol/2013/0131/135959936981.png"
+                ]
+              ]
+            },
+            {
+              "listType": 0,
+              "fieldName": "禁选",
+              "fieldData": [
+                [
+                  "http://files.15w.com/lol/2014/0326/1395820761.png",
+                  "http://files.15w.com/lol/2015/0402/14279364254157.png",
+                  "http://files.15w.com/lol/2016/0410/14602764529245.png"
+                ],
+                [
+                  "http://files.15w.com/lol/2014/0326/1395813884.png",
+                  "http://files.15w.com/lol/2014/1023/1414042808.png",
+                  "http://files.15w.com/lol/2015/1020/14453287976558.png"
+                ]
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "经济",
+              "fieldData": [
+                67.1,
+                82.8
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "推塔",
+              "fieldData": [
+                4,
+                9
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "击杀",
+              "fieldData": [
+                12,
+                23
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "大龙",
+              "fieldData": [
+                0,
                 2
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "小龙",
+              "fieldData": [
+                1,
+                3
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "title": "第3场",
+        "time": "31分钟",
+        "dataList": {
+          "list": [
+            {
+              "listType": 0,
+              "fieldName": "选择",
+              "fieldData": [
+                [
+                  "http://files.15w.com/lol/2013/0314/136325520588.png",
+                  "http://files.15w.com/lol/2016/0410/14602764529245.png",
+                  "http://files.15w.com/lol/2013/0529/136979160826.jpg",
+                  "http://files.15w.com/lol/2015/0518/14319273262628.jpg",
+                  "http://files.15w.com/lol/2016/0217/14556918929530.jpg"
+                ],
+                [
+                  "http://files.15w.com/lol/2016/0407/14600159511964.png",
+                  "http://files.15w.com/lol/2014/1127/1417078622.png",
+                  "http://files.15w.com/lol/2014/0326/1395814864.png",
+                  "http://files.15w.com/lol/2014/0327/1395930935.png",
+                  "http://files.15w.com/lol/2013/0131/135959936981.png"
+                ]
+              ]
+            },
+            {
+              "listType": 0,
+              "fieldName": "禁选",
+              "fieldData": [
+                [
+                  "http://files.15w.com/lol/2014/0326/1395820761.png",
+                  "http://files.15w.com/lol/2015/0402/14279364254157.png",
+                  "http://files.15w.com/lol/2014/0619/1403229461.png"
+                ],
+                [
+                  "http://files.15w.com/lol/2014/0326/1395813884.png",
+                  "http://files.15w.com/lol/2014/0326/1395821070.png",
+                  "http://files.15w.com/lol/2014/1023/1414042808.png"
+                ]
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "经济",
+              "fieldData": [
+                52.8,
+                50.3
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "推塔",
+              "fieldData": [
+                12,
+                6
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "击杀",
+              "fieldData": [
+                16,
+                8
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "大龙",
+              "fieldData": [
+                0,
+                1
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "小龙",
+              "fieldData": [
+                2,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "title": "第4场",
+        "time": "41分钟",
+        "dataList": {
+          "list": [
+            {
+              "listType": 0,
+              "fieldName": "选择",
+              "fieldData": [
+                [
+                  "http://files.15w.com/lol/2016/0407/14600159511964.png",
+                  "http://files.15w.com/lol/2014/1023/1414070009.png",
+                  "http://files.15w.com/lol/2014/0327/1395892384.png",
+                  "http://files.15w.com/lol/2015/0518/14319273262628.jpg",
+                  "http://files.15w.com/lol/2014/0619/1403229461.png"
+                ],
+                [
+                  "http://files.15w.com/lol/2014/0327/1395896801.png",
+                  "http://files.15w.com/lol/2014/1127/1417078622.png",
+                  "http://files.15w.com/lol/2013/0826/331546117410.jpg",
+                  "http://files.15w.com/lol/2012/1219/135591798767.jpg",
+                  "http://files.15w.com/lol/2016/0410/14602764529245.png"
+                ]
+              ]
+            },
+            {
+              "listType": 0,
+              "fieldName": "禁选",
+              "fieldData": [
+                [
+                  "http://files.15w.com/lol/2015/0402/14279364254157.png",
+                  "http://files.15w.com/lol/2014/0326/1395821070.png",
+                  "http://files.15w.com/lol/2014/0326/1395820761.png"
+                ],
+                [
+                  "http://files.15w.com/lol/2014/0326/1395813884.png",
+                  "http://files.15w.com/lol/2013/0529/136979160826.jpg",
+                  "http://files.15w.com/lol/2014/1023/1414042808.png"
+                ]
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "经济",
+              "fieldData": [
+                79.1,
+                69
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "推塔",
+              "fieldData": [
+                9,
+                3
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "击杀",
+              "fieldData": [
+                30,
+                16
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "大龙",
+              "fieldData": [
+                1,
+                0
+              ]
+            },
+            {
+              "listType": 1,
+              "fieldName": "小龙",
+              "fieldData": [
+                2,
+                1
               ]
             }
           ]
