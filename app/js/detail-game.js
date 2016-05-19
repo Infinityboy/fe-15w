@@ -33,11 +33,11 @@ function renderData(data) {
 
     htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + 'px"></div></div>';
     htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + 'px"></div></div> </section>';
-    htmlStr += '<section class="supporters"><a href="##" class="sp sp-left" data-id="'+data.dataId+'" data-team="'+data.teamA.teamId+'"><img class="supporters-leftlogo" src="images/matchdetail_ic_support.png"/>';
+    htmlStr += '<section class="supporters"><a href="##" class="sp sp-left" data-id="' + data.dataId + '" data-team="' + data.teamA.teamId + '"><img class="supporters-leftlogo" src="images/matchdetail_ic_support.png"/>';
 
     htmlStr += '<span class="supporters-leftNumber supp" id="supporters-leftNumber"> ' + data.teamA.support_numbber + '</span></a>';
     htmlStr += '<span class="supporters-gameintro">' + data.title + '</span>';
-    htmlStr += '<a href="##" class="sp sp-right" data-id="'+data.dataId+'" data-team="'+data.teamB.teamId+'"><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span> ';
+    htmlStr += '<a href="##" class="sp sp-right" data-id="' + data.dataId + '" data-team="' + data.teamB.teamId + '"><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span> ';
     htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/></a></section> ';
     htmlStr += '<section class="line"></section></header>';
 
@@ -81,7 +81,7 @@ function renderData(data) {
             var date = new Date();
             var dateStr;
             if (item.updateTime) {
-                date = new Date(item.updateTime);
+                date = new Date(item.updateTime * 1000);
             }
             dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
@@ -96,7 +96,7 @@ function renderData(data) {
     if (data.originSrc && data.cover) {
         htmlStr += '<section class="gamevedio"> ';
         htmlStr += '<h2>比赛视频</h2>';
-        htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="'+data.originSrc+'"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="'+ data.cover +'"><p>' + data.title +'</p></section> ';
+        htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="' + data.originSrc + '"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="' + data.cover + '"><p>' + data.title + '</p></section> ';
         htmlStr += '</section><section class="line"></section></div>';
     }
 
@@ -112,7 +112,7 @@ function renderData(data) {
             var date = new Date();
             var dateStr;
             if (item.updateTime) {
-                date = new Date(item.updateTime);
+                date = new Date(item.updateTime * 1000);
             }
             dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
 
@@ -192,9 +192,9 @@ function renderData(data) {
                     }
 
                     htmlStr += '<section class="conpares clearfix">';
-                    htmlStr += '<span>'+subItem.fieldName+'</span>';
+                    htmlStr += '<span>' + subItem.fieldName + '</span>';
                     htmlStr += '<div class="bar-inner">';
-                    htmlStr += '<div class="left-bar">'+subItem.fieldData[0]+'<span class="bar" style="width:' + leftBarWidth + 'px"></span></div>';
+                    htmlStr += '<div class="left-bar">' + subItem.fieldData[0] + '<span class="bar" style="width:' + leftBarWidth + 'px"></span></div>';
                     htmlStr += '<div class="right-bar"><span class="bar" style="width:' + rightBarWidth + 'px"></span>' + subItem.fieldData[1] + '</div>';
                     htmlStr += '</div>';
                     htmlStr += '</section>';
@@ -212,11 +212,11 @@ function renderData(data) {
 }
 
 $(function () {
-    $.get('data/game-detail.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });
+    //$.get('data/game-detail.json', function (res) {
+    //    if (res.code == 10000) {
+    //        renderData(res.data);
+    //    }
+    //});
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
@@ -234,13 +234,13 @@ $(function () {
         var dataId = $(this).data('id');
         var teamId = $(this).data('team');
 
-        //if (getCookie("sp-" + cacheData.dataId)) {
-        //    return;
-        //}
+        if (getCookie("sp-" + dataId)) {
+            return;
+        }
         try {
             number++;
             elem.html(number);
-            //setCookie("sp-" + cacheData.dataId, number, 365);
+            setCookie("sp-" + dataId, number, 365);
             Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
 
@@ -254,13 +254,13 @@ $(function () {
         var teamId = $(this).data('team');
 
         var number = parseInt(elem.html());
-        //if (getCookie("sp-" + cacheData.dataId)) {
-        //    return;
-        //}
+        if (getCookie("sp-" + dataId)) {
+            return;
+        }
         try {
             number++;
             elem.html(number);
-            //setCookie("sp-" + cacheData.dataId, number, 365);
+            setCookie("sp-" + dataId, number, 365);
             Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
         }
@@ -278,11 +278,11 @@ $(function () {
     });
 
     // 直播跳转
-    $(document).on('click', '.play-icon', function(){
-       try{
-           Jnapp.jn_related(5, $(this).data('url'));
-       } catch(e){
+    $(document).on('click', '.play-icon', function () {
+        try {
+            Jnapp.jn_related(5, $(this).data('url'));
+        } catch (e) {
 
-       }
+        }
     });
 });

@@ -34,7 +34,7 @@ function renderData(data) {
             var date = new Date();
             var dateStr;
             if (item.updateTime) {
-                date = new Date(item.updateTime);
+                date = new Date(item.updateTime * 1000);
             }
             dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
             htmlStr += '<span class="list-time">' + dateStr + '</span>';

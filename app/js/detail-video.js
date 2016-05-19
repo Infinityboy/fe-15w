@@ -1,13 +1,13 @@
 'use strict';
 window.Jn = {};
 
-Jn.setData = function(data){
+Jn.setData = function (data) {
     if (data.key == 'videoInitDetail') {
         renderData(data.content);
     }
 };
 
-function renderData(content){
+function renderData(content) {
     var data = content;
     var htmlStr = '<header><h1 class="title">' + data.title + '</h1>';
     htmlStr += '<div class="video-meta"><span class="date">' + data.time + '</span><span class="author color-blue ml5">';
@@ -19,13 +19,13 @@ function renderData(content){
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="line"></section><section class="list"><h3>视频推荐</h3><ul> ';
         $.each(data.recomendVideos, function (index, item) {
-            htmlStr += '<li class="clearFix"><a href="##" class="list-item"  data-type="'+item.articleType+'" data-id="'+ item.extra +'"> <img class="fl" src="' + item.thumbnail + '"/>';
+            htmlStr += '<li class="clearFix"><a href="##" class="list-item"  data-type="' + item.articleType + '" data-id="' + item.extra + '"> <img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
-            htmlStr += '<span class="list-tag" style="color:'+item.tagColor+';border-color:'+item.tagColor+';">' + item.tagName + '</span>';
+            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
             var date = new Date();
             var dateStr;
             if (item.updateTime) {
-                date = new Date(item.updateTime);
+                date = new Date(item.updateTime * 1000);
             }
             dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
@@ -39,7 +39,7 @@ function renderData(content){
     $('#detail').html(htmlStr);
 }
 
-$(function(){
+$(function () {
     //$.get('data/video-detail.json', function (res) {
     //    renderData(res.content);
     //});
@@ -48,7 +48,7 @@ $(function(){
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
         try {
-            Jnapp.jn_related($(this).data('type'), $(this).data('id') +"");
+            Jnapp.jn_related($(this).data('type'), $(this).data('id') + "");
         } catch (e) {
 
         }
