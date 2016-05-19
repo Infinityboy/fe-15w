@@ -17,7 +17,7 @@ function renderData(content) {
 
     var videoHeight = $(document).width() / 1.7;
     if (!videoHeight) {
-        videoHeight = '10rem'
+        videoHeight = '10rem';
     }else{
         videoHeight += 'px';
     }

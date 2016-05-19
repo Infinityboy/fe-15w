@@ -36,10 +36,9 @@ function renderData(data) {
             if (item.updateTime) {
                 date = new Date(item.updateTime * 1000);
             }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</a></li>';
-
         });
 
         htmlStr += '</ul></section><section class="line"></section>';
@@ -73,7 +72,7 @@ $(function () {
     // 微博
     $(document).on('click', '.maintext-share-weibo', function (e) {
         e.preventDefault();
-        shareBegin(0)
+        shareBegin(0);
     });
 
     // 微信
@@ -85,7 +84,7 @@ $(function () {
     // 朋友圈
     $(document).on('click', '.maintext-share-frident', function (e) {
         e.preventDefault();
-        shareBegin(2)
+        shareBegin(2);
     });
 
     function shareBegin(type) {

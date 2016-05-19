@@ -9,6 +9,7 @@
 
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
+    jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify');
 
 var distDir = 'dist'; // 目标目录文件
@@ -20,11 +21,22 @@ gulp.task('minCss', function () {
         .pipe(gulp.dest(distDir + '/css'));
 });
 
+// js语法检查
+gulp.task('lint', function () {
+    return gulp.src([
+        "app/js/detail-game.js",
+        "app/js/detail-news.js",
+        "app/js/detail-video.js"
+    ]).pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('default'))
+        .pipe(jshint.reporter('fail'));
+});
+
 // 压缩js文件
 gulp.task('minJs', function () {
     return gulp.src('app/js/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest(distDir+'/js'));
+        .pipe(gulp.dest(distDir + '/js'));
 });
 
 // 拷贝html文件
@@ -44,5 +56,5 @@ gulp.task('moveData', function () {
 
 
 // 命令行执行gulp
-gulp.task('default', ['minCss', 'minJs', 'moveHtml', 'moveImg', 'moveData']);
+gulp.task('default', ['minCss', 'lint', 'minJs', 'moveHtml', 'moveImg', 'moveData']);
 

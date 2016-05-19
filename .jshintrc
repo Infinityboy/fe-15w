@@ -1,0 +1,11 @@
+{
+  "strict": false,
+  "node": true,
+  "globals": {
+    "$": false,
+    "document": false,
+    "window": false,
+    "Jn": false,
+    "Jnapp": false
+  }
+}

@@ -1,7 +1,24 @@
 'use strict';
 
-window.Jn = {};
 var cacheData = null;
+window.Jn = {
+    setCookie: function (name, value, iDay) {
+        var oDate = new Date();
+        oDate.setDate(oDate.getDate() + iDay);
+        document.cookie = name + '=' + value + ';expires=' + oDate;
+    },
+    getCookie: function (name) {
+        var arr = document.cookie.split('; ');
+        for (var i = 0; i < arr.length; i++) {
+            var arr2 = arr[i].split('=');
+            if (arr2[0] == name) {
+                return arr2[1];
+            }
+        }
+        return '';
+    }
+};
+
 
 Jn.setData = function (data) {
     if (data.key == 'gameInitDetail') {
@@ -109,7 +126,7 @@ function renderData(data) {
             if (item.updateTime) {
                 date = new Date(item.updateTime * 1000);
             }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</a></li> ';
@@ -128,7 +145,7 @@ function renderData(data) {
         var itemWidth = screen / len;
 
         $.each(data.gameContent, function (index, item) {
-            if (index == 0) {
+            if (index === 0) {
                 htmlStr += '<a href="##" class="roundspan3 on" data-id="' + index + '" style="width:' + itemWidth + 'px" >' + item.title + '</a>';
             } else {
                 htmlStr += '<a href="##" class="roundspan3" data-id="' + index + '" style="width:' + itemWidth + 'px" >' + item.title + '</a>';
@@ -140,7 +157,7 @@ function renderData(data) {
         htmlStr += '<div class="data-details">';
 
         $.each(data.gameContent, function (index, item) {
-            if (index == 0) {
+            if (index === 0) {
                 htmlStr += '<div class="data-content-item">';
             } else {
                 htmlStr += '<div class="data-content-item" style="display: none">';
@@ -152,7 +169,7 @@ function renderData(data) {
             var itemList = item.dataList.list;
 
             $.each(itemList, function (index, subItem) {
-                if (subItem.listType == 0) {
+                if (subItem.listType === 0) {
                     htmlStr += '<section class="game-data-select">';
 
                     htmlStr += '<div class="img-left">';
@@ -172,7 +189,7 @@ function renderData(data) {
                     htmlStr += '</div>';
                     htmlStr += ' </section>';
 
-                } else if (subItem.listType == 1) {
+                } else if (subItem.listType === 1) {
                     // 计算单元长度
                     var leftBarLength = parseInt(subItem.fieldData[0]);
                     var rightBarLength = parseInt(subItem.fieldData[1]);
@@ -180,10 +197,10 @@ function renderData(data) {
                     var leftBarWidth, rightBarWidth;
                     if (leftBarLength + rightBarLength > 100) {
                         leftBarWidth = leftBarLength * 100 / (leftBarLength + rightBarLength);
-                        rightBarWidth = rightBarLength * 100 / (leftBarLength + rightBarLength)
+                        rightBarWidth = rightBarLength * 100 / (leftBarLength + rightBarLength);
                     } else {
                         leftBarWidth = leftBarLength;
-                        rightBarWidth = rightBarLength
+                        rightBarWidth = rightBarLength;
                     }
 
                     htmlStr += '<section class="conpares clearfix">';
@@ -208,16 +225,16 @@ function renderData(data) {
 
 $(function () {
     /*$.get('data/game-detail.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });*/
+     if (res.code == 10000) {
+     renderData(res.data);
+     }
+     });*/
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
         try {
             Jnapp.jn_related($(this).data('type'), $(this).data('id') + "");
-        } catch (e) {
+        } catch (error) {
 
         }
     });
@@ -229,14 +246,14 @@ $(function () {
         var dataId = $(this).data('id');
         var teamId = $(this).data('team');
 
-        if (getCookie("sp-" + dataId)) {
+        if (Jn.getCookie("sp-" + dataId)) {
             return;
         }
         try {
             number++;
             elem.html(number);
             $(this).find('img').attr('src', 'images/matchdetail_ic_support_red.png');
-            setCookie("sp-" + dataId, number, 365);
+            Jn.setCookie("sp-" + dataId, number, 365);
             Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
 
@@ -250,14 +267,14 @@ $(function () {
         var teamId = $(this).data('team');
 
         var number = parseInt(elem.html());
-        if (getCookie("sp-" + dataId)) {
+        if (Jn.getCookie("sp-" + dataId)) {
             return;
         }
         try {
             number++;
             elem.html(number);
             $(this).find('img').attr('src', 'images/matchdetail_ic_support_blue.png');
-            setCookie("sp-" + dataId, number, 365);
+            Jn.setCookie("sp-" + dataId, number, 365);
             Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
         }
