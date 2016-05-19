@@ -50,11 +50,11 @@ gulp.task('moveImg', function () {
 });
 
 // 拷贝图片资源
-gulp.task('moveData', function () {
-    return gulp.src('app/data/*').pipe(gulp.dest(distDir + '/data/'));
-});
+//gulp.task('moveData', function () {
+//    return gulp.src('app/data/*').pipe(gulp.dest(distDir + '/data/'));
+//});
 
 
 // 命令行执行gulp
-gulp.task('default', ['minCss', 'lint', 'minJs', 'moveHtml', 'moveImg', 'moveData']);
+gulp.task('default', ['minCss', 'lint', 'minJs', 'moveHtml', 'moveImg']);
 
