@@ -27,7 +27,7 @@ function renderData(data) {
     htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a></div></section>';
     var news_list = data.relate_news;
     if (news_list.length > 0) {
-        htmlStr += '<section class="line"></section><section class="list"><h3>相关新闻</h3><ul id="news_list">';
+        htmlStr += '<div class="list"><h3>相关新闻</h3><ul id="news_list">';
         $.each(news_list, function (index, item) {
             htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/><p class="list-title">' + item.title + '</p><span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
 
@@ -41,7 +41,7 @@ function renderData(data) {
             htmlStr += '</a></li>';
         });
 
-        htmlStr += '</ul></section><section class="line"></section>';
+        htmlStr += '</ul></div>';
     }
     $('#newsDetail').html(htmlStr);
 }

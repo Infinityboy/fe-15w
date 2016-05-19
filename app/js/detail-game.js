@@ -28,16 +28,17 @@ Jn.setData = function (data) {
 
 function renderData(data) {
     var htmlStr = '<header><section class="header-scores">';
-    htmlStr += '<img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/>';
-    htmlStr += '<div><span class="header-scores-left"><b>' + data.teamA.score + '</b></span>';
-    htmlStr += '<span class="header-scores-midele"><b>:</b></span>';
-    htmlStr += '<span class="header-scores-right"><b>' + data.teamB.score + '</b></span></div> ';
-    htmlStr += '<img class="header-scores-logoright" src="' + data.teamB.logo + '"/> ';
-    htmlStr += '</section> <section class="header-teams"> ';
-    htmlStr += '<span class="header-teams-left">' + data.teamA.name + '</span> ';
+    htmlStr += '<div><img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/></div>';
+    htmlStr += '<div class="game-score"><span><b>' + data.teamA.score + '</b> </span><span><b>:</b></span>';
+    htmlStr += ' <span><b>' + data.teamB.score + '</b></span></div> ';
+    htmlStr += '<div><img class="header-scores-logoright" src="' + data.teamB.logo + '"/></div>';
+    htmlStr += '</section>';
 
-    htmlStr += '<div class="header-teams-middle"><span>' + data.gameTime + data.gameType + '</span></div> ';
-    htmlStr += '<span class="header-teams-right">' + data.teamB.name + '</span> </section> <section class="ProgressBar clearFix"> ';
+    htmlStr += '<section class="header-teams">';
+    htmlStr += '<div class="header-teams-left">' + data.teamA.name + '</div> ';
+
+    htmlStr += '<div class="header-teams-middle"><span>' + data.gameTime + ' ' + data.gameType + '</span></div> ';
+    htmlStr += '<div class="header-teams-right">' + data.teamB.name + '</div> </section> <section class="ProgressBar clearFix"> ';
 
     // 单元长度为15px
     var leftItemLength = data.teamA.score * 50;
@@ -46,13 +47,11 @@ function renderData(data) {
     htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + 'px"></div></div>';
     htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + 'px"></div></div> </section>';
     htmlStr += '<section class="supporters"><a href="##" class="sp sp-left" data-id="' + data.dataId + '" data-team="' + data.teamA.teamId + '"><img class="supporters-leftlogo" src="images/matchdetail_ic_support.png"/>';
-
     htmlStr += '<span class="supporters-leftNumber supp" id="supporters-leftNumber"> ' + data.teamA.support_numbber + '</span></a>';
-    htmlStr += '<span class="supporters-gameintro">' + data.title + '</span>';
-    htmlStr += '<a href="##" class="sp sp-right" data-id="' + data.dataId + '" data-team="' + data.teamB.teamId + '"><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span> ';
-    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/></a></section> ';
-    htmlStr += '<section class="line"></section></header>';
-
+    htmlStr += '<div class="space-holder"></div>';
+    htmlStr += '<a href="##" class="sp sp-right" data-id="' + data.dataId + '" data-team="' + data.teamB.teamId + '">';
+    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span></a></section> ';
+    htmlStr += '</header>';
 
     //图文直播
     if (data.relateArticle.length > 0) {
@@ -78,7 +77,7 @@ function renderData(data) {
             htmlStr += '</div></div></li>';
         });
         htmlStr += '</ul> </section>';
-        htmlStr += '</section><section class="line"></section>';
+        htmlStr += '</section>';
     }
 
     //相关视频
@@ -102,14 +101,14 @@ function renderData(data) {
 
         });
 
-        htmlStr += '</ul></section><section class="line"></section>';
+        htmlStr += '</ul></section>';
     }
 
     if (data.originSrc && data.cover) {
         htmlStr += '<section class="gamevedio"> ';
         htmlStr += '<h2>比赛视频</h2>';
         htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="' + data.originSrc + '"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="' + data.cover + '"><p>' + data.title + '</p></section> ';
-        htmlStr += '</section><section class="line"></section></div>';
+        htmlStr += '</section></div>';
     }
 
     //推荐视频
@@ -136,7 +135,7 @@ function renderData(data) {
 
     //比赛数据
     if (data.gameContent.length > 0) {
-        htmlStr += '<section class="line"></section><section class="game-data clearFix">';
+        htmlStr += '<section class="game-data clearFix">';
         htmlStr += '<h2>数据</h2>';
         htmlStr += '<div  class="clearFix" id="roundlist">';
 
@@ -224,11 +223,11 @@ function renderData(data) {
 }
 
 $(function () {
-    /*$.get('data/game-detail.json', function (res) {
-     if (res.code == 10000) {
-     renderData(res.data);
-     }
-     });*/
+    //$.get('data/game-detail.json', function (res) {
+    //    if (res.code == 10000) {
+    //        renderData(res.data);
+    //    }
+    //});
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();

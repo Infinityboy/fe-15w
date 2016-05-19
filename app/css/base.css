@@ -109,6 +109,8 @@ input::-moz-focus-inner {
 body {
     font: 14px/1.6 "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     color: #333;
+    background: #eee;
+    padding-bottom: .6rem;
 }
 
 .clearfix:after {
@@ -129,7 +131,7 @@ a {
 
 .flat-content img {
     width: 100%;
-    margin: .8rem 0;
+    margin: 0 0 .8rem;
 }
 
 .flat-content p {
@@ -169,10 +171,9 @@ header .title {
 
 .video-meta {
     color: #999;
-    padding: 0 .8rem 0;
     position: relative;
     font-size: 1rem;
-    margin: .5rem 0;
+    padding: .5rem 0.8rem 0;
 }
 
 .video-meta .date {
@@ -207,7 +208,8 @@ body>div .line:last-child, body>section .line:last-child{
     font-size: 1.1rem;
     font-weight: normal;
     line-height: 1;
-    border-bottom: 1px solid #e1e1e1;
+    background: #eee;
+    margin-top: .8rem;
 }
 
 .list li {
@@ -260,8 +262,8 @@ body>div .line:last-child, body>section .line:last-child{
     border: 1px solid #b6b6b6;
     border-radius: 3px;
     text-align: center;
-    padding: .2rem .3rem .15rem;
-    font-size: .65rem;
+    padding: 0 .3rem;
+    font-size: 0.5rem;
     line-height: 1;
 }
 

@@ -13,6 +13,7 @@
 .indent {
     padding: 0.8rem;
     font-size: 0.64rem;
+    background: #fff;
 }
 
 .maintext img {
@@ -26,6 +27,7 @@
     font-size: .85rem;
     text-align: center;
     padding-bottom: 1rem;
+    background: #fff;
 }
 
 .maintext-share img {

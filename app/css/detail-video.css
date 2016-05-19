@@ -45,7 +45,6 @@ body {
     overflow-x: hidden;
 }
 
-
 .video-meta .views {
     position: absolute;
     right: 0.8rem;
@@ -61,6 +60,10 @@ header .player iframe {
     width: 100%;
     min-height: 10rem;
     display: block;
+}
+
+header .player {
+    margin-bottom: .5rem;
 }
 
 header .player img {

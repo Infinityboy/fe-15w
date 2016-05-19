@@ -25,7 +25,7 @@ function renderData(content) {
 
     htmlStr += '<div class="video-excerpt"><p>' + data.excerpt + '</p></div></header>';
     if (data.recomendVideos.length > 0) {
-        htmlStr += '<section class="line"></section><section class="list"><h3>视频推荐</h3><ul> ';
+        htmlStr += '<section class="list"><h3>视频推荐</h3><ul> ';
         $.each(data.recomendVideos, function (index, item) {
             htmlStr += '<li class="clearFix"><a href="##" class="list-item"  data-type="' + item.articleType + '" data-id="' + item.extra + '"> <img class="fl" src="' + item.thumbnail + '"/>';
             htmlStr += '<p class="list-title">' + item.title + '</p> ';
@@ -42,7 +42,7 @@ function renderData(content) {
             htmlStr += '</a></li>';
 
         });
-        htmlStr += '</ul></section><section class="line"></section>';
+        htmlStr += '</ul></section>';
     }
     $('#detail').html(htmlStr);
 }
