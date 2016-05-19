@@ -235,6 +235,7 @@ $(function () {
         try {
             number++;
             elem.html(number);
+            $(this).find('img').attr('src', 'images/matchdetail_ic_support_red.png');
             setCookie("sp-" + dataId, number, 365);
             Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
@@ -255,6 +256,7 @@ $(function () {
         try {
             number++;
             elem.html(number);
+            $(this).find('img').attr('src', 'images/matchdetail_ic_support_blue.png');
             setCookie("sp-" + dataId, number, 365);
             Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
