@@ -19,12 +19,8 @@ function renderData(data) {
     htmlStr += '</section> <section class="header-teams"> ';
     htmlStr += '<span class="header-teams-left">' + data.teamA.name + '</span> ';
 
-    var time = '';
-    if (data.gameTime) {
-        var date = new Date(data.gameTime);
-        time = date.getHours() + ' : ' + date.getMinutes();
-    }
-    htmlStr += '<div class="header-teams-middle"><span>' + time + '</span></div> ';
+
+    htmlStr += '<div class="header-teams-middle"><span>' + data.gameTime + data.gameType + '</span></div> ';
     htmlStr += '<span class="header-teams-right">' + data.teamB.name + '</span> </section> <section class="ProgressBar clearFix"> ';
 
     // 单元长度为15px
@@ -212,11 +208,11 @@ function renderData(data) {
 }
 
 $(function () {
-    //$.get('data/game-detail.json', function (res) {
-    //    if (res.code == 10000) {
-    //        renderData(res.data);
-    //    }
-    //});
+    $.get('data/game-detail.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();

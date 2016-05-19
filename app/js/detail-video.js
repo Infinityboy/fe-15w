@@ -14,7 +14,15 @@ function renderData(content) {
     htmlStr += data.author + '</span>';
     htmlStr += '<span class="views">' + data.views + '</span></div>';
     var videoContent = data.content ? data.content : '';
-    htmlStr += '<div class="player">' + videoContent + '</div>';
+
+    var videoHeight = $(document).width() / 1.7;
+    if (!videoHeight) {
+        videoHeight = '10rem'
+    }else{
+        videoHeight += 'px';
+    }
+    htmlStr += '<div class="player" style="height:'+ videoHeight +'">' + videoContent + '</div>';
+
     htmlStr += '<div class="video-excerpt"><p>' + data.excerpt + '</p></div></header>';
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="line"></section><section class="list"><h3>视频推荐</h3><ul> ';
@@ -40,9 +48,9 @@ function renderData(content) {
 }
 
 $(function () {
-    //$.get('data/video-detail.json', function (res) {
-    //    renderData(res.content);
-    //});
+    /*$.get('data/video-detail.json', function (res) {
+        renderData(res.content);
+    });*/
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -53,4 +61,5 @@ $(function () {
 
         }
     });
+
 });
