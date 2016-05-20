@@ -41,7 +41,7 @@ function renderData(data) {
     htmlStr += '<div class="header-teams-right">' + data.teamB.name + '</div> </section> <section class="ProgressBar clearFix"> ';
 
     // 单元长度为15px
-    var leftItemLength = data.teamA.score * 50;
+    var leftItemLength = Math.max(data.teamA.score * 50, 5);
     var rightItemLength = Math.max(data.teamB.score * 50, 5);
 
     htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + 'px"></div></div>';
