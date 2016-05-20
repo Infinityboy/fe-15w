@@ -45,7 +45,7 @@ function renderData(data) {
             htmlStr += '</a></li>';
         });
 
-        htmlStr += '</ul></div>';
+        htmlStr += '</ul></div><section class="line"></section>';
     }
     $('#newsDetail').html(htmlStr);
 }

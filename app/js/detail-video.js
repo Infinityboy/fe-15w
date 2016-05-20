@@ -18,10 +18,10 @@ function renderData(content) {
     var videoHeight = $(document).width() / 1.7;
     if (!videoHeight) {
         videoHeight = '10rem';
-    }else{
+    } else {
         videoHeight += 'px';
     }
-    htmlStr += '<div class="player" style="height:'+ videoHeight +'">' + videoContent + '</div>';
+    htmlStr += '<div class="player" style="height:' + videoHeight + '">' + videoContent + '</div>';
 
     htmlStr += '<div class="video-excerpt"><p>' + data.excerpt + '</p></div></header>';
     if (data.recomendVideos.length > 0) {
@@ -45,7 +45,7 @@ function renderData(content) {
             htmlStr += '</a></li>';
 
         });
-        htmlStr += '</ul></section>';
+        htmlStr += '</ul></section><section class="line"></section>';
     }
     $('#detail').html(htmlStr);
 }
@@ -65,4 +65,11 @@ $(function () {
         }
     });
 
+    $(window).on('resize', function () {
+        var videoHeight = $(document).width() / 1.7;
+        var player = $('.player');
+        if (player) {
+            player.css('height', videoHeight);
+        }
+    });
 });

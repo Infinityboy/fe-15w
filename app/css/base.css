@@ -110,7 +110,6 @@ body {
     font: 14px/1.6 "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     color: #333;
     background: #eee;
-    padding-bottom: .6rem;
 }
 
 .clearfix:after {
@@ -130,7 +129,7 @@ a {
 }
 
 .flat-content img {
-    width: 100%;
+    max-width: 100%;
     margin: 0 0 .8rem;
 }
 
@@ -138,6 +137,10 @@ a {
     margin-bottom: .8rem;
     font-size: 1rem;
     text-align: justify;
+}
+
+.flat-content .cimg{
+    text-align: center;
 }
 
 .fl {
@@ -267,4 +270,7 @@ header .title {
     position: absolute;
     right: 0.8rem;
     bottom: .8rem;
+}
+.line{
+    height: .8rem;
 }
