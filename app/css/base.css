@@ -237,8 +237,18 @@ header .title {
 }
 
 .list-title {
+    display: inline-block;
+    overflow:hidden;
+    /*white-space:nowrap;*/
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    min-height: 3.13rem;
     font-size: 1rem;
     color: #444;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    word-break: break-all;
 }
 
 .list-excerpt {
