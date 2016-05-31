@@ -26,6 +26,7 @@ Jn.setData = function (data) {
     }
 };
 
+
 function renderData(data) {
     var htmlStr = '<header><section class="header-scores">';
     htmlStr += '<div><img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/></div>';
@@ -53,98 +54,15 @@ function renderData(data) {
     htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span></a></section> ';
     htmlStr += '</header>';
 
-    //图文直播
-    if (data.relateArticle.length > 0) {
-        htmlStr += '<section class="live-byword"> <h2>图文直播</h2> ';
-        htmlStr += '<section class="live-byword-listbox"> <ul>';
-        $.each(data.relateArticle, function (index, item) {
-            htmlStr += '<li> <div class="innerbox"><div class="live-byword-list clearfix"> ';
-            htmlStr += '<a href="##" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
-            htmlStr += '<div class="fl live-byword-list-games" > ';
-            htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
-            htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>' + '&nbsp;' + '' + item.time + '</span></p></div></div> ';
-            htmlStr += '<div class="live-byword-list-words"> ';
-            htmlStr += '<p>' + item.content + '</p>';
-
-            var itemImgs = data.relateArticle[index];
-            if (itemImgs.images.length > 0) {
-                htmlStr += '<div class="clearFix live-byword-list-words-images">';
-                $.each(itemImgs.images, function (index, item) {
-                    htmlStr += '<img class="fl" src="' + item + '"/>';
-                });
-                htmlStr += '</div> ';
-            }
-            htmlStr += '</div></div></li>';
-        });
-        htmlStr += '</ul> </section>';
-        htmlStr += '</section>';
-    }
-
-    //相关视频
-    if (data.relateVideos.length > 0) {
-        htmlStr += '<section class="list"><h3>比赛视频</h3> <ul> ';
-
-        $.each(data.relateVideos, function (index, item) {
-            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += '<p class="list-title">' + item.title + '</p> ';
-
-            if (item.tagColor && item.tagName) {
-                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
-            }
-
-            var date = new Date();
-            var dateStr;
-            if (item.updateTime) {
-                date = new Date(item.updateTime * 1000);
-            }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-
-            htmlStr += '<span class="list-time">' + dateStr + '</span>';
-            htmlStr += '</a></li>';
-        });
-
-        htmlStr += '</ul></section>';
-    }
-
-    //if (data.originSrc && data.cover) {
-    //    htmlStr += '<section class="gamevedio"> ';
-    //    htmlStr += '<h2>比赛视频</h2>';
-    //    htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="' + data.originSrc + '"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="' + data.cover + '"><p>' + data.title + '</p></section> ';
-    //    htmlStr += '</section></div>';
-    //}
-
-    //推荐视频
-    if (data.recomendVideos.length > 0) {
-        htmlStr += '<section class="list"> <h3>相关新闻</h3><ul>';
-        $.each(data.recomendVideos, function (index, item) {
-            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
-            htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += '<p class="list-title">' + item.title + '</p>';
-
-            if (item.tagColor && item.tagName) {
-                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
-            }
-
-
-            var date = new Date();
-            var dateStr;
-            if (item.updateTime) {
-                date = new Date(item.updateTime * 1000);
-            }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-
-            htmlStr += '<span class="list-time">' + dateStr + '</span>';
-            htmlStr += '</a></li> ';
-        });
-        htmlStr += ' </ul></section>';
-    }
+    //选项卡
+    htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##">直播</a></li><li class="outList " data-id="1"><a href="##">新闻</a></li><li class="outList " data-id="2"><a href="##">视频</a></li></ul><div class="outContainer ">';
 
     //比赛数据
-    if (data.gameContent.length > 0) {
-        htmlStr += '<section class="game-data clearFix">';
-        htmlStr += '<h2>数据</h2>';
-        htmlStr += '<div  class="clearFix" id="roundlist">';
 
+    if (data.gameContent.length > 0) {
+        htmlStr += '<div class="live" data-id="0">';
+        htmlStr += '<section class="game-data clearFix">';
+        htmlStr += '<div  class="clearFix" id="roundlist">';
         var len = data.gameContent.length;
         var screen = document.documentElement.clientWidth;
         var itemWidth = screen / len;
@@ -166,10 +84,6 @@ function renderData(data) {
             } else {
                 htmlStr += '<div class="data-content-item" style="display: none">';
             }
-            htmlStr += '<section class="gamedata-teams"><img class="gamedata-teams-logo1eft" ' + 'src="' + data.teamA.logo + '"/> ' +
-                '<p class="gamedata-teams-duration">' + data.gameContent[index].time + '</p> ' +
-                '<img class="gamedata-teams-logoright" src="' + data.teamB.logo + '"/></section> ';
-
             var itemList = item.dataList.list;
 
             $.each(itemList, function (index, subItem) {
@@ -206,14 +120,6 @@ function renderData(data) {
                         leftBarWidth = leftBarLength;
                         rightBarWidth = rightBarLength;
                     }
-
-                    htmlStr += '<section class="conpares clearfix">';
-                    htmlStr += '<span>' + subItem.fieldName + '</span>';
-                    htmlStr += '<div class="bar-inner">';
-                    htmlStr += '<div class="left-bar">' + subItem.fieldData[0] + '<span class="bar" style="width:' + leftBarWidth + 'px"></span></div>';
-                    htmlStr += '<div class="right-bar"><span class="bar" style="width:' + rightBarWidth + 'px"></span>' + subItem.fieldData[1] + '</div>';
-                    htmlStr += '</div>';
-                    htmlStr += '</section>';
                 }
             });
 
@@ -222,24 +128,113 @@ function renderData(data) {
         });
         htmlStr += '</div></section>';
     }
-    htmlStr += '<section class="line"></section>';
+
+    //图文直播
+    if (data.relateArticle.length > 0) {
+        htmlStr += '<section class="live-byword-listbox selected"> <ul>';
+        $.each(data.relateArticle, function (index, item) {
+            htmlStr += '<li> <div class="innerbox"><div class="live-byword-list clearfix"> ';
+            htmlStr += '<a href="##" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
+            htmlStr += '<div class="fl live-byword-list-games" > ';
+            htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
+            htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>' + '&nbsp;' + '' + item.time + '</span></p></div></div> ';
+            htmlStr += '<div class="live-byword-list-words"> ';
+            htmlStr += '<p>' + item.content + '</p>';
+
+            var itemImgs = data.relateArticle[index];
+            if (itemImgs.images.length > 0) {
+                htmlStr += '<div class="clearFix live-byword-list-words-images">';
+                $.each(itemImgs.images, function (index, item) {
+                    htmlStr += '<img class="fl" src="' + item + '"/>';
+                });
+                htmlStr += '</div> ';
+            }
+            htmlStr += '</div></div></li>';
+        });
+        htmlStr += '</ul> </section>';
+        htmlStr += '</section></div>';
+    }
+
+    //相关新闻
+    if (data.recomendVideos.length > 0) {
+        htmlStr += '<div class="news" data-id="1">';
+        htmlStr += '<section class="list"> <h3>相关新闻</h3><ul>';
+        $.each(data.recomendVideos, function (index, item) {
+            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
+            htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
+            htmlStr += '<p class="list-title">' + item.title + '</p>';
+
+            if (item.tagColor && item.tagName) {
+                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            }
+
+
+            var date = new Date();
+            var dateStr;
+            if (item.updateTime) {
+                date = new Date(item.updateTime * 1000);
+            }
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+            htmlStr += '<span class="list-time">' + dateStr + '</span>';
+            htmlStr += '</a></li> ';
+        });
+        htmlStr += ' </ul></section>';
+    }
+
+    //比赛视频
+
+    if (data.relateVideos.length > 0) {
+        htmlStr += '<section class="list"><h3>比赛视频</h3> <ul> ';
+
+        $.each(data.relateVideos, function (index, item) {
+            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
+            htmlStr += '<p class="list-title">' + item.title + '</p> ';
+
+            if (item.tagColor && item.tagName) {
+                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            }
+
+            var date = new Date();
+            var dateStr;
+            if (item.updateTime) {
+                date = new Date(item.updateTime * 1000);
+            }
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+            htmlStr += '<span class="list-time">' + dateStr + '</span>';
+            htmlStr += '</a></li>';
+        });
+
+        htmlStr += '</ul></section></div>';
+    }
+
+    if (data.originSrc && data.cover) {
+        htmlStr += '<div class="video" data-id="2"> ';
+        htmlStr += '<section class="gamevedio" data-id="2"> ';
+        htmlStr += '<h2>比赛视频</h2>';
+        htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="' + data.originSrc + '"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="' + data.cover + '"><p>' + data.title + '</p></section> ';
+        htmlStr += '</section></div></div></div>';
+    }
     $('#box').html(htmlStr);
+
+
+
 
 }
 
 $(function () {
-    //$.get('data/game-detail.json', function (res) {
-    //    if (res.code == 10000) {
-    //        renderData(res.data);
-    //    }
-    //});
+    $.get('data/game-detail.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
         try {
             Jnapp.jn_related($(this).data('type'), $(this).data('id') + "");
         } catch (error) {
-
         }
     });
 
@@ -287,7 +282,19 @@ $(function () {
     });
 
 
-    // tab切换
+    // tab切换 切换外层选项卡
+
+    $(document).on('click', '.outer .outList', function (e) {
+        e.preventDefault();
+        if (!$(this).hasClass('selected')) {
+            var cls = $(this).data('id');
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('.outContainer').children().eq(cls).css({ display: 'block' }).siblings().css({ display: 'none' });
+        }
+    });
+
+    //tab切换 切换内层选项卡
+
     $(document).on('click', 'a.roundspan3', function (e) {
         e.preventDefault();
         if (!$(this).hasClass('on')) {

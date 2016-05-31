@@ -197,6 +197,9 @@ header .title {
 
 
 /* 相关推荐模块 */
+.news{
+    display: none;
+}
 .list {
     background: #fff;
 }
