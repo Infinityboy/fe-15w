@@ -215,6 +215,8 @@ function renderData(data) {
         htmlStr += '<h2>比赛视频</h2>';
         htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="' + data.originSrc + '"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="' + data.cover + '"><p>' + data.title + '</p></section> ';
         htmlStr += '</section></div></div></div>';
+    }else{
+         '暂无视频';
     }
     $('#box').html(htmlStr);
 
@@ -224,11 +226,11 @@ function renderData(data) {
 }
 
 $(function () {
-    $.get('data/game-detail.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });
+    //$.get('data/game-detail.json', function (res) {
+    //    if (res.code == 10000) {
+    //        renderData(res.data);
+    //    }
+    //});
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
