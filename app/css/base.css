@@ -210,8 +210,8 @@ header .title {
     font-size: 1.1rem;
     font-weight: normal;
     line-height: 1;
-    background: #eee;
-    margin-top: .8rem;
+    background: #f2f2f2;
+    /*margin-top: .8rem;*/
 }
 
 .list li {

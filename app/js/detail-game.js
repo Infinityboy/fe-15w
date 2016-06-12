@@ -27,6 +27,7 @@ Jn.setData = function (data) {
 };
 
 
+
 function renderData(data) {
     var htmlStr = '<header><section class="header-scores">';
     htmlStr += '<div><img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/></div>';
@@ -55,7 +56,7 @@ function renderData(data) {
     htmlStr += '</header>';
 
     //选项卡
-    htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##">直播</a></li><li class="outList " data-id="1"><a href="##">新闻</a></li><li class="outList " data-id="2"><a href="##">视频</a></li></ul><div class="outContainer ">';
+    htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">新闻</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">视频</div></a></li></ul><div class="outContainer ">';
 
     //比赛数据
 
@@ -127,6 +128,8 @@ function renderData(data) {
 
         });
         htmlStr += '</div></section>';
+    }else{
+        htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:block;background-color: #ffffff;">';
     }
 
     //图文直播
@@ -135,7 +138,7 @@ function renderData(data) {
         $.each(data.relateArticle, function (index, item) {
             htmlStr += '<li> <div class="innerbox"><div class="live-byword-list clearfix"> ';
             htmlStr += '<a href="##" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
-            htmlStr += '<div class="fl live-byword-list-games" > ';
+            htmlStr += '<div class="fl live-byword-list-games"> ';
             htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
             htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>' + '&nbsp;' + '' + item.time + '</span></p></div></div> ';
             htmlStr += '<div class="live-byword-list-words"> ';
@@ -153,12 +156,18 @@ function renderData(data) {
         });
         htmlStr += '</ul> </section>';
         htmlStr += '</section></div>';
+    }else{
+        if(data.gameContent.length > 0){
+            htmlStr += '</div>';
+        }else{
+            htmlStr += '暂无直播数据</div>';
+        }
     }
 
     //相关新闻
     if (data.recomendVideos.length > 0) {
         htmlStr += '<div class="news" data-id="1">';
-        htmlStr += '<section class="list"> <h3>相关新闻</h3><ul>';
+        htmlStr += '<section class="list"><ul>';
         $.each(data.recomendVideos, function (index, item) {
             htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
             htmlStr += '<img class="fl" src="' + item.thumbnail + '"/>';
@@ -179,58 +188,60 @@ function renderData(data) {
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</a></li> ';
         });
-        htmlStr += ' </ul></section>';
+        htmlStr += ' </ul></section></div>';
     }
+    else{
+        htmlStr += '<div class="news" data-id="1" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:none;background-color: #ffffff;">暂无新闻数据</div>';
+    }
+
 
     //比赛视频
-
-    if (data.relateVideos.length > 0) {
-        htmlStr += '<section class="list"><h3>比赛视频</h3> <ul> ';
-
-        $.each(data.relateVideos, function (index, item) {
-            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += '<p class="list-title">' + item.title + '</p> ';
-
-            if (item.tagColor && item.tagName) {
-                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
-            }
-
-            var date = new Date();
-            var dateStr;
-            if (item.updateTime) {
-                date = new Date(item.updateTime * 1000);
-            }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-
-            htmlStr += '<span class="list-time">' + dateStr + '</span>';
-            htmlStr += '</a></li>';
-        });
-
-        htmlStr += '</ul></section></div>';
-    }
-
     if (data.originSrc && data.cover) {
-        htmlStr += '<div class="video" data-id="2"> ';
-        htmlStr += '<section class="gamevedio" data-id="2"> ';
-        htmlStr += '<h2>比赛视频</h2>';
-        htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="' + data.originSrc + '"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="' + data.cover + '"><p>' + data.title + '</p></section> ';
-        htmlStr += '</section></div></div></div>';
+        if (data.relateVideos.length > 0) {
+            htmlStr += '<div class="video" data-id="2"> ';
+            htmlStr += '<section class="list"> <ul> ';
+
+            $.each(data.relateVideos, function (index, item) {
+                htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
+                htmlStr += '<p class="list-title">' + item.title + '</p> ';
+
+                if (item.tagColor && item.tagName) {
+                    htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+                }
+
+                var date = new Date();
+                var dateStr;
+                if (item.updateTime) {
+                    date = new Date(item.updateTime * 1000);
+                }
+                dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+                htmlStr += '<span class="list-time">' + dateStr + '</span>';
+                htmlStr += '</a></li>';
+            });
+
+            htmlStr += '</ul></section></div>';
+        }
+        //htmlStr += '<section class="gamevedio" data-id="2"> ';
+        //htmlStr += '<h2>比赛视频</h2>';
+        //htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="' + data.originSrc + '"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="' + data.cover + '"><p>' + data.title + '</p></section> ';
+        //htmlStr += '</section></div></div></div>';
     }else{
-         '暂无视频';
+        htmlStr += '<div class="video" data-id="2" style="height: 10rem;font-size: 0.9rem; text-align: center;line-height:10rem;display:none;background-color: #ffffff;">暂无视频数据</div>';
     }
+
     $('#box').html(htmlStr);
-
-
 
 
 }
 
 $(function () {
-    //$.get('data/game-detail.json', function (res) {
-    //    if (res.code == 10000) {
-    //        renderData(res.data);
-    //    }
-    //});
+    $.get('data/game-detail.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
+
 
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();
@@ -285,16 +296,23 @@ $(function () {
 
 
     // tab切换 切换外层选项卡
-
     $(document).on('click', '.outer .outList', function (e) {
         e.preventDefault();
         if (!$(this).hasClass('selected')) {
             var cls = $(this).data('id');
+            var oContainer = $('.outContainer');
             $(this).addClass('selected').siblings().removeClass('selected');
-            $('.outContainer').children().eq(cls).css({ display: 'block' }).siblings().css({ display: 'none' });
+            if(oContainer.children().eq(cls)){
+                oContainer.children().eq(cls).show().siblings().hide();
+            }
+            //else{
+            //    oContainer.html('<div class="empty" style="height: 200rem;text-align: center;" data-id="2">暂无数据</div>');
+            //    $('#box').html(htmlStr);
+            //    console.log($('.empty').data('id'));
+            //    oContainer.children().eq(cls).show().siblings().hide();
+            //}
         }
     });
-
     //tab切换 切换内层选项卡
 
     $(document).on('click', 'a.roundspan3', function (e) {

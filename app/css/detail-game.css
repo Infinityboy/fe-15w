@@ -82,8 +82,8 @@ header .header-teams .header-teams-middle {
 /*外层选项卡*/
 
 .outer{
-    width: 100%;
-    height: 7.875rem;
+    /*width: 100%;*/
+    height: 4.2rem;
     display: -webkit-box;
     display: -webkit-flex;
     -webkit-box-orient: vertical;
@@ -95,15 +95,18 @@ header .header-teams .header-teams-middle {
     align-items: center;
     -webkit-box-flex:1;
     float: left;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #333;
-    height: 2rem;
-    line-height: 7.875rem;
+    height: 4.2rem;
+    line-height: 4.2rem;
     display: inline-block;
     text-align: center;
     background-color: #f2f2f2;
 }
-
+.outList.selected .border{
+    height: 4.1rem;
+    border-bottom: 0.14rem solid #e41619;
+}
 .outList.selected a{
     color: #e41619;
 }
@@ -536,13 +539,13 @@ header .header-teams .header-teams-middle {
 
 
 #roundlist {
-    height: 5.125rem;
+    height: 3.6rem;
     font-size: 1.5rem;
     text-align: center;
     background-color: #f2f2f2;
     display: -webkit-box;
     border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    /*border-bottom: 1px solid #dfdfdf;*/
 }
 
 #roundlist a:nth-child(2n+1) {
@@ -560,16 +563,16 @@ header .header-teams .header-teams-middle {
     border-right: 1px  ;
     /*background: #fcfcfc;*/
     color: #666;
-    line-height: 5.125rem;
+    line-height: 3.6rem;
     display: block;
     font-size: .9rem;
 }
 
 #roundlist > a.on {
     color: #333;
-    height: 5.125rem;
+    height: 3.6rem;
     background: white;
-    border-top: 0.15rem solid #e41619;
+
 }
 
 .game-data-select {
@@ -616,6 +619,6 @@ header .header-teams .header-teams-middle {
 .data-details {
     padding: 1rem ;
     background-color: #fff;
-    margin-top: 2.5rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
