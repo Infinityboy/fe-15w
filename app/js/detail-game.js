@@ -236,11 +236,11 @@ function renderData(data) {
 }
 
 $(function () {
-    $.get('data/game-detail.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });
+    //$.get('data/game-detail.json', function (res) {
+    //    if (res.code == 10000) {
+    //        renderData(res.data);
+    //    }
+    //});
 
 
     $(document).on('click', '.list-item', function (e) {
