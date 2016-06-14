@@ -1,0 +1,189 @@
+.banner img {
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.wrap {
+    margin: 0 auto;
+    clear: both;
+}
+
+.wrap {
+    width: 100%;
+}
+
+.container .wrap {
+    position: relative;
+}
+
+.container .left {
+    width: auto;
+    float: none;
+}
+
+.container .left .details {
+    padding: .8rem;
+}
+
+h1 {
+    position: relative;
+    overflow: hidden;
+    color: #333;
+    font-size: 42px;
+    font-weight: normal;
+}
+
+h1 {
+    padding-top: 0;
+    font-size: 1.2rem;
+    line-height: 1.45rem;
+}
+
+.detailsTit {
+    padding-top: 0.5rem;
+}
+
+.detailsTit {
+    position: relative;
+    overflow: hidden;
+    padding-top: 1rem;
+}
+
+.detailsTit .pic {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #b5b5b5;
+    padding: 0.05rem;
+    border-radius: 50%;
+    margin-right: 0;
+    float: left;
+}
+
+.container .left img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.detailsTit .ti {
+    line-height: 1.1rem;
+    padding: 0;
+    font-size: 1rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.25rem;
+    border-bottom: 1px solid #e9e9e9;
+    color: #383838;
+    overflow: hidden;
+}
+
+.container .left p {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+.container .left .detailsTit p {
+    margin-top: 0;
+    overflow: hidden;
+    padding-left: 0.25rem;
+    padding-top: 0.25rem;
+}
+
+.art-time {
+    color: #999;
+}
+
+.detailsTit p span {
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.f-blue, a.f-blue {
+    color: #0c82fb;
+}
+
+.detailsTit .art-time i {
+    margin-top: 0;
+}
+
+.detailsTit .art-time i {
+    width: 13px;
+    height: 13px;
+    margin-top: 4px;
+    vertical-align: top;
+    margin-right: 5px;
+    background: url(http://www.15w.com/ui/www/v1/img/ui.png) no-repeat;
+    display: inline-block;
+    background-position: -61px -47px;
+}
+
+.leaderCon {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    background: #f9f9f9;
+    color: #383838;
+    line-height: 1.5;
+}
+
+.themeBlue .leaderCon span {
+    background: #0c82fb;
+}
+
+.leaderCon span {
+    float: left;
+    display: inline-block;
+    color: #fff;
+    margin-right: 8px;
+    vertical-align: top;
+    border-radius: 3px;
+    padding: 0 6px;
+    font-size: .8rem;
+}
+
+.detailsCon {
+    position: relative;
+    overflow: hidden;
+}
+
+
+h2 {
+    position: relative;
+    overflow: hidden;
+    color: #212020;
+    font-weight: normal;
+}
+
+.container {
+    background: #fff;
+}
+
+.container .left p {
+    margin-top: 0.8rem;
+    font-size: 0.7rem;
+    line-height: 1.3rem;
+    color: #5c5c5c;
+}
+
+.container .left img {
+    max-width: 100%;
+}
+.detailsCon h2 {
+    padding-top: 1rem;
+    font-size: 1.1rem;
+}
+.detailsCon h2 i {
+    display: inline-block;
+    height: 1em;
+    margin-right: 0.5rem;
+    width: 0.15rem;
+    border-radius: 0.07rem;
+    background: #0c82fb;
+}
+
