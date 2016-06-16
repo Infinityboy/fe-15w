@@ -231,16 +231,26 @@ function renderData(data) {
     }
 
     $('#box').html(htmlStr);
-
-
 }
 
 $(function () {
-    //$.get('data/game-detail.json', function (res) {
+    // $.get('data/game-detail.json', function (res) {
     //    if (res.code == 10000) {
     //        renderData(res.data);
     //    }
-    //});
+    // });
+
+    // 图片查看大图
+    $(document).on('click', '.live-byword-list-words-images img', function (e) {
+        e.preventDefault();
+        var title = $(this).attr('alt');
+        title = title ? title : '';
+        try {
+            Jnapp.jn_image($(this).attr('src'), title, '');
+        } catch (e) {
+
+        }
+    });
 
 
     $(document).on('click', '.list-item', function (e) {

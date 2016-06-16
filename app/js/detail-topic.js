@@ -24,6 +24,18 @@ $(function () {
     //     }
     // });
 
+    // 图片查看大图
+    $(document).on('click', '.detailsCon img', function (e) {
+        e.preventDefault();
+        var title = $(this).attr('alt');
+        title = title ? title : '';
+        try {
+            Jnapp.jn_image($(this).attr('src'), title, '');
+        } catch (e) {
+
+        }
+    });
+
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
         e.preventDefault();

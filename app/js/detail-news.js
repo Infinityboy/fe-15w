@@ -31,7 +31,7 @@ function renderData(data) {
         $.each(news_list, function (index, item) {
             htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/><p class="list-title">' + item.title + '</p>';
 
-            if(item.tagColor && item.tagName){
+            if (item.tagColor && item.tagName) {
                 htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
             }
 
@@ -52,15 +52,15 @@ function renderData(data) {
 
 $(function () {
     // $.ajax({
-    //    url: 'data/news.json',
-    //    type: "GET",
-    //    dataType: 'json',
-    //    success: function (str) {
-    //        renderData(str.data);
-    //    },
-    //    error: function (err) {
-    //        alert('失败:' + err);
-    //    }
+    //     url: 'data/news.json',
+    //     type: "GET",
+    //     dataType: 'json',
+    //     success: function (str) {
+    //         renderData(str.data);
+    //     },
+    //     error: function (err) {
+    //         alert('失败:' + err);
+    //     }
     // });
 
     // 相关新闻
@@ -68,6 +68,18 @@ $(function () {
         e.preventDefault();
         try {
             Jnapp.jn_related($(this).data('type'), $(this).data('id') + "");
+        } catch (e) {
+
+        }
+    });
+
+    // 图片查看大图
+    $(document).on('click', '.flat-content img', function (e) {
+        e.preventDefault();
+        var title = $(this).attr('alt');
+        title = title ? title : '';
+        try {
+            Jnapp.jn_image($(this).attr('src'), title, '');
         } catch (e) {
 
         }
