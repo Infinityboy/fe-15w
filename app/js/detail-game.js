@@ -160,7 +160,7 @@ function renderData(data) {
         if(data.gameContent.length > 0){
             htmlStr += '</div>';
         }else{
-            htmlStr += '暂无直播数据</div>';
+            htmlStr += '当前比赛场次还没有图文直播哦!</div>';
         }
     }
 

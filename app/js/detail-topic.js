@@ -57,13 +57,12 @@ function renderData(data) {
     var htmlStr = '<div class="allcontain detailWrap" style=""><div class="banner" style="background: url(' + banner + ') no-repeat center top; background-size: auto 100%;"></div><div class="container">';
     htmlStr += '<div class="container"><div class="wrap"><div class="left"><div class="details"><h1>' + title + '</h1><div class="detailsTit">';
     htmlStr += '<div class="pic"><img src="' + avatar + '"></div>';
-    htmlStr += '<div class="ti">作者：' + data.author + '</div><p><span class="art-time"><i></i>' + time + '</span><span>来源 <a href="#" target="_blank" class="f-blue">' + data['source'] + '</a></span><span>评 <em class="f-blue">0</em></span></p></div>';
+    htmlStr += '<div class="ti">作者：' + data.author + '</div><p><span class="art-time"><i></i>' + time + '</span><span>来源 <a href="#" target="_blank" class="f-blue">' + data['source'] + '</a></span></p></div>';
 
     // 文章正文
     htmlStr += content;
     htmlStr += '</div></div></div></div>';
-
-    if (data.pastlist) {
+    if (data.pastlist.length > 0) {
         htmlStr += '<div class="list"><h3>往期回顾</h3><ul id="news_list">';
         $.each(data.pastlist, function (index, item) {
             htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/><p class="list-title">' + item.title + '</p>';
