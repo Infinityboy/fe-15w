@@ -49,7 +49,6 @@ $(function () {
 
 function renderData(data) {
     var title = data.title ? data.title : '';
-    var time = data.time ? data.time : '2016-06-04';
     var content = data.content ? data.content : '';
     var banner = data.banner;
     var avatar = data.avatar;
@@ -57,7 +56,11 @@ function renderData(data) {
     var htmlStr = '<div class="allcontain detailWrap" style=""><div class="banner" style="background: url(' + banner + ') no-repeat center top; background-size: auto 100%;"></div><div class="container">';
     htmlStr += '<div class="container"><div class="wrap"><div class="left"><div class="details"><h1>' + title + '</h1><div class="detailsTit">';
     htmlStr += '<div class="pic"><img src="' + avatar + '"></div>';
-    htmlStr += '<div class="ti">作者：' + data.author + '</div><p><span class="art-time"><i></i>' + time + '</span><span>来源 <a href="#" target="_blank" class="f-blue">' + data['source'] + '</a></span></p></div>';
+    htmlStr += '<div class="ti">作者：' + data.author + '</div><p>';
+    if(data.time){
+        htmlStr += '<span class="art-time"><i></i>' + time + '</span>';
+    }
+    htmlStr += '<span>来源 <a href="#" target="_blank" class="f-blue">' + data['source'] + '</a></span></p></div>';
 
     // 文章正文
     htmlStr += content;
