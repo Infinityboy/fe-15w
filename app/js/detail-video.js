@@ -1,5 +1,6 @@
 'use strict';
 window.Jn = {};
+var cacheData = null;
 
 Jn.setData = function (data) {
     if (data.key == 'videoInitDetail') {
@@ -9,6 +10,7 @@ Jn.setData = function (data) {
 
 function renderData(content) {
     var data = content;
+    cacheData = data;
     var htmlStr = '<header><h1 class="title">' + data.title + '</h1>';
     htmlStr += '<div class="video-meta"><span class="date">' + data.time + '</span><span class="author color-blue ml5">';
     htmlStr += data.author + '</span>';
@@ -24,6 +26,9 @@ function renderData(content) {
     htmlStr += '<div class="player" style="height:' + videoHeight + '">' + videoContent + '</div>';
 
     htmlStr += '<div class="video-excerpt"><p>' + data.excerpt + '</p></div></header>';
+
+    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a></div>';
+
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="list"><h3>视频推荐</h3><ul> ';
         $.each(data.recomendVideos, function (index, item) {
@@ -51,9 +56,9 @@ function renderData(content) {
 }
 
 $(function () {
-    //$.get('data/video-detail.json', function (res) {
-    //    renderData(res.content);
-    //});
+    // $.get('data/video-detail.json', function (res) {
+    //     renderData(res.content);
+    // });
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -64,6 +69,37 @@ $(function () {
 
         }
     });
+
+    // 微博
+    $(document).on('click', '.maintext-share-weibo', function (e) {
+        e.preventDefault();
+        shareBegin(0);
+    });
+
+    // 微信
+    $(document).on('click', '.maintext-share-weixin', function (e) {
+        e.preventDefault();
+        shareBegin(1);
+    });
+
+    // 朋友圈
+    $(document).on('click', '.maintext-share-frident', function (e) {
+        e.preventDefault();
+        shareBegin(2);
+    });
+
+    function shareBegin(type) {
+        try {
+            var thumbnail = cacheData.thumbnail;
+            var title = cacheData.title;
+            var content = cacheData.excerpt;
+            var url = cacheData.shareUrl;
+            Jnapp.jn_share(type, thumbnail, title, content, url);
+        } catch (e) {
+
+        }
+    }
+
 
     $(window).on('resize', function () {
         var videoHeight = $(document).width() / 1.7;
