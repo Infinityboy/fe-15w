@@ -145,7 +145,7 @@ function renderData(data) {
             htmlStr += '<p>' + item.content + '</p>';
 
             var itemImgs = data.relateArticle[index];
-            if (itemImgs.images.length > 0) {
+            if (itemImgs.images && itemImgs.images.length > 0) {
                 htmlStr += '<div class="clearFix live-byword-list-words-images">';
                 $.each(itemImgs.images, function (index, item) {
                     htmlStr += '<img class="fl" src="' + item + '"/>';
@@ -196,37 +196,31 @@ function renderData(data) {
 
 
     //比赛视频
-    if (data.originSrc && data.cover) {
-        if (data.relateVideos.length > 0) {
-            htmlStr += '<div class="video" data-id="2"> ';
-            htmlStr += '<section class="list"> <ul> ';
+    if (data.relateVideos.length > 0) {
+        htmlStr += '<div class="video" data-id="2"> ';
+        htmlStr += '<section class="list"> <ul> ';
 
-            $.each(data.relateVideos, function (index, item) {
-                htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
-                htmlStr += '<p class="list-title">' + item.title + '</p> ';
+        $.each(data.relateVideos, function (index, item) {
+            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
+            htmlStr += '<p class="list-title">' + item.title + '</p> ';
 
-                if (item.tagColor && item.tagName) {
-                    htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
-                }
+            if (item.tagColor && item.tagName) {
+                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+            }
 
-                var date = new Date();
-                var dateStr;
-                if (item.updateTime) {
-                    date = new Date(item.updateTime * 1000);
-                }
-                dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+            var date = new Date();
+            var dateStr;
+            if (item.updateTime) {
+                date = new Date(item.updateTime * 1000);
+            }
+            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
-                htmlStr += '<span class="list-time">' + dateStr + '</span>';
-                htmlStr += '</a></li>';
-            });
+            htmlStr += '<span class="list-time">' + dateStr + '</span>';
+            htmlStr += '</a></li>';
+        });
 
-            htmlStr += '</ul></section></div>';
-        }
-        //htmlStr += '<section class="gamevedio" data-id="2"> ';
-        //htmlStr += '<h2>比赛视频</h2>';
-        //htmlStr += '<div class="game-video-play"><div class="play-icon" data-url="' + data.originSrc + '"><img src="images/play_icon.png" alt=""><span>直播中</span></div><img src="' + data.cover + '"><p>' + data.title + '</p></section> ';
-        //htmlStr += '</section></div></div></div>';
-    }else{
+        htmlStr += '</ul></section></div>';
+    } else {
         htmlStr += '<div class="video" data-id="2" style="height: 10rem;font-size: 0.9rem; text-align: center;line-height:10rem;display:none;background-color: #ffffff;">暂无视频数据</div>';
     }
 
@@ -313,14 +307,9 @@ $(function () {
             var oContainer = $('.outContainer');
             $(this).addClass('selected').siblings().removeClass('selected');
             if(oContainer.children().eq(cls)){
+                console.log(oContainer.children().eq(cls));
                 oContainer.children().eq(cls).show().siblings().hide();
             }
-            //else{
-            //    oContainer.html('<div class="empty" style="height: 200rem;text-align: center;" data-id="2">暂无数据</div>');
-            //    $('#box').html(htmlStr);
-            //    console.log($('.empty').data('id'));
-            //    oContainer.children().eq(cls).show().siblings().hide();
-            //}
         }
     });
     //tab切换 切换内层选项卡

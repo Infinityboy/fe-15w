@@ -26,44 +26,7 @@
       "score": "0",
       "teamId": "5604984102"
     },
-    "relateVideos": [
-      {
-        "thumbnail": "http://files.15w.com/image/2016/0423/14614116384508.jpg",
-        "title": "LPL2016春季赛总决赛RNG VS EDG_1",
-        "tagName": "赛事",
-        "tagColor": "#ff00ff",
-        "articleType": 6,
-        "updateTime": 1461411665,
-        "extra": "5604990503"
-      },
-      {
-        "thumbnail": "http://files.15w.com/image/2016/0423/14614116384508.jpg",
-        "title": "LPL2016春季赛总决赛RNG VS EDG_2",
-        "tagName": "赛事",
-        "tagColor": "#ff00ff",
-        "articleType": 6,
-        "updateTime": 1461411679,
-        "extra": "5604990523"
-      },
-      {
-        "thumbnail": "http://files.15w.com/image/2016/0423/14614116384508.jpg",
-        "title": "LPL2016春季赛总决赛RNG VS EDG_3",
-        "tagName": "赛事",
-        "tagColor": "#ff00ff",
-        "articleType": 6,
-        "updateTime": 1461411698,
-        "extra": "5604990543"
-      },
-      {
-        "thumbnail": "http://files.15w.com/image/2016/0423/14614116384508.jpg",
-        "title": "LPL2016春季赛总决赛RNG VS EDG_4",
-        "tagName": "赛事",
-        "tagColor": "#ff00ff",
-        "articleType": 6,
-        "updateTime": 1461660997,
-        "extra": "5604990563"
-      }
-    ],
+    "relateVideos": [],
     "relateArticle": [
       {
         "avatar": "http://files.15w.com/user/mavtar.jpg",
