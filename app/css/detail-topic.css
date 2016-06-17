@@ -157,6 +157,10 @@ h1 {
     overflow: hidden;
 }
 
+.detailsCon .pic {
+    margin-top: .8rem;
+}
+
 h2 {
     position: relative;
     overflow: hidden;
