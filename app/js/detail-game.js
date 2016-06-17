@@ -158,9 +158,9 @@ function renderData(data) {
         htmlStr += '</section></div>';
     }else{
         if(data.gameContent.length > 0){
-            htmlStr += '</div>';
+            htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center">当前比赛场次还没有图文直播哦!</p></section></div>';
         }else{
-            htmlStr += '当前比赛场次还没有图文直播哦!</div>';
+            htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center;">当前比赛场次还没有图文直播哦!</p></section></div>';
         }
     }
 
