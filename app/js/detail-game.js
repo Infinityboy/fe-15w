@@ -98,7 +98,7 @@ function renderData(data) {
                     });
                     htmlStr += '</div>';
 
-                    htmlStr += '<p class="game-data-select-word">' + itemList[0].fieldName + '</p>';
+                    htmlStr += '<p class="game-data-select-word">' + itemList[index].fieldName + '</p>';
 
                     var rightArr = subItem.fieldData[1];
                     htmlStr += '<div class="img-right">';
@@ -228,11 +228,11 @@ function renderData(data) {
 }
 
 $(function () {
-    // $.get('data/game-detail.json', function (res) {
-    //    if (res.code == 10000) {
-    //        renderData(res.data);
-    //    }
-    // });
+     //$.get('data/game-detail.json', function (res) {
+     //   if (res.code == 10000) {
+     //       renderData(res.data);
+     //   }
+     //});
 
     // 图片查看大图
     $(document).on('click', '.live-byword-list-words-images img', function (e) {
