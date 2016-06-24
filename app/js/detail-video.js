@@ -18,13 +18,19 @@ function renderData(content) {
     var videoContent = data.content ? data.content : '';
 
     var videoHeight = $(document).width() / 1.7;
-    if (!videoHeight) {
-        videoHeight = '10rem';
-    } else {
-        videoHeight += 'px';
+
+    if (data.videoType == 1) {
+        if (!videoHeight) {
+            videoHeight = '10rem';
+        } else {
+            videoHeight += 'px';
+        }
+    } else{
+        videoHeight = 'auto';
     }
+
     if (data.videoType == "2") {
-        videoContent = '<img  data-id="' + data.videoUrl + '" src="' + data.thumbnail + '" />' + '<span class="replace-button"><span>';
+        videoContent = '<img class="video-cover"  data-id="' + data.videoUrl + '" src="' + data.thumbnail + '" />' + '<span class="replace-button"><span>';
     }
 
     htmlStr += '<div class="player" style="height:' + videoHeight + '">' + videoContent + '</div>';
@@ -74,18 +80,18 @@ $(function () {
         }
     });
 
-    $(document).on('click', '.player ', function (e) {
-        e.preventDefault();
-        var target = e.target.nodeName;
-        var $video = $('.player img');
-        if (target && (target == 'IMG' || target == 'SPAN')) {
+    $(document).on('touchstart', '.player', function (e) {
+        var img = $(this).find('.video-cover');
+        if (img.length > 0){
+            e.preventDefault();
+            var target = e.target.nodeName;
             try {
-                Jnapp.jn_video(101, $video.data('id'));
+                console.log(img.data('id'));
+                Jnapp.jn_video(101, img.data('id'));
             } catch (err) {
 
             }
         }
-
     });
 
     // 微博
@@ -122,7 +128,7 @@ $(function () {
     $(window).on('resize', function () {
         var videoHeight = $(document).width() / 1.7;
         var player = $('.player');
-        if (player) {
+        if (player && player.find('.video-cover').length <= 0) {
             player.css('height', videoHeight);
         }
     });
