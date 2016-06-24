@@ -60,9 +60,9 @@ function renderData(content) {
 }
 
 $(function () {
-     //$.get('data/video-detail.json', function (res) {
-     //    renderData(res.content);
-     //});
+     $.get('data/video-detail.json', function (res) {
+        renderData(res.content);
+     });
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -77,7 +77,7 @@ $(function () {
     $(document).on('click', '.player img', function (e) {
         e.preventDefault();
         try {
-            jn_video(101,$(this).data('id')+ "");
+            Jnapp.jn_video(101,$(this).data('id'));
         } catch (e) {
 
         }
