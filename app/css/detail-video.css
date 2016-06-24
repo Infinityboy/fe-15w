@@ -68,7 +68,6 @@ header .player {
 }
 
 header .player img {
-    position: absolute;
     width: 100%;
     display: block;
 }
@@ -77,11 +76,11 @@ header .player img {
     left: 50%;
     margin-left: -1.4rem;
     top: 40%;
-    width: 2.8rem;
+    width: 3rem;
     height: 3rem;
-    background: url('../images/play_icon.png') no-repeat;
-    border: 1px solid rgba(0,0,0,0.5);
     border-radius: 50%;
+    background: rgba(0,0,0,0.6) url('../images/play_icon.png') no-repeat center center;
+    background-size: 80%;
 }
 
 .video-excerpt {
