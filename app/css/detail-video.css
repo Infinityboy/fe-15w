@@ -63,12 +63,25 @@ header .player iframe {
 }
 
 header .player {
+    position: relative;
     margin-top: .5rem;
 }
 
 header .player img {
+    position: absolute;
     width: 100%;
     display: block;
+}
+.replace-button{
+    position: absolute;
+    left: 50%;
+    margin-left: -1.4rem;
+    top: 40%;
+    width: 2.8rem;
+    height: 3rem;
+    background: url('../images/play_icon.png') no-repeat;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 50%;
 }
 
 .video-excerpt {

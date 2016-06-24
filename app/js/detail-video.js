@@ -24,7 +24,7 @@ function renderData(content) {
         videoHeight += 'px';
     }
     if(data.videoType=="2"){
-        videoContent = '<img  data-id="'+data.videoUrl+'" src="'+data.thumbnail+'" />';
+        videoContent = '<img  data-id="'+data.videoUrl+'" src="'+data.thumbnail+'" />'+'<span class="replace-button"><span>';
     }
 
     htmlStr += '<div class="player" style="height:' + videoHeight + '">' + videoContent + '</div>';
@@ -60,9 +60,9 @@ function renderData(content) {
 }
 
 $(function () {
-     $.get('data/video-detail.json', function (res) {
-        renderData(res.content);
-     });
+     //$.get('data/video-detail.json', function (res) {
+     //   renderData(res.content);
+     //});
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -74,13 +74,18 @@ $(function () {
         }
     });
 
-    $(document).on('click', '.player img', function (e) {
+    $(document).on('click', '.player ', function (e) {
         e.preventDefault();
-        try {
-            Jnapp.jn_video(101,$(this).data('id'));
-        } catch (e) {
+        var target = e.target.nodeName;
+        var $video = $('.player img');
+        if(target && (target=='IMG'||target == 'SPAN')){
+            try {
+                Jnapp.jn_video(101,$video.data('id'));
+            } catch (e) {
 
+            }
         }
+
     });
 
     // 微博
