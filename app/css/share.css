@@ -11,17 +11,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
+    padding: 2rem .5rem 0;
     border-bottom: 1px solid #efefef;
+    background: #fff;
 }
 
 .video-excerpt-tip img {
     width: 80px;
     height: 80px;
-}
-
-.video-excerpt-tip p {
-    text-align: center;
+    background: #fff;
+    margin-right: .3rem;
 }
 
 .maintext-share {
