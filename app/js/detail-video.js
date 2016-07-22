@@ -296,12 +296,10 @@ $(function () {
                 Jnapp.jn_login();
             } else {
                 var data = {
-                    'data' : {
                     'dataId': voteId,
                     'uid': uId,
                     'token': token,
                     'sign': key
-                    }
                 };
 
                 $(this).find('.num').text(optionValue + 1);
