@@ -309,7 +309,7 @@ $(function () {
                 oQuestion.find('.progress-bar').show();
                 isVote = true;
                 try {
-                    //Jnapp.jn_setData(uId + '_' + voteId, optionValue);
+                    Jnapp.jn_setData(uId + '_' + voteId, optionValue);
                     // 设置本地缓存
                     oQuestion.find('.progress-bar').show();
                     oAnswerId.show();
