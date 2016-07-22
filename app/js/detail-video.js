@@ -153,12 +153,12 @@ function renderData(content) {
         });
     }
 
-    try {
-        // Android 强制竖屏
-        Jnapp.jn_setHorizontal(false);
-    } catch (ex) {
-
-    }
+    // try {
+    //     // Android 强制竖屏
+    //     Jnapp.jn_setHorizontal(false);
+    // } catch (ex) {
+    //
+    // }
 }
 
 $(function () {
