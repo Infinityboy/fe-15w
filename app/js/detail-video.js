@@ -2,13 +2,18 @@
 window.Jn = {};
 var cacheData = null;
 var voteId;
-
+var defaultHeight = 360;
+var defaultWidth = 640;
 Jn.setData = function (data) {
     if (data.key == 'videoInitDetail') {
         renderData(data.content);
     }
 };
 
+
+function isIOS(ua) {
+    return ua.indexOf('iPhone') > 0;
+}
 
 
 function renderData(content) {
@@ -17,60 +22,97 @@ function renderData(content) {
     voteId = data.voteId;
     var videoContent = data.content ? data.content : '';
     var screenWidth = $(window).width();
-    var videoHeight = screenWidth * 498 / 640;
+    var videoHeight = screenWidth * defaultHeight / defaultWidth;
 
+    var ua = window.navigator.userAgent;
+    var htmlStr = '';
+    if (data.videoType == 1) {
+        htmlStr = '<header>' + '<div class="player clearfix" style="height:' + videoHeight + 'px;">' + videoContent;
+        if (!isIOS(ua)) {
+            htmlStr += '<button class="video-button" style="top: ' + (videoHeight - 40) + 'px"></button>';
+        }
+        htmlStr += '</div></header>';
+    }
 
-    var htmlStr = '<header>'+'<div class="player clearfix" style="height:' + videoHeight + 'px">' + videoContent +'<button class="video-button" style="top:'+(videoHeight-40)+'px">'+'</button>'+ '</div></header>';
+    htmlStr += '<div class="content">';
+    htmlStr += '<div class="video-header">';
+    htmlStr += '<h1 class="title">' + data.title + '</h1>';
+    htmlStr += '<div class="video-meta clearfix">';
 
+    // 播放次数
+    if (data.views) {
+        htmlStr += '<span class="date"><em class="play-num"></em>播放: ' + data.views + ' 次</span>';
+    }
 
-    //htmlStr += '<div class="player" style="height:' + videoHeight + '">' + videoContent + '</div>';
-    htmlStr += '<div class="content">'+'<h1 class="title">' + data.title + '</h1>';
-    htmlStr += '<div class="video-meta clearfix"><span class="date">' + data.time + '</span><span class="author color-blue ml5">';
-    htmlStr += data.author + '</span>';
-    htmlStr += '<span class="views">' + data.views + '</span></div>';
+    // 作者
+    htmlStr += '<span class="author ml5">' + data.author + '</span>';
+    htmlStr += '</div>';
 
-    htmlStr +='<div class="video-question" style="display:block;"></div>';
-    htmlStr +='<div class="video-question-answer" style="display:none;"></div>';
+    // 摘要描述
+    if (data.excerpt) {
+        htmlStr += '<div class="excerpt">' + data.excerpt + '</div>';
+    }
+    htmlStr += '</div>';
+    var userData = {};
+    try {
+        userData = Jnapp.jn_login_info();
+    } catch (ex) {
+    }
 
+    if (typeof userData == 'string') {
+        userData = $.parseJSON(userData);
+    }
 
+    htmlStr += '<div class="video-question" style="display:block;"></div>';
+    htmlStr += '<div class="video-question-answer" style="display:none;"></div>';
 
-    //var userData = Jnapp.jn_login_info();
-    //console.log(voteId);
     if (voteId && voteId !== 'undefined') {
-        //'data/video-question.json'
-        $.get("http://api.15w.com/client/app/jn/v1_4/vote/detail?dataId="+voteId+"", function (res) {
-            //console.log(res);
+        $.getJSON("http://api.15w.com/client/app/jn/v1_4/vote/detail?dataId=" + voteId + "&callback=?", function (res) {
             if (res.code == '10000') {
-                //console.log(res);
                 var dataQuestion = res.data;
                 var questionOptions = dataQuestion.votes;
                 var questionExcerpt = dataQuestion.excerpt;
                 var result = dataQuestion.results;
                 var question = $('.video-question');
                 var answer = $('.video-question-answer');
-                var htmlQu = '<ul><li class="video-question-title">' + dataQuestion.title + '</li><li class="video-question-option" data-id="0"><span >A:</span>' + questionOptions.A + '</li><li class="video-question-option" data-id="1"><span >B:</span>' + questionOptions.B + '</li><li class="video-question-option" data-id="2"><span >C:</span>' + questionOptions.C + '</li><li class="video-question-option" data-id="3"><span>D:</span>' + questionOptions.D + '</li></ul><p>' + questionExcerpt + '</p>';
+                var htmlQu = '<p class="video-question-title">' + dataQuestion.title + '</p>';
+
+                htmlQu += '<a class="video-question-option" data-id="0" href="##"><span>A:</span>' + questionOptions.A + '</a>';
+                htmlQu += '<a class="video-question-option" data-id="1" href="##"><span>B:</span>' + questionOptions.B + '</a>';
+                htmlQu += '<a class="video-question-option" data-id="2" href="##"><span>C:</span>' + questionOptions.C + '</a>';
+                htmlQu += '<a class="video-question-option" data-id="3" href="##"><span>D:</span>' + questionOptions.D + '</a>';
+                htmlQu += '<p>' + questionExcerpt + '</p>';
+
                 var htmlAns = '<ul class="video-answer"><li class="video-answer-title">' + dataQuestion.title + '</li><li class="video-answer-option"><span>A:</span>' + questionOptions.A + '<em style="display: none" data-id="0">(已选择)</em></li><ul class="option-detail"><li class="color-a"></li><li class="option-num">' + result.A + '</li></ul><li class="video-answer-option" ><span>B:</span>' + questionOptions.B + '<em style="display: none" data-id="1">(已选择)</em></li><ul class="option-detail"><li class="color-b"></li><li class="option-num">' + result.B + '</li></ul><li class="video-answer-option clearfix" ><span>C:</span>' + questionOptions.C + '<em style="display: none" data-id="2">(已选择)</em></li><ul class="option-detail"><li class="color-c"></li><li class="option-num">' + result.C + '</li></ul><li class="video-answer-option" ><span>D:</span>' + questionOptions.D + '<em style="display: none" data-id="3">(已选择)</em></li><ul class="option-detail"><li class="color-d"></li><li class="option-num">' + result.D + '</li></ul></ul><p>' + questionExcerpt + '</p>';
                 question.html(htmlQu);
                 answer.html(htmlAns);
-            }
-            if(dataQuestion.islogin == '1') {  //已登录
-                //console.log(res.data);
-                //var userValue = jn_getData(uId + '_' + voteId);
-                if (dataQuestion.isVote == '-1') {
-                    question.show();
-                    answer.hide();
-                } else {
-                    question.hide();
-                    answer.show();
+
+                if (userData.userid && userData.token) {
+                    try {
+                        var cacheData = Jnapp.jn_getData(userData.userid + '_' + voteId);
+                        if (cacheData) {
+                            question.hide();
+                            answer.show();
+                        }
+                    } catch (ex) {
+
+                    }
                 }
-            }else {
-            question.show();
-            answer.hide();
             }
+
         });
     }
 
-    htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="images/提莫_2xpng.png" alt="loading..."/><p>' + data.excerpt + '</p></div></div>';
+    // 分享
+    try {
+        var shareData = Jnapp.jn_getShare();
+        if (typeof shareData == 'string') {
+            shareData = $.parseJSON(shareData);
+            htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="data:image/png;charset=utf-8;base64,' + shareData.baseIcon + '" alt="loading..."/><p>' + shareData.title + '</p></div></div>';
+        }
+    } catch (ex) {
+
+    }
 
     htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq-space"><img src="images/空间_2x.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
 
@@ -98,63 +140,24 @@ function renderData(content) {
         htmlStr += '</ul></section><section class="line"></section></div>';
     }
     $('#detail').html(htmlStr);
-    if(data.videoType == 1){
-        var iFrame = $('header .player iframe');
-        iFrame.css('height', videoHeight+'px');
-    }else{
-        videoHeight = 'auto';
+    if (data.videoType == 1) {
+        $('iframe').css({
+            height: videoHeight + 'px'
+        });
     }
 
-    if (data.videoType == 2) {
-        videoContent = '<img class="video-cover"  data-id="' + data.videoUrl + '" src="' + data.thumbnail + '" />' + '<span class="replace-button"><span>';
+    try{
+        // Android 强制竖屏
+        Jnapp.jn_setHorizontal(false);
+    } catch (ex){
+
     }
-
-
 }
 
 $(function () {
-     $.get('data/video-detail.json', function (res) {
-         renderData(res.content);
-     });
-
-     //问答
-    //var userData = Jnapp.jn_login_info();
-    //uId = userData.uid;
-    //token = userData.token;
-    //if (voteId && voteId !== 'undefined') {
-    //
-    //    //'data/video-question.json'
-    //    $.get('"http://api.15w.com/client/app/jn/v1_4/vote/detail?dataId='+voteId+'"', function (res) {
-    //        //console.log(res);
-    //        if (res.code == '10000') {
-    //            console.log(res.code);
-    //            var dataQuestion = res.data;
-    //            var questionOptions = dataQuestion.votes;
-    //            var questionExcerpt = dataQuestion.excerpt;
-    //            var result = dataQuestion.results;
-    //            var question = $('.video-question');
-    //            var answer = $('.video-question-answer');
-    //            var htmlQu = '<ul><li class="video-question-title">' + dataQuestion.title + '</li><li class="video-question-option" data-id="0"><span >A:</span>' + questionOptions.A + '</li><li class="video-question-option" data-id="1"><span >B:</span>' + questionOptions.B + '</li><li class="video-question-option" data-id="2"><span >C:</span>' + questionOptions.C + '</li><li class="video-question-option" data-id="3"><span>D:</span>' + questionOptions.D + '</li></ul><p>' + questionExcerpt + '</p>';
-    //            var htmlAns = '<ul class="video-answer"><li class="video-answer-title">' + dataQuestion.title + '</li><li class="video-answer-option"><span>A:</span>' + questionOptions.A + '<em style="display: none" data-id="0">(已选择)</em></li><ul class="option-detail"><li class="color-a"></li><li class="option-num">' + result.A + '</li></ul><li class="video-answer-option" ><span>B:</span>' + questionOptions.B + '<em style="display: none" data-id="1">(已选择)</em></li><ul class="option-detail"><li class="color-b"></li><li class="option-num">' + result.B + '</li></ul><li class="video-answer-option clearfix" ><span>C:</span>' + questionOptions.C + '<em style="display: none" data-id="2">(已选择)</em></li><ul class="option-detail"><li class="color-c"></li><li class="option-num">' + result.C + '</li></ul><li class="video-answer-option" ><span>D:</span>' + questionOptions.D + '<em style="display: none" data-id="3">(已选择)</em></li><ul class="option-detail"><li class="color-d"></li><li class="option-num">' + result.D + '</li></ul></ul><p>' + questionExcerpt + '</p>';
-    //            question.html(htmlQu);
-    //            answer.html(htmlAns);
-    //        }
-    //        //if(userData.uid && userData.token) {  //已登录
-    //            //console.log(res.data);
-    //            //var userValue = jn_getData(uId + '_' + voteId);
-    //            //if (userValue) {
-    //            //    question.hide();
-    //            //    answer.show();
-    //            //} else {
-    //            //    question.show();
-    //            //    answer.hide();
-    //            //}
-    //        //}else {
-    //            question.show();
-    //            answer.hide();
-    //        //}
-    //    });
-    //}
+    // $.get('data/video-detail.json', function (res) {
+    //     renderData(res.content);
+    // });
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -163,19 +166,6 @@ $(function () {
             Jnapp.jn_related($(this).data('type'), $(this).data('id') + "");
         } catch (err) {
 
-        }
-    });
-
-    $(document).on('touchstart', '.player', function (e) {
-        var img = $(this).find('.video-cover');
-        if (img.length > 0){
-            e.preventDefault();
-            try {
-                console.log(img.data('id'));
-                Jnapp.jn_video(101, img.data('id'));
-            } catch (err) {
-
-            }
         }
     });
 
@@ -224,102 +214,79 @@ $(function () {
     var isHorizontal = false;
     var player = $('.player');
     var screenWidth = $(window).width();
-    var height = screenWidth * 498 / 640;
+    var height = screenWidth * defaultHeight / defaultWidth;
     var oContent = $('.video-recommend .content');
     $(document).on('click', '.video-button', function (e) {
         e.preventDefault();
         try {
             isHorizontal = !isHorizontal;
+            var iframe = $('.player iframe');
             if (isHorizontal) {
-                var iFrame = $('header .player iframe');
-                iFrame.css('height', '100%');
+                iframe.css('height', '100%');
                 player.css('height', screenWidth + 'px');
-                oContent.css('display','none');
-                $('.video-button').css('top',(screenWidth-40)+'px');
+                oContent.css('display', 'none');
+                $('.video-button').css('top', (screenWidth - 40) + 'px');
                 $('body').css({
                     'height': '100%',
                     'overflow': 'hidden'
                 });
-                Jnapp.jn_test(true);
+                Jnapp.jn_setHorizontal(true);
             } else {  // 竖屏
-                var iFrame = $('header .player iframe');
-                iFrame.css('height', height + 'px');
+                iframe = $('header .player iframe');
+                iframe.css('height', height + 'px');
                 player.css('height', height + 'px');
                 $('body').css({'height': 'auto', 'overflow': 'hidden'});
-                $('.video-button').css('top',(height-40)+'px');
-                Jnapp.jn_test(false);
+                $('.video-button').css('top', (height - 40) + 'px');
+                Jnapp.jn_setHorizontal(false);
             }
         } catch (e) {
 
         }
     });
 
-    $(window).on('resize', function () {
-        var videoHeight = screenWidth * 498 / 640;
-        var player = $('.player');
-        if (player && player.find('.video-cover').length <= 0) {
-            player.css('height', videoHeight);
-        }
-    });
 
-    $(document).on('click','.video-question ul li',function(e){
+    $(document).on('click', '.video-question-option', function (e) {
         e.preventDefault();
+        var selectVal = $(this).text();
         var oQuestion = $('.video-question');
         var oAnswer = $('.video-question-answer');
         var liId = $(this).data('id');
-        var oAnswerId = $('.video-answer-option').children("[data-id='"+liId+"']");
-        var optionValue = $(this).text().substr(0,1);
+        var oAnswerId = $('.video-answer-option').children("[data-id='" + liId + "']");
+        var optionValue = $(this).text().substr(0, 1);
 
         //验证等录
-        var userData = Jnapp.jn_login_info();
-        var uId = userData.uid;
-        var token = userData.token;
-        /*****未登录********/
-        if(uId == '' &&  token == ''){
-            Jnapp.jn_login();
-        }else{//已登陆
-
-            switch(optionValue){
-                case 'A':
-                    $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote',{
-                        'dataId': voteId,
-                        'uid':uId,
-                        'token':token,
-                        'sign':'A'
-                    });
-                    break;
-                case 'B':
-                    $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote',{
-                        'dataId': voteId,
-                        'uid':uId,
-                        'token':token,
-                        'sign':'B'
-                    });
-                    break;
-                case 'C':
-                    $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote',{
-                        'dataId': voteId,
-                        'uid':uId,
-                        'token':token,
-                        'sign':'C'
-                    });
-                    break;
-                case 'D':
-                    $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote',{
-                        'dataId': voteId,
-                        'uid':uId,
-                        'token':token,
-                        'sign':'D'
-                    });
-                    break;
-                default :
-                    'error';
+        try {
+            var userData = Jnapp.jn_login_info();
+            if (typeof userData == 'string') {
+                userData = $.parseJSON(userData);
             }
+            var uId = userData.userid;
+            var token = userData.token;
 
-            //Jnapp.jn_setData(uId+'_'+voteId,optionValue);
-            oQuestion.hide();
-            oAnswer.show();
-            oAnswerId.show();
+            if (!uId || !token) {
+                Jnapp.jn_login();
+            } else {
+                var data = {
+                    'dataId': voteId,
+                    'uid': uId,
+                    'token': token,
+                    'sign': optionValue
+                };
+                $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote', data);
+                try {
+                    Jnapp.jn_setData(uId + '_' + voteId, optionValue);
+                    // 设置本地缓存
+                    oQuestion.hide();
+                    oAnswer.show();
+                    oAnswerId.show();
+                    Jnapp.jn_comment(cacheData.content.changyanSid, '我选 ' + selectVal + ', 求中奖');
+                } catch (ex) {
+
+                }
+            }
+        } catch (ex) {
+
         }
+
     });
 });

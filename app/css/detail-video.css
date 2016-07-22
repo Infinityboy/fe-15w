@@ -44,13 +44,27 @@ body {
     background: #eee;
     overflow-x: hidden;
 }
-.content{
+
+.content {
     overflow-y: hidden;
-    background-color: #ffffff;
 }
-.content h1{
-    padding: 0 0.5rem;
+
+.video-header {
+    margin-bottom: .8rem;
+    background: #fff;
+    padding: .8rem;
 }
+
+.content h1 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.video-meta {
+    font-size: .85rem;
+}
+
 .video-meta .views {
     right: 0.8rem;
     text-align: right;
@@ -62,16 +76,21 @@ body {
     font-size: 1rem;
 }
 
+.excerpt {
+    margin-top: .8rem;
+    color: #999;
+}
+
 header .player iframe {
     width: 100%;
     display: block;
     position: fixed;
-    top:0;
+    top: 0;
     z-index: 998;
 }
+
 header .player {
     position: relative;
-    margin-top: .5rem;
 }
 
 header .player img {
@@ -79,10 +98,10 @@ header .player img {
     max-height: 90%;
     display: block;
 }
-.video-button{
+
+.video-button {
     position: fixed;
     right: 0;
-    /*opacity:0;*/
     background: red;
     width: 50px;
     height: 40px;
@@ -90,8 +109,10 @@ header .player img {
     text-indent: -8888rem;
     overflow: hidden;
     z-index: 999;
+    bottom: 0;
 }
-.replace-button{
+
+.replace-button {
     position: absolute;
     left: 50%;
     margin-left: -1.5rem;
@@ -99,95 +120,127 @@ header .player img {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background: rgba(0,0,0,0.6) url('../images/play_icon.png') no-repeat center center;
+    background: rgba(0, 0, 0, 0.6) url('../images/play_icon.png') no-repeat center center;
     background-size: 80%;
 }
+
 /**********问题开始**************/
-.video-question{
+.video-question {
     margin-top: 1rem;
     color: #333333;
     font-size: .9rem;
     background-color: #ffffff;
 }
-.video-question ul{
+
+.video-question ul {
     padding: 0 1rem;
 }
-.video-question p{
+
+.video-question p {
     padding: 0.4rem 1rem;
 }
-.video-question-title{
+
+.video-question-title {
     height: auto;
-    padding: 0.4rem 0;
+    display: block;
     border-bottom: 1px solid #efefef;
 }
-.video-question-option{
+
+.video-question-option {
     height: auto;
-    line-height: 2rem;
-    padding-left: 0.5rem;
+    line-height: 2.2rem;
+    margin: 0 0.8rem;
     border-bottom: 1px solid #efefef;
+    display: block;
 }
-.video-question-option span{
+
+.video-question-option span {
     margin-right: 2rem;
 }
-/**********问题结束**************/
+
+.play-num {
+    background: url("../images/play_num.png");
+    display: inline-block;
+    vertical-align: middle;
+    width: .85rem;
+    background-size: 100% auto;
+    height: .85rem;
+    float: none;
+    margin-right: .3rem;
+    margin-top: -3px;
+}
 
 /**********答案开始**************/
-.video-question-answer{
+.video-question-answer {
     margin-top: 1rem;
     color: #333333;
     font-size: .9rem;
     background-color: #ffffff;
 }
-.video-question-answer .video-answer{
+
+.video-question-answer .video-answer {
     padding: 0 1rem;
 }
-.video-question-answer p{
+
+.video-question-answer p {
     padding: 0.4rem 1rem;
 }
-.video-answer-title{
+
+.video-answer-title {
     height: auto;
     padding: 0.4rem 0;
     border-bottom: 1px solid #efefef;
 }
-.video-answer-option{
+
+.video-answer-option {
     padding-top: 0.2rem;
     padding-left: 0.5rem;
 }
-.option-detail{
+
+.option-detail {
     display: flex;
     padding-left: 0.5rem;
     border-bottom: 1px solid #efefef;
 }
-.color-a,.color-b,.color-c,.color-d{
+
+.color-a, .color-b, .color-c, .color-d {
     height: 1rem;
     margin-right: 0.5rem;
 }
-.color-a{
+
+.color-a {
     width: 10rem;
     background-color: #e03030;
 }
-.color-b{
+
+.color-b {
     width: 8rem;
     background-color: #e54f88;
 }
-.color-c{
+
+.color-c {
     width: 16rem;
     background-color: #5875be;
 }
-.color-d{
+
+.color-d {
     width: 14rem;
     background-color: #6fcace;
 }
-.video-answer-option span{
+
+.video-answer-option span {
     margin-right: 2rem;
 }
-.option-num{
+
+.option-num {
     font-size: .9rem;
 }
-em{
+
+em {
     font-size: .9rem;
     float: right;
     color: #e03030;
 }
+
 /**********答案结束**************/
 

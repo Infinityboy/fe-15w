@@ -178,16 +178,12 @@ header .title {
 .video-meta {
     color: #999;
     font-size: 1rem;
-    padding: .5rem 0.8rem;
 }
 
 .video-meta .date {
     margin-right: .5rem;
 }
 
-.video-meta .author {
-    color: #41adff;
-}
 
 /**
  公用模块
