@@ -103,7 +103,6 @@ function renderData(content) {
                     htmlQu += '<a class="video-question-option" data-id="2" href="##"><span>C:</span>' + questionOptions.C + '<div class="progress-bar" style="display: none"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
                     htmlQu += '<a class="video-question-option" data-id="3" href="##"><span>D:</span>' + questionOptions.D + '<div class="progress-bar" style="display: none"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
                     htmlQu += '<p>' + questionExcerpt + '</p>';
-                    htmlQu += '<p>' + questionExcerpt + '</p>';
                 }
                 question.html(htmlQu);
             }
