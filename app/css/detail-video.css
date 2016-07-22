@@ -84,9 +84,9 @@ body {
 header .player iframe {
     width: 100%;
     display: block;
-    position: fixed;
-    top: 0;
-    z-index: 998;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*z-index: 998;*/
 }
 
 header .player {
@@ -100,7 +100,7 @@ header .player img {
 }
 
 .video-button {
-    position: fixed;
+    position: absolute;
     right: 0;
     background: red;
     width: 50px;

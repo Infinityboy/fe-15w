@@ -27,7 +27,7 @@ function renderData(content) {
     var ua = window.navigator.userAgent;
     var htmlStr = '';
     if (data.videoType == 1) {
-        htmlStr = '<header>' + '<div class="player clearfix" style="height:' + videoHeight + 'px;">' + videoContent;
+        htmlStr = '<header style="height:' + videoHeight + 'px;position: fixed;overflow: hidden;width: 100%">' + '<div class="player clearfix">' + videoContent;
         // if (!isIOS(ua)) {
         //     htmlStr += '<button class="video-button" style="top: ' + (videoHeight - 40) + 'px"></button>';
         // }
@@ -36,7 +36,7 @@ function renderData(content) {
         htmlStr += '</div></header>';
     }
 
-    htmlStr += '<div class="content">';
+    htmlStr += '<div class="content" style="padding-top: ' + videoHeight+ 'px">';
     htmlStr += '<div class="video-header">';
     htmlStr += '<h1 class="title">' + data.title + '</h1>';
     htmlStr += '<div class="video-meta clearfix">';
@@ -163,9 +163,9 @@ function renderData(content) {
 }
 
 $(function () {
-    $.get('data/video-detail.json', function (res) {
-        renderData(res.content);
-    });
+    // $.get('data/video-detail.json', function (res) {
+    //     renderData(res.content);
+    // });
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -319,7 +319,7 @@ $(function () {
                 $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote', data, function (res) {
                     if (res.code == '10000') {
                         try {
-                            Jnapp.jn_setData(uId + '_' + voteId, optionValue + '');
+                            // Jnapp.jn_setData(uId + '_' + voteId, optionValue + '');
                             Jnapp.jn_comment(cacheData.changyanSid, '我选 ' + key + ' : ' + val + ', 求中奖');
                         } catch (ex) {
                           window.alert(res.code);
