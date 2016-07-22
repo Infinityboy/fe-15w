@@ -311,7 +311,7 @@ $(function () {
                     // 设置本地缓存
                     oQuestion.find('.progress-bar').show();
                     oAnswerId.show();
-                    Jnapp.jn_comment(cacheData.content.changyanSid, '我选 ' + selectVal + ', 求中奖');
+                    Jnapp.jn_comment(cacheData.changyanSid, '我选 ' + selectVal + ', 求中奖');
                 } catch (ex) {
 
                 }
