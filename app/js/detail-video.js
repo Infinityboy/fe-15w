@@ -163,9 +163,9 @@ function renderData(content) {
 }
 
 $(function () {
-    // $.get('data/video-detail.json', function (res) {
-    //     renderData(res.content);
-    // });
+    $.get('data/video-detail.json', function (res) {
+        renderData(res.content);
+    });
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -238,6 +238,7 @@ $(function () {
                     'height': '100%',
                     'overflow': 'hidden'
                 });
+                window.alert('top:' + (screenWidth - 40));
                 Jnapp.jn_setHorizontal(true);
             } else {  // 竖屏
                 iframe = $('header .player iframe');
@@ -245,6 +246,7 @@ $(function () {
                 player.css('height', height + 'px');
                 $('body').css({'height': 'auto', 'overflow': 'hidden'});
                 $('.video-button').css('top', (height - 40) + 'px');
+                window.alert('top:' + (height - 40));
                 Jnapp.jn_setHorizontal(false);
             }
         } catch (e) {
@@ -320,8 +322,10 @@ $(function () {
                             Jnapp.jn_setData(uId + '_' + voteId, optionValue + '');
                             Jnapp.jn_comment(cacheData.changyanSid, '我选 ' + key + ' : ' + val + ', 求中奖');
                         } catch (ex) {
-
+                          window.alert(res.code);
                         }
+                    } else{
+                        window.alert(res.code);
                     }
                 });
 
