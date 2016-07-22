@@ -50,7 +50,7 @@ body {
 }
 
 .video-header {
-    margin-bottom: .8rem;
+    margin-bottom: .5rem;
     background: #fff;
     padding: .8rem;
 }
@@ -126,7 +126,7 @@ header .player img {
 
 /**********问题开始**************/
 .video-question {
-    margin-top: 1rem;
+    margin-top: .5rem;
     color: #333333;
     font-size: .9rem;
     background-color: #ffffff;
@@ -147,15 +147,26 @@ header .player img {
 }
 
 .video-question-option {
-    height: auto;
-    line-height: 2.2rem;
     margin: 0 0.8rem;
     border-bottom: 1px solid #efefef;
     display: block;
+    line-height: 3rem;
+    position: relative;
+}
+
+.video-question .video-question-option:last-child{
+    border: none !important;
+}
+
+.video-question-option .progress-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 1;
 }
 
 .video-question-option span {
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .play-num {
@@ -199,32 +210,37 @@ header .player img {
 
 .option-detail {
     display: flex;
-    padding-left: 0.5rem;
+    padding-left: 0.1rem;
     border-bottom: 1px solid #efefef;
 }
 
 .color-a, .color-b, .color-c, .color-d {
-    height: 1rem;
-    margin-right: 0.5rem;
+    height: 100%;
+    margin-right: 0.1rem;
+}
+
+.progress {
+    display: inline-block;
+    line-height: 1;
 }
 
 .color-a {
-    width: 10rem;
+    width: .5rem;
     background-color: #e03030;
 }
 
 .color-b {
-    width: 8rem;
+    width: .5rem;
     background-color: #e54f88;
 }
 
 .color-c {
-    width: 16rem;
+    width: .5rem;
     background-color: #5875be;
 }
 
 .color-d {
-    width: 14rem;
+    width: 0.5rem;
     background-color: #6fcace;
 }
 
@@ -236,11 +252,6 @@ header .player img {
     font-size: .9rem;
 }
 
-em {
-    font-size: .9rem;
-    float: right;
-    color: #e03030;
+.progress-bar {
+    height: .7rem;
 }
-
-/**********答案结束**************/
-

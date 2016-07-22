@@ -19,7 +19,7 @@ function renderData(data) {
     var content = data.content ? data.content : '';
 
     var htmlStr = '<header><h1 class="title">' + title + '</h1>';
-    htmlStr += '<div class="video-meta"><span class="date">' + time + '</span><span class="author color-blue ml5">';
+    htmlStr += '<div class="meta"><span class="date">' + time + '</span><span class="author color-blue ml5">';
     htmlStr += data.author + '</span></div></header>';
 
     htmlStr += '<div class="indent flat-content">' + content + '</div>';

@@ -4,6 +4,7 @@ var cacheData = null;
 var voteId;
 var defaultHeight = 360;
 var defaultWidth = 640;
+var isVote = false;
 Jn.setData = function (data) {
     if (data.key == 'videoInitDetail') {
         renderData(data.content);
@@ -41,7 +42,7 @@ function renderData(content) {
 
     // 播放次数
     if (data.views) {
-        htmlStr += '<span class="date"><em class="play-num"></em>播放: ' + data.views + ' 次</span>';
+        htmlStr += '<span class="date"><em class="play-num"></em>播放: ' + data.views + '</span>';
     }
 
     // 作者
@@ -63,8 +64,7 @@ function renderData(content) {
         userData = $.parseJSON(userData);
     }
 
-    htmlStr += '<div class="video-question" style="display:block;"></div>';
-    htmlStr += '<div class="video-question-answer" style="display:none;"></div>';
+    htmlStr += '<div class="video-question""></div>';
 
     if (voteId && voteId !== 'undefined') {
         $.getJSON("http://api.15w.com/client/app/jn/v1_4/vote/detail?dataId=" + voteId + "&callback=?", function (res) {
@@ -74,30 +74,39 @@ function renderData(content) {
                 var questionExcerpt = dataQuestion.excerpt;
                 var result = dataQuestion.results;
                 var question = $('.video-question');
-                var answer = $('.video-question-answer');
-                var htmlQu = '<p class="video-question-title">' + dataQuestion.title + '</p>';
 
-                htmlQu += '<a class="video-question-option" data-id="0" href="##"><span>A:</span>' + questionOptions.A + '</a>';
-                htmlQu += '<a class="video-question-option" data-id="1" href="##"><span>B:</span>' + questionOptions.B + '</a>';
-                htmlQu += '<a class="video-question-option" data-id="2" href="##"><span>C:</span>' + questionOptions.C + '</a>';
-                htmlQu += '<a class="video-question-option" data-id="3" href="##"><span>D:</span>' + questionOptions.D + '</a>';
-                htmlQu += '<p>' + questionExcerpt + '</p>';
-
-                var htmlAns = '<ul class="video-answer"><li class="video-answer-title">' + dataQuestion.title + '</li><li class="video-answer-option"><span>A:</span>' + questionOptions.A + '<em style="display: none" data-id="0">(已选择)</em></li><ul class="option-detail"><li class="color-a"></li><li class="option-num">' + result.A + '</li></ul><li class="video-answer-option" ><span>B:</span>' + questionOptions.B + '<em style="display: none" data-id="1">(已选择)</em></li><ul class="option-detail"><li class="color-b"></li><li class="option-num">' + result.B + '</li></ul><li class="video-answer-option clearfix" ><span>C:</span>' + questionOptions.C + '<em style="display: none" data-id="2">(已选择)</em></li><ul class="option-detail"><li class="color-c"></li><li class="option-num">' + result.C + '</li></ul><li class="video-answer-option" ><span>D:</span>' + questionOptions.D + '<em style="display: none" data-id="3">(已选择)</em></li><ul class="option-detail"><li class="color-d"></li><li class="option-num">' + result.D + '</li></ul></ul><p>' + questionExcerpt + '</p>';
-                question.html(htmlQu);
-                answer.html(htmlAns);
-
+                var cacheData = null;
                 if (userData.userid && userData.token) {
                     try {
-                        var cacheData = Jnapp.jn_getData(userData.userid + '_' + voteId);
-                        if (cacheData) {
-                            question.hide();
-                            answer.show();
-                        }
+                        cacheData = Jnapp.jn_getData(userData.userid + '_' + voteId);
                     } catch (ex) {
 
                     }
                 }
+                var resultArr = [result.A, result.B, result.C, result.D];
+                var max = Math.max.apply(null, resultArr);
+                var relA = Math.max(1, resultArr[0] / max * 80);
+                var relB = Math.max(1, resultArr[1] / max * 80);
+                var relC = Math.max(1, resultArr[2] / max * 80);
+                var relD = Math.max(1, resultArr[3] / max * 80);
+
+                var htmlQu = '<p class="video-question-title">' + dataQuestion.title + '</p>';
+                if (cacheData) {
+                    isVote = true;
+                    htmlQu += '<a class="video-question-option" style="border: none" data-id="0" href="##"><span>A:</span>' + questionOptions.A + '<div class="progress-bar"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="1" href="##"><span>B:</span>' + questionOptions.B + '<div class="progress-bar"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="2" href="##"><span>C:</span>' + questionOptions.C + '<div class="progress-bar"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="3" href="##"><span>D:</span>' + questionOptions.D + '<div class="progress-bar"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
+                    htmlQu += '<p>' + questionExcerpt + '</p>';
+                } else {
+                    htmlQu += '<a class="video-question-option" data-id="0" href="##"><span>A:</span>' + questionOptions.A + '<div class="progress-bar" style="display: none"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="1" href="##"><span>B:</span>' + questionOptions.B + '<div class="progress-bar" style="display: none"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="2" href="##"><span>C:</span>' + questionOptions.C + '<div class="progress-bar" style="display: none"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="3" href="##"><span>D:</span>' + questionOptions.D + '<div class="progress-bar" style="display: none"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
+                    htmlQu += '<p>' + questionExcerpt + '</p>';
+                    htmlQu += '<p>' + questionExcerpt + '</p>';
+                }
+                question.html(htmlQu);
             }
 
         });
@@ -114,7 +123,7 @@ function renderData(content) {
         htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="../images/timo_2xpng" alt="loading..."/><p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p></div></div>';
     }
 
-    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq-space"><img src="images/空间_2x.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
+    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq"><img src="images/空间_2x.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
 
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="list"><h3>视频推荐</h3><ul> ';
@@ -146,10 +155,10 @@ function renderData(content) {
         });
     }
 
-    try{
+    try {
         // Android 强制竖屏
         Jnapp.jn_setHorizontal(false);
-    } catch (ex){
+    } catch (ex) {
 
     }
 }
@@ -245,14 +254,35 @@ $(function () {
     });
 
 
+    function repaintProgress() {
+        var resultArr = [];
+        $.each($('.num'), function (index, elem) {
+            resultArr.push(parseInt($(elem).text()));
+        });
+        var max = Math.max.apply(null, resultArr);
+        var percent = [];
+        percent.push(Math.max(1, resultArr[0] / max * 80));
+        percent.push(Math.max(1, resultArr[1] / max * 80));
+        percent.push(Math.max(1, resultArr[2] / max * 80));
+        percent.push(Math.max(1, resultArr[3] / max * 80));
+
+        var progress = $('.progress');
+        $.each(progress, function (index, item) {
+            $(item).css('width', percent[index] + '%');
+        });
+    }
+
+
     $(document).on('click', '.video-question-option', function (e) {
         e.preventDefault();
+        if (isVote) {
+            return;
+        }
         var selectVal = $(this).text();
         var oQuestion = $('.video-question');
-        var oAnswer = $('.video-question-answer');
         var liId = $(this).data('id');
         var oAnswerId = $('.video-answer-option').children("[data-id='" + liId + "']");
-        var optionValue = $(this).text().substr(0, 1);
+        var optionValue = parseInt($(this).find('.num').text());
 
         //验证等录
         try {
@@ -273,11 +303,15 @@ $(function () {
                     'sign': optionValue
                 };
                 $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote', data);
+
+                $(this).find('.num').text(optionValue + 1);
+                repaintProgress();
+                oQuestion.find('.progress-bar').show();
+                isVote = true;
                 try {
-                    Jnapp.jn_setData(uId + '_' + voteId, optionValue);
+                    //Jnapp.jn_setData(uId + '_' + voteId, optionValue);
                     // 设置本地缓存
-                    oQuestion.hide();
-                    oAnswer.show();
+                    oQuestion.find('.progress-bar').show();
                     oAnswerId.show();
                     Jnapp.jn_comment(cacheData.content.changyanSid, '我选 ' + selectVal + ', 求中奖');
                 } catch (ex) {
@@ -285,7 +319,7 @@ $(function () {
                 }
             }
         } catch (ex) {
-
+            window.alert('请下载电竞头条客户端经行投票!');
         }
 
     });

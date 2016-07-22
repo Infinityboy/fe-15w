@@ -175,19 +175,18 @@ header .title {
     line-height: 1.4;
 }
 
-.video-meta {
+.video-meta,.meta {
     color: #999;
     font-size: 1rem;
 }
 
-.video-meta .date {
+.video-meta .date, .meta .date {
     margin-right: .5rem;
 }
 
-
-/**
- 公用模块
- ————————————*/
+.meta{
+    padding: .8rem;
+}
 
 
 /* 相关推荐模块 */
@@ -196,6 +195,7 @@ header .title {
 }
 .list {
     background: #fff;
+    margin-top: .5rem;
 }
 
 .list h3 {
@@ -204,8 +204,7 @@ header .title {
     font-size: 1.1rem;
     font-weight: normal;
     line-height: 1;
-    background: #f2f2f2;
-    /*margin-top: .8rem;*/
+    border-bottom: 1px solid #ddd;
 }
 
 .list li {
