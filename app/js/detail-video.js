@@ -94,16 +94,16 @@ function renderData(content) {
                 var htmlQu = '<p class="video-question-title">' + dataQuestion.title + '</p>';
                 if (cacheData) {
                     isVote = true;
-                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="0" data-elem="A" href="##"><span>A:</span>' + questionOptions.A + ' <span class="selected" style="display: none">(已选择)</span><div class="progress-bar"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="1" data-elem="B" href="##"><span>B:</span>' + questionOptions.B + ' <span class="selected" style="display: none">(已选择)</span><div class="progress-bar"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="2" data-elem="C" href="##"><span>C:</span>' + questionOptions.C + ' <span class="selected" style="display: none">(已选择)</span><div class="progress-bar"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="3" data-elem="D"  href="##"><span>D:</span>' + questionOptions.D + ' <span class="selected"  style="display: none">(已选择)</span><div class="progress-bar"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="0" data-elem="A" href="##"><span>A:</span><span class="val">' + questionOptions.A + '</span> <span class="selected" style="display: none">(已选择)</span><div class="progress-bar"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="1" data-elem="B" href="##"><span>B:</span><span class="val">' + questionOptions.B + '</span> <span class="selected" style="display: none">(已选择)</span><div class="progress-bar"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="2" data-elem="C" href="##"><span>C:</span><span class="val">' + questionOptions.C + '</span> <span class="selected" style="display: none">(已选择)</span><div class="progress-bar"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="3" data-elem="D"  href="##"><span>D:</span><span class="val">' + questionOptions.D + '</span> <span class="selected"  style="display: none">(已选择)</span><div class="progress-bar"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
                     htmlQu += '<p>' + questionExcerpt + '</p>';
                 } else {
-                    htmlQu += '<a class="video-question-option" data-id="0"  data-elem="A"  href="##"><span>A:</span>' + questionOptions.A + ' <span class="selected" style="display: none">(已选择)</span><div class="progress-bar" style="display: none"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" data-id="1"  data-elem="B" href="##"><span>B:</span>' + questionOptions.B + ' <span class="selected" style="display: none">(已选择)</span><div class="progress-bar" style="display: none"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" data-id="2"  data-elem="C"  href="##"><span>C:</span>' + questionOptions.C + ' <span class="selected" style="display: none">(已选择)</span><div class="progress-bar" style="display: none"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" data-id="3"  data-elem="D" href="##"><span>D:</span>' + questionOptions.D + ' <span class="selected" style="display: none">(已选择)</span><div class="progress-bar" style="display: none"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="0"  data-elem="A"  href="##"><span>A:</span><span class="val">' + questionOptions.A + '</span> <span class="selected" style="display: none">(已选择)</span><div class="progress-bar" style="display: none"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="1"  data-elem="B" href="##"><span>B:</span><span class="val">' + questionOptions.B + '</span> <span class="selected" style="display: none">(已选择)</span><div class="progress-bar" style="display: none"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="2"  data-elem="C"  href="##"><span>C:</span><span class="val">' + questionOptions.C + '</span> <span class="selected" style="display: none">(已选择)</span><div class="progress-bar" style="display: none"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="3"  data-elem="D" href="##"><span>D:</span><span class="val">' + questionOptions.D + '</span> <span class="selected" style="display: none">(已选择)</span><div class="progress-bar" style="display: none"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
                     htmlQu += '<p>' + questionExcerpt + '</p>';
                 }
                 question.html(htmlQu);
@@ -284,6 +284,7 @@ $(function () {
         var oAnswerId = $('.video-answer-option').children("[data-id='" + liId + "']");
         var optionValue = parseInt($(this).find('.num').text());
         var key = $(this).data('elem');
+        var val = $(this).find('span.val').text();
 
         //验证等录
         try {
@@ -316,8 +317,8 @@ $(function () {
                 $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote', data, function (res) {
                     if (res.code == '10000') {
                         try {
-                            Jnapp.jn_setData(uId + '_' + voteId, optionValue);
-                            Jnapp.jn_comment(cacheData.changyanSid, '我选 ' + key + ', 求中奖');
+                            Jnapp.jn_setData(uId + '_' + voteId, optionValue + '');
+                            Jnapp.jn_comment(cacheData.changyanSid, '我选 ' + key + ' : ' + val + ', 求中奖');
                         } catch (ex) {
 
                         }
