@@ -116,7 +116,7 @@ function renderData(content) {
         var shareData = Jnapp.jn_getShare();
         if (typeof shareData == 'string') {
             shareData = $.parseJSON(shareData);
-            htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="data:image/png;charset=utf-8;base64,' + shareData.baseIcon + '" alt="loading..."/><p>' + shareData.title + '</p></div></div>';
+            htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="data:image/jpeg;charset=utf-8;base64,' + shareData.baseIcon + '" alt="loading..."/><p>' + shareData.title + '</p></div></div>';
         }
     } catch (ex) {
     }
