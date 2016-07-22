@@ -137,7 +137,7 @@ header .player img {
 }
 
 .video-question p {
-    padding: 0.4rem 1rem;
+    padding: 0.65rem 1rem;
 }
 
 .video-question-title {
@@ -152,6 +152,7 @@ header .player img {
     display: block;
     line-height: 3rem;
     position: relative;
+    color: #666;
 }
 
 .video-question .video-question-option:last-child{

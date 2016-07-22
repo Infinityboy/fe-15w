@@ -41,7 +41,7 @@ function renderData(content) {
 
     // 播放次数
     if (data.views) {
-        htmlStr += '<span class="date"><em class="play-num"></em>播放: ' + data.views + '</span>';
+        htmlStr += '<span class="date"><em class="play-num"></em>' + data.views + '</span>';
     }
 
     // 作者
@@ -92,16 +92,16 @@ function renderData(content) {
                 var htmlQu = '<p class="video-question-title">' + dataQuestion.title + '</p>';
                 if (cacheData) {
                     isVote = true;
-                    htmlQu += '<a class="video-question-option" style="border: none" data-id="0" href="##"><span>A:</span>' + questionOptions.A + '<div class="progress-bar"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="1" href="##"><span>B:</span>' + questionOptions.B + '<div class="progress-bar"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="2" href="##"><span>C:</span>' + questionOptions.C + '<div class="progress-bar"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="3" href="##"><span>D:</span>' + questionOptions.D + '<div class="progress-bar"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="0" data-elem="A" href="##"><span>A:</span>' + questionOptions.A + '<div class="progress-bar"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="1" data-elem="B" href="##"><span>B:</span>' + questionOptions.B + '<div class="progress-bar"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="2" data-elem="C" href="##"><span>C:</span>' + questionOptions.C + '<div class="progress-bar"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" style="border: none"  data-id="3" data-elem="D"  href="##"><span>D:</span>' + questionOptions.D + '<div class="progress-bar"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
                     htmlQu += '<p>' + questionExcerpt + '</p>';
                 } else {
-                    htmlQu += '<a class="video-question-option" data-id="0" href="##"><span>A:</span>' + questionOptions.A + '<div class="progress-bar" style="display: none"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" data-id="1" href="##"><span>B:</span>' + questionOptions.B + '<div class="progress-bar" style="display: none"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" data-id="2" href="##"><span>C:</span>' + questionOptions.C + '<div class="progress-bar" style="display: none"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
-                    htmlQu += '<a class="video-question-option" data-id="3" href="##"><span>D:</span>' + questionOptions.D + '<div class="progress-bar" style="display: none"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="0"  data-elem="A"  href="##"><span>A:</span>' + questionOptions.A + '<div class="progress-bar" style="display: none"><em class="progress color-a"  style="width:' + relA + '%"></em><em class="num">' + result.A + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="1"  data-elem="B" href="##"><span>B:</span>' + questionOptions.B + '<div class="progress-bar" style="display: none"><em class="progress color-b"  style="width:' + relB + '%"></em><em class="num">' + result.B + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="2"  data-elem="C"  href="##"><span>C:</span>' + questionOptions.C + '<div class="progress-bar" style="display: none"><em class="progress color-c"  style="width:' + relC + '%"></em><em class="num">' + result.C + '</em></div></a>';
+                    htmlQu += '<a class="video-question-option" data-id="3"  data-elem="D" href="##"><span>D:</span>' + questionOptions.D + '<div class="progress-bar" style="display: none"><em class="progress color-d"  style="width:' + relD + '%"></em><em class="num">' + result.D + '</em></div></a>';
                     htmlQu += '<p>' + questionExcerpt + '</p>';
                 }
                 question.html(htmlQu);
@@ -272,6 +272,7 @@ $(function () {
 
     $(document).on('click', '.video-question-option', function (e) {
         e.preventDefault();
+
         if (isVote) {
             return;
         }
@@ -280,6 +281,7 @@ $(function () {
         var liId = $(this).data('id');
         var oAnswerId = $('.video-answer-option').children("[data-id='" + liId + "']");
         var optionValue = parseInt($(this).find('.num').text());
+        var key = $(this).data('elem');
 
         //验证等录
         try {
@@ -297,23 +299,27 @@ $(function () {
                     'dataId': voteId,
                     'uid': uId,
                     'token': token,
-                    'sign': optionValue
+                    'sign': key
                 };
-                $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote', data);
 
                 $(this).find('.num').text(optionValue + 1);
                 repaintProgress();
+
+                oQuestion.find('.video-question-option').css('border-color','transparent');
                 oQuestion.find('.progress-bar').show();
                 isVote = true;
-                try {
-                    Jnapp.jn_setData(uId + '_' + voteId, optionValue);
-                    // 设置本地缓存
-                    oQuestion.find('.progress-bar').show();
-                    oAnswerId.show();
-                    Jnapp.jn_comment(cacheData.changyanSid, '我选 ' + selectVal + ', 求中奖');
-                } catch (ex) {
 
-                }
+                $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote', data, function (res) {
+                    if (res.code == '10000') {
+                        try {
+                            Jnapp.jn_setData(uId + '_' + voteId, optionValue);
+                            Jnapp.jn_comment(cacheData.changyanSid, '我选 ' + selectVal + ', 求中奖');
+                        } catch (ex) {
+
+                        }
+                    }
+                });
+
             }
         } catch (ex) {
             window.alert('请下载电竞头条客户端经行投票!');
