@@ -16,7 +16,6 @@ function isIOS(ua) {
     return ua.indexOf('iPhone') > 0;
 }
 
-
 function renderData(content) {
     var data = content;
     cacheData = data;
@@ -120,10 +119,9 @@ function renderData(content) {
             htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="data:image/png;charset=utf-8;base64,' + shareData.baseIcon + '" alt="loading..."/><p>' + shareData.title + '</p></div></div>';
         }
     } catch (ex) {
-        htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="../images/timo_2xpng" alt="loading..."/><p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p></div></div>';
     }
 
-    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq"><img src="images/空间_2x.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
+    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq"><img src="images/qq_zone.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
 
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="list"><h3>视频推荐</h3><ul> ';
