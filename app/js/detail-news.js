@@ -24,7 +24,9 @@ function renderData(data) {
 
     htmlStr += '<div class="indent flat-content">' + content + '</div>';
 
-    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a></div></section>';
+    htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="images/提莫_2xpng.png" alt="loading..."/><p>' + data.excerpt + '</p></div></div>';
+
+    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq-space"><img src="images/空间_2x.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
     var news_list = data.relate_news;
     if (news_list.length > 0) {
         htmlStr += '<div class="list"><h3>相关新闻</h3><ul id="news_list">';
@@ -51,17 +53,17 @@ function renderData(data) {
 }
 
 $(function () {
-    // $.ajax({
-    //     url: 'data/news.json',
-    //     type: "GET",
-    //     dataType: 'json',
-    //     success: function (str) {
-    //         renderData(str.data);
-    //     },
-    //     error: function (err) {
-    //         alert('失败:' + err);
-    //     }
-    // });
+     //$.ajax({
+     //    url: 'data/news.json',
+     //    type: "GET",
+     //    dataType: 'json',
+     //    success: function (str) {
+     //        renderData(str.data);
+     //    },
+     //    error: function (err) {
+     //        alert('失败:' + err);
+     //    }
+     //});
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -101,6 +103,18 @@ $(function () {
     $(document).on('click', '.maintext-share-frident', function (e) {
         e.preventDefault();
         shareBegin(2);
+    });
+
+    //qq
+    $(document).on('click', '.maintext-share-qq-space', function (e) {
+        e.preventDefault();
+        shareBegin(3);
+    });
+
+    //空间
+    $(document).on('click', '.maintext-share-qq', function (e) {
+        e.preventDefault();
+        shareBegin(4);
     });
 
     function shareBegin(type) {

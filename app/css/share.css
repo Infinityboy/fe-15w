@@ -1,0 +1,62 @@
+/**********分享开始**************/
+.excerpt-share{
+    margin-top: 1rem;
+    background-color: #fff;
+}
+.video-excerpt {
+    padding: 0 .8rem 0 .8rem;
+    color: #666;
+}
+.video-excerpt-tip{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:0.4rem;
+    max-padding-right:1.25rem;
+    max-padding-left:1.25rem;
+    border-bottom: 1px solid #efefef;
+}
+.video-excerpt-tip img{
+    width: 100px;
+    height: 100px;
+}
+.video-excerpt-tip p{
+    text-align: center;
+}
+.maintext-share {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-size: .85rem;
+    text-align: center;
+    padding-top: 1.4rem;
+    padding-bottom: 1.2rem;
+    max-padding-left: 1.25rem;
+    max-padding-right: 1.25rem;
+    background: #fff;
+}
+.maintext-share a{
+    flex: 1;
+}
+.maintext-share a img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: .5rem;
+    max-margin-left: 0.625rem;
+    max-margin-right: 0.625rem;
+}
+
+.sharename {
+    height: 1rem;
+    text-align: center;
+    line-height: 1rem;
+    color: #666;
+}
+
+.maintext-share-weixin, .maintext-share-weibo, .maintext-share-frident, .maintext-share-qq-space, .maintext-share-qq,{
+    width: 50px;
+    display: inline-block;
+}
+/**********分享结束**************/

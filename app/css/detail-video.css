@@ -44,11 +44,17 @@ body {
     background: #eee;
     overflow-x: hidden;
 }
-
+.content{
+    overflow-y: hidden;
+    background-color: #ffffff;
+}
+.content h1{
+    padding: 0 0.5rem;
+}
 .video-meta .views {
-    position: absolute;
     right: 0.8rem;
     text-align: right;
+    float: right;
 }
 
 .video-excerpt p {
@@ -58,10 +64,11 @@ body {
 
 header .player iframe {
     width: 100%;
-    min-height: 10rem;
     display: block;
+    position: fixed;
+    top:0;
+    z-index: 998;
 }
-
 header .player {
     position: relative;
     margin-top: .5rem;
@@ -69,12 +76,25 @@ header .player {
 
 header .player img {
     width: 100%;
+    max-height: 90%;
     display: block;
+}
+.video-button{
+    position: fixed;
+    right: 0;
+    /*opacity:0;*/
+    background: red;
+    width: 50px;
+    height: 40px;
+    border: none;
+    text-indent: -8888rem;
+    overflow: hidden;
+    z-index: 999;
 }
 .replace-button{
     position: absolute;
     left: 50%;
-    margin-left: -1.4rem;
+    margin-left: -1.5rem;
     top: 40%;
     width: 3rem;
     height: 3rem;
@@ -82,35 +102,92 @@ header .player img {
     background: rgba(0,0,0,0.6) url('../images/play_icon.png') no-repeat center center;
     background-size: 80%;
 }
-
-.video-excerpt {
-    padding: .8rem;
-    color: #666;
+/**********问题开始**************/
+.video-question{
+    margin-top: 1rem;
+    color: #333333;
+    font-size: .9rem;
+    background-color: #ffffff;
 }
-.maintext-share {
-    color: #999;
-    position: relative;
-    font-size: .85rem;
-    text-align: center;
-    padding-bottom: 1rem;
-    background: #fff;
+.video-question ul{
+    padding: 0 1rem;
 }
-
-.maintext-share img {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-bottom: .5rem;
+.video-question p{
+    padding: 0.4rem 1rem;
 }
+.video-question-title{
+    height: auto;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #efefef;
+}
+.video-question-option{
+    height: auto;
+    line-height: 2rem;
+    padding-left: 0.5rem;
+    border-bottom: 1px solid #efefef;
+}
+.video-question-option span{
+    margin-right: 2rem;
+}
+/**********问题结束**************/
 
-.sharename {
+/**********答案开始**************/
+.video-question-answer{
+    margin-top: 1rem;
+    color: #333333;
+    font-size: .9rem;
+    background-color: #ffffff;
+}
+.video-question-answer .video-answer{
+    padding: 0 1rem;
+}
+.video-question-answer p{
+    padding: 0.4rem 1rem;
+}
+.video-answer-title{
+    height: auto;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #efefef;
+}
+.video-answer-option{
+    padding-top: 0.2rem;
+    padding-left: 0.5rem;
+}
+.option-detail{
+    display: flex;
+    padding-left: 0.5rem;
+    border-bottom: 1px solid #efefef;
+}
+.color-a,.color-b,.color-c,.color-d{
     height: 1rem;
-    text-align: center;
-    line-height: 1rem;
-    color: #666;
+    margin-right: 0.5rem;
 }
-
-.maintext-share-weixin, .maintext-share-weibo, .maintext-share-frident {
-    width: 5.5rem;
-    display: inline-block;
+.color-a{
+    width: 10rem;
+    background-color: #e03030;
 }
+.color-b{
+    width: 8rem;
+    background-color: #e54f88;
+}
+.color-c{
+    width: 16rem;
+    background-color: #5875be;
+}
+.color-d{
+    width: 14rem;
+    background-color: #6fcace;
+}
+.video-answer-option span{
+    margin-right: 2rem;
+}
+.option-num{
+    font-size: .9rem;
+}
+em{
+    font-size: .9rem;
+    float: right;
+    color: #e03030;
+}
+/**********答案结束**************/
 
