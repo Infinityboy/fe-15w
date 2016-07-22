@@ -102,7 +102,7 @@ header .player img {
 .video-button {
     position: fixed;
     right: 0;
-    background: transparent;
+    background: red;
     width: 50px;
     height: 40px;
     border: none;
@@ -137,13 +137,14 @@ header .player img {
 }
 
 .video-question p {
-    padding: 0.65rem 1rem;
+    padding: 0.65rem .8rem;
 }
 
 .video-question-title {
     height: auto;
     display: block;
     border-bottom: 1px solid #efefef;
+    color: #666;
 }
 
 .video-question-option {
@@ -168,6 +169,10 @@ header .player img {
 
 .video-question-option span {
     margin-right: 1rem;
+}
+.video-question-option span.selected{
+    color: #e03030;
+    margin-right: 0;
 }
 
 .play-num {
