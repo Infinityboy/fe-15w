@@ -27,16 +27,16 @@ function renderData(content) {
     var ua = window.navigator.userAgent;
     var htmlStr = '';
     if (data.videoType == 1) {
-        htmlStr = '<header style="height:' + videoHeight + 'px;position: fixed;overflow: hidden;width: 100%">' + '<div class="player clearfix">' + videoContent;
-        // if (!isIOS(ua)) {
-        //     htmlStr += '<button class="video-button" style="top: ' + (videoHeight - 40) + 'px"></button>';
-        // }
-        htmlStr += '<button class="video-button" style="top: ' + (videoHeight - 40) + 'px"></button>';
-
+        htmlStr += '<header class="header" style="height:' + videoHeight + 'px;">' + '<div class="player clearfix">' + videoContent;
+        if (!isIOS(ua)) {
+            htmlStr += '<button class="video-button"></button>';
+        }
         htmlStr += '</div></header>';
+        htmlStr += '<div class="content" style="padding-top: ' + videoHeight+ 'px">';
+    } else{
+        htmlStr += '<div class="content">';
     }
 
-    htmlStr += '<div class="content" style="padding-top: ' + videoHeight+ 'px">';
     htmlStr += '<div class="video-header">';
     htmlStr += '<h1 class="title">' + data.title + '</h1>';
     htmlStr += '<div class="video-meta clearfix">';
@@ -148,18 +148,6 @@ function renderData(content) {
         htmlStr += '</ul></section><section class="line"></section></div>';
     }
     $('#detail').html(htmlStr);
-    if (data.videoType == 1) {
-        $('iframe').css({
-            height: videoHeight + 'px'
-        });
-    }
-
-    // try {
-    //     // Android 强制竖屏
-    //     Jnapp.jn_setHorizontal(false);
-    // } catch (ex) {
-    //
-    // }
 }
 
 $(function () {
@@ -230,23 +218,18 @@ $(function () {
             isHorizontal = !isHorizontal;
             var iframe = $('.player iframe');
             if (isHorizontal) {
-                iframe.css('height', '100%');
-                player.css('height', screenWidth + 'px');
+                var header = $('.header');
+                header.css({'height': screenWidth + 'px'});
                 oContent.css('display', 'none');
-                $('.video-button').css('top', (screenWidth - 40) + 'px');
                 $('body').css({
                     'height': '100%',
                     'overflow': 'hidden'
                 });
-                window.alert('top:' + (screenWidth - 40));
                 Jnapp.jn_setHorizontal(true);
             } else {  // 竖屏
-                iframe = $('header .player iframe');
-                iframe.css('height', height + 'px');
-                player.css('height', height + 'px');
-                $('body').css({'height': 'auto', 'overflow': 'hidden'});
-                $('.video-button').css('top', (height - 40) + 'px');
-                window.alert('top:' + (height - 40));
+                var header = $('.header');
+                header.css('height', height + 'px');
+                $('body').css({'height': 'auto', 'overflow': 'auto'});
                 Jnapp.jn_setHorizontal(false);
             }
         } catch (e) {
@@ -280,10 +263,8 @@ $(function () {
         if (isVote) {
             return;
         }
-        var selectVal = $(this).text();
         var oQuestion = $('.video-question');
         var liId = $(this).data('id');
-        var oAnswerId = $('.video-answer-option').children("[data-id='" + liId + "']");
         var optionValue = parseInt($(this).find('.num').text());
         var key = $(this).data('elem');
         var val = $(this).find('span.val').text();
@@ -313,22 +294,18 @@ $(function () {
                 oQuestion.find('.video-question-option').css('border-color','transparent');
                 oQuestion.find('.progress-bar').show();
                 $(this).find('.selected').show();
-
                 isVote = true;
-
-                $.post('http://api.15w.com/client/app/jn/v1_4/vote/vote', data, function (res) {
+                var param = 'dataId=' + voteId + '&uid=' + uId + '&token=' + token + '&sign=' + key + '&t=' + new Date().getTime() + '&callback=?';
+                $.getJSON('http://api.15w.com/client/app/jn/v1_4/vote/vote?' + param,function (res) {
                     if (res.code == '10000') {
                         try {
-                            // Jnapp.jn_setData(uId + '_' + voteId, optionValue + '');
+                            Jnapp.jn_setData(uId + '_' + voteId, optionValue + '');
                             Jnapp.jn_comment(cacheData.changyanSid, '我选 ' + key + ' : ' + val + ', 求中奖');
                         } catch (ex) {
-                          window.alert(res.code);
                         }
                     } else{
-                        window.alert(res.code);
                     }
                 });
-
             }
         } catch (ex) {
             window.alert('请下载电竞头条客户端经行投票!');

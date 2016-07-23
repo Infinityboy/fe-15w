@@ -47,6 +47,8 @@ body {
 
 .content {
     overflow-y: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .video-header {
@@ -81,16 +83,21 @@ body {
     color: #999;
 }
 
+header{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    z-index: 9999;
+}
+
 header .player iframe {
     width: 100%;
     display: block;
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*z-index: 998;*/
 }
 
 header .player {
     position: relative;
+    height: 100%;
 }
 
 header .player img {
@@ -101,8 +108,8 @@ header .player img {
 
 .video-button {
     position: absolute;
+    background: transparent;
     right: 0;
-    background: red;
     width: 50px;
     height: 40px;
     border: none;
