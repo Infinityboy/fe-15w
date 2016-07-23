@@ -117,6 +117,7 @@ header .player img {
     overflow: hidden;
     z-index: 999;
     bottom: 0;
+    outline: none;
 }
 
 .replace-button {
