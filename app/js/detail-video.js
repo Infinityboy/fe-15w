@@ -151,9 +151,9 @@ function renderData(content) {
 }
 
 $(function () {
-    // $.get('data/video-detail.json', function (res) {
-    //     renderData(res.content);
-    // });
+    $.get('data/video-detail.json', function (res) {
+        renderData(res.content);
+    });
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
@@ -217,8 +217,8 @@ $(function () {
         try {
             isHorizontal = !isHorizontal;
             var iframe = $('.player iframe');
+            var header = $('.header');
             if (isHorizontal) {
-                var header = $('.header');
                 header.css({'height': screenWidth + 'px'});
                 oContent.css('display', 'none');
                 $('body').css({
@@ -227,7 +227,6 @@ $(function () {
                 });
                 Jnapp.jn_setHorizontal(true);
             } else {  // 竖屏
-                var header = $('.header');
                 header.css('height', height + 'px');
                 $('body').css({'height': 'auto', 'overflow': 'auto'});
                 Jnapp.jn_setHorizontal(false);
