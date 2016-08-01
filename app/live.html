@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="css/base.css" >
+    <style>
+        .live-tip{
+            padding-left: 1.5rem;
+            padding-top: 1.5rem;
+            background-color: #ffffff;
+            font-size: 0.9rem;
+            color: #999999;
+            margin-bottom: -0.5rem;
+        }
+        .live-list{
+            padding-left: 1.5rem;
+        }
+        .deck{
+            margin-top: 1.5rem;
+            float: left;
+            margin-right: 1.5rem;
+            /*border: 1px solid #e41619;选中状态*/
+            border: 1px solid #8e9fb7;
+            border-radius: 8px;
+        }
+        .deck.selected{
+            border: 1px solid #e41619;
+        }
+        .deck.no-select{
+           opacity: 0.5;
+        }
+        .deck-img{
+            width: 150px;
+            height: 150px;
+            margin: 0 0.2rem;
+        }
+        .deck img{
+            display: block;
+            margin: 0 auto;
+        }
+        .live-button{
+            display: block;
+            text-align: center;
+            height: 2rem;
+            line-height: 2rem;
+            background-color: #8e9fb7;
+            /*background-color: #e41619;选中状态*/
+            border-radius: 0 0 6px 6px;
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+        .live-button.selected{
+            background-color: #e41619;
+        }
+    </style>
+</head>
+<body>
+    <div class="live" data-id="0">
+        <p class="live-tip">请选择直播平台</p>
+        <section class="live-list">
+            <div class="deck selected">
+                <div class="deck-img"><img src="images/qq.tv.jpg" alt=""/></div>
+                <span class="live-button selected">观看直播</span>
+            </div>
+            <div class="deck">
+                <div class="deck-img"><img src="images/zhanqi.tv.jpg" alt=""/></div>
+                <span class="live-button">观看直播</span>
+            </div>
+            <div class="deck">
+                <div class="deck-img"><img src="images/douyu.tv.jpg" alt=""/></div>
+                <span class="live-button">观看直播</span>
+            </div>
+            <div class="deck">
+                <div class="deck-img"><img src="images/panda.tv.jpg" alt=""/></div>
+                <span class="live-button">观看直播</span>
+            </div>
+            <div class="deck no-select">
+                <div class="deck-img"><img src="images/huya.tv.jpg" alt=""/></div>
+                <span class="live-button">即将开始</span>
+            </div>
+            <div class="deck no-select">
+                <div class="deck-img"><img src="images/longzhu.tv.jpg" alt=""/></div>
+                <span class="live-button">即将开始</span>
+            </div>
+            <div class="deck no-select">
+                <div class="deck-img"><img src="images/quanmin.tv.jpg" alt=""/></div>
+                <span class="live-button">即将开始</span>
+            </div>
+            <div class="deck no-select">
+                <div class="deck-img"><img src="images/huomao.tv.jpg" alt=""/></div>
+                <span class="live-button">即将开始</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

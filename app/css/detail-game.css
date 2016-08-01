@@ -112,6 +112,65 @@ header .header-teams .header-teams-middle {
     background-color: white;
     display: block;
 }
+
+.live-tip{
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+    color: #999999;
+    margin-bottom: -0.5rem;
+}
+.live-list{
+    width: 100%;
+    display: table;
+    /*border-collapse:separate;*/
+    /*border-spacing: 0 1.5rem;*/
+}
+.deck{
+    display: table-cell;
+    margin-top: 1.5rem;
+    /*border: 1px solid #e41619;选中状态*/
+    border: 1px solid #8e9fb7;
+    border-radius: 8px;
+    float: left;
+    margin-left: 7.6%;
+}
+.deck-row{
+    display: table-row;
+}
+.deck.selected{
+    border: 1px solid #e41619;
+}
+.deck.no-select{
+    opacity: 0.5;
+}
+.deck-img{
+    /*width: 150px;*/
+    /*height: 150px;*/
+    margin: 0 0.2rem;
+}
+.deck img{
+    width: 132px;
+    height: 132px;
+    display: block;
+    margin: 0 auto;
+}
+.live-button{
+    display: block;
+    text-align: center;
+    height: 2rem;
+    line-height: 2rem;
+    background-color: #8e9fb7;
+    /*background-color: #e41619;选中状态*/
+    border-radius: 0 0 6px 6px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+.live-button.selected{
+    background-color: #e41619;
+}
+
 .inlayer{
     height: 1.5rem;
 }
@@ -230,7 +289,6 @@ header .header-teams .header-teams-middle {
 
 .live-byword-listbox {
     background: #fff;
-    display: block;
 }
 
 .live-byword-listbox ul {
@@ -403,14 +461,12 @@ header .header-teams .header-teams-middle {
     right: 2.81rem;
     bottom: 0.68rem;
 }
-.video{
+.reviews{
     display: none;
 }
 .gamevedio {
     position: relative;
 }
-
-
 .gamevedio h2 , .game-data h2, .live-byword h2{
     color: #e03131;
     padding: .65rem .8rem;

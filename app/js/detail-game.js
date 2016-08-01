@@ -55,118 +55,106 @@ function renderData(data) {
     htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span></a></section> ';
     htmlStr += '</header>';
 
-    //选项卡
-    htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">新闻</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">视频</div></a></li></ul><div class="outContainer ">';
+    //比赛数据替换为直播平台
 
-    //比赛数据
-
-    if (data.gameContent.length > 0) {
+    if (data.state == '1') {
+        //正在直播
+        htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
         htmlStr += '<div class="live" data-id="0">';
-        htmlStr += '<section class="game-data clearFix">';
-        htmlStr += '<div  class="clearFix" id="roundlist">';
-        var len = data.gameContent.length;
-        var screen = document.documentElement.clientWidth;
-        var itemWidth = screen / len;
-
-        $.each(data.gameContent, function (index, item) {
-            if (index === 0) {
-                htmlStr += '<a href="##" class="roundspan3 on" data-id="' + index + '" style="width:' + itemWidth + 'px" >' + item.title + '</a>';
-            } else {
-                htmlStr += '<a href="##" class="roundspan3" data-id="' + index + '" style="width:' + itemWidth + 'px" >' + item.title + '</a>';
-            }
+        htmlStr += '<p class="live-tip">请选择直播平台</p>';
+        htmlStr += '<section class="live-list clearfix">';
+        htmlStr += '<div class="live-wrap">';
+        $.each(data.originSrc,function(i,liveList){
+            htmlStr += '<div class="deck">';
+            htmlStr += '<div class="deck-img"><img src="'+liveList.logo+'" alt=""/>'+'</div>';
+            htmlStr += '<span class="live-button select">观看直播</span></div>';
         });
+        htmlStr += '</div></section></div>';
 
-        htmlStr += '</div>';
-        htmlStr += '<div class="data-details">';
+    }else if(data.state == '3'){
+        //未直播将要直播
+        htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div class="live" data-id="0">';
+        htmlStr += '<p class="live-tip">请选择直播平台</p>';
+        htmlStr += '<section class="live-list clearfix">';
+        htmlStr += '<div class="live-wrap">';
+        $.each(data.originSrc,function(index,liveList){
+            htmlStr += '<div class="deck no-select">';
+            htmlStr += '<div class="deck-img"><img src="'+liveList.logo+'" alt=""/>'+'</div>';
+            htmlStr += '<span class="live-button">即将开始</span></div>';
+        });
+        htmlStr += '</div></section></div>';
+    }else if(data.state == '2'){
+        //直播结束回放视频列表
+        htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">视频</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
+        if (data.relateVideos.length > 0) {
+            htmlStr += '<div class="live" data-id="0">';
+            htmlStr += '<section class="list"><ul> ';
+            $.each(data.relateVideos, function (index, item) {
+                htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
+                htmlStr += '<p class="list-title">' + item.title + '</p> ';
 
-        $.each(data.gameContent, function (index, item) {
-            if (index === 0) {
-                htmlStr += '<div class="data-content-item">';
-            } else {
-                htmlStr += '<div class="data-content-item" style="display: none">';
-            }
-            var itemList = item.dataList.list;
-
-            $.each(itemList, function (index, subItem) {
-                if (subItem.listType === 0) {
-                    htmlStr += '<section class="game-data-select">';
-
-                    htmlStr += '<div class="img-left">';
-                    var leftArr = subItem.fieldData[0];
-                    $.each(leftArr, function (index, imgItem) {
-                        htmlStr += '<img class="game-data-select-logo1eft" src="' + imgItem + '"/>';
-                    });
-                    htmlStr += '</div>';
-
-                    htmlStr += '<p class="game-data-select-word">' + itemList[index].fieldName + '</p>';
-
-                    var rightArr = subItem.fieldData[1];
-                    htmlStr += '<div class="img-right">';
-                    $.each(rightArr, function (index, imgItem) {
-                        htmlStr += '<img class="game-data-select-logo1eft" src="' + imgItem + '"/>';
-                    });
-                    htmlStr += '</div>';
-                    htmlStr += ' </section>';
-
-                } else if (subItem.listType === 1) {
-                    // 计算单元长度
-                    var leftBarLength = parseInt(subItem.fieldData[0]);
-                    var rightBarLength = parseInt(subItem.fieldData[1]);
-
-                    var leftBarWidth, rightBarWidth;
-                    if (leftBarLength + rightBarLength > 100) {
-                        leftBarWidth = leftBarLength * 100 / (leftBarLength + rightBarLength);
-                        rightBarWidth = rightBarLength * 100 / (leftBarLength + rightBarLength);
-                    } else {
-                        leftBarWidth = leftBarLength;
-                        rightBarWidth = rightBarLength;
-                    }
+                if (item.tagColor && item.tagName) {
+                    htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
                 }
+
+                var date = new Date();
+                var dateStr;
+                if (item.updateTime) {
+                    date = new Date(item.updateTime * 1000);
+                }
+                dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+                htmlStr += '<span class="list-time">' + dateStr + '</span>';
+                htmlStr += '</a></li>';
             });
 
-            htmlStr += '</div>';
-
-        });
-        htmlStr += '</div></section>';
-    }else{
+            htmlStr += '</ul></section></div>';
+        } else {
+            htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem; text-align: center;line-height:10rem;display:none;background-color: #ffffff;">暂无视频数据</div>';
+        }
+    }
+    else{
         htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:block;background-color: #ffffff;">';
     }
 
-    //图文直播
-    if (data.relateArticle.length > 0) {
-        htmlStr += '<section class="live-byword-listbox selected"> <ul>';
-        $.each(data.relateArticle, function (index, item) {
-            htmlStr += '<li> <div class="innerbox"><div class="live-byword-list clearfix"> ';
-            htmlStr += '<a href="##" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
-            htmlStr += '<div class="fl live-byword-list-games"> ';
-            htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
-            htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>' + '&nbsp;' + '' + item.time + '</span></p></div></div> ';
-            htmlStr += '<div class="live-byword-list-words"> ';
-            htmlStr += '<p>' + item.content + '</p>';
+    //图文直播变为讨论  PS：讨论无内容所以切换不正确
+    //if (data.relateArticle.length > 0) {
+    //    htmlStr += '<div class="reviews" data-id="1">';
+    //    htmlStr += '<section class="live-byword-listbox"> <ul>';
+    //    $.each(data.relateArticle, function (index, item) {
+    //        htmlStr += '<li> <div class="innerbox"><div class="live-byword-list clearfix"> ';
+    //        htmlStr += '<a href="##" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
+    //        htmlStr += '<div class="fl live-byword-list-games"> ';
+    //        htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
+    //        htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>' + '&nbsp;' + '' + item.time + '</span></p></div></div> ';
+    //        htmlStr += '<div class="live-byword-list-words"> ';
+    //        htmlStr += '<p>' + item.content + '</p>';
+    //
+    //        var itemImgs = data.relateArticle[index];
+    //        if (itemImgs.images && itemImgs.images.length > 0) {
+    //            htmlStr += '<div class="clearFix live-byword-list-words-images">';
+    //            $.each(itemImgs.images, function (index, item) {
+    //                htmlStr += '<img class="fl" src="' + item + '"/>';
+    //            });
+    //            htmlStr += '</div> ';
+    //        }
+    //        htmlStr += '</div></div></li>';
+    //    });
+    //    htmlStr += '</ul> </section>';
+    //    htmlStr += '</section></div>';
+    //}else{
+    //    if(data.gameContent.length > 0){
+    //        htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center">当前比赛场次还没有图文直播哦!</p></section>';
+    //    }else{
+    //        htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center;">当前比赛场次还没有图文直播哦!</p></section>';
+    //    }
+    //}
 
-            var itemImgs = data.relateArticle[index];
-            if (itemImgs.images && itemImgs.images.length > 0) {
-                htmlStr += '<div class="clearFix live-byword-list-words-images">';
-                $.each(itemImgs.images, function (index, item) {
-                    htmlStr += '<img class="fl" src="' + item + '"/>';
-                });
-                htmlStr += '</div> ';
-            }
-            htmlStr += '</div></div></li>';
-        });
-        htmlStr += '</ul> </section>';
-        htmlStr += '</section></div>';
-    }else{
-        if(data.gameContent.length > 0){
-            htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center">当前比赛场次还没有图文直播哦!</p></section></div>';
-        }else{
-            htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center;">当前比赛场次还没有图文直播哦!</p></section></div>';
-        }
-    }
 
     //相关新闻
     if (data.recomendVideos.length > 0) {
-        htmlStr += '<div class="news" data-id="1">';
+        htmlStr += '<div class="news" data-id="2">';
         htmlStr += '<section class="list"><ul>';
         $.each(data.recomendVideos, function (index, item) {
             htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '">';
@@ -188,7 +176,7 @@ function renderData(data) {
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</a></li> ';
         });
-        htmlStr += ' </ul></section></div>';
+        htmlStr += ' </ul></section></div></div>';
     }
     else{
         htmlStr += '<div class="news" data-id="1" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:none;background-color: #ffffff;">暂无新闻数据</div>';
@@ -196,44 +184,50 @@ function renderData(data) {
 
 
     //比赛视频
-    if (data.relateVideos.length > 0) {
-        htmlStr += '<div class="video" data-id="2"> ';
-        htmlStr += '<section class="list"> <ul> ';
-
-        $.each(data.relateVideos, function (index, item) {
-            htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += '<p class="list-title">' + item.title + '</p> ';
-
-            if (item.tagColor && item.tagName) {
-                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
-            }
-
-            var date = new Date();
-            var dateStr;
-            if (item.updateTime) {
-                date = new Date(item.updateTime * 1000);
-            }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-
-            htmlStr += '<span class="list-time">' + dateStr + '</span>';
-            htmlStr += '</a></li>';
-        });
-
-        htmlStr += '</ul></section></div>';
-    } else {
-        htmlStr += '<div class="video" data-id="2" style="height: 10rem;font-size: 0.9rem; text-align: center;line-height:10rem;display:none;background-color: #ffffff;">暂无视频数据</div>';
-    }
+    //if (data.relateVideos.length > 0) {
+    //    htmlStr += '<div class="video" data-id="2"> ';
+    //    htmlStr += '<section class="list"> <ul> ';
+    //
+    //    $.each(data.relateVideos, function (index, item) {
+    //        htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
+    //        htmlStr += '<p class="list-title">' + item.title + '</p> ';
+    //
+    //        if (item.tagColor && item.tagName) {
+    //            htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+    //        }
+    //
+    //        var date = new Date();
+    //        var dateStr;
+    //        if (item.updateTime) {
+    //            date = new Date(item.updateTime * 1000);
+    //        }
+    //        dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    //
+    //        htmlStr += '<span class="list-time">' + dateStr + '</span>';
+    //        htmlStr += '</a></li>';
+    //    });
+    //
+    //    htmlStr += '</ul></section></div>';
+    //} else {
+    //    htmlStr += '<div class="video" data-id="2" style="height: 10rem;font-size: 0.9rem; text-align: center;line-height:10rem;display:none;background-color: #ffffff;">暂无视频数据</div>';
+    //}
 
     $('#box').html(htmlStr);
 }
 
 $(function () {
-     //$.get('data/game-detail.json', function (res) {
+     //$.get('data/living.json', function (res) {
      //   if (res.code == 10000) {
      //       renderData(res.data);
      //   }
      //});
 
+    $(document).on('click','.select',function(e){
+        e.preventDefault();
+        $(this).addClass('selected');
+        $(this).parent().addClass('selected');
+        //调客户端观看直播的方法
+    });
     // 图片查看大图
     $(document).on('click', '.live-byword-list-words-images img', function (e) {
         e.preventDefault();
@@ -310,16 +304,6 @@ $(function () {
                 console.log(oContainer.children().eq(cls));
                 oContainer.children().eq(cls).show().siblings().hide();
             }
-        }
-    });
-    //tab切换 切换内层选项卡
-
-    $(document).on('click', 'a.roundspan3', function (e) {
-        e.preventDefault();
-        if (!$(this).hasClass('on')) {
-            var index = $(this).data('id');
-            $(this).addClass('on').siblings('a').removeClass('on');
-            $('.data-details > .data-content-item').eq(index).show().siblings().hide();
         }
     });
 
