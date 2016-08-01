@@ -67,6 +67,10 @@ h1 {
     max-width: 100%;
 }
 
+.maintext-share {
+    margin-top: .5rem;
+}
+
 .detailsTit .ti {
     line-height: 1.1rem;
     padding: 0;
