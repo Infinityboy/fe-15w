@@ -1,6 +1,8 @@
 'use strict';
 
 var cacheData = null;
+var s;
+var sourceId;
 window.Jn = {
     setCookie: function (name, value, iDay) {
         var oDate = new Date();
@@ -19,13 +21,21 @@ window.Jn = {
     }
 };
 
-
 Jn.setData = function (data) {
     if (data.key == 'gameInitDetail') {
         renderData(data.content);
     }
 };
 
+Jn.addComment = function(data){
+    if(data.code == '10000' && data.message == 'success'){
+        renderData(data.data);
+    }
+};
+
+Jn.refreshComment = function(data){
+    jn_getComment(data.content.changyanSid,data.content.sourceTitle);
+};
 
 
 function renderData(data) {
@@ -67,7 +77,7 @@ function renderData(data) {
         $.each(data.originSrc,function(i,liveList){
             htmlStr += '<div class="deck">';
             htmlStr += '<div class="deck-img"><img src="'+liveList.logo+'" alt=""/>'+'</div>';
-            htmlStr += '<span class="live-button select">观看直播</span></div>';
+            htmlStr += '<span class="live-button select" data-url="'+liveList.link+'">观看直播</span></div>';
         });
         htmlStr += '</div></section></div>';
 
@@ -113,8 +123,7 @@ function renderData(data) {
         } else {
             htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem; text-align: center;line-height:10rem;display:none;background-color: #ffffff;">暂无视频数据</div>';
         }
-    }
-    else{
+    }else{
         htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:block;background-color: #ffffff;">';
     }
 
@@ -151,6 +160,65 @@ function renderData(data) {
     //    }
     //}
 
+    //$.getJSON('http://changyan.sohu.com/api/2/topic/comments?client_id=cyqJ0s6uI&topic_id=' + data.changyanSid + '&callback=?',function(res){
+    //    console.log(res);
+    //});
+    //function showAjax(){
+    //    $.ajax({
+    //        url:"http://changyan.sohu.com/api/2/topic/comments?client_id=cyqJ0s6uI&topic_id=" + data.changyanSid + "&callback=?",
+    //        type:"GET",
+    //        data:"",
+    //        dataType: 'jsonp',
+    //        success:function(data){
+    //            //要执行的内容
+    //            //showContent();
+    //            //page++;	//页数加1
+    //            console.log(data);
+    //        }
+    //    })
+    //}
+    sourceId = data.changyanSid;
+    var sourceTitle = data.title;
+    //var getComment = jn_getComment(sourceId,sourceTitle);
+    //if (typeof getComment == 'string') {
+    //    getComment = $.parseJSON(getComment);
+    //}
+    htmlStr += '<div class="reviews" data-id="1">';
+    //畅言评论
+    htmlStr += '<section class="hot-reviews">';
+    htmlStr += '<div class="reviews-title"><span>热门评论</span></div>';
+    htmlStr += '<div class="reviews-box">';
+    htmlStr += '<div class="reviews-header"><img src="" alt="png.."/></div>';
+    htmlStr += '<div class="reviews-right">';
+    htmlStr += '<span class="reviews-name">空谷幽兰</span>';
+    htmlStr += '<span class="reviews-time">6天前</span>';
+    htmlStr += '<p class="reviews-content">别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊</p> </div> </div>';
+    htmlStr += '<div class="reviews-box">';
+    htmlStr += '<div class="reviews-header"><img src="" alt="png.."/></div>';
+    htmlStr += '<div class="reviews-right">';
+    htmlStr += '<span class="reviews-name">空谷幽兰</span>';
+    htmlStr += '<span class="reviews-time">6天前</span>';
+    htmlStr += '<p class="reviews-content">别说了啊啊啊</p></div></div>';
+    htmlStr += '<div class="reviews-box-last">';
+    htmlStr += '<div class="reviews-header"><img src="" alt="png.."/></div>';
+    htmlStr += '<div class="reviews-right">';
+    htmlStr += '<span class="reviews-name">空谷幽兰</span>';
+    htmlStr += '<span class="reviews-time">6天前</span>';
+    htmlStr += '<p class="reviews-content">别说了啊啊啊</p>';
+    htmlStr += '</div></div></section>';
+
+    htmlStr += '<section class="new-reciews">';
+    htmlStr += '<div class="reviews-title"><span>最新评论</span></div>';
+    //$.each('',function(idx,content){
+        htmlStr += '<div class="reviews-box">';
+        htmlStr += '<div class="reviews-header"><img src="" alt="png.."/></div>';
+        htmlStr += '<div class="reviews-right">';
+        htmlStr += '<span class="reviews-name">空谷幽兰</span>';
+        htmlStr += '<span class="reviews-time">6天前</span>';
+        htmlStr += '<p class="reviews-content">别说了啊啊啊</p></div></div>';
+    //});
+    htmlStr += '</section>';
+    htmlStr += '</div>';
 
     //相关新闻
     if (data.recomendVideos.length > 0) {
@@ -213,20 +281,30 @@ function renderData(data) {
     //}
 
     $('#box').html(htmlStr);
+
 }
 
 $(function () {
-     //$.get('data/living.json', function (res) {
-     //   if (res.code == 10000) {
-     //       renderData(res.data);
-     //   }
-     //});
+     $.get('data/living.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+     });
 
+    //观看直播
     $(document).on('click','.select',function(e){
         e.preventDefault();
-        $(this).addClass('selected');
-        $(this).parent().addClass('selected');
-        //调客户端观看直播的方法
+        var dataUrl = $(this).data('url');
+        console.log(dataId);
+        try{
+            $(this).addClass('selected');
+            $(this).parent().addClass('selected');
+            Jnapp.jn_related('5',dataUrl+'');
+        }catch(e){
+
+        }
+
+
     });
     // 图片查看大图
     $(document).on('click', '.live-byword-list-words-images img', function (e) {
@@ -264,7 +342,7 @@ $(function () {
             number++;
             elem.html(number);
             $(this).find('img').attr('src', 'images/matchdetail_ic_support_red.png');
-            Jn.setCookie("sp-" + dataId, number, 365);
+            Jn.setCookie("sp-" + dataId, number + '', 365);
             Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
 
@@ -286,7 +364,7 @@ $(function () {
             number++;
             elem.html(number);
             $(this).find('img').attr('src', 'images/matchdetail_ic_support_blue.png');
-            Jn.setCookie("sp-" + dataId, number, 365);
+            Jn.setCookie("sp-" + dataId, number + '', 365);
             Jnapp.jn_agree(7, dataId, teamId);
         } catch (e) {
         }
@@ -307,6 +385,46 @@ $(function () {
         }
     });
 
+    //讨论底部无限加载
+    var page = 1;
+    //var reviewStatus = $('.outContainer .reviews').css("display");
+    //console.log(reviewStatus);
+    //if(reviewStatus == 'block'){
+        $(document).on('scroll',function(e){
+            e.preventDefault();
+            var $scrollTop = $(window).scrollTop(),
+                $documentHeight = $(document).height(),
+                $winHeight = $(window).height(),
+                $dis = $scrollTop + $winHeight,
+                loadReview = $('.new-reciews'),
+                htmlReview;
+            var allpage; //总页码，会从后台获取
+                if( $dis>=$documentHeight) {
+                    //掉客户端方法
+                    //var moreComment = jn_getMoreComment(sourceId,page + '','30');
+                    //if (typeof moreComment == 'string') {
+                    //    moreComment = $.parseJSON(moreComment);
+                    //}
+                    page++;
+                    console.log(page);
+                    try {
+                        //$.each('',function(idx,content){
+                        htmlReview = '<div class="reviews-box">';
+                        htmlReview += '<div class="reviews-header"><img src="" alt="png.."/></div>';
+                        htmlReview += '<div class="reviews-right">';
+                        htmlReview += '<span class="reviews-name">空谷幽兰</span>';
+                        htmlReview += '<span class="reviews-time">6天前</span>';
+                        htmlReview += '<p class="reviews-content">别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊</p></div></div>';
+                        //});
+                        console.log(htmlReview);
+                        loadReview.append(htmlReview);
+                    } catch (e) {
+
+                    }
+                }
+        });
+    //}
+
     // 直播跳转
     $(document).on('click', '.play-icon', function () {
         try {
@@ -316,3 +434,4 @@ $(function () {
         }
     });
 });
+

@@ -1,0 +1,50 @@
+section{
+    background-color: #ffffff;
+}
+.reviews-box{
+    display: flex;
+    border-bottom: 1px solid #9c9c9c;
+    margin: 0 0.8rem;
+}
+.reviews-header{
+    padding: 0.6rem 0;
+    flex: 1;
+}
+.reviews-header img{
+    width: 2rem;
+    height: 2rem;
+}
+.reviews-title{
+    padding: 0.6rem;
+    border-bottom: 1px solid #9c9c9c;
+}
+.reviews-title span{
+    color: #ff0000;
+    font-size: 0.8rem;
+}
+.reviews-right{
+    padding: 0.4rem;
+    display: flex;
+    flex-direction:column;
+    flex: 9;
+}
+.reviews-name,.reviews-time,.reviews-content{
+    padding: 0.1rem;
+}
+.reviews-name,.reviews-content{
+    font-size: 0.8rem;
+}
+.reviews-name{
+    color: #41adff;
+}
+.reviews-time{
+    font-size: 0.6rem;
+    color: #9c9c9c;
+}
+.reviews-box-last{
+    display: flex;
+    margin: 0 0.8rem;
+}
+.new-reciews{
+    margin-top: 0.5rem;
+}
