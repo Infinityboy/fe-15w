@@ -243,8 +243,9 @@ function renderReviews(reviewsData,type){
     topicId = reviewsData.topic_id;
     allpage = reviewsData.cmt_sum/30;
     if(type == 0){
-        htmlReview = '<section class="hot-reviews">';
+        htmlReview = '<div>';
         if(reviewsData.hots){
+            htmlReview += '<section class="hot-reviews">';
             htmlReview += '<div class="reviews-title"><span>热门评论</span></div>';
             $.each(reviewsData.hots,function(i,hotContent){
                 htmlReview = '<div class="reviews-box">';
@@ -255,8 +256,9 @@ function renderReviews(reviewsData,type){
                 htmlReview += '<p class="reviews-content">'+hotContent.content+'</p>';
                 htmlReview += '</div></div>';
             });
+            htmlReview += '</section>';
         }
-        htmlReview += '</section>';
+
         htmlReview += '<section class="new-reciews">';
         htmlReview += '<div class="reviews-title"><span>最新评论</span></div>';
         $.each(reviewsData.comments,function(idx,content){
@@ -268,6 +270,7 @@ function renderReviews(reviewsData,type){
             htmlReview += '<p class="reviews-content">'+content.content+'</p></div></div>';
         });
         htmlReview += '</section>';
+        htmlReview += '</div>';
         $('.reviews').html(htmlReview);
     }
     if(type == 1){
