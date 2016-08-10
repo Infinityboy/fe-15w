@@ -239,6 +239,7 @@ function renderData(data) {
 function renderReviews(reviewsData,type){
     var newReview = $('.new-reciews');
     var htmlReview;
+
     topicId = reviewsData.topic_id;
     allpage = reviewsData.cmt_sum/30;
     if(type == 0){
@@ -270,16 +271,16 @@ function renderReviews(reviewsData,type){
         $('.reviews').html(htmlReview);
     }
     if(type == 1){
-        var htmlMorereview;
+        var htmlMorereview = '<div>';
         $.each(reviewsData.comments,function(index,moreContent){
-            htmlMorereview = '<div class="reviews-box">';
+            htmlMorereview += '<div class="reviews-box">';
             htmlMorereview += '<div class="reviews-header"><img src="'+moreContent.passport.img_url+'" alt=""/>'+'</div>';
             htmlMorereview += '<div class="reviews-right">';
             htmlMorereview += '<span class="reviews-name">'+moreContent.passport.nickname+'</span>';
             htmlMorereview += '<span class="reviews-time">6天前</span>';
             htmlMorereview += '<p class="reviews-content">'+moreContent.content+'</p></div></div>';
         });
-        htmlMorereview += '';
+        htmlMorereview += '</div>';
         newReview.append(htmlMorereview);
     }
 }
