@@ -4,6 +4,7 @@ var cacheData = null;
 var s;
 var sourceId;
 var topicId;
+var allpage;
 window.Jn = {
     setCookie: function (name, value, iDay) {
         var oDate = new Date();
@@ -182,6 +183,7 @@ function renderData(data) {
     var sourceTitle = data.title;
     var getComment = Jnapp.jn_getComment(sourceId,sourceTitle);
     topicId = getComment.topic_id;
+    allpage = getComment.cmt_sum/30;
     htmlStr += '<div class="reviews" data-id="1">';
     //畅言评论
     htmlStr += '<section class="hot-reviews">';
@@ -394,26 +396,30 @@ $(function () {
                     $dis = $scrollTop + $winHeight,
                     loadReview = $('.new-reciews'),
                     htmlReview;
-                //var allpage; //总页码，会从后台获取
                 if( $dis>=$documentHeight) {
-                    //掉客户端方法
-                    var moreComment = Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
                     page++;
                     console.log(page);
-                    try {
-                        $.each(moreComment.comments,function(idx,content){
-                            htmlReview = '<div class="reviews-box">';
-                            htmlReview += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
-                            htmlReview += '<div class="reviews-right">';
-                            htmlReview += '<span class="reviews-name">'+content.passport.nickname+'</span>';
-                            htmlReview += '<span class="reviews-time">6天前</span>';
-                            htmlReview += '<p class="reviews-content">'+content.content+'</p></div></div>';
-                        });
-                        console.log(htmlReview);
-                        loadReview.append(htmlReview);
-                    } catch (e) {
+                    if(page>allpage){
 
+                    }else{
+                        //掉客户端方法
+                        var moreComment = Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
+                        try {
+                            $.each(moreComment.comments,function(idx,content){
+                                htmlReview = '<div class="reviews-box">';
+                                htmlReview += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
+                                htmlReview += '<div class="reviews-right">';
+                                htmlReview += '<span class="reviews-name">'+content.passport.nickname+'</span>';
+                                htmlReview += '<span class="reviews-time">6天前</span>';
+                                htmlReview += '<p class="reviews-content">'+content.content+'</p></div></div>';
+                            });
+                            console.log(htmlReview);
+                            loadReview.append(htmlReview);
+                        } catch (e) {
+
+                        }
                     }
+
                 }
             });
         }
