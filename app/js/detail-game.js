@@ -3,6 +3,7 @@
 var cacheData = null;
 var s;
 var sourceId;
+var sourceTitle;
 var topicId;
 var allpage;
 window.Jn = {
@@ -30,8 +31,8 @@ Jn.setData = function (data) {
 };
 
 Jn.addComment = function(data){
-    if(data.code == '10000' && data.message == 'success'){
-        renderData(data.data);
+    if(data.code == '10000'){
+        renderReviews(data);
     }
 };
 
@@ -41,6 +42,9 @@ Jn.refreshComment = function(data){
 
 
 function renderData(data) {
+
+
+
     var htmlStr = '<header><section class="header-scores">';
     htmlStr += '<div><img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/></div>';
     htmlStr += '<div class="game-score"><span><b>' + data.teamA.score + '</b> </span><span><b>:</b></span>';
@@ -162,63 +166,46 @@ function renderData(data) {
     //    }
     //}
 
-    //$.getJSON('http://changyan.sohu.com/api/2/topic/comments?client_id=cyqJ0s6uI&topic_id=' + data.changyanSid + '&callback=?',function(res){
-    //    console.log(res);
-    //});
-    //function showAjax(){
-    //    $.ajax({
-    //        url:"http://changyan.sohu.com/api/2/topic/comments?client_id=cyqJ0s6uI&topic_id=" + data.changyanSid + "&callback=?",
-    //        type:"GET",
-    //        data:"",
-    //        dataType: 'jsonp',
-    //        success:function(data){
-    //            //要执行的内容
-    //            //showContent();
-    //            //page++;	//页数加1
-    //            console.log(data);
-    //        }
-    //    })
-    //}
     sourceId = data.changyanSid;
-    var sourceTitle = data.title;
-    var getComment = Jnapp.jn_getComment(sourceId,sourceTitle);
-    topicId = getComment.topic_id;
-    allpage = getComment.cmt_sum/30;
+    sourceTitle = data.title;
+    //var getComment = Jnapp.jn_getComment(sourceId,sourceTitle);
+
+    Jnapp.jn_getComment(sourceId,sourceTitle);
     htmlStr += '<div class="reviews" data-id="1">';
     //畅言评论
-    htmlStr += '<section class="hot-reviews">';
-    htmlStr += '<div class="reviews-title"><span>热门评论</span></div>';
-    htmlStr += '<div class="reviews-box">';
-    htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[0].passport.img_url+'" alt=""/>'+'</div>';
-    htmlStr += '<div class="reviews-right">';
-    htmlStr += '<span class="reviews-name">'+getComment.hots[0].passport.nickname+'</span>';
-    htmlStr += '<span class="reviews-time">6天前</span>';
-    htmlStr += '<p class="reviews-content">'+getComment.hots[0].content+'</p> </div> </div>';
-    htmlStr += '<div class="reviews-box">';
-    htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[1].passport.img_url+'" alt=""/>'+'</div>';
-    htmlStr += '<div class="reviews-right">';
-    htmlStr += '<span class="reviews-name">'+getComment.hots[1].passport.nickname+'</span>';
-    htmlStr += '<span class="reviews-time">6天前</span>';
-    htmlStr += '<p class="reviews-content">'+getComment.hots[1].content+'</p></div></div>';
-    htmlStr += '<div class="reviews-box-last">';
-    htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[2].passport.img_url+'" alt=""/>'+'</div>';
-    htmlStr += '<div class="reviews-right">';
-    htmlStr += '<span class="reviews-name">'+getComment.hots[2].passport.nickname+'</span>';
-    htmlStr += '<span class="reviews-time">6天前</span>';
-    htmlStr += '<p class="reviews-content">'+getComment.hots[2].content+'</p>';
-    htmlStr += '</div></div></section>';
-
-    htmlStr += '<section class="new-reciews">';
-    htmlStr += '<div class="reviews-title"><span>最新评论</span></div>';
-    $.each(getComment.comments,function(idx,content){
-        htmlStr += '<div class="reviews-box">';
-        htmlStr += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
-        htmlStr += '<div class="reviews-right">';
-        htmlStr += '<span class="reviews-name">'+content.passport.nickname+'</span>';
-        htmlStr += '<span class="reviews-time">6天前</span>';
-        htmlStr += '<p class="reviews-content">'+content.content+'</p></div></div>';
-    });
-    htmlStr += '</section>';
+    //htmlStr += '<section class="hot-reviews">';
+    //htmlStr += '<div class="reviews-title"><span>热门评论</span></div>';
+    //htmlStr += '<div class="reviews-box">';
+    //htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[0].passport.img_url+'" alt=""/>'+'</div>';
+    //htmlStr += '<div class="reviews-right">';
+    //htmlStr += '<span class="reviews-name">'+getComment.hots[0].passport.nickname+'</span>';
+    //htmlStr += '<span class="reviews-time">6天前</span>';
+    //htmlStr += '<p class="reviews-content">'+getComment.hots[0].content+'</p> </div> </div>';
+    //htmlStr += '<div class="reviews-box">';
+    //htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[1].passport.img_url+'" alt=""/>'+'</div>';
+    //htmlStr += '<div class="reviews-right">';
+    //htmlStr += '<span class="reviews-name">'+getComment.hots[1].passport.nickname+'</span>';
+    //htmlStr += '<span class="reviews-time">6天前</span>';
+    //htmlStr += '<p class="reviews-content">'+getComment.hots[1].content+'</p></div></div>';
+    //htmlStr += '<div class="reviews-box-last">';
+    //htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[2].passport.img_url+'" alt=""/>'+'</div>';
+    //htmlStr += '<div class="reviews-right">';
+    //htmlStr += '<span class="reviews-name">'+getComment.hots[2].passport.nickname+'</span>';
+    //htmlStr += '<span class="reviews-time">6天前</span>';
+    //htmlStr += '<p class="reviews-content">'+getComment.hots[2].content+'</p>';
+    //htmlStr += '</div></div></section>';
+    //
+    //htmlStr += '<section class="new-reciews">';
+    //htmlStr += '<div class="reviews-title"><span>最新评论</span></div>';
+    //$.each(getComment.comments,function(idx,content){
+    //    htmlStr += '<div class="reviews-box">';
+    //    htmlStr += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
+    //    htmlStr += '<div class="reviews-right">';
+    //    htmlStr += '<span class="reviews-name">'+content.passport.nickname+'</span>';
+    //    htmlStr += '<span class="reviews-time">6天前</span>';
+    //    htmlStr += '<p class="reviews-content">'+content.content+'</p></div></div>';
+    //});
+    //htmlStr += '</section>';
     htmlStr += '</div>';
 
     //相关新闻
@@ -233,7 +220,6 @@ function renderData(data) {
             if (item.tagColor && item.tagName) {
                 htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
             }
-
 
             var date = new Date();
             var dateStr;
@@ -284,13 +270,67 @@ function renderData(data) {
     $('#box').html(htmlStr);
 
 }
+function renderReviews(reviewsData){
+    topicId = reviewsData.topic_id;
+    allpage = reviewsData.cmt_sum/30;
+    if(reviewsData.type == '0'){
+        var htmlStr = '<section class="hot-reviews">';
+        htmlStr += '<div class="reviews-title"><span>热门评论</span></div>';
+        htmlStr = '<div class="reviews-box">';
+        htmlStr += '<div class="reviews-header"><img src="'+reviewsData.hots[0].passport.img_url+'" alt=""/>'+'</div>';
+        htmlStr += '<div class="reviews-right">';
+        htmlStr += '<span class="reviews-name">'+reviewsData.hots[0].passport.nickname+'</span>';
+        htmlStr += '<span class="reviews-time">6天前</span>';
+        htmlStr += '<p class="reviews-content">'+reviewsData.hots[0].content+'</p> </div> </div>';
+        htmlStr += '<div class="reviews-box">';
+        htmlStr += '<div class="reviews-header"><img src="'+reviewsData.hots[1].passport.img_url+'" alt=""/>'+'</div>';
+        htmlStr += '<div class="reviews-right">';
+        htmlStr += '<span class="reviews-name">'+reviewsData.hots[1].passport.nickname+'</span>';
+        htmlStr += '<span class="reviews-time">6天前</span>';
+        htmlStr += '<p class="reviews-content">'+reviewsData.hots[1].content+'</p></div></div>';
+        htmlStr += '<div class="reviews-box-last">';
+        htmlStr += '<div class="reviews-header"><img src="'+reviewsData.hots[2].passport.img_url+'" alt=""/>'+'</div>';
+        htmlStr += '<div class="reviews-right">';
+        htmlStr += '<span class="reviews-name">'+reviewsData.hots[2].passport.nickname+'</span>';
+        htmlStr += '<span class="reviews-time">6天前</span>';
+        htmlStr += '<p class="reviews-content">'+reviewsData.hots[2].content+'</p>';
+        htmlStr += '</div></div></section>';
+
+        htmlStr += '<section class="new-reciews">';
+        htmlStr += '<div class="reviews-title"><span>最新评论</span></div>';
+        $.each(reviewsData.comments,function(idx,content){
+            htmlStr += '<div class="reviews-box">';
+            htmlStr += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
+            htmlStr += '<div class="reviews-right">';
+            htmlStr += '<span class="reviews-name">'+content.passport.nickname+'</span>';
+            htmlStr += '<span class="reviews-time">6天前</span>';
+            htmlStr += '<p class="reviews-content">'+content.content+'</p></div></div>';
+        });
+        htmlStr += '</section>';
+        $('.reviews').html(htmlStr);
+    }
+    if(reviewsData.type == '1'){
+        var htmlMorereview;
+        var newReview = $('.new-reciews');
+        $.each(reviewsData.comments,function(idx,content){
+            htmlMorereview = '<div class="reviews-box">';
+            htmlMorereview += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
+            htmlMorereview += '<div class="reviews-right">';
+            htmlMorereview += '<span class="reviews-name">'+content.passport.nickname+'</span>';
+            htmlMorereview += '<span class="reviews-time">6天前</span>';
+            htmlMorereview += '<p class="reviews-content">'+content.content+'</p></div></div>';
+        });
+        newReview.append(htmlMorereview);
+    }
+}
+
 
 $(function () {
-     $.get('data/living.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-     });
+     //$.get('data/living.json', function (res) {
+     //   if (res.code == 10000) {
+     //       renderData(res.data);
+     //   }
+     //});
 
     //观看直播
     $(document).on('click','.select',function(e){
@@ -388,33 +428,34 @@ $(function () {
         //讨论无限加载(还是不能满足只在讨论模块无限加载)
         var page = 1;
         if(target.innerHTML == '讨论'){
+            //Jnapp.jn_getComment(sourceId,sourceTitle);
             $(document).on('scroll',function(e){
                 e.preventDefault();
                 var $scrollTop = $(window).scrollTop(),
                     $documentHeight = $(document).height(),
                     $winHeight = $(window).height(),
-                    $dis = $scrollTop + $winHeight,
-                    loadReview = $('.new-reciews'),
-                    htmlReview;
+                    $dis = $scrollTop + $winHeight;
+                    //loadReview = $('.new-reciews'),
+                    //htmlReview;
                 if( $dis>=$documentHeight) {
                     page++;
                     console.log(page);
                     if(page>allpage){
 
                     }else{
-                        //掉客户端方法
-                        var moreComment = Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
                         try {
-                            $.each(moreComment.comments,function(idx,content){
-                                htmlReview = '<div class="reviews-box">';
-                                htmlReview += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
-                                htmlReview += '<div class="reviews-right">';
-                                htmlReview += '<span class="reviews-name">'+content.passport.nickname+'</span>';
-                                htmlReview += '<span class="reviews-time">6天前</span>';
-                                htmlReview += '<p class="reviews-content">'+content.content+'</p></div></div>';
-                            });
-                            console.log(htmlReview);
-                            loadReview.append(htmlReview);
+                            //掉客户端方法
+                            Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
+                            //$.each(moreComment.comments,function(idx,content){
+                            //    htmlReview = '<div class="reviews-box">';
+                            //    htmlReview += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
+                            //    htmlReview += '<div class="reviews-right">';
+                            //    htmlReview += '<span class="reviews-name">'+content.passport.nickname+'</span>';
+                            //    htmlReview += '<span class="reviews-time">6天前</span>';
+                            //    htmlReview += '<p class="reviews-content">'+content.content+'</p></div></div>';
+                            //});
+                            //console.log(htmlReview);
+                            //loadReview.append(htmlReview);
                         } catch (e) {
 
                         }
