@@ -419,6 +419,8 @@ $(function () {
 
             }
 
+        }else{
+            load = false;
         }
 
     });
