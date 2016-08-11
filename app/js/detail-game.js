@@ -6,6 +6,7 @@ var sourceTitle;
 var topicId;
 var allpage;
 var load = false;
+var pageTitle;
 window.Jn = {
     setCookie: function (name, value, iDay) {
         var oDate = new Date();
@@ -387,9 +388,10 @@ $(function () {
                 oContainer.children().eq(cls).show().siblings().hide();
             }
         }
-        //讨论无限加载(还是不能满足只在讨论模块无限加载)
+        //讨论无限加载
         var page = 1;
-        if($(this).text() == '讨论'){
+        pageTitle = $(this).text();
+        if(pageTitle == '讨论'){
             load = true;
             //Jnapp.jn_getComment(sourceId,sourceTitle);
         }
@@ -407,7 +409,7 @@ $(function () {
                     }else{
                         try {
                             //掉客户端方法
-                            if(load == true){
+                            if(load == true && pageTitle == '讨论'){
                                 Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
                             }
                         } catch (e) {
