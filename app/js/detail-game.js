@@ -392,7 +392,8 @@ $(function () {
         if(target.innerHTML == '讨论'){
             load = true;
             //Jnapp.jn_getComment(sourceId,sourceTitle);
-            if(load){
+            if(load == true){
+                load = false;
                 $(document).on('scroll',function(e){
                     e.preventDefault();
                     var $scrollTop = $(window).scrollTop(),
@@ -415,9 +416,11 @@ $(function () {
 
                     }
                 });
+
             }
+
         }
-        load = false;
+
     });
 
     //讨论底部无限加载
