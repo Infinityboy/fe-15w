@@ -420,44 +420,6 @@ $(function () {
 
     });
 
-    //讨论底部无限加载
-    //var page = 1;
-    //if(target.text() == '讨论'){
-    //    $(document).on('scroll',function(e){
-    //        e.preventDefault();
-    //        var $scrollTop = $(window).scrollTop(),
-    //            $documentHeight = $(document).height(),
-    //            $winHeight = $(window).height(),
-    //            $dis = $scrollTop + $winHeight,
-    //            loadReview = $('.new-reciews'),
-    //            htmlReview;
-    //        var allpage; //总页码，会从后台获取
-    //            if( $dis>=$documentHeight) {
-    //                //掉客户端方法
-    //                //var moreComment = jn_getMoreComment(sourceId,page + '','30');
-    //                //if (typeof moreComment == 'string') {
-    //                //    moreComment = $.parseJSON(moreComment);
-    //                //}
-    //                page++;
-    //                console.log(page);
-    //                try {
-    //                    //$.each('',function(idx,content){
-    //                    htmlReview = '<div class="r eviews-box">';
-    //                    htmlReview += '<div class="reviews-header"><img src="" alt="png.."/></div>';
-    //                    htmlReview += '<div class="reviews-right">';
-    //                    htmlReview += '<span class="reviews-name">空谷幽兰</span>';
-    //                    htmlReview += '<span class="reviews-time">6天前</span>';
-    //                    htmlReview += '<p class="reviews-content">别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊别说了啊啊啊</p></div></div>';
-    //                    //});
-    //                    console.log(htmlReview);
-    //                    loadReview.append(htmlReview);
-    //                } catch (e) {
-    //
-    //                }
-    //            }
-    //    });
-    //}
-
     // 直播跳转
     $(document).on('click', '.play-icon', function () {
         try {
