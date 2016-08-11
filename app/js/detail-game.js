@@ -376,8 +376,8 @@ $(function () {
     // tab切换 切换外层选项卡
     $(document).on('click', '.outer .outList', function (e) {
         e.preventDefault();
-        var target = e.target;
-        console.log(target.innerHTML);
+        //var target = e.target;
+        //console.log(target.innerHTML);
         if (!$(this).hasClass('selected')) {
             var cls = $(this).data('id');
             var oContainer = $('.outContainer');
@@ -389,39 +389,34 @@ $(function () {
         }
         //讨论无限加载(还是不能满足只在讨论模块无限加载)
         var page = 1;
-        if(target.innerHTML == '讨论'){
+        if($(this).text() == '讨论'){
             load = true;
             //Jnapp.jn_getComment(sourceId,sourceTitle);
-            if(load == true){
-                load = false;
-                $(document).on('scroll',function(e){
-                    e.preventDefault();
-                    var $scrollTop = $(window).scrollTop(),
-                        $documentHeight = $(document).height(),
-                        $winHeight = $(window).height(),
-                        $dis = $scrollTop + $winHeight;
-                    if( $dis>=$documentHeight) {
-                        page++;
-                        console.log(page);
-                        if(page>allpage){
-
-                        }else{
-                            try {
-                                //掉客户端方法
-                                Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
-                            } catch (e) {
-
-                            }
-                        }
-
-                    }
-                });
-
-            }
-
-        }else{
-            load = false;
         }
+            $(document).on('scroll',function(e){
+                e.preventDefault();
+                var $scrollTop = $(window).scrollTop(),
+                    $documentHeight = $(document).height(),
+                    $winHeight = $(window).height(),
+                    $dis = $scrollTop + $winHeight;
+                if( $dis>=$documentHeight) {
+                    page++;
+                    console.log(page);
+                    if(page>allpage){
+
+                    }else{
+                        try {
+                            //掉客户端方法
+                            if(load == true){
+                                Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
+                            }
+                        } catch (e) {
+
+                        }
+                    }
+
+                }
+            });
 
     });
 
