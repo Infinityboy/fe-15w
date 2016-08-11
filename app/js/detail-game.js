@@ -392,32 +392,32 @@ $(function () {
         if(target.innerHTML == '讨论'){
             load = true;
             //Jnapp.jn_getComment(sourceId,sourceTitle);
-        }
-        if(load == 'true'){
-            $(document).on('scroll',function(e){
-                e.preventDefault();
-                var $scrollTop = $(window).scrollTop(),
-                    $documentHeight = $(document).height(),
-                    $winHeight = $(window).height(),
-                    $dis = $scrollTop + $winHeight;
-                if( $dis>=$documentHeight) {
-                    page++;
-                    console.log(page);
-                    if(page>allpage){
+            if(load){
+                $(document).on('scroll',function(e){
+                    e.preventDefault();
+                    var $scrollTop = $(window).scrollTop(),
+                        $documentHeight = $(document).height(),
+                        $winHeight = $(window).height(),
+                        $dis = $scrollTop + $winHeight;
+                    if( $dis>=$documentHeight) {
+                        page++;
+                        console.log(page);
+                        if(page>allpage){
 
-                    }else{
-                        try {
-                            //掉客户端方法
-                            Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
-                        } catch (e) {
+                        }else{
+                            try {
+                                //掉客户端方法
+                                Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
+                            } catch (e) {
 
+                            }
                         }
-                    }
 
-                }
-            });
+                    }
+                });
+            }
         }
-    load = false;
+        load = false;
     });
 
     //讨论底部无限加载
