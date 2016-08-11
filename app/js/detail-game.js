@@ -1,11 +1,11 @@
 'use strict';
 
 var cacheData = null;
-var s;
 var sourceId;
 var sourceTitle;
 var topicId;
 var allpage;
+var load = false;
 window.Jn = {
     setCookie: function (name, value, iDay) {
         var oDate = new Date();
@@ -246,8 +246,8 @@ function renderReviews(reviewsData,type){
         htmlReview += '<section class="hot-reviews">';
         if(reviewsData.hots){
             htmlReview += '<div class="reviews-title"><span>热门评论</span></div>';
-            $.each(reviewsData.hots,function(i,hotContent){
-                htmlReview = '<div class="reviews-box">';
+            $.each(reviewsData.hots,function(hotIdx,hotContent){
+                htmlReview += '<div class="reviews-box">';
                 htmlReview += '<div class="reviews-header"><img src="'+hotContent.passport.img_url+'" alt=""/>'+'</div>';
                 htmlReview += '<div class="reviews-right">';
                 htmlReview += '<span class="reviews-name">'+hotContent.passport.nickname+'</span>';
@@ -390,7 +390,10 @@ $(function () {
         //讨论无限加载(还是不能满足只在讨论模块无限加载)
         var page = 1;
         if(target.innerHTML == '讨论'){
+            load = true;
             //Jnapp.jn_getComment(sourceId,sourceTitle);
+        }
+        if(load == 'true'){
             $(document).on('scroll',function(e){
                 e.preventDefault();
                 var $scrollTop = $(window).scrollTop(),
@@ -414,11 +417,9 @@ $(function () {
                 }
             });
         }
+    load = false;
+    });
 
-    });
-    $(document).off('click', '.outer .outList',function(e){
-        e.preventDefault();
-    });
     //讨论底部无限加载
     //var page = 1;
     //if(target.text() == '讨论'){

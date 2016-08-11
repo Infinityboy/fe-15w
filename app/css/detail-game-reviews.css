@@ -13,6 +13,7 @@ section{
 .reviews-header img{
     width: 2rem;
     height: 2rem;
+    border-radius: 50%;
 }
 .reviews-title{
     padding: 0.6rem;
