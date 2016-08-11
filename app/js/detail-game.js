@@ -37,8 +37,12 @@ Jn.addComment = function(reviewsData){
     }
 };
 
-Jn.refreshComment = function(data){
-    Jnapp.jn_getComment(data.content.changyanSid,data.content.sourceTitle);
+Jn.refreshComment = function(){
+
+    if(load == true && pageTitle == '讨论'){
+        Jnapp.jn_getComment(sourceId,sourceTitle);
+    }
+
 };
 
 
@@ -168,40 +172,6 @@ function renderData(data) {
     sourceTitle = data.title;
     Jnapp.jn_getComment(sourceId,sourceTitle);
     htmlStr += '<div class="reviews" data-id="1">';
-    //畅言评论
-    //htmlStr += '<section class="hot-reviews">';
-    //htmlStr += '<div class="reviews-title"><span>热门评论</span></div>';
-    //htmlStr += '<div class="reviews-box">';
-    //htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[0].passport.img_url+'" alt=""/>'+'</div>';
-    //htmlStr += '<div class="reviews-right">';
-    //htmlStr += '<span class="reviews-name">'+getComment.hots[0].passport.nickname+'</span>';
-    //htmlStr += '<span class="reviews-time">6天前</span>';
-    //htmlStr += '<p class="reviews-content">'+getComment.hots[0].content+'</p> </div> </div>';
-    //htmlStr += '<div class="reviews-box">';
-    //htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[1].passport.img_url+'" alt=""/>'+'</div>';
-    //htmlStr += '<div class="reviews-right">';
-    //htmlStr += '<span class="reviews-name">'+getComment.hots[1].passport.nickname+'</span>';
-    //htmlStr += '<span class="reviews-time">6天前</span>';
-    //htmlStr += '<p class="reviews-content">'+getComment.hots[1].content+'</p></div></div>';
-    //htmlStr += '<div class="reviews-box-last">';
-    //htmlStr += '<div class="reviews-header"><img src="'+getComment.hots[2].passport.img_url+'" alt=""/>'+'</div>';
-    //htmlStr += '<div class="reviews-right">';
-    //htmlStr += '<span class="reviews-name">'+getComment.hots[2].passport.nickname+'</span>';
-    //htmlStr += '<span class="reviews-time">6天前</span>';
-    //htmlStr += '<p class="reviews-content">'+getComment.hots[2].content+'</p>';
-    //htmlStr += '</div></div></section>';
-    //
-    //htmlStr += '<section class="new-reciews">';
-    //htmlStr += '<div class="reviews-title"><span>最新评论</span></div>';
-    //$.each(getComment.comments,function(idx,content){
-    //    htmlStr += '<div class="reviews-box">';
-    //    htmlStr += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
-    //    htmlStr += '<div class="reviews-right">';
-    //    htmlStr += '<span class="reviews-name">'+content.passport.nickname+'</span>';
-    //    htmlStr += '<span class="reviews-time">6天前</span>';
-    //    htmlStr += '<p class="reviews-content">'+content.content+'</p></div></div>';
-    //});
-    //htmlStr += '</section>';
     htmlStr += '</div>';
 
     //相关新闻
@@ -243,6 +213,7 @@ function renderReviews(reviewsData,type){
     var result;
     topicId = reviewsData.topic_id;
     allpage = reviewsData.cmt_sum/30;
+    //时间戳转换
     function getDatediff(timeStamp){
         var minute = 1000 * 60;
         var hour = minute * 60;
@@ -405,8 +376,8 @@ $(function () {
     // tab切换 切换外层选项卡
     $(document).on('click', '.outer .outList', function (e) {
         e.preventDefault();
-        //var target = e.target;
-        //console.log(target.innerHTML);
+        var page = 1;
+        pageTitle = $(this).text();
         if (!$(this).hasClass('selected')) {
             var cls = $(this).data('id');
             var oContainer = $('.outContainer');
@@ -417,36 +388,33 @@ $(function () {
             }
         }
         //讨论无限加载
-        var page = 1;
-        pageTitle = $(this).text();
         if(pageTitle == '讨论'){
             load = true;
-            //Jnapp.jn_getComment(sourceId,sourceTitle);
         }
-            $(document).on('scroll',function(e){
-                e.preventDefault();
-                var $scrollTop = $(window).scrollTop(),
-                    $documentHeight = $(document).height(),
-                    $winHeight = $(window).height(),
-                    $dis = $scrollTop + $winHeight;
-                if( $dis>=$documentHeight) {
-                    page++;
-                    console.log(page);
-                    if(page>allpage){
+        $(document).on('scroll',function(e){
+            e.preventDefault();
+            var $scrollTop = $(window).scrollTop(),
+                $documentHeight = $(document).height(),
+                $winHeight = $(window).height(),
+                $dis = $scrollTop + $winHeight;
+            if( $dis>=$documentHeight) {
+                page++;
+                console.log(page);
+                if(page>allpage){
 
-                    }else{
-                        try {
-                            //掉客户端方法
-                            if(load == true && pageTitle == '讨论'){
-                                Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
-                            }
-                        } catch (e) {
-
+                }else{
+                    try {
+                        //调客户端方法
+                        if(load == true && pageTitle == '讨论'){
+                            Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
                         }
-                    }
+                    } catch (e) {
 
+                    }
                 }
-            });
+
+            }
+        });
 
     });
 
