@@ -6,7 +6,9 @@ var sourceTitle;
 var topicId;
 var allpage;
 var load = false;
-var pageTitle;
+var pageTitle,
+    isLoading = false;
+
 window.Jn = {
     setCookie: function (name, value, iDay) {
         var oDate = new Date();
@@ -31,16 +33,17 @@ Jn.setData = function (data) {
     }
 };
 
-Jn.addComment = function(reviewsData){
-    if(reviewsData.code == '10000'){
-        renderReviews(reviewsData.data,reviewsData.type);
+Jn.addComment = function (reviewsData) {
+    isLoading = false;
+    if (reviewsData.code == '10000') {
+        renderReviews(reviewsData.data, reviewsData.type);
     }
 };
 
-Jn.refreshComment = function(){
-
-    if(load == true && pageTitle == '讨论'){
-        Jnapp.jn_getComment(sourceId,sourceTitle);
+Jn.refreshComment = function () {
+    if (load && pageTitle == '讨论' && !isLoading) {
+        isLoading = true;
+        Jnapp.jn_getComment(sourceId, sourceTitle);
     }
 
 };
@@ -82,27 +85,27 @@ function renderData(data) {
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
         htmlStr += '<div class="live-wrap">';
-        $.each(data.originSrc,function(i,liveList){
-            htmlStr += '<div class="deck">';
-            htmlStr += '<div class="deck-img"><img src="'+liveList.logo+'" alt=""/>'+'</div>';
-            htmlStr += '<span class="live-button select" data-url="'+liveList.link+'">观看直播</span></div>';
+        $.each(data.originSrc, function (i, liveList) {
+            htmlStr += '<div class="deck"><div class="deck-item">';
+            htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
+            htmlStr += '<span class="live-button select" data-url="' + liveList.link + '">观看直播</span></div></div>';
         });
         htmlStr += '</div></section></div>';
 
-    }else if(data.state == '3'){
+    } else if (data.state == '3') {
         //未直播将要直播
         htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
         htmlStr += '<div class="live-wrap">';
-        $.each(data.originSrc,function(index,liveList){
+        $.each(data.originSrc, function (index, liveList) {
             htmlStr += '<div class="deck no-select">';
-            htmlStr += '<div class="deck-img"><img src="'+liveList.logo+'" alt=""/>'+'</div>';
+            htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
             htmlStr += '<span class="live-button">即将开始</span></div>';
         });
         htmlStr += '</div></section></div>';
-    }else if(data.state == '2'){
+    } else if (data.state == '2') {
         //直播结束回放视频列表
         htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">视频</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
         if (data.relateVideos.length > 0) {
@@ -131,7 +134,7 @@ function renderData(data) {
         } else {
             htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem; text-align: center;line-height:10rem;display:none;background-color: #ffffff;">暂无视频数据</div>';
         }
-    }else{
+    } else {
         htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:block;background-color: #ffffff;">';
     }
 
@@ -170,9 +173,9 @@ function renderData(data) {
 
     sourceId = data.changyanSid;
     sourceTitle = data.title;
-    try{
-        Jnapp.jn_getComment(sourceId,sourceTitle);
-    } catch (e){
+    try {
+        Jnapp.jn_getComment(sourceId, sourceTitle);
+    } catch (e) {
 
     }
 
@@ -204,7 +207,7 @@ function renderData(data) {
         });
         htmlStr += ' </ul></section></div></div>';
     }
-    else{
+    else {
         htmlStr += '<div class="news" data-id="1" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:none;background-color: #ffffff;">暂无新闻数据</div>';
     }
 
@@ -212,50 +215,51 @@ function renderData(data) {
 
 }
 
-function renderReviews(reviewsData,type){
+function renderReviews(reviewsData, type) {
     var newReview = $('.new-reciews');
     var htmlReview;
     var result;
     topicId = reviewsData.topic_id;
-    allpage = reviewsData.cmt_sum/30;
+    allpage = reviewsData.cmt_sum / 30;
     //时间戳转换
-    function getDatediff(timeStamp){
+    function getDatediff(timeStamp) {
         var minute = 1000 * 60;
         var hour = minute * 60;
         var day = hour * 24;
         var now = new Date().getTime();
         var diffValue = now - timeStamp;
-        if(diffValue < 0){
+        if (diffValue < 0) {
             return;
         }
-        var dayBefore =diffValue/day;
-        var hourBefore =diffValue/hour;
-        var minBefore =diffValue/minute;
-        if(dayBefore>=1){
-            result=""+ parseInt(dayBefore) +"天前";
+        var dayBefore = diffValue / day;
+        var hourBefore = diffValue / hour;
+        var minBefore = diffValue / minute;
+        if (dayBefore >= 1) {
+            result = "" + parseInt(dayBefore) + "天前";
         }
-        else if(hourBefore>=1){
-            result=""+ parseInt(hourBefore) +"小时前";
+        else if (hourBefore >= 1) {
+            result = "" + parseInt(hourBefore) + "小时前";
         }
-        else if(minBefore>=1){
-            result=""+ parseInt(minBefore) +"分钟前";
-        }else
-            result="刚刚";
+        else if (minBefore >= 1) {
+            result = "" + parseInt(minBefore) + "分钟前";
+        } else
+            result = "刚刚";
         return result;
     }
-    if(type == 0){
+
+    if (type === 0) {
         htmlReview = '<div>';
         htmlReview += '<section class="hot-reviews">';
-        if(reviewsData.hots){
+        if (reviewsData.hots) {
             getDatediff(reviewsData.hots.create_time);
             htmlReview += '<div class="reviews-title"><span>热门评论</span></div>';
-            $.each(reviewsData.hots,function(hotIdx,hotContent){
+            $.each(reviewsData.hots, function (hotIdx, hotContent) {
                 htmlReview += '<div class="reviews-box">';
-                htmlReview += '<div class="reviews-header"><img src="'+hotContent.passport.img_url+'" alt=""/>'+'</div>';
+                htmlReview += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
                 htmlReview += '<div class="reviews-right">';
-                htmlReview += '<span class="reviews-name">'+hotContent.passport.nickname+'</span>';
-                htmlReview += '<span class="reviews-time">'+result+'</span>';
-                htmlReview += '<p class="reviews-content">'+hotContent.content+'</p></div></div>';
+                htmlReview += '<span class="reviews-name">' + hotContent.passport.nickname + '</span>';
+                htmlReview += '<span class="reviews-time">' + result + '</span>';
+                htmlReview += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
             });
 
         }
@@ -263,28 +267,28 @@ function renderReviews(reviewsData,type){
         getDatediff(reviewsData.comments.create_time);
         htmlReview += '<section class="new-reciews">';
         htmlReview += '<div class="reviews-title"><span>最新评论</span></div>';
-        $.each(reviewsData.comments,function(idx,content){
+        $.each(reviewsData.comments, function (idx, content) {
             htmlReview += '<div class="reviews-box">';
-            htmlReview += '<div class="reviews-header"><img src="'+content.passport.img_url+'" alt=""/>'+'</div>';
+            htmlReview += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
             htmlReview += '<div class="reviews-right">';
-            htmlReview += '<span class="reviews-name">'+content.passport.nickname+'</span>';
-            htmlReview += '<span class="reviews-time">'+result+'</span>';
-            htmlReview += '<p class="reviews-content">'+content.content+'</p></div></div>';
+            htmlReview += '<span class="reviews-name">' + content.passport.nickname + '</span>';
+            htmlReview += '<span class="reviews-time">' + result + '</span>';
+            htmlReview += '<p class="reviews-content">' + content.content + '</p></div></div>';
         });
         htmlReview += '</section>';
         htmlReview += '</div>';
         $('.reviews').html(htmlReview);
     }
-    if(type == 1){
+    if (type == 1) {
         var htmlMorereview = '<div>';
         getDatediff(reviewsData.comments.create_time);
-        $.each(reviewsData.comments,function(index,moreContent){
+        $.each(reviewsData.comments, function (index, moreContent) {
             htmlMorereview += '<div class="reviews-box">';
-            htmlMorereview += '<div class="reviews-header"><img src="'+moreContent.passport.img_url+'" alt=""/>'+'</div>';
+            htmlMorereview += '<div class="reviews-header"><img src="' + moreContent.passport.img_url + '" alt=""/>' + '</div>';
             htmlMorereview += '<div class="reviews-right">';
-            htmlMorereview += '<span class="reviews-name">'+moreContent.passport.nickname+'</span>';
-            htmlMorereview += '<span class="reviews-time">'+result+'</span>';
-            htmlMorereview += '<p class="reviews-content">'+moreContent.content+'</p></div></div>';
+            htmlMorereview += '<span class="reviews-name">' + moreContent.passport.nickname + '</span>';
+            htmlMorereview += '<span class="reviews-time">' + result + '</span>';
+            htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
         });
         htmlMorereview += '</div>';
         newReview.append(htmlMorereview);
@@ -293,21 +297,21 @@ function renderReviews(reviewsData,type){
 
 
 $(function () {
-     // $.get('data/living.json', function (res) {
-     //   if (res.code == 10000) {
-     //       renderData(res.data);
-     //   }
-     // });
+    // $.get('data/living.json', function (res) {
+    //     if (res.code == 10000) {
+    //         renderData(res.data);
+    //     }
+    // });
 
     //观看直播
-    $(document).on('click','.select',function(e){
+    $(document).on('click', '.select', function (e) {
         e.preventDefault();
         var dataUrl = $(this).data('url');
-        try{
+        try {
             $(this).addClass('selected');
             $(this).parent().addClass('selected');
-            Jnapp.jn_related('5',dataUrl+'');
-        }catch(e){
+            Jnapp.jn_related('5', dataUrl + '');
+        } catch (e) {
 
         }
 
@@ -387,37 +391,32 @@ $(function () {
             var cls = $(this).data('id');
             var oContainer = $('.outContainer');
             $(this).addClass('selected').siblings().removeClass('selected');
-            if(oContainer.children().eq(cls)){
-                console.log(oContainer.children().eq(cls));
+            if (oContainer.children().eq(cls)) {
                 oContainer.children().eq(cls).show().siblings().hide();
             }
         }
         //讨论无限加载
-        if(pageTitle == '讨论'){
+        if (pageTitle == '讨论') {
             load = true;
         }
-        $(document).on('scroll',function(e){
+        $(document).on('scroll', function (e) {
             e.preventDefault();
             var $scrollTop = $(window).scrollTop(),
                 $documentHeight = $(document).height(),
                 $winHeight = $(window).height(),
                 $dis = $scrollTop + $winHeight;
-            if( $dis>=$documentHeight) {
+            if ($dis >= $documentHeight) {
                 page++;
-                console.log(page);
-                if(page>allpage){
-
-                }else{
+                if (page <= allpage) {
                     try {
-                        //调客户端方法
-                        if(load == true && pageTitle == '讨论'){
-                            Jnapp.jn_getMoreComment(sourceId+'',page + '','30',topicId+'');
+                        if (load && pageTitle == '讨论' && !isLoading) {
+                            isLoading = true;
+                            Jnapp.jn_getMoreComment(sourceId + '', page + '', '30', topicId + '');
                         }
                     } catch (e) {
 
                     }
                 }
-
             }
         });
 

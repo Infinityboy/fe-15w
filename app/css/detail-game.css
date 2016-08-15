@@ -81,16 +81,16 @@ header .header-teams .header-teams-middle {
 
 /*外层选项卡*/
 
-.outer{
+.outer {
     height: 3.6rem;
     display: -webkit-flex;
     -webkit-box-orient: vertical;
 }
 
-.outList{
+.outList {
     width: 100%;
     align-items: center;
-    -webkit-box-flex:1;
+    -webkit-box-flex: 1;
     float: left;
     font-size: 1rem;
     color: #333;
@@ -100,63 +100,76 @@ header .header-teams .header-teams-middle {
     text-align: center;
     background-color: #f2f2f2;
 }
-.outList.selected .border{
+
+.outList.selected .border {
     height: 3.5rem;
     border-bottom: 0.14rem solid #e41619;
 }
-.outList.selected a{
+
+.outList.selected a {
     color: #e41619;
 }
 
-.live{
+.live {
     background-color: white;
     display: block;
 }
 
-.live-tip{
-    padding-left: 1.5rem;
+.live-tip {
+    padding-left: .8rem;
     padding-top: 1.5rem;
     background-color: #ffffff;
     font-size: 0.9rem;
     color: #999999;
     margin-bottom: -0.5rem;
 }
-.live-list{
+
+.live-list {
     width: 100%;
     display: table;
-    /*border-collapse:separate;*/
-    /*border-spacing: 0 1.5rem;*/
 }
-.deck{
+
+.deck {
     display: table-cell;
     margin-top: 1.5rem;
-    /*border: 1px solid #e41619;选中状态*/
+    text-align: center;
+}
+
+.deck-item {
+    margin: 1rem;
     border: 1px solid #8e9fb7;
     border-radius: 8px;
-    float: left;
-    margin-left: 7.6%;
 }
-.deck-row{
+
+.deck-row {
     display: table-row;
 }
-.deck.selected{
+
+.deck.selected {
     border: 1px solid #e41619;
 }
-.deck.no-select{
+
+.deck.no-select {
     opacity: 0.5;
 }
-.deck-img{
-    /*width: 150px;*/
-    /*height: 150px;*/
-    margin: 0 0.2rem;
+
+.deck-img {
+    width: 100%;
 }
-.deck img{
-    width: 132px;
-    height: 132px;
-    display: block;
+
+.deck img {
     margin: 0 auto;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 130px;
 }
-.live-button{
+
+.live-wrap {
+    width: 100%;
+    display: table;
+}
+
+.live-button {
     display: block;
     text-align: center;
     height: 2rem;
@@ -167,14 +180,16 @@ header .header-teams .header-teams-middle {
     font-size: 0.9rem;
     color: #ffffff;
 }
-.live-button.selected{
+
+.live-button.selected {
     background-color: #e41619;
 }
 
-.inlayer{
+.inlayer {
     height: 1.5rem;
 }
-.intList{
+
+.intList {
     float: left;
     font-size: .9rem;
     height: 1rem;
@@ -461,13 +476,16 @@ header .header-teams .header-teams-middle {
     right: 2.81rem;
     bottom: 0.68rem;
 }
-.reviews{
+
+.reviews {
     display: none;
 }
+
 .gamevedio {
     position: relative;
 }
-.gamevedio h2 , .game-data h2, .live-byword h2{
+
+.gamevedio h2, .game-data h2, .live-byword h2 {
     color: #e03131;
     padding: .65rem .8rem;
     font-size: 1.1rem;
@@ -590,7 +608,6 @@ header .header-teams .header-teams-middle {
     padding: 0 .3rem;
 }
 
-
 #roundlist {
     height: 3.24rem;
     font-size: 1.5rem;
@@ -611,8 +628,8 @@ header .header-teams .header-teams-middle {
 #roundlist > a {
     -webkit-box-flex: 1;
     height: 1.5rem;
-    border-left: 1px ;
-    border-right: 1px  ;
+    border-left: 1px;
+    border-right: 1px;
     /*background: #fcfcfc;*/
     color: #666;
     line-height: 3.6rem;
@@ -669,7 +686,7 @@ header .header-teams .header-teams-middle {
 }
 
 .data-details {
-    padding: 1rem ;
+    padding: 1rem;
     background-color: #fff;
     margin-top: 1rem;
     margin-bottom: 1rem;
