@@ -313,7 +313,7 @@ $(function () {
         try {
             $(this).addClass('selected');
             $(this).parent().addClass('selected').siblings('.deck').removeClass('selected');
-            Jnapp.jn_related('5', dataUrl + '');
+            Jnapp.jn_related(5, dataUrl + '');
         } catch (e) {
 
         }
