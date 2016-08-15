@@ -3,17 +3,17 @@
   "message": "success",
   "data": {
     "dataId": "5605022344",
-    "title": "2016��LPL�ļ���7��31��15��00 IM VS VG",
-    "gameTime": "07��31�� 15:00",
+    "title": "2016年LPL夏季赛7月31日15：00 IM VS VG",
+    "gameTime": "07月31日 15:00",
     "gameType": "BO3",
     "changyanSid": "11/1923",
-    "excerpt": "2016��LPL�ļ���7��31��15��00 IM VS VG",
+    "excerpt": "2016年LPL夏季赛7月31日15：00 IM VS VG",
     "startTime": 1469948400,
     "endTime": 1469958060,
     "thumbnail": "http://files.15w.com/image/2016/0410/14602378391759.jpg",
     "shareUrl": "http://m.15w.com/lol/match/5605022344.html",
     "cover": "http://files.15w.com/image/2016/0410/14602378391759.jpg",
-    "state": 1,
+    "state": 2,
     "teamA": {
       "name": "IM",
       "logo": "http://files.15w.com/image/2016/0520/14637239426647.png",
@@ -31,7 +31,7 @@
     "relateVideos": [
       {
         "thumbnail": "http://files.15w.com/image/2016/0731/14699662992835.jpg",
-        "title": "LPL2016�ļ�����������9�� IM VS VG_1",
+        "title": "LPL2016夏季赛常规赛第9周 IM VS VG_1",
         "tagName": "",
         "tagColor": "",
         "articleType": 6,
@@ -40,7 +40,7 @@
       },
       {
         "thumbnail": "http://files.15w.com/image/2016/0731/14699662992835.jpg",
-        "title": "LPL2016�ļ�����������9�� IM VS VG_2",
+        "title": "LPL2016夏季赛常规赛第9周 IM VS VG_2",
         "tagName": "",
         "tagColor": "",
         "articleType": 6,
@@ -50,34 +50,34 @@
     ],
     "recomendVideos": [
       {
-        "title": "��˾�������LPL������WE�ϵ�Aluka��������",
-        "updateTime": 1470043904,
-        "thumbnail": "http://files.15w.com/image/2016/0801/14700439021397.jpg",
-        "excerpt": "������˾�������Ѿ��ܾ�û�г��������ǵ���Ұ���ˡ�Ȼ�������������һ�������лظ�˵�Լ��Ѿ�����������LOL�ˣ�����Ҫתս�����ȷ档",
+        "title": "欧洲LCS夏季赛H2k VS Fnatic 延期至16日",
+        "updateTime": 1471227545,
+        "thumbnail": "http://files.15w.com/image/2016/0815/14712275429615.jpg",
+        "excerpt": "根据欧洲媒体消息，因为技术性的问题超过2个小时都解决不了比赛无法进行，所以拳头公司决定将这场附加赛延期至16日。",
         "articleType": 0,
-        "extra": "5606435345",
+        "extra": "5606465065",
         "tagName": "",
         "tagColor": ""
       },
       {
-        "title": "ȫ�Ҷ����氮�� Uzi����LPL�ֳ�����",
-        "updateTime": 1470034091,
-        "thumbnail": "http://files.15w.com/image/2016/0801/14700340843682.jpg",
-        "excerpt": "��ΪС���ļ��ˣ�����Ҳ�ǵ��ֳ�Ϊuzi��������������ܰ��һ���ˣ�",
+        "title": "老外怎么看：恭喜Uzi首次进入LPL总决赛",
+        "updateTime": 1471189046,
+        "thumbnail": "http://files.15w.com/image/2016/0813/1471101267864.jpg",
+        "excerpt": "LPL夏季赛半决赛可谓是精彩至极，竟出现蓝色方全胜的魔咒！",
         "articleType": 0,
-        "extra": "5606434605",
-        "tagName": "",
-        "tagColor": ""
+        "extra": "5606464225",
+        "tagName": "专栏",
+        "tagColor": "#d559da"
       },
       {
-        "title": "LCK 2016�ļ���R2ʣ�����б�����������",
-        "updateTime": 1470017880,
-        "thumbnail": "http://files.15w.com/image/2016/0801/14700177591984.jpg",
-        "excerpt": "��5��25�տ�ʼ�����ڣ�LCK 2016�ļ�����������R1�ߵ�R2����������һ�ܼ�����Ļ��ROX�Ե�һ��������ļ������",
+        "title": "LPL半决赛综述 EDGRNG会师决赛",
+        "updateTime": 1471188825,
+        "thumbnail": "http://files.15w.com/image/2016/0814/14711897534247.jpg",
+        "excerpt": "EDG和RNG在今日的半决赛中分别战胜对手，他们将在8月26日决出总冠军。",
         "articleType": 0,
-        "extra": "5606433765",
-        "tagName": "",
-        "tagColor": ""
+        "extra": "5606464205",
+        "tagName": "赛事",
+        "tagColor": "#e03131"
       }
     ],
     "originSrc": [
@@ -86,16 +86,8 @@
         "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
       },
       {
-        "link": "http://m.panda.tv/room.html?roomid=7000",
-        "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
-      },
-      {
-        "link": "http://m.panda.tv/room.html?roomid=7000",
-        "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
-      },
-      {
-        "link": "http://m.panda.tv/room.html?roomid=7000",
-        "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
+        "link": "http://m.douyu.com/424559",
+        "logo": "http://api.15w.com/client/app/jn/static/img/logo/douyu.jpg"
       }
     ]
   }

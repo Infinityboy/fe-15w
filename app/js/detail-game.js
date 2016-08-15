@@ -170,7 +170,12 @@ function renderData(data) {
 
     sourceId = data.changyanSid;
     sourceTitle = data.title;
-    Jnapp.jn_getComment(sourceId,sourceTitle);
+    try{
+        Jnapp.jn_getComment(sourceId,sourceTitle);
+    } catch (e){
+
+    }
+
     htmlStr += '<div class="reviews" data-id="1">';
     htmlStr += '</div>';
 
@@ -288,11 +293,11 @@ function renderReviews(reviewsData,type){
 
 
 $(function () {
-     //$.get('data/living.json', function (res) {
+     // $.get('data/living.json', function (res) {
      //   if (res.code == 10000) {
      //       renderData(res.data);
      //   }
-     //});
+     // });
 
     //观看直播
     $(document).on('click','.select',function(e){
