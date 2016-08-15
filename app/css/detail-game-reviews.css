@@ -1,51 +1,59 @@
-section{
+section {
     background-color: #ffffff;
 }
-.reviews-box{
+
+.reviews-box {
     display: flex;
     border-bottom: 0.5px solid #efefef;
-    margin: 0 0.8rem;
+    margin: 0 0.8rem .5rem;
 }
-.reviews-header{
+
+.reviews-header {
     padding: 0.6rem 0;
     flex: 1;
 }
-.reviews-header img{
+
+.reviews-header img {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
 }
-.reviews-title{
+
+.reviews-title {
     padding: 0.6rem;
     border-bottom: 0.5px solid #efefef;
 }
-.reviews-title span{
+
+.reviews-title span {
     color: #ff0000;
     font-size: 0.8rem;
 }
-.reviews-right{
+
+.reviews-right {
     padding: 0.4rem;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     flex: 9;
 }
-.reviews-name,.reviews-time,.reviews-content{
+
+.reviews-name, .reviews-time, .reviews-content {
     padding: 0.1rem;
 }
-.reviews-name,.reviews-content{
+
+.reviews-name, .reviews-content {
     font-size: 0.8rem;
 }
-.reviews-name{
+
+.reviews-name {
     color: #41adff;
 }
-.reviews-time{
+
+.reviews-time {
     font-size: 0.6rem;
     color: #9c9c9c;
 }
-.reviews-box-last{
+
+.reviews-box-last {
     display: flex;
     margin: 0 0.8rem;
-}
-.new-reciews{
-    margin-top: 0.5rem;
 }
