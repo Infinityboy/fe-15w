@@ -298,11 +298,11 @@ function renderReviews(reviewsData, type) {
 
 
 $(function () {
-    // $.get('data/living.json', function (res) {
-    //     if (res.code == 10000) {
-    //         renderData(res.data);
-    //     }
-    // });
+    $.get('data/living.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
 
     //观看直播
     $(document).on('click', '.deck>a', function (e) {
@@ -352,9 +352,10 @@ $(function () {
             }
             number++;
             elem.html(number);
+
             $(this).find('img').attr('src', 'images/matchdetail_ic_support_red.png');
             Jnapp.jn_setData("sp-" + dataId, number + '');
-            Jnapp.jn_agree(7, dataId + '', teamId);
+            Jnapp.jn_agree(7, dataId + '', teamId + "");
         } catch (e) {
 
         }
@@ -377,7 +378,7 @@ $(function () {
             elem.html(number);
             $(this).find('img').attr('src', 'images/matchdetail_ic_support_blue.png');
             Jnapp.jn_setData("sp-" + dataId, number + '');
-            Jnapp.jn_agree(7, dataId + "", teamId);
+            Jnapp.jn_agree(7, dataId + "", teamId + '');
         } catch (e) {
         }
     });
