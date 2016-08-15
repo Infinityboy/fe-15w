@@ -88,6 +88,18 @@
       {
         "link": "http://m.douyu.com/424559",
         "logo": "http://api.15w.com/client/app/jn/static/img/logo/douyu.jpg"
+      },
+      {
+        "link": "http://m.panda.tv/room.html?roomid=7000",
+        "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
+      },
+      {
+        "link": "http://m.douyu.com/424559",
+        "logo": "http://api.15w.com/client/app/jn/static/img/logo/douyu.jpg"
+      },
+      {
+        "link": "http://m.panda.tv/room.html?roomid=7000",
+        "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
       }
     ]
   }

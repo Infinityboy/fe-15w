@@ -130,9 +130,9 @@ header .header-teams .header-teams-middle {
 }
 
 .deck {
-    display: table-cell;
-    margin-top: 1.5rem;
     text-align: center;
+    width: 50%;
+    float: left;
 }
 
 .deck > a {
