@@ -298,11 +298,11 @@ function renderReviews(reviewsData, type) {
 
 
 $(function () {
-    $.get('data/living.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });
+    // $.get('data/living.json', function (res) {
+    //     if (res.code == 10000) {
+    //         renderData(res.data);
+    //     }
+    // });
 
     //观看直播
     $(document).on('click', '.deck>a', function (e) {
@@ -348,6 +348,7 @@ $(function () {
 
         try {
             if (Jnapp.jn_getData("sp-" + dataId)) {
+                window.alert('你已经支持过啦!');
                 return;
             }
             number++;
@@ -371,6 +372,7 @@ $(function () {
         var number = elem.text();
         try {
             if (Jnapp.jn_getData("sp-" + dataId)) {
+                window.alert('你已经支持过啦!');
                 return;
             }
 
