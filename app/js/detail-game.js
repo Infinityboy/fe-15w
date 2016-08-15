@@ -86,9 +86,9 @@ function renderData(data) {
         htmlStr += '<section class="live-list clearfix">';
         htmlStr += '<div class="live-wrap">';
         $.each(data.originSrc, function (i, liveList) {
-            htmlStr += '<div class="deck"><div class="deck-item">';
+            htmlStr += '<div class="deck select"><a href="###" data-url="' + liveList.link + '"><div class="deck-item">';
             htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
-            htmlStr += '<span class="live-button select" data-url="' + liveList.link + '">观看直播</span></div></div>';
+            htmlStr += '<span class="live-button">观看直播</span></div></a></div>';
         });
         htmlStr += '</div></section></div>';
 
@@ -101,8 +101,10 @@ function renderData(data) {
         htmlStr += '<div class="live-wrap">';
         $.each(data.originSrc, function (index, liveList) {
             htmlStr += '<div class="deck no-select">';
+            htmlStr += '<a href="###">';
             htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
-            htmlStr += '<span class="live-button">即将开始</span></div>';
+            htmlStr += '<span class="live-button">即将开始</span>';
+            htmlStr += '</a></div>';
         });
         htmlStr += '</div></section></div>';
     } else if (data.state == '2') {
@@ -305,17 +307,16 @@ $(function () {
     // });
 
     //观看直播
-    $(document).on('click', '.select', function (e) {
+    $(document).on('click', '.deck>a', function (e) {
         e.preventDefault();
         var dataUrl = $(this).data('url');
         try {
             $(this).addClass('selected');
-            $(this).parent().addClass('selected');
+            $(this).parent().addClass('selected').siblings('.deck').removeClass('selected');
             Jnapp.jn_related('5', dataUrl + '');
         } catch (e) {
 
         }
-
 
     });
     // 图片查看大图

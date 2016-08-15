@@ -135,6 +135,10 @@ header .header-teams .header-teams-middle {
     text-align: center;
 }
 
+.deck > a {
+    display: inline-block;
+}
+
 .deck-item {
     margin: 1rem;
     border: 1px solid #8e9fb7;
@@ -145,8 +149,8 @@ header .header-teams .header-teams-middle {
     display: table-row;
 }
 
-.deck.selected {
-    border: 1px solid #e41619;
+.deck.selected .live-button {
+    background: #e41619;
 }
 
 .deck.no-select {
