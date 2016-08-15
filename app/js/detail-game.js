@@ -48,7 +48,6 @@ Jn.refreshComment = function () {
 
 };
 
-
 function renderData(data) {
     var htmlStr = '<header><section class="header-scores">';
     htmlStr += '<div><img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/></div>';
@@ -77,7 +76,6 @@ function renderData(data) {
     htmlStr += '</header>';
 
     //比赛数据替换为直播平台
-
     if (data.state == '1') {
         //正在直播
         htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
@@ -251,8 +249,8 @@ function renderReviews(reviewsData, type) {
 
     if (parseInt(type) === 0) {
         htmlReview = '<div>';
-        htmlReview += '<section class="hot-reviews">';
-        if (reviewsData.hots) {
+        if (reviewsData.hots && reviewsData.hots.length > 0) {
+            htmlReview += '<section class="hot-reviews">';
             getDatediff(reviewsData.hots.create_time);
             htmlReview += '<div class="reviews-title"><span>热门评论</span></div>';
             $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -263,9 +261,8 @@ function renderReviews(reviewsData, type) {
                 htmlReview += '<span class="reviews-time">' + result + '</span>';
                 htmlReview += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
             });
-
+            htmlReview += '</section>';
         }
-        htmlReview += '</section>';
         getDatediff(reviewsData.comments.create_time);
         htmlReview += '<section class="new-reciews">';
         htmlReview += '<div class="reviews-title"><span>最新评论</span></div>';
@@ -300,11 +297,11 @@ function renderReviews(reviewsData, type) {
 
 
 $(function () {
-    // $.get('data/living.json', function (res) {
-    //     if (res.code == 10000) {
-    //         renderData(res.data);
-    //     }
-    // });
+    $.get('data/living.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
 
     //观看直播
     $(document).on('click', '.deck>a', function (e) {
