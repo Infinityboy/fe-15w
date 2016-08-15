@@ -352,7 +352,8 @@ $(function () {
             number++;
             elem.html(number);
             $(this).find('img').attr('src', 'images/matchdetail_ic_support_red.png');
-            Jnapp.jn_setData(7, dataId + '', teamId);
+            Jnapp.jn_setData("sp-" + dataId, number + '');
+            Jnapp.jn_agree(7, dataId + '', teamId);
         } catch (e) {
 
         }
@@ -370,10 +371,12 @@ $(function () {
             if (Jnapp.jn_getData("sp-" + dataId)) {
                 return;
             }
+
             number++;
             elem.html(number);
             $(this).find('img').attr('src', 'images/matchdetail_ic_support_blue.png');
-            Jnapp.jn_setData(7, dataId + '', teamId);
+            Jnapp.jn_setData("sp-" + dataId, number + '');
+            Jnapp.jn_agree(7, dataId + "", teamId);
         } catch (e) {
         }
     });
