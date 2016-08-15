@@ -247,7 +247,7 @@ function renderReviews(reviewsData, type) {
         return result;
     }
 
-    if (type === 0) {
+    if (parseInt(type) === 0) {
         htmlReview = '<div>';
         htmlReview += '<section class="hot-reviews">';
         if (reviewsData.hots) {
@@ -279,7 +279,8 @@ function renderReviews(reviewsData, type) {
         htmlReview += '</div>';
         $('.reviews').html(htmlReview);
     }
-    if (type == 1) {
+
+    if (parseInt(type) === 1) {
         var htmlMorereview = '<div>';
         getDatediff(reviewsData.comments.create_time);
         $.each(reviewsData.comments, function (index, moreContent) {
