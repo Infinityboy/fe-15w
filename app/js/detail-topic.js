@@ -13,17 +13,17 @@ Jn.setData = function (data) {
 };
 
 $(function () {
-    $.ajax({
-        url: 'data/detail-topic.json',
-        type: "GET",
-        dataType: 'json',
-        success: function (str) {
-            renderData(str.data);
-        },
-        error: function (err) {
-            alert('失败:' + err);
-        }
-    });
+    // $.ajax({
+    //     url: 'data/detail-topic.json',
+    //     type: "GET",
+    //     dataType: 'json',
+    //     success: function (str) {
+    //         renderData(str.data);
+    //     },
+    //     error: function (err) {
+    //         alert('失败:' + err);
+    //     }
+    // });
 
     // 图片查看大图
     $(document).on('click', '.detailsCon img', function (e) {

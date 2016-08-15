@@ -63,16 +63,17 @@ function renderData(data) {
     htmlStr += '<div class="header-teams-right">' + data.teamB.name + '</div> </section> <section class="ProgressBar clearFix"> ';
 
     // 单元长度为15px
-    var leftItemLength = Math.max(data.teamA.score * 50, 5);
-    var rightItemLength = Math.max(data.teamB.score * 50, 5);
+    var max = Math.max(data.teamA.support_numbber, data.teamB.support_numbber);
+    var leftItemLength = Math.max(data.teamA.support_numbber / max * 80, 5);
+    var rightItemLength = Math.max(data.teamB.support_numbber / max * 80, 5) ;
 
-    htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + 'px"></div></div>';
-    htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + 'px"></div></div> </section>';
+    htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + '%"></div></div>';
+    htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + '%"></div></div> </section>';
     htmlStr += '<section class="supporters"><a href="##" class="sp sp-left" data-id="' + data.dataId + '" data-team="' + data.teamA.teamId + '"><img class="supporters-leftlogo" src="images/matchdetail_ic_support.png"/>';
     htmlStr += '<span class="supporters-leftNumber supp" id="supporters-leftNumber"> ' + data.teamA.support_numbber + '</span></a>';
     htmlStr += '<div class="space-holder"></div>';
     htmlStr += '<a href="##" class="sp sp-right" data-id="' + data.dataId + '" data-team="' + data.teamB.teamId + '">';
-    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/><span class="supporters-rightNumber supp"id="supporters-rightNumber">' + data.teamB.support_numbber + '</span></a></section> ';
+    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/><span class="supporters-rightNumber supp" id="supporters-rightNumber">' + data.teamB.support_numbber + '</span></a></section> ';
     htmlStr += '</header>';
 
     //比赛数据替换为直播平台
@@ -297,11 +298,11 @@ function renderReviews(reviewsData, type) {
 
 
 $(function () {
-    $.get('data/living.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });
+    // $.get('data/living.json', function (res) {
+    //     if (res.code == 10000) {
+    //         renderData(res.data);
+    //     }
+    // });
 
     //观看直播
     $(document).on('click', '.deck>a', function (e) {
@@ -341,7 +342,7 @@ $(function () {
     $(document).on('click', '.sp-left', function (e) {
         e.preventDefault();
         var elem = $('#supporters-leftNumber');
-        var number = parseInt(elem.html());
+        var number = elem.text();
         var dataId = $(this).data('id');
         var teamId = $(this).data('team');
 
@@ -366,7 +367,7 @@ $(function () {
         var dataId = $(this).data('id');
         var teamId = $(this).data('team');
 
-        var number = parseInt(elem.html());
+        var number = elem.text();
         try {
             if (Jnapp.jn_getData("sp-" + dataId)) {
                 return;
