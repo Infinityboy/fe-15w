@@ -138,6 +138,7 @@ header .player img {
     color: #333333;
     font-size: .9rem;
     background-color: #ffffff;
+    margin-bottom: .5rem;
 }
 
 .video-question ul {
