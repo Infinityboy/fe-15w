@@ -250,7 +250,7 @@ function renderReviews(reviewsData, type) {
 
     // 首屏数据
     if (parseInt(type) === 0) {
-        if (reviewsData.hots && reviewsData.comments && reviewsData.comments.length > 0 && reviewsData.hots.length > 0) {
+        if ((reviewsData.hots && reviewsData.hots.length > 0) ||  (reviewsData.comments && reviewsData.comments.length > 0)) {
             htmlReview = '<div>';
             if (reviewsData.hots && reviewsData.hots.length > 0) {
                 htmlReview += '<section class="hot-reviews">';
