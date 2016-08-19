@@ -234,8 +234,9 @@ function renderReviews(reviewsData,type){
         }
         else if(minBefore>=1){
             result=""+ parseInt(minBefore) +"分钟前";
-        }else
+        }else{
             result="刚刚";
+        }
         return result;
     }
     if(type == 0){
@@ -278,7 +279,7 @@ function renderReviews(reviewsData,type){
             htmlMorereview += '<div class="reviews-header"><img src="'+moreContent.passport.img_url+'" alt=""/>'+'</div>';
             htmlMorereview += '<div class="reviews-right">';
             htmlMorereview += '<span class="reviews-name">'+moreContent.passport.nickname+'</span>';
-            htmlMorereview += '<span class="reviews-time">'+result+'</span>';
+            htmlMorereview += '<span class="reviews-time    ">'+result+'</span>';
             htmlMorereview += '<p class="reviews-content">'+moreContent.content+'</p></div></div>';
         });
         htmlMorereview += '</div>';

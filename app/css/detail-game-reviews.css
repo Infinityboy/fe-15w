@@ -3,7 +3,7 @@ section{
 }
 .reviews-box{
     display: flex;
-    border-bottom: 0.5px solid #9c9c9c;
+    border-bottom: 0.5px solid #d8d8d8;
     margin: 0 0.8rem;
 }
 .reviews-header{
@@ -17,7 +17,7 @@ section{
 }
 .reviews-title{
     padding: 0.6rem;
-    border-bottom: 0.5px solid #9c9c9c;
+    border-bottom: 0.5px solid #d8d8d8;
 }
 .reviews-title span{
     color: #ff0000;
