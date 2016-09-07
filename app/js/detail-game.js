@@ -241,18 +241,11 @@ function renderReviews(reviewsData, type) {
         else if (hourBefore >= 1) {
             result = "" + parseInt(hourBefore) + "小时前";
         }
-<<<<<<< HEAD
         else if(minBefore>=1){
             result=""+ parseInt(minBefore) +"分钟前";
         }else{
             result="刚刚";
         }
-=======
-        else if (minBefore >= 1) {
-            result = "" + parseInt(minBefore) + "分钟前";
-        } else
-            result = "刚刚";
->>>>>>> d1a6719e88e81847ec9fe8e76da942d80e597225
         return result;
     }
 
@@ -301,15 +294,12 @@ function renderReviews(reviewsData, type) {
             htmlMorereview += '<div class="reviews-box">';
             htmlMorereview += '<div class="reviews-header"><img src="' + moreContent.passport.img_url + '" alt=""/>' + '</div>';
             htmlMorereview += '<div class="reviews-right">';
-<<<<<<< HEAD
             htmlMorereview += '<span class="reviews-name">'+moreContent.passport.nickname+'</span>';
             htmlMorereview += '<span class="reviews-time    ">'+result+'</span>';
             htmlMorereview += '<p class="reviews-content">'+moreContent.content+'</p></div></div>';
-=======
             htmlMorereview += '<span class="reviews-name">' + moreContent.passport.nickname + '</span>';
             htmlMorereview += '<span class="reviews-time">' + result + '</span>';
             htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
->>>>>>> d1a6719e88e81847ec9fe8e76da942d80e597225
         });
         htmlMorereview += '</div>';
         newReview.append(htmlMorereview);
@@ -318,11 +308,11 @@ function renderReviews(reviewsData, type) {
 
 
 $(function () {
-    // $.get('data/living.json', function (res) {
-    //     if (res.code == 10000) {
-    //         renderData(res.data);
-    //     }
-    // });
+     //$.get('data/living.json', function (res) {
+     //    if (res.code == 10000) {
+     //        renderData(res.data);
+     //    }
+     //});
 
     //观看直播
     $(document).on('click', '.deck>a', function (e) {
