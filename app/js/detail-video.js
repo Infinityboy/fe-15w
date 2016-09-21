@@ -306,7 +306,7 @@ $(function () {
                 });
             }
         } catch (ex) {
-            window.alert('请下载电竞头条客户端经行投票!');
+            window.alert('请下载电竞头条客户端进行投票!');
         }
 
     });

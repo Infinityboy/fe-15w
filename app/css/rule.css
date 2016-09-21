@@ -1,0 +1,27 @@
+body{
+    background-color: transparent;
+}
+html{
+    background-color: #f3f3f3;
+}
+.rule-list{
+    width: 16rem;
+    margin: 3.5rem auto;
+}
+.rule-list li{
+    display: table;
+}
+.rule-num,.rule-content{
+    font-family: pingfang;
+    color: #333333;
+}
+.rule-num{
+    display: table-cell;
+    font-size: 1.5rem;
+}
+.rule-content{
+    padding-left: 0.5rem;
+    display: table-cell;
+    font-size: 0.75rem;
+    text-align: center;
+}
