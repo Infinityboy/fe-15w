@@ -4,7 +4,9 @@
 
 
 Jn.setData = function (data) {
-    if (data.code == 10000) {
+    if (data.key == 'popularPlayer') {
+        renderData(data.data);
+    }else if(data.key == 'popularTeam'){
         renderData(data.data);
     }
 };
