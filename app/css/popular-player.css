@@ -118,7 +118,7 @@
     border-radius: 50%;
     /*display: table-cell;*/
     flex: 1.5;
-    /*padding-right: 1.4rem;*/
+    margin: 0 -0.5rem;
 }
 .rank-head img{
     width: 3rem;
@@ -126,7 +126,7 @@
     border-radius: 50%;
 }
 .players-list-pact{
-    color: #b4b4b4;
+    color: #333;
     /*display: table-cell;*/
     flex: 3;
     padding: 0.7rem 0;

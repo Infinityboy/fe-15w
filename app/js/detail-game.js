@@ -79,7 +79,7 @@ function renderData(data) {
     //比赛数据替换为直播平台
     if (data.state == '1') {
         //正在直播
-        htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></li></a></ul><div class="outContainer ">';
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
@@ -93,7 +93,7 @@ function renderData(data) {
 
     } else if (data.state == '3') {
         //未直播将要直播
-        htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
@@ -108,7 +108,7 @@ function renderData(data) {
         htmlStr += '</div></section></div>';
     } else if (data.state == '2') {
         //直播结束回放视频列表
-        htmlStr += '</div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">视频</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">视频</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
         if (data.relateVideos.length > 0) {
             htmlStr += '<div class="live" data-id="0">';
             htmlStr += '<section class="list"><ul> ';
@@ -351,6 +351,7 @@ $(function () {
     //left 点赞支持
     $(document).on('click', '.sp-left', function (e) {
         e.preventDefault();
+
         var elem = $('#supporters-leftNumber');
         var number = elem.text();
         var dataId = $(this).data('id');
@@ -358,7 +359,7 @@ $(function () {
 
         try {
             if (Jnapp.jn_getData("sp-" + dataId)) {
-                window.alert('你已经支持过啦!');
+                alert('你已经支持过啦!');
                 return;
             }
             number++;
@@ -378,11 +379,10 @@ $(function () {
         var elem = $('#supporters-rightNumber');
         var dataId = $(this).data('id');
         var teamId = $(this).data('team');
-
         var number = elem.text();
         try {
             if (Jnapp.jn_getData("sp-" + dataId)) {
-                window.alert('你已经支持过啦!');
+                alert('你已经支持过啦!');
                 return;
             }
 
@@ -397,14 +397,14 @@ $(function () {
 
 
     // tab切换 切换外层选项卡
-    $(document).on('click', '.outer .outList', function (e) {
+    $(document).on('click', '.outList a', function (e) {
         e.preventDefault();
         var page = 1;
         pageTitle = $(this).text();
         if (!$(this).hasClass('selected')) {
-            var cls = $(this).data('id');
+            var cls = $(this).parent().data('id');
             var oContainer = $('.outContainer');
-            $(this).addClass('selected').siblings().removeClass('selected');
+            $(this).parent().addClass('selected').siblings().removeClass('selected');
             if (oContainer.children().eq(cls)) {
                 oContainer.children().eq(cls).show().siblings().hide();
             }
