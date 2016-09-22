@@ -89,7 +89,7 @@ $(function(){
             }else if(typeId  == 14){
                 stringType = 'team';
             }
-            console.log(stringType, dataId);
+            //console.log(stringType, dataId);
             Jnapp.jn_openPage(stringType, dataId+'');
         }catch(e){
 
@@ -107,7 +107,7 @@ $(function(){
             }else if(typeId  == 14){
                 stringType = 'team';
             }
-            console.log(stringType, dataId);
+            //console.log(stringType, dataId);
             Jnapp.jn_openPage(stringType, dataId+'');
         }catch(e){
 
