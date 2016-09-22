@@ -356,10 +356,9 @@ $(function () {
         var number = elem.text();
         var dataId = $(this).data('id');
         var teamId = $(this).data('team');
-
         try {
             if (Jnapp.jn_getData("sp-" + dataId)) {
-                alert('你已经支持过啦!');
+                window.alert('你已经支持过啦!');
                 return;
             }
             number++;
@@ -382,7 +381,7 @@ $(function () {
         var number = elem.text();
         try {
             if (Jnapp.jn_getData("sp-" + dataId)) {
-                alert('你已经支持过啦!');
+                window.alert('你已经支持过啦!');
                 return;
             }
 

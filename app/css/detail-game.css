@@ -106,7 +106,8 @@ header .header-teams .header-teams-middle {
 }
 
 .outList.selected a {
-    color: #e41619;
+    color: #666;
+    font-weight: bold;
 }
 
 .live {
