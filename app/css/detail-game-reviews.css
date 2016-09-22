@@ -4,13 +4,8 @@ section {
 
 .reviews-box {
     display: flex;
-<<<<<<< HEAD
     border-bottom: 0.5px solid #d8d8d8;
     margin: 0 0.8rem;
-=======
-    border-bottom: 0.5px solid #efefef;
-    margin: 0 0.8rem .5rem;
->>>>>>> d1a6719e88e81847ec9fe8e76da942d80e597225
 }
 
 .reviews-header {
@@ -26,11 +21,7 @@ section {
 
 .reviews-title {
     padding: 0.6rem;
-<<<<<<< HEAD
     border-bottom: 0.5px solid #d8d8d8;
-=======
-    border-bottom: 0.5px solid #efefef;
->>>>>>> d1a6719e88e81847ec9fe8e76da942d80e597225
 }
 
 .reviews-title span {
