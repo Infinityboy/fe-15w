@@ -83,6 +83,9 @@
 .first{
     margin-top: -1.2rem;
 }
+.popular-box-skip,.popular-skip{
+    display: block;
+}
 .popular-players{
     background-color: #ffffff;
     margin-top: 0.5rem;
