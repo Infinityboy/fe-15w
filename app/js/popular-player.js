@@ -48,7 +48,7 @@ function renderData(data){
                 }else{
                     rank = item.ranking;
                 }if(index>=3){
-                    htmlStr+= '<a class="popular-skip" data-id="'+item.dataId+'" data-type="'+item.articleType+'">';
+                    htmlStr+= '<a href="###" class="popular-skip" data-id="'+item.dataId+'" data-type="'+item.articleType+'">';
                     htmlStr+= '<div class="popular-players-list">';
                     htmlStr+= '<div class="rank" ><span>'+rank+'</span></div>';
                     htmlStr+= '<div class="rank-head"><img src="'+item.thumbnail+'" alt=""/></div>';
