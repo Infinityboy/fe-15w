@@ -78,6 +78,8 @@ $(function(){
      //        alert('失败:' + err);
      //    }
      //});
+
+
     $(document).on('click','.popular-box',function(e){
         e.preventDefault();
         try{
@@ -96,6 +98,8 @@ $(function(){
         }
     });
 
+
+
     $(document).on('click','.popular-players a',function(e){
         e.preventDefault();
         try{
@@ -113,6 +117,7 @@ $(function(){
 
         }
     });
+
 
 
 });
