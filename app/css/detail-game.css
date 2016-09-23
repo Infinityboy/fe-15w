@@ -102,13 +102,15 @@ header .header-teams .header-teams-middle {
 .outList>a{
     display: block;
 }
+.border{
+    color: #333;
+}
 .outList.selected .border {
     height: 3.5rem;
     border-bottom: 0.14rem solid #f7df34;
 }
 
 .outList.selected a {
-    color: #666;
     font-weight: bold;
 }
 
