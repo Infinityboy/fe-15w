@@ -153,9 +153,10 @@ function renderData(content) {
 }
 
 $(function () {
-    // $.get('data/video-detail.json', function (res) {
-    //    renderData(res.content);
-    // });
+
+     //$.get('data/video-detail.json', function (res) {
+     //   renderData(res.content);
+     //});
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
