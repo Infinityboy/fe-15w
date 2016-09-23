@@ -46,28 +46,28 @@
     white-space:nowrap;
 }
 .player-img{
-    width: 3rem;
-    height: 3rem;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: 50%;
     border: 3px solid #ffffff;
     margin: 0 auto 0.5rem;
 }
 .player-img img{
-    width: 3rem;
-    height: 3rem;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: 50%;
 }
 .player-img-first{
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 4.8rem;
+    height: 4.8rem;
     border-radius: 50%;
     border: 3px solid #ffffff;
     /*margin: 0 2.4rem 0.5rem 2.4rem;*/
     margin: 0 auto 0.5rem;
 }
 .player-img-first img{
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 4.8rem;
+    height: 4.8rem;
     border-radius: 50%;
 }
 .player-sec-icon img{
@@ -109,16 +109,16 @@
     font-size: 1.2rem;
 }
 .rank-head{
-    width: 3rem;
-    height: 3rem;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: 50%;
     /*display: table-cell;*/
     flex: 1.5;
     margin: 0 -0.5rem;
 }
 .rank-head img{
-    width: 3rem;
-    height: 3rem;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: 50%;
 }
 .players-list-pact{
