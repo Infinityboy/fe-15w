@@ -79,7 +79,7 @@ function renderData(data) {
     //比赛数据替换为直播平台
     if (data.state == '1') {
         //正在直播
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></li></a></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
@@ -93,7 +93,7 @@ function renderData(data) {
 
     } else if (data.state == '3') {
         //未直播将要直播
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">直播</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
@@ -108,7 +108,7 @@ function renderData(data) {
         htmlStr += '</div></section></div>';
     } else if (data.state == '2') {
         //直播结束回放视频列表
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><div class="border"><a href="##">视频</a></div></li><li class="outList " data-id="1"><div class="border"><a href="##">讨论</a></div></li><li class="outList " data-id="2"><div class="border"><a href="##">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
         if (data.relateVideos.length > 0) {
             htmlStr += '<div class="live" data-id="0">';
             htmlStr += '<section class="list"><ul> ';
