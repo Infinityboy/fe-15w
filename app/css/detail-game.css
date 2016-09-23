@@ -99,7 +99,9 @@ header .header-teams .header-teams-middle {
     text-align: center;
     background-color: #f2f2f2;
 }
-
+.outList>a{
+    display: block;
+}
 .outList.selected .border {
     height: 3.5rem;
     border-bottom: 0.14rem solid #f7df34;
