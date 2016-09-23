@@ -1,9 +1,5 @@
 .popular-bg{
-    background-image: url('../images/bg-player.png.png') ;
-    background-size: 100%;
-}
-.mask{
-    background-color: rgba(0,0,0,0.75);
+    background-image: url('../images/ditu.png');
 }
 .sale-describe{
     padding-top: 2rem;
