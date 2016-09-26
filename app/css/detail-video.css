@@ -72,12 +72,20 @@ body {
     text-align: right;
     float: right;
 }
-
+/**********ios7/8的视频详情页分享上方图片的遗留问题开始************/
+.video-excerpt{
+    display: table;
+}
+.video-excerpt-tip{
+    display: table-cell;
+}
 .video-excerpt p {
+    display: table-cell;
     overflow: hidden;
     font-size: 1rem;
+    text-align: center;
 }
-
+/**********ios7/8的视频详情页分享上方图片的遗留问题结束************/
 .excerpt {
     margin-top: .8rem;
     color: #999;

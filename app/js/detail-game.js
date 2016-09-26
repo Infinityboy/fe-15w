@@ -79,7 +79,8 @@ function renderData(data) {
     //比赛数据替换为直播平台
     if (data.state == '1') {
         //正在直播
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        //htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
@@ -93,7 +94,8 @@ function renderData(data) {
 
     } else if (data.state == '3') {
         //未直播将要直播
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        //htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
@@ -108,7 +110,8 @@ function renderData(data) {
         htmlStr += '</div></section></div>';
     } else if (data.state == '2') {
         //直播结束回放视频列表
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        //htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
         if (data.relateVideos.length > 0) {
             htmlStr += '<div class="live" data-id="0">';
             htmlStr += '<section class="list"><ul> ';
@@ -138,39 +141,6 @@ function renderData(data) {
     } else {
         htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:block;background-color: #ffffff;">';
     }
-
-    //图文直播变为讨论  PS：讨论无内容所以切换不正确
-    //if (data.relateArticle.length > 0) {
-    //    htmlStr += '<div class="reviews" data-id="1">';
-    //    htmlStr += '<section class="live-byword-listbox"> <ul>';
-    //    $.each(data.relateArticle, function (index, item) {
-    //        htmlStr += '<li> <div class="innerbox"><div class="live-byword-list clearfix"> ';
-    //        htmlStr += '<a href="##" class="live-byword-listimg"><img src="' + item.avatar + '"/> </a>';
-    //        htmlStr += '<div class="fl live-byword-list-games"> ';
-    //        htmlStr += '<p class="live-byword-list-name">' + item.author + '</p> ';
-    //        htmlStr += '<p class="live-byword-list-time">' + item.round + '<span>' + '&nbsp;' + '' + item.time + '</span></p></div></div> ';
-    //        htmlStr += '<div class="live-byword-list-words"> ';
-    //        htmlStr += '<p>' + item.content + '</p>';
-    //
-    //        var itemImgs = data.relateArticle[index];
-    //        if (itemImgs.images && itemImgs.images.length > 0) {
-    //            htmlStr += '<div class="clearFix live-byword-list-words-images">';
-    //            $.each(itemImgs.images, function (index, item) {
-    //                htmlStr += '<img class="fl" src="' + item + '"/>';
-    //            });
-    //            htmlStr += '</div> ';
-    //        }
-    //        htmlStr += '</div></div></li>';
-    //    });
-    //    htmlStr += '</ul> </section>';
-    //    htmlStr += '</section></div>';
-    //}else{
-    //    if(data.gameContent.length > 0){
-    //        htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center">当前比赛场次还没有图文直播哦!</p></section>';
-    //    }else{
-    //        htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center;">当前比赛场次还没有图文直播哦!</p></section>';
-    //    }
-    //}
 
     sourceId = data.changyanSid;
     sourceTitle = data.title;
@@ -206,11 +176,29 @@ function renderData(data) {
             htmlStr += '<span class="list-time">' + dateStr + '</span>';
             htmlStr += '</a></li> ';
         });
-        htmlStr += ' </ul></section></div></div>';
+        htmlStr += ' </ul></section></div>';
     }
     else {
-        htmlStr += '<div class="news" data-id="1" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;background-color: #ffffff;">暂无新闻数据</div>';
+        htmlStr += '<div class="news" data-id="2" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;background-color: #ffffff;">暂无新闻数据</div>';
     }
+
+
+
+    //竞猜
+    //if (data.relateArticle.length > 0) {
+        htmlStr += '<div class="guess" data-id="3">';
+        htmlStr += '<section class="live-byword-listbox">';
+
+        htmlStr += '</section>';
+        htmlStr += '</div></div>';
+    //}else{
+    //    if(data.gameContent.length > 0){
+    //        htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center">当前比赛场次还没有图文直播哦!</p></section>';
+    //    }else{
+    //        htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center;">当前比赛场次还没有图文直播哦!</p></section>';
+    //    }
+    //}
+
 
     $('#box').html(htmlStr);
 
@@ -308,11 +296,11 @@ function renderReviews(reviewsData, type) {
 
 
 $(function () {
-     //$.get('data/living.json', function (res) {
-     //    if (res.code == 10000) {
-     //        renderData(res.data);
-     //    }
-     //});
+     $.get('data/living.json', function (res) {
+         if (res.code == 10000) {
+             renderData(res.data);
+         }
+     });
 
     //观看直播
     $(document).on('click', '.deck>a', function (e) {

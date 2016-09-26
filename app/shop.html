@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>商城</title>
+    <link rel="stylesheet" href="css/base.css" >
+    <style>
+        html{
+            background-color: #eee;
+        }
+        .wrap-head{
+            height: 2rem;
+            padding: 0.6rem 0.8rem 0;
+        }
+        .my-val,.my-note{
+            font-size: 1rem;
+            font-family: pingfang;
+            color: #666666;
+        }
+        .my-val{
+            float: left;
+        }
+        .my-note{
+            float: right;
+            height: 1.3rem;
+            border-bottom: 1px solid #666666;
+        }
+        .sho-container{
+            padding: 0 0.8rem;
+        }
+        .wrap-center{
+            margin-right: -1px;
+        }
+        .sho-goods-list{
+            background-color: #ffffff;
+            width: 46%;
+            overflow: hidden;
+            display: inline-block;
+            padding: 0 1.4%;
+            border-radius: 5px;
+            margin-right: 1px;
+        }
+        .sho-g-content{
+            padding: 1.4rem 0.5rem;
+        }
+        .sho-g-img img{
+            width: 100%;
+            border-radius: 6px;
+        }
+        .sho-g-describe{
+            padding: 1rem 0;
+        }
+        .JB-stock p{
+            display: inline-block;
+        }
+        .Q-B,.JB-stock{
+            font-size: 0.8rem;
+            font-family: pingfang;
+        }
+        .J-B,.JB-stock,.footer-des>p{
+            color: #666666;
+        }
+        .sho-stock{
+            float: right;
+        }
+        .sho-stock-num{
+            color: #f5b300;
+        }
+        .sho-button{
+            background-color: #f5b300;
+            border-radius: 20px;
+            padding: 0.4rem 0;
+        }
+        .sho-button span{
+            display: block;
+            text-align: center;
+            color: #643c0c;
+        }
+        .footer-des{
+            padding: 1.3rem 0.8rem;
+        }
+        .footer-des>p{
+            font-size: 0.7rem;
+            font-family: pingfang;
+        }
+        .alert-w{
+            display: none;
+            position: absolute;
+            width: 76%;
+            height: 28%;
+            left: 50%;
+            margin-top: -14%;
+            top: 50%;
+            margin-left: -38%;
+            background-color: #ffffff;
+        }
+        .QB-message{
+            margin: 30% auto;
+            font-size: 0.8rem;
+            font-family: pingfang;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sho-wrap">
+        <section>
+            <div class="wrap-head clearfix">
+                <p class="my-val">我的余额：0</p>
+                <a href="##"><p class="my-note">我的兑换记录</p></a>
+            </div>
+        </section>
+       <section>
+           <div class="sho-container ">
+               <div class="wrap-center clearfix">
+                   <div class="sho-goods-list">
+                       <div class="sho-g-content">
+                           <div class="sho-g-img"><img src="images/ditu.png" alt=""/></div>
+                           <div class="sho-g-describe">
+                               <p class="Q-B">50000000Q币卡</p>
+                               <div class="JB-stock clearfix"><p class="J-B">50竞币</p><p class="sho-stock">库存：<em class="sho-stock-num">2345</em></p></div>
+                           </div>
+                           <div class="sho-button"><a href="javascript:;"><span>兑换</span></a></div>
+                       </div>
+                   </div>
+
+                   <div class="sho-goods-list">
+                       <div class="sho-g-content">
+                           <div class="sho-g-img"><img src="images/ditu.png" alt=""/></div>
+                           <div class="sho-g-describe">
+                               <p class="Q-B">50000000Q币卡</p>
+                               <div class="JB-stock clearfix"><p class="J-B">50竞币</p><p class="sho-stock">库存：<em class="sho-stock-num">2345</em></p></div>
+                           </div>
+                           <div class="sho-button"><a href="javascript:;"><span>兑换</span></a></div>
+                       </div>
+                   </div>
+
+                   <div class="sho-goods-list">
+                       <div class="sho-g-content">
+                           <div class="sho-g-img"><img src="images/ditu.png" alt=""/></div>
+                           <div class="sho-g-describe">
+                               <p class="Q-B">50000000Q币卡</p>
+                               <div class="JB-stock clearfix"><p class="J-B">50竞币</p><p class="sho-stock">库存：<em class="sho-stock-num">2345</em></p></div>
+                           </div>
+                           <div class="sho-button"><a href="javascript:;"><span>兑换</span></a></div>
+                       </div>
+                   </div>
+
+                   <div class="sho-goods-list">
+                       <div class="sho-g-content">
+                           <div class="sho-g-img"><img src="images/ditu.png" alt=""/></div>
+                           <div class="sho-g-describe">
+                               <p class="Q-B">50000000Q币卡</p>
+                               <div class="JB-stock clearfix"><p class="J-B">50竞币</p><p class="sho-stock">库存：<em class="sho-stock-num">2345</em></p></div>
+                           </div>
+                           <div class="sho-button"><a href="javascript:;"><span>兑换</span></a></div>
+                       </div>
+                   </div>
+
+               </div>
+           </div>
+       </section>
+        <section>
+            <div class="footer-des">
+                <p>本商城商品与活动都与设备生产商Apple无关；如需帮助请联系客服QQ：或者发送邮件至Help@15w.com</p>
+            </div>
+        </section>
+        <a class="alert-w" href="javascript:;">
+                <div class="QB-message">
+                    余额不足,兑换失败
+                </div>
+        </a>
+    </div>
+    <script src="./js/zepto.min.js"></script>
+    <script>
+        $(function(){
+            var isAlert = false;
+            var oAlert = $('.alert-w');
+            $(document).on('click','.sho-button a',function(e){
+                e.preventDefault();
+                if(!isAlert){
+                    oAlert.css('display','block');
+                    isAlert = true;
+                }else{
+                    return false;
+                }
+            });
+
+            $(document).on('click','.alert-w',function(e){
+                e.preventDefault();
+                $(this).css('display','none');
+                isAlert = false;
+            });
+        });
+    </script>
+</body>
+</html>

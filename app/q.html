@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" href="css/base.css" >
+    <style>
+        .wrap{
+            background-color: #ffffff;
+        }
+        .guess-nums{
+            text-align: right;
+            padding: 1rem 0.5rem 1.2rem 0;
+        }
+        .guess-container,.guess-tip{
+            padding: 0 1rem;
+            margin:  0 auto;
+        }
+        .guess-game,.guess-option{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .team-name,.guess-game-time{
+            font-size: 1.2rem;
+            color: #666666;
+            font-family: pingfang;
+        }
+        .game-head-icon,.team-name,.guess-game-time,.team-win-left,.team-win-right,.team-state{
+            flex: 1;
+            text-align: center;
+        }
+        .guess-game{
+            padding-bottom: 0.8rem;
+        }
+        .guess-option{
+            padding-bottom: 1rem;
+        }
+        .game-head-icon img{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+        }
+        .team-win-left,.team-win-right{
+            padding: 0.6rem 0.4rem;
+            background-color: #f7df34;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #643c0c;
+        }
+        .guess-tip p,.team-state{
+            font-size: 0.8rem;
+            color: #666666;
+            font-family: pingfang;
+        }
+        .team-state{
+            font-size: 0.9rem;
+        }
+        .more-guess-rule{
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="guess-nums"><p>35353535参与</p></div>
+    <div class="guess-container">
+        <div class="guess-game">
+            <div class="game-head-icon"><img src="images/ditu.png" alt=""/></div>
+            <div class="team-name">RNG</div>
+            <div class="guess-game-time">07:40</div>
+            <div class="guess-game-time">BO1</div>
+            <div class="team-name">RNG</div>
+            <div class="game-head-icon"><img src="images/ditu.png" alt=""/></div>
+        </div>
+        <div class="guess-option">
+            <div class="team-win-left"><p><span>RNG胜</span><span>1.70</span></p></div>
+            <div class="team-state"><span>赔&nbsp率</span></div>
+            <div class="team-win-right"><p><span>RNG胜</span><span>1.70</span></p></div>
+        </div>
+    </div>
+    <div class="guess-tip"><p>实际结算赔率以竞猜结束的赔率为准 <a href="##"><em class="more-guess-rule">更多规则</em></a></p></div>
+</div>
+</body>
+</html>
