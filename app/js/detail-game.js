@@ -479,7 +479,7 @@ $(function () {
         var teamId = $(this).data('team');
         var teamName = $(this).data('teamName');
         var dataOdd = $(this).data('odd');
-        if (dataStatus == 2) {
+        if ($('.guess').data('staus') == 2) {
             try {
                 Jnapp.jn_betting(dataId + '', teamId*1, teamName+'', dataOdd*1);
             } catch (e) {
