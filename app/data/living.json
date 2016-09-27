@@ -101,6 +101,33 @@
         "link": "http://m.panda.tv/room.html?roomid=7000",
         "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
       }
-    ]
+    ],
+    "bet": {
+      "name": "test",
+      "stimes": "1474300800",
+      "etimes": "1475164800",
+      "bestOf": 1,
+      "joinNum": 3,
+      "gameId": "5605001863",
+      "teamA": {
+        "teamId": "5604986823",
+        "logo": "http://files.15w.com/image/2016/0923/14746360643958.png",
+        "name": "C9",
+        "score": "",
+        "odds": 7
+      },
+      "teamB": {
+        "teamId": "5604987283",
+        "logo": "http://files.15w.com/image/2016/0923/14746373201190.png",
+        "name": "IM",
+        "score": "",
+        "odds": 1.2
+      },
+      "userList": [ ],
+      "status": {
+        "type": 2,
+        "message": "已开盘"
+      }
+    }
   }
 }

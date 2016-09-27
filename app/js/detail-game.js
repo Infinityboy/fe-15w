@@ -41,6 +41,7 @@ Jn.addComment = function (reviewsData) {
 };
 
 Jn.refreshComment = function () {
+
     if (load && pageTitle == '讨论' && !isLoading) {
         isLoading = true;
         Jnapp.jn_getComment(sourceId, sourceTitle);
@@ -65,7 +66,7 @@ function renderData(data) {
     // 单元长度为15px
     var max = Math.max(data.teamA.support_numbber, data.teamB.support_numbber);
     var leftItemLength = Math.max(data.teamA.support_numbber / max * 80, 5);
-    var rightItemLength = Math.max(data.teamB.support_numbber / max * 80, 5) ;
+    var rightItemLength = Math.max(data.teamB.support_numbber / max * 80, 5);
 
     htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + '%"></div></div>';
     htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + '%"></div></div> </section>';
@@ -79,8 +80,11 @@ function renderData(data) {
     //比赛数据替换为直播平台
     if (data.state == '1') {
         //正在直播
-        //htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+        if (data.bet.gameId) {
+            htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+        } else {
+            htmlStr += '<div id="wrap" data-id="'+data.bet+'"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        }
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
@@ -94,8 +98,11 @@ function renderData(data) {
 
     } else if (data.state == '3') {
         //未直播将要直播
-        //htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+        if (data.bet.gameId) {
+            htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+        } else {
+            htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        }
         htmlStr += '<div class="live" data-id="0">';
         htmlStr += '<p class="live-tip">请选择直播平台</p>';
         htmlStr += '<section class="live-list clearfix">';
@@ -110,8 +117,12 @@ function renderData(data) {
         htmlStr += '</div></section></div>';
     } else if (data.state == '2') {
         //直播结束回放视频列表
-        //htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
-        htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+        if (data.bet.gameId) {
+            htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+        } else {
+            htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+        }
+
         if (data.relateVideos.length > 0) {
             htmlStr += '<div class="live" data-id="0">';
             htmlStr += '<section class="list"><ul> ';
@@ -183,27 +194,49 @@ function renderData(data) {
     }
 
 
-
     //竞猜
-    //if (data.relateArticle.length > 0) {
-        htmlStr += '<div class="guess" data-id="3">';
-        htmlStr += '<section class="live-byword-listbox">';
+    var statusType;
+    if (data.bet.gameId) {
+        if(data.bet.status.type == 2){
+            statusType = '赔&nbsp率';
+        }else{
+            statusType = data.bet.status.message;
+        }
+        var dataEtime = new Date(1475164800);
+        var gameHour = dataEtime.getHours();
+        var gameMinute = dataEtime.getMinutes();
+        if(gameHour < 10){
+            gameHour = '0'+ gameHour;
+        }else{
+            gameHour = dataEtime.getHours();
+        }
 
+        if(gameMinute < 10){
+            gameMinute = '0'+ gameMinute;
+        }else{
+            gameMinute = dataEtime.getMinutes();
+        }
+        htmlStr += '<div class="guess" data-id="3" data-staus="' + data.bet.status.type + '" >';
+        htmlStr += '<section class="live-byword-listbox">';
+        htmlStr += '<div class="guess-nums"><p>' + data.bet.joinNum + '参与</p></div>';
+        htmlStr += '<div class="guess-container">';
+        htmlStr += '<div class="guess-game">';
+        htmlStr += '<div class="game-head-icon"><img src="' + data.bet.teamA.logo + '" alt=""/>' + '</div>';
+        htmlStr += '<div class="team-name">' + data.bet.teamA.name + '</div>';
+        htmlStr += '<div class="guess-game-time">'+gameHour+':'+gameMinute+'</div>';
+        htmlStr += '<div class="guess-game-time">' + data.gameType + '</div>';
+        htmlStr += '<div class="team-name">' + data.bet.teamB.name + '</div>';
+        htmlStr += '<div class="game-head-icon"><img src="' + data.bet.teamB.logo + '" alt=""/>' + '</div></div>';
+        htmlStr += '<div class="guess-option">';
+        htmlStr += '<a href="" class="team-win-left" data-id="' + data.dataId + '"  data-team="1"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + data.bet.teamA.odds + '</span></p></a>';
+        htmlStr += '<div class="team-state"><span>'+statusType+'</span></div>';
+        htmlStr += '<a href="" class="team-win-right" data-id="' + data.dataId + '"  data-team="2"><p><span>' + data.teamB.name + '胜' + '</span><span>' + data.bet.teamB.odds + '</span></p></div></div></a>';
+        htmlStr += '<div class="guess-tip"><p>实际结算赔率以竞猜结束的赔率为准 <a href="##"><em class="more-guess-rule">更多规则</em></a></p></div>';
         htmlStr += '</section>';
         htmlStr += '</div></div>';
-    //}else{
-    //    if(data.gameContent.length > 0){
-    //        htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center">当前比赛场次还没有图文直播哦!</p></section>';
-    //    }else{
-    //        htmlStr += '<section class="live-byword-listbox selected"><p style="text-align: center;">当前比赛场次还没有图文直播哦!</p></section>';
-    //    }
-    //}
-
-
+    }
     $('#box').html(htmlStr);
-
 }
-
 function renderReviews(reviewsData, type) {
     var newReview = $('.new-reciews');
     var htmlReview;
@@ -296,12 +329,15 @@ function renderReviews(reviewsData, type) {
 
 
 $(function () {
-     $.get('data/living.json', function (res) {
-         if (res.code == 10000) {
-             renderData(res.data);
-         }
-     });
-
+    //$.get('data/living.json', function (res) {
+    //    if (res.code == 10000) {
+    //        renderData(res.data);
+    //    }
+    //});
+    var dataStatus = $('.guess').data('staus');
+    if(dataStatus !== '2'){
+        $('.guess-option a').addClass('selectedGray');
+    }
     //观看直播
     $(document).on('click', '.deck>a', function (e) {
         e.preventDefault();
@@ -424,12 +460,30 @@ $(function () {
     });
 
     // 直播跳转
-    $(document).on('click', '.play-icon', function () {
+    $(document).on('click', '.play-icon', function (e) {
+        e.preventDefault();
         try {
             Jnapp.jn_related(5, $(this).data('url'));
         } catch (e) {
 
         }
     });
+
+    //竞猜下注
+
+    $(document).on('click', '.guess-option a', function (e) {
+        e.preventDefault();
+        var dataId = $(this).data('id');
+        var teamId = $(this).data('team');
+        if (dataStatus == 2) {
+            try {
+                Jnapp.jn_betting(dataId + '', teamId*1);
+            } catch (e) {
+
+            }
+        }
+
+    });
 });
+
 
