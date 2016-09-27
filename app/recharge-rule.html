@@ -4,8 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
     <title>充值说明</title>
-    <link rel="stylesheet" href="css/base.css" >
     <style>
+        html {
+            color: #000;
+            background: #fff;
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #000;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        fieldset, img {
+            border: 0;
+        }
+
+        address, caption, cite, code, dfn, em, th, var {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        caption, th {
+            text-align: left;
+        }
+
+        q:before, q:after {
+            content: '';
+        }
+
+        abbr, acronym {
+            border: 0;
+            font-variant: normal;
+        }
+
+        sup {
+            vertical-align: text-top;
+        }
+
+        sub {
+            vertical-align: text-bottom;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            *font-size: 100%;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        legend {
+            color: #000;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            -webkit-appearance: button;
+            cursor: pointer;
+        }
+
+        button[disabled],
+        input[disabled] {
+            cursor: default;
+        }
+
+        input[type="search"] {
+            -webkit-appearance: textfield;
+            outline: none;
+            border: none;
+        }
+
+        input[type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 14px/1.6 "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            color: #333;
+            background: #eee;
+        }
+
+        .clearfix:after {
+            display: block;
+            clear: both;
+            visibility: hidden;
+            height: 0;
+            content: ''
+        }
+
+        .clearfix {
+            zoom: 1
+        }
+
+        a {
+            -webkit-tap-highlight-color: rgba(0,0,0,0); /**去除a链接蓝框***/
+            transition: all 0.2s ease;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .flat-content img {
+            max-width: 100%;
+            margin: 0 0 .8rem;
+        }
+
+        .flat-content p {
+            margin-bottom: .8rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .flat-content .cimg{
+            text-align: center;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        img {
+            vertical-align: top;
+        }
         .guess-wrap{
             background-color: #ffffff;
             padding: 0 0.6rem;
