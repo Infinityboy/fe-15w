@@ -51,7 +51,7 @@ Jn.refreshComment = function () {
 };
 
 Jn.showGameTab = function(tabNum){
-        tabId = tabNum;
+        $('.box').attr('data-id',tabNum);
 };
 
 function renderData(data) {
@@ -335,13 +335,14 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-    //$.get('data/living.json', function (res) {
-    //    if (res.code == 10000) {
-    //        renderData(res.data);
-    //    }
-    //});
+    $.get('data/living.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
+    var tabId  = $('.box').data('id');
 
-    $('.outList').children().eq(tabId).addClass('selected').siblings().removeClass('selected');
+    $('.outer').children().eq(tabId).addClass('selected').siblings().removeClass('selected');
     $('.outContainer').children().eq(tabId).show().siblings().hide();
 
     var dataStatus = $('.guess').data('staus');

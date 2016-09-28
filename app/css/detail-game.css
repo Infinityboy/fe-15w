@@ -1,6 +1,6 @@
 header {
-    width: 100%;
     border-top: 1px solid #f2ebf3;
+    background-image: url('../images/ditu.png');
 }
 
 header .header-scores {
