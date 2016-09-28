@@ -122,12 +122,12 @@
                     htmlStr += '<div class="wrap-center clearfix">';
                     htmlStr += '<div class="sho-goods-list">';
                     htmlStr += '<div class="sho-g-content">';
-                    htmlStr += '<div class="sho-g-img"><img src="images/ditu.png" alt=""/></div>';
+                    htmlStr += '<div class="sho-g-img"><img src="'+item.thumbnail+'" alt=""/></div>';
                     htmlStr += '<div class="sho-g-describe">';
                     htmlStr += '<p class="Q-B">'+item.title+'</p>';
                     htmlStr += '<div class="JB-stock clearfix"><p class="J-B">'+item.money+item.typeName+'</p><p class="sho-stock">库存：<em class="sho-stock-num">'+item.stock+'</em></p></div>';
                     htmlStr += '</div>';
-                    htmlStr += '<div class="sho-button"><a href="javascript:;"><span>兑换</span></a></div>';
+                    htmlStr += '<div class="sho-button"><a href="javascript:;" data-id="'+item.dataId+'"><span>兑换</span></a></div>';
                     htmlStr += '</div></div></div></div>';
                 });
                     htmlStr += ' </section><section>';
@@ -160,6 +160,33 @@
             var oAlert = $('.alert-w');
             $(document).on('click','.sho-button a',function(e){
                 e.preventDefault();
+                var userData = Jnapp.jn_login_info();
+                var dataId = $(this).data('id');
+                var reqData = {
+                    uid:userData.userid,
+                    utoken:userData.token,
+                    dataId:dataId
+                };
+                if(userData !== 'undefined' && userData){
+                        $.ajax({
+                            url: 'http://api.15w.com/client/app/jn/v1_3/shop/exchange',
+                            type: "POST",
+                            data: reqData,
+                            dataType: 'jsonp',
+                            success: function (res) {
+                            if(res.code == 10000){
+                                renderData(res.data);
+                            }
+
+                        },
+                        error: function (err) {
+                            alert('失败:' + err);
+                        }
+                    });
+                }else{
+                    Jnapp.jn_login();
+            }
+
                 if(!isAlert){
                     oAlert.css('display','block');
                     isAlert = true;
@@ -175,9 +202,9 @@
                 try {
                     userData = Jnapp.jn_login_info();
                     if(userData){
-                        window.location.href=''
+//                        window.location.href=''
                     }else{
-                        Jnapp.jn_login();
+
                     }
                 } catch (ex) {
 

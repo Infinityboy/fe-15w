@@ -127,7 +127,7 @@
                     $.each(data.list.excerpt,function(idx,val){
                         htmlStr += '<div class="note-card-message">';
                         htmlStr += '<p class="card-num">'+val.content1+'</p>';
-                        htmlStr += '<p class="card-pwd">'+val.content2+'</p></div>
+                        htmlStr += '<p class="card-pwd">'+val.content2+'</p></div>';
                     });
                     htmlStr += '</div>';
                 });
@@ -141,6 +141,7 @@
 
                 $('.wrap-sho-note').html(htmlStr);
             }
+
             $.ajax({
                 url: 'http://api.15w.com/client/app/jn/v1_3/shop/user_itemlist',
                 type: "GET",

@@ -700,6 +700,9 @@ header .header-teams .header-teams-middle {
     margin-bottom: 1rem;
 }
 /**********guess开始***********/
+.guess{
+    display: none;
+}
 .guess-nums{
     text-align: right;
     padding: 1rem 0.5rem 1.2rem 0;
