@@ -110,20 +110,21 @@
     <script>
         $(function(){
             var money = '';
-//            Jn.moneyCallback = function (data) {
-//                if (data) {
-//                     money = data.money;
-//                }
-//            };
+            Jn.moneyCallback = function (data) {
+                if (data) {
+                     money = data.money;
+                }
+            };
             function renderData(data){
-//                var userData = Jnapp.jn_login_info();
-//                if(userData!=='undefined' && userData){
-//                    Jnapp.jn_getMoney();
-//                }
+                var userData = Jnapp.jn_login_info();
+                if(userData!=='undefined' && userData){
+                    Jnapp.jn_getMoney();
+                }
                 var htmlStr = '<section>';
                     htmlStr += '<div class="wrap-head clearfix">';
                     htmlStr += '<p class="my-val">我的余额：'+money+'</p>';
-                    htmlStr += '<a href="##"><p class="my-note">我的兑换记录</p></a>';
+                    htmlStr += '<a href="http://api.15w.com/client/app/jn/web/jfshop/shopnote.html' +
+                            '"><p class="my-note">我的兑换记录</p></a>';
                     htmlStr += '</div></section>';
                     htmlStr += '<section>';
                 $.each(data.list,function(index,item){
@@ -144,15 +145,16 @@
                     htmlStr += '<p>本商城商品与活动都与设备生产商Apple无关；如需帮助请联系客服QQ：或者发送邮件至Help@15w.com</p>';
                     htmlStr += ' </div></section>';
 
+
                     $('.sho-wrap').html(htmlStr);
             }
-            function renderAlert(){
+
+            function renderAlert(alertData){
                 var htmlAlert = ' <a class="alert-w" href="javascript:;">';
-                htmlAlert += '<div class="QB-message">123</div>';
+                htmlAlert += '<div class="QB-message">'+alertData.message+'</div>';
                 htmlAlert += '</a>';
-                $('.sho-wrap').append(htmlAlert);
+                $('.sho-wrap').after(htmlAlert);
             }
-            renderAlert();
             $.ajax({
                 url: 'http://api.15w.com/client/app/jn/v1_3/shop/list',
                 type: "GET",
@@ -173,33 +175,33 @@
             var oAlert = $('.alert-w');
             $(document).on('click','.sho-button a',function(e){
                 e.preventDefault();
-//                var userData = Jnapp.jn_login_info();
-//                var dataId = $(this).data('id');
-//                var reqData = {
-//                    uid:userData.userid,
-//                    utoken:userData.token,
-//                    dataId:dataId,
-//                    num:1
-//                };
-//                if(userData !== 'undefined' && userData){
-//                        $.ajax({
-//                            url: 'http://api.15w.com/client/app/jn/v1_3/shop/exchange',
-//                            type: "POST",
-//                            data: reqData,
-//                            dataType: 'jsonp',
-//                            success: function (res) {
-//                            if(res.code == 10000){
-//                                renderAlert(res.data);
-//                            }
-//
-//                        },
-//                        error: function (err) {
-//                            alert('失败:' + err);
-//                        }
-//                    });
-//                }else{
-//                    Jnapp.jn_login();
-//                }
+                var userData = Jnapp.jn_login_info();
+                var dataId = $(this).data('id');
+                var reqData = {
+                    uid:userData.userid,
+                    utoken:userData.token,
+                    dataId:dataId,
+                    num:1
+                };
+                if(userData !== 'undefined' && userData){
+                        $.ajax({
+                            url: 'http://api.15w.com/client/app/jn/v1_3/shop/exchange',
+                            type: "POST",
+                            data: reqData,
+                            dataType: 'jsonp',
+                            success: function (res) {
+
+                                renderAlert(res.data);
+
+
+                        },
+                        error: function (err) {
+                            alert('失败:' + err);
+                        }
+                    });
+                }else{
+                    Jnapp.jn_login();
+                }
 
                 if(!isAlert){
                     oAlert.css('display','block');
@@ -212,19 +214,17 @@
             $(document).on('click','.alert-w',function(e){
                 e.preventDefault();
                 var alertText = $(this).children().text();
-                console.log(alertText);
                 $(this).css('display','none');
                 isAlert = false;
-//                try {
-//                    userData = Jnapp.jn_login_info();
-//                    if(alertText == '兑换成功'){
-////                        window.location.href=''
-//                    }else{
-//
-//                    }
-//                } catch (ex) {
-//
-//                }
+                try {
+                    if(alertText == '兑换成功'){
+                        window.location.href='http://api.15w.com/client/app/jn/web/jfshop/shopnote.html'
+                    }else{
+
+                    }
+                } catch (ex) {
+
+                }
             });
         });
     </script>

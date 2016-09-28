@@ -112,15 +112,25 @@
     <script>
         $(function(){
 
+            var money = '';
+            Jn.moneyCallback = function (data) {
+                if (data) {
+                    money = data.money;
+                }
+            };
+
             function renderData(data){
+
+                var userData = Jnapp.jn_login_info();
+                if(userData!=='undefined' && userData){
+                    Jnapp.jn_getMoney();
+                }
                 var htmlStr = '<div class="note-head clearfix">';
-                    htmlStr += '<p class="note-my-val">我的余额：0</p>';
+                    htmlStr += '<p class="note-my-val">我的余额：'+money+'</p>';
                     htmlStr += '<a href="##"><p class="note-return">返回商城</p></a></div>';
                 $.each(data.list,function(index,item){
                     htmlStr += '<div class="note-list">';
-                    htmlStr += '<div class="note-time">';
-                    htmlStr += '<span>'+item.createTime+'</span>';
-                    htmlStr += '<span>12:01:10</span></div>';
+                    htmlStr += '<div class="note-time"><span>'+item.createTime+'</span></div>';
                     htmlStr += '<div class="note-exchange clearfix">';
                     htmlStr += '<p>兑换：'+item.money+'币卡</p>';
                     htmlStr += '<p class="rest-QB">-'+item.money+'Q币</p></div>';

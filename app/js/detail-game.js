@@ -470,7 +470,7 @@ $(function () {
 
         }
     });
-
+    var isGuess = false;
     //竞猜下注
     $(document).on('click', '.guess-option a', function (e) {
         e.preventDefault();
@@ -480,13 +480,21 @@ $(function () {
         var dataOdd = $(this).data('odd');
         if ($('.guess').data('staus') == 2) {
             try {
-                Jnapp.jn_betting(dataId + '', teamId*1, teamName+'', dataOdd*1);
+                Jnapp.jn_betting(dataId + '', teamId*1, teamName+'', dataOdd+'');
             } catch (e) {
 
             }
         }
 
     });
+    $(document).on('click','.guess-tip a',function(e){
+        e.preventDefault();
+        try {
+            Jnapp.jn_showPage(200);
+        } catch (e) {
+
+        }
+    })
 });
 
 
