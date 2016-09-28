@@ -110,11 +110,17 @@
     <script>
         $(function(){
             var money = '';
-            Jn.moneyCallback = function (data) {
-                if (data) {
-                     money = data.money;
-                }
-            };
+            window.Jn = {};
+            try{
+                Jn.moneyCallback = function (data) {
+                    if (data) {
+                        money = data.money;
+                    }
+                };
+            }catch(e){
+
+            }
+
             function renderData(data){
                 var userData = Jnapp.jn_login_info();
                 if(userData!=='undefined' && userData){
@@ -190,10 +196,7 @@
                             data: reqData,
                             dataType: 'jsonp',
                             success: function (res) {
-
                                 renderAlert(res.data);
-
-
                         },
                         error: function (err) {
                             alert('失败:' + err);

@@ -8,6 +8,7 @@ var allpage;
 var load = false;
 var pageTitle,
     isLoading = false;
+var tabId;
 
 window.Jn = {
     setCookie: function (name, value, iDay) {
@@ -47,6 +48,10 @@ Jn.refreshComment = function () {
         Jnapp.jn_getComment(sourceId, sourceTitle);
     }
 
+};
+
+Jn.showGameTab = function(tabNum){
+        tabId = tabNum;
 };
 
 function renderData(data) {
@@ -336,10 +341,15 @@ $(function () {
     //    }
     //});
 
+    $('.outList').children().eq(tabId).addClass('selected').siblings().removeClass('selected');
+    $('.outContainer').children().eq(tabId).show().siblings().hide();
+
     var dataStatus = $('.guess').data('staus');
     if(dataStatus !== '2'){
         $('.guess-option a').addClass('selectedGray');
     }
+
+
     //观看直播
     $(document).on('click', '.deck>a', function (e) {
         e.preventDefault();
@@ -487,6 +497,7 @@ $(function () {
         }
 
     });
+    //更多规则跳转
     $(document).on('click','.guess-tip a',function(e){
         e.preventDefault();
         try {
