@@ -109,6 +109,7 @@
     color: #666666;
     font-family: pingfang;
     font-size: 1.2rem;
+    padding-top: 0.4rem;
 }
 .rank-head{
     width: 3.6rem;
@@ -137,6 +138,7 @@
     overflow: hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
+    padding-top: 0.4rem;
 }
 
 .grades{
@@ -149,4 +151,5 @@
 .grades span{
     font-size: 1rem;
     color: #333333;
+    padding-top: 0.4rem;
 }

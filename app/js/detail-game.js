@@ -8,7 +8,6 @@ var allpage;
 var load = false;
 var pageTitle,
     isLoading = false;
-var tabId;
 
 window.Jn = {
     setCookie: function (name, value, iDay) {
@@ -82,11 +81,11 @@ function renderData(data) {
 
     htmlStr += '<div class="ProgressBar-leftbox"><div class="ProgressBar-left" style="width:' + leftItemLength + '%"></div></div>';
     htmlStr += '<div class="ProgressBar-rightbox"><div class="ProgressBar-right" style="width:' + rightItemLength + '%"></div></div> </section>';
-    htmlStr += '<section class="supporters"><a href="##" class="sp sp-left" data-id="' + data.dataId + '" data-team="' + data.teamA.teamId + '"><img class="supporters-leftlogo" src="images/matchdetail_ic_support.png"/>';
+    htmlStr += '<section class="supporters"><a href="##" class="sp sp-left" data-id="' + data.dataId + '" data-team="' + data.teamA.teamId + '"><img class="supporters-leftlogo" src="images/zan_2x.png"/>';
     htmlStr += '<span class="supporters-leftNumber supp" id="supporters-leftNumber"> ' + data.teamA.support_numbber + '</span></a>';
     htmlStr += '<div class="space-holder"></div>';
     htmlStr += '<a href="##" class="sp sp-right" data-id="' + data.dataId + '" data-team="' + data.teamB.teamId + '">';
-    htmlStr += '<img class="supporters-rightlogo" src="images/matchdetail_ic_support.png"/><span class="supporters-rightNumber supp" id="supporters-rightNumber">' + data.teamB.support_numbber + '</span></a></section> ';
+    htmlStr += '<img class="supporters-rightlogo" src="images/zan_2x.png"/><span class="supporters-rightNumber supp" id="supporters-rightNumber">' + data.teamB.support_numbber + '</span></a></section> ';
     htmlStr += '</header>';
 
     //比赛数据替换为直播平台
@@ -401,7 +400,8 @@ $(function () {
             number++;
             elem.html(number);
 
-            $(this).find('img').attr('src', 'images/matchdetail_ic_support_red.png');
+            $(this).find('img').attr('src', 'images/click-zan_2x.png');
+            $('.supporters-leftNumber').css('color','#efd200');
             Jnapp.jn_setData("sp-" + dataId, number + '');
             Jnapp.jn_agree(7, dataId + '', teamId + "");
         } catch (e) {
@@ -424,7 +424,8 @@ $(function () {
 
             number++;
             elem.html(number);
-            $(this).find('img').attr('src', 'images/matchdetail_ic_support_blue.png');
+            $(this).find('img').attr('src', 'images/click-zan_2x.png');
+            $('.supporters-rightNumber').css('color','#efd200');
             Jnapp.jn_setData("sp-" + dataId, number + '');
             Jnapp.jn_agree(7, dataId + "", teamId + '');
         } catch (e) {
@@ -483,7 +484,8 @@ $(function () {
 
         }
     });
-    var isGuess = false;
+
+
     //竞猜下注
     $(document).on('click', '.guess-option a', function (e) {
         e.preventDefault();

@@ -291,7 +291,7 @@ header .header-teams .header-teams-middle {
 
 .supporters-leftNumber {
     font-size: 0.68rem;
-    color: #efd200;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -770,6 +770,8 @@ header .header-teams .header-teams-middle {
     color: #333333;
 }
 .selectedGray{
-    background-color: #b6b6b6;
+    background-color: transparent;
+    border: 1px solid #cacaca ;
+    color: #cacaca;
 }
 /************guess结束**************/
