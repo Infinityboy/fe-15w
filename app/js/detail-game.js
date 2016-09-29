@@ -56,7 +56,7 @@ Jn.showGameTab = function(tabNum) {
     $('.outContainer').children().eq(tabNum).show().siblings().hide();
 
     var dataStatus = $('.guess').data('staus');
-    if (dataStatus !== '2') {
+    if (dataStatus !== 2) {
         $('.guess-option a').addClass('selectedGray');
     }
 };
