@@ -2,7 +2,7 @@
     background-image: url('../images/ditu.png');
 }
 .sale-describe{
-    padding-top: 2rem;
+    padding-top: 1rem;
     /*display: table;*/
     display: flex;
 }
@@ -39,7 +39,7 @@
     text-align: center;
     display: block;
     font-size: 0.7rem;
-    color: #c8c8c8;
+    color: #ffffff;
     font-family: pingfang;
     overflow: hidden;
     text-overflow:ellipsis;
@@ -51,6 +51,7 @@
     border-radius: 50%;
     border: 3px solid #ffffff;
     margin: 0 auto 0.5rem;
+    background-color: #dadada;
 }
 .player-img img{
     width: 3.6rem;
@@ -64,6 +65,7 @@
     border: 3px solid #ffffff;
     /*margin: 0 2.4rem 0.5rem 2.4rem;*/
     margin: 0 auto 0.5rem;
+    background-color: #dadada;
 }
 .player-img-first img{
     width: 4.8rem;

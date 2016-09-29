@@ -67,17 +67,17 @@ function renderData(data){
 
 $(function(){
 
-     //$.ajax({
-     //    url: 'http://api.15w.com/client/app/jn/v1_3/game/ranking?typeId=player',
-     //    type: "GET",
-     //    dataType: 'jsonp',
-     //    success: function (res) {
-     //        renderData(res.data);
-     //    },
-     //    error: function (err) {
-     //        alert('失败:' + err);
-     //    }
-     //});
+     $.ajax({
+         url: 'http://api.15w.com/client/app/jn/v1_3/game/ranking?typeId=player',
+         type: "GET",
+         dataType: 'jsonp',
+         success: function (res) {
+             renderData(res.data);
+         },
+         error: function (err) {
+             alert('失败:' + err);
+         }
+     });
 
 
     $(document).on('click','.popular-box',function(e){
