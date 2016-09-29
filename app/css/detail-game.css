@@ -19,14 +19,14 @@ header .header-scores {
     color: #e03131;
     vertical-align: middle;
     font-size: 2rem;
-    font-family: pingfang;
+    font-family: Arial;
 }
 
 .header-scores .game-score span:last-child {
     color: #41adff;
     vertical-align: middle;
     font-size: 2rem;
-    font-family: pingfang;
+    font-family: Arial;
 }
 
 .header-scores .game-score span:nth-child(2) {
@@ -73,7 +73,7 @@ header .header-teams .header-teams-left {
     line-height: 1rem;
     color: #ffffff;
     font-size: 1rem;
-    font-family: pingfang;
+    font-family: Arial;
 }
 
 header .header-teams .header-teams-right {
@@ -81,13 +81,13 @@ header .header-teams .header-teams-right {
     line-height: 1rem;
     color: #ffffff;
     font-size: 1rem;
-    font-family: pingfang;
+    font-family: Arial;
 }
 
 header .header-teams .header-teams-middle {
     font-size: 1rem;
     color: #ffffff;
-    font-family: pingfang;
+    font-family: Arial;
 }
 
 /*外层选项卡*/
@@ -733,7 +733,7 @@ header .header-teams .header-teams-middle {
 .team-name,.guess-game-time{
     font-size: 1.2rem;
     color: #666666;
-    font-family: pingfang;
+    font-family: Arial;
 }
 .game-head-icon,.team-name,.guess-game-time,.team-win-left,.team-win-right,.team-state{
     flex: 1;
@@ -761,7 +761,7 @@ header .header-teams .header-teams-middle {
 .guess-tip p,.team-state{
     font-size: 0.8rem;
     color: #666666;
-    font-family: pingfang;
+    font-family: Arial;
 }
 .team-state{
     font-size: 0.9rem;

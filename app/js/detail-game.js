@@ -341,11 +341,11 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-    //$.get('data/living.json', function (res) {
-    //    if (res.code == 10000) {
-    //        renderData(res.data);
-    //    }
-    //});
+    $.get('data/living.json', function (res) {
+        if (res.code == 10000) {
+            renderData(res.data);
+        }
+    });
 
 
 
