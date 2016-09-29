@@ -50,8 +50,15 @@ Jn.refreshComment = function () {
 
 };
 
-Jn.showGameTab = function(tabNum){
-        $('.box').attr('data-id',tabNum);
+Jn.showGameTab = function(tabNum) {
+    $('.box').data('id', tabNum + '');
+    $('.outer').children().eq(tabNum).addClass('selected').siblings().removeClass('selected');
+    $('.outContainer').children().eq(tabNum).show().siblings().hide();
+
+    var dataStatus = $('.guess').data('staus');
+    if (dataStatus !== '2') {
+        $('.guess-option a').addClass('selectedGray');
+    }
 };
 
 function renderData(data) {
@@ -335,20 +342,13 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-    $.get('data/living.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });
-    var tabId  = $('.box').data('id');
+    //$.get('data/living.json', function (res) {
+    //    if (res.code == 10000) {
+    //        renderData(res.data);
+    //    }
+    //});
 
-    $('.outer').children().eq(tabId).addClass('selected').siblings().removeClass('selected');
-    $('.outContainer').children().eq(tabId).show().siblings().hide();
 
-    var dataStatus = $('.guess').data('staus');
-    if(dataStatus !== '2'){
-        $('.guess-option a').addClass('selectedGray');
-    }
 
 
     //观看直播
@@ -437,6 +437,7 @@ $(function () {
         e.preventDefault();
         var page = 1;
         pageTitle = $(this).text();
+
         if (!$(this).hasClass('selected')) {
             var cls = $(this).parent().data('id');
             var oContainer = $('.outContainer');
@@ -445,6 +446,7 @@ $(function () {
                 oContainer.children().eq(cls).show().siblings().hide();
             }
         }
+
         //讨论无限加载
         if (pageTitle == '讨论') {
             load = true;
@@ -506,7 +508,9 @@ $(function () {
         } catch (e) {
 
         }
-    })
+    });
+
+
 });
 
 
