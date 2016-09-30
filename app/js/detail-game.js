@@ -236,9 +236,9 @@ function renderData(data) {
         htmlStr += '<div class="team-name">' + data.bet.teamB.name + '</div>';
         htmlStr += '<div class="game-head-icon"><img src="' + data.bet.teamB.logo + '" alt=""/>' + '</div></div>';
         htmlStr += '<div class="guess-option">';
-        htmlStr += '<a href="" class="team-win-left" data-id="' + data.dataId + '"  data-team="1" data-teamname="' + data.bet.teamA.name+'" data-odd="' + data.bet.teamA.odds + '"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + data.bet.teamA.odds + '</span></p></a>';
+        htmlStr += '<a href="" class="team-win-left" data-id="' + data.bet.gameId + '"  data-team="1" data-teamname="' + data.bet.teamA.name+'" data-odd="' + data.bet.teamA.odds + '"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + data.bet.teamA.odds + '</span></p></a>';
         htmlStr += '<div class="team-state"><span>'+statusType+'</span></div>';
-        htmlStr += '<a href="" class="team-win-right" data-id="' + data.dataId + '"  data-team="2" data-teamname="' + data.bet.teamB.name+'" data-odd="' + data.bet.teamB.odds + '"><p><span>' + data.teamB.name + '胜' + '</span><span>' + data.bet.teamB.odds + '</span></p></div></div></a>';
+        htmlStr += '<a href="" class="team-win-right" data-id="' + data.bet.gameId + '"  data-team="2" data-teamname="' + data.bet.teamB.name+'" data-odd="' + data.bet.teamB.odds + '"><p><span>' + data.teamB.name + '胜' + '</span><span>' + data.bet.teamB.odds + '</span></p></div></div></a>';
         htmlStr += '<div class="guess-tip"><p>实际结算赔率以竞猜结束的赔率为准 <a href="##"><em class="more-guess-rule">更多规则</em></a></p></div>';
         htmlStr += '</section>';
         htmlStr += '</div></div>';
@@ -384,7 +384,6 @@ $(function () {
     //left 点赞支持
     $(document).on('click', '.sp-left', function (e) {
         e.preventDefault();
-
         var elem = $('#supporters-leftNumber');
         var number = elem.text();
         var dataId = $(this).data('id');
