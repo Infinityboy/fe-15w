@@ -8,6 +8,7 @@ var allpage;
 var load = false;
 var pageTitle,
     isLoading = false;
+var dateStr;
 
 window.Jn = {
     setCookie: function (name, value, iDay) {
@@ -207,26 +208,22 @@ function renderData(data) {
 
     //竞猜
     var statusType;
+    function  formatDate(createTime){
+        var   changeTime = new Date(createTime*1000);
+        var   hourOld=changeTime.getHours();
+        var   hourNew = hourOld<10?'0'+hourOld: hourOld;
+        var   minuteOld=changeTime.getMinutes();
+        var   minuteNew = minuteOld<10?'0'+minuteOld: minuteOld;
+        return  dateStr = hourNew+":"+minuteNew;
+    }
+
     if (data.bet!== 'undefined' && data.bet) {
         if(data.bet.status.type == 2){
             statusType = '赔&nbsp率';
         }else{
             statusType = data.bet.status.message;
         }
-        var dataEtime = new Date(1475164800);
-        var gameHour = dataEtime.getHours();
-        var gameMinute = dataEtime.getMinutes();
-        if(gameHour < 10){
-            gameHour = '0'+ gameHour;
-        }else{
-            gameHour = dataEtime.getHours();
-        }
 
-        if(gameMinute < 10){
-            gameMinute = '0'+ gameMinute;
-        }else{
-            gameMinute = dataEtime.getMinutes();
-        }
         htmlStr += '<div class="guess" data-id="3" data-staus="' + data.bet.status.type + '" >';
         htmlStr += '<section class="live-byword-listbox">';
         htmlStr += '<div class="guess-nums"><p>' + data.bet.joinNum + '参与</p></div>';
@@ -234,7 +231,7 @@ function renderData(data) {
         htmlStr += '<div class="guess-game">';
         htmlStr += '<div class="game-head-icon"><img src="' + data.bet.teamA.logo + '" alt=""/>' + '</div>';
         htmlStr += '<div class="team-name">' + data.bet.teamA.name + '</div>';
-        htmlStr += '<div class="guess-game-time">'+gameHour+':'+gameMinute+'</div>';
+        htmlStr += '<div class="guess-game-time">'+formatDate(data.bet.etimes)+'</div>';
         htmlStr += '<div class="guess-game-time">' + data.gameType + '</div>';
         htmlStr += '<div class="team-name">' + data.bet.teamB.name + '</div>';
         htmlStr += '<div class="game-head-icon"><img src="' + data.bet.teamB.logo + '" alt=""/>' + '</div></div>';
@@ -341,11 +338,11 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-    $.get('data/living.json', function (res) {
-        if (res.code == 10000) {
-            renderData(res.data);
-        }
-    });
+    //$.get('data/living.json', function (res) {
+    //    if (res.code == 10000) {
+    //        renderData(res.data);
+    //    }
+    //});
 
 
 
