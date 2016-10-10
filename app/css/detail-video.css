@@ -75,6 +75,7 @@ body {
 /**********ios7/8的视频详情页分享上方图片的遗留问题开始************/
 .video-excerpt{
     display: table;
+    width: 100%;
 }
 .video-excerpt-tip{
     display: table;
