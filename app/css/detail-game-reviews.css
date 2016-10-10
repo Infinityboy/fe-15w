@@ -1,6 +1,6 @@
-/*section {*/
-    /*background-color: #ffffff;*/
-/*}*/
+section {
+    background-color: #ffffff;
+}
 
 .reviews-box {
     display: flex;
@@ -38,6 +38,8 @@
 
 .reviews-name, .reviews-time, .reviews-content {
     padding: 0.1rem;
+    word-wrap: break-word;
+    word-break:break-all;
 }
 
 .reviews-name, .reviews-content {

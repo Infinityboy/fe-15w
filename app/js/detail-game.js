@@ -270,37 +270,38 @@ function renderData(data) {
     }
     $('#box').html(htmlStr);
 }
-function renderReviews(reviewsData, type) {
-    var newReview = $('.new-reciews');
-    var htmlReview;
-    var result;
-    topicId = reviewsData.topic_id;
-    allpage = reviewsData.cmt_sum / 30;
-    //时间戳转换
-    function getDatediff(timeStamp) {
-        var minute = 1000 * 60;
-        var hour = minute * 60;
-        var day = hour * 24;
-        var now = new Date().getTime();
-        var diffValue = now - timeStamp;
-        if (diffValue < 0) {
-            return;
-        }
-        var dayBefore = diffValue / day;
-        var hourBefore = diffValue / hour;
-        var minBefore = diffValue / minute;
-        if (dayBefore >= 1) {
-            result = "" + parseInt(dayBefore) + "天前";
-        }
-        else if (hourBefore >= 1) {
-            result = "" + parseInt(hourBefore) + "小时前";
-        }
-        else if(minBefore>=1){
-            result=""+ parseInt(minBefore) +"分钟前";
-        }else{
-            result="刚刚";
-        }
-        return result;
+
+    function renderReviews(reviewsData, type) {
+        var newReview = $('.new-reciews');
+        var htmlReview;
+        var result;
+        topicId = reviewsData.topic_id;
+        allpage = reviewsData.cmt_sum / 30;
+        //时间戳转换
+        function getDatediff(timeStamp) {
+            var minute = 1000 * 60;
+            var hour = minute * 60;
+            var day = hour * 24;
+            var now = new Date().getTime();
+            var diffValue = now - timeStamp;
+            if (diffValue < 0) {
+                return;
+            }
+            var dayBefore = diffValue / day;
+            var hourBefore = diffValue / hour;
+            var minBefore = diffValue / minute;
+            if (dayBefore >= 1) {
+                result = "" + parseInt(dayBefore) + "天前";
+            }
+            else if (hourBefore >= 1) {
+                result = "" + parseInt(hourBefore) + "小时前";
+            }
+            else if(minBefore>=1){
+                result=""+ parseInt(minBefore) +"分钟前";
+            }else{
+                result="刚刚";
+            }
+            return result;
     }
 
     // 首屏数据
