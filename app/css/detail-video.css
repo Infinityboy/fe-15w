@@ -76,11 +76,15 @@ body {
 .video-excerpt{
     display: table;
 }
+.video-excerpt-tip{
+    display: table;
+}
 .video-excerpt p {
     display: table-cell;
     overflow: hidden;
     font-size: 1rem;
     text-align: center;
+    vertical-align: middle;
 }
 /**********ios7/8的视频详情页分享上方图片的遗留问题结束************/
 .excerpt {
