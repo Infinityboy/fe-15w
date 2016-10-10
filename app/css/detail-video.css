@@ -86,6 +86,7 @@ body {
     font-size: 1rem;
     text-align: center;
     vertical-align: middle;
+    width: 100%;
 }
 /**********ios7/8的视频详情页分享上方图片的遗留问题结束************/
 .excerpt {
