@@ -217,6 +217,8 @@ function renderData(data) {
         return  dateStr = hourNew+":"+minuteNew;
     }
 
+
+
     if (data.bet!== 'undefined' && data.bet) {
         if(data.bet.status.type == 2){
             statusType = '赔&nbsp率';
@@ -224,17 +226,40 @@ function renderData(data) {
             statusType = data.bet.status.message;
         }
 
+
         htmlStr += '<div class="guess" data-id="3" data-staus="' + data.bet.status.type + '" >';
         htmlStr += '<section class="live-byword-listbox">';
         htmlStr += '<div class="guess-nums"><p>' + data.bet.joinNum + '参与</p></div>';
         htmlStr += '<div class="guess-container">';
         htmlStr += '<div class="guess-game">';
-        htmlStr += '<div class="game-head-icon"><img src="' + data.bet.teamA.logo + '" alt=""/>' + '</div>';
+        htmlStr += '<div class="teams-show">';
+        if(data.bet.status.type == 0){
+            if(data.bet.teamA.score-data.bet.teamB.score>0){
+                htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamA.logo + '" alt=""/><img class="win-icon" src="images/win_2x.png" alt=""/>' + '</div>';
+            }else{
+                htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamA.logo + '" alt=""/>' + '</div>';
+            }
+        }else{
+            htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamA.logo + '" alt=""/>' + '</div>';
+        }
         htmlStr += '<div class="team-name">' + data.bet.teamA.name + '</div>';
-        htmlStr += '<div class="guess-game-time">'+formatDate(data.bet.etimes)+'</div>';
-        htmlStr += '<div class="guess-game-time">' + data.gameType + '</div>';
+        if(data.bet.status.type == 0){
+            htmlStr += '<div class="guess-game-time">&nbsp'+data.bet.teamA.score+':'+data.bet.teamB.score+'&nbsp</div>';
+        }else{
+            htmlStr += '<div class="guess-game-time">'+formatDate(data.bet.etimes)+'</div>';
+            htmlStr += '<div class="guess-game-time">' + data.gameType + '</div>';
+        }
         htmlStr += '<div class="team-name">' + data.bet.teamB.name + '</div>';
-        htmlStr += '<div class="game-head-icon"><img src="' + data.bet.teamB.logo + '" alt=""/>' + '</div></div>';
+        if(data.bet.status.type == 0){
+            if(data.bet.teamA.score-data.bet.teamB.score<0){
+                htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamB.logo + '" alt=""/><img class="win-icon" src="images/win_2x.png" alt=""/>' + '</div>';
+            }else{
+                htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamB.logo + '" alt=""/>' + '</div>';
+            }
+        }else{
+            htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamB.logo + '" alt=""/>' + '</div>';
+        }
+        htmlStr += '</div>';
         htmlStr += '<div class="guess-option">';
         htmlStr += '<a href="" class="team-win-left" data-id="' + data.bet.gameId + '"  data-team="1" data-teamname="' + data.bet.teamA.name+'" data-odd="' + data.bet.teamA.odds + '"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + data.bet.teamA.odds + '</span></p></a>';
         htmlStr += '<div class="team-state"><span>'+statusType+'</span></div>';

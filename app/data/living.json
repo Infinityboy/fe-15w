@@ -113,20 +113,20 @@
         "teamId": "5604986823",
         "logo": "http://files.15w.com/image/2016/0923/14746360643958.png",
         "name": "C9",
-        "score": "",
+        "score": "1",
         "odds": 7
       },
       "teamB": {
         "teamId": "5604987283",
         "logo": "http://files.15w.com/image/2016/0923/14746373201190.png",
         "name": "IM",
-        "score": "",
+        "score": "3",
         "odds": 1.2
       },
       "userList": [ ],
       "status": {
-        "type": 2,
-        "message": "已开盘"
+        "type": 0,
+        "message": "已结算"
       }
     }
   }
