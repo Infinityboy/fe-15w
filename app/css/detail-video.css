@@ -76,9 +76,6 @@ body {
 .video-excerpt{
     display: table;
 }
-.video-excerpt-tip{
-    display: table-cell;
-}
 .video-excerpt p {
     display: table-cell;
     overflow: hidden;
