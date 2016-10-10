@@ -235,7 +235,7 @@ function renderData(data) {
         htmlStr += '<div class="teams-show">';
         if(data.bet.status.type == 5){
             if(data.bet.teamA.score-data.bet.teamB.score>0){
-                htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamA.logo + '" alt=""/><img class="win-icon" src="images/win_2x.png" alt=""/>' + '</div>';
+                htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamA.logo + '" alt=""/><img class="win-icon-left" src="images/win_2x.png" alt=""/>' + '</div>';
             }else{
                 htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamA.logo + '" alt=""/>' + '</div>';
             }
@@ -252,7 +252,7 @@ function renderData(data) {
         htmlStr += '<div class="team-name">' + data.bet.teamB.name + '</div>';
         if(data.bet.status.type == 5){
             if(data.bet.teamA.score-data.bet.teamB.score<0){
-                htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamB.logo + '" alt=""/><img class="win-icon" src="images/win_2x.png" alt=""/>' + '</div>';
+                htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamB.logo + '" alt=""/><img class="win-icon-right" src="images/win_2x.png" alt=""/>' + '</div>';
             }else{
                 htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamB.logo + '" alt=""/>' + '</div>';
             }

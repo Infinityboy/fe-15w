@@ -757,9 +757,16 @@ header .header-teams .header-teams-middle {
     height: 3rem;
     border-radius: 50%;
 }
-.win-icon{
+.win-icon-left{
     position: absolute;
-    right: 2rem;
+    left: 2.2rem;
+    top: 0.8rem;
+    width: 2rem;
+    height: 2rem;
+}
+.win-icon-right{
+    position: absolute;
+    right: 2.2rem;
     top: 0.8rem;
     width: 2rem;
     height: 2rem;
