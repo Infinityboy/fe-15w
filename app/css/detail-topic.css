@@ -67,6 +67,24 @@ h1 {
     max-width: 100%;
 }
 
+.video-excerpt{
+    display: table;
+    width: 100%;
+}
+
+.video-excerpt-tip{
+    display: table;
+}
+
+.video-excerpt p {
+    display: table-cell;
+    overflow: hidden;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
 .maintext-share {
     margin-top: .5rem;
 }

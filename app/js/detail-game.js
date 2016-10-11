@@ -384,6 +384,7 @@ $(function () {
 		}
 
 	});
+
 	// 图片查看大图
 	$(document).on('click', '.live-byword-list-words-images img', function (e) {
 		e.preventDefault();
