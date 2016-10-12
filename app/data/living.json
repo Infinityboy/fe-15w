@@ -124,8 +124,47 @@
         "odds": 1.2
       },
       "userList": [ ],
-      "status": {
-        "type": 5,
+      "ranking":
+      {
+        "money":
+        [
+
+          {
+            "uname": "不会飞的小超人",
+            "avtar": "http://files.15w.com/user/2016/0913/56183757665615.jpg",
+            "money": "100.00"
+          },
+
+          {
+            "uname": "bbgvacs",
+            "avtar": "http://files.15w.com/user/2016/1010/56196261668301.jpg",
+            "money": "100.00"
+          },
+
+          {
+            "uname": "永嘉桥头公司",
+            "avtar": "http://files.15w.com/user/2016/1011/56196590868463.jpg",
+            "money": "100.00"
+          },
+
+          {
+            "uname": "倾听心声",
+            "avtar": "http://files.15w.com/user/2016/1012/56197103466181.jpg",
+            "money": "100.00"
+          },
+
+          {
+            "uname": "〆浅天ゞ",
+            "avtar": "http://files.15w.com/user/2016/1012/561971780670.jpg",
+            "money": "100.00"
+          }
+        ],
+        "win": [ ]
+      },
+
+
+"status": {
+        "type": 2,
         "message": "已结算"
       }
     }

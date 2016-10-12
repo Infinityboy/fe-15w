@@ -209,13 +209,35 @@ function renderData(data) {
 	//竞猜
 	var statusType;
 
+	//function formatDate(createTime) {
+	//	var changeTime = new Date(createTime * 1000);
+	//	var hourOld = changeTime.getHours();
+	//	var hourNew = hourOld < 10 ? '0' + hourOld : hourOld;
+	//	var minuteOld = changeTime.getMinutes();
+	//	var minuteNew = minuteOld < 10 ? '0' + minuteOld : minuteOld;
+	//	return dateStr = hourNew + ":" + minuteNew;
+	//}
+
 	function formatDate(createTime) {
-		var changeTime = new Date(createTime * 1000);
-		var hourOld = changeTime.getHours();
-		var hourNew = hourOld < 10 ? '0' + hourOld : hourOld;
-		var minuteOld = changeTime.getMinutes();
-		var minuteNew = minuteOld < 10 ? '0' + minuteOld : minuteOld;
-		return dateStr = hourNew + ":" + minuteNew;
+		var minute = 1000 * 60;
+		var hour = minute * 60;
+		var day = hour * 24;
+
+		var dayBefore = createTime / day;
+		var hourBefore = createTime / hour;
+		var minBefore = createTime / minute;
+		if (dayBefore >= 1) {
+			dateStr = "剩余" + parseInt(dayBefore) + "天";
+		}
+		else if (hourBefore >= 1) {
+			dateStr = "剩余" + parseInt(hourBefore) + "小时";
+		}
+		else if (minBefore >= 1) {
+			dateStr = "剩余" + parseInt(minBefore) + "分钟";
+		} else {
+			dateStr = "剩余1分钟";
+		}
+		return dateStr;
 	}
 
 
@@ -247,7 +269,6 @@ function renderData(data) {
 			htmlStr += '<div class="guess-game-time">&nbsp' + data.bet.teamA.score + ':' + data.bet.teamB.score + '&nbsp</div>';
 		} else {
 			htmlStr += '<div class="guess-game-time">' + formatDate(data.bet.etimes) + '</div>';
-			htmlStr += '<div class="guess-game-time">' + data.gameType + '</div>';
 		}
 		htmlStr += '<div class="team-name">' + data.bet.teamB.name + '</div>';
 		if (data.bet.status.type == 5) {
@@ -261,9 +282,9 @@ function renderData(data) {
 		}
 		htmlStr += '</div>';
 		htmlStr += '<div class="guess-option">';
-		htmlStr += '<a href="" class="team-win-left" data-id="' + data.bet.gameId + '"  data-team="1" data-teamname="' + data.bet.teamA.name + '" data-odd="' + data.bet.teamA.odds + '"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + data.bet.teamA.odds + '</span></p></a>';
+		htmlStr += '<a href="" class="team-win-left" data-id="' + data.bet.gameId + '"  data-team="1" data-teamname="' + data.bet.teamA.name + '" data-odd="' + data.bet.teamA.odds + '"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + data.bet.teamA.odds.toFixed(2) + '</span></p></a>';
 		htmlStr += '<div class="team-state"><span>' + statusType + '</span></div>';
-		htmlStr += '<a href="" class="team-win-right" data-id="' + data.bet.gameId + '"  data-team="2" data-teamname="' + data.bet.teamB.name + '" data-odd="' + data.bet.teamB.odds + '"><p><span>' + data.teamB.name + '胜' + '</span><span>' + data.bet.teamB.odds + '</span></p></div></div></a>';
+		htmlStr += '<a href="" class="team-win-right" data-id="' + data.bet.gameId + '"  data-team="2" data-teamname="' + data.bet.teamB.name + '" data-odd="' + data.bet.teamB.odds + '"><p><span>' + data.teamB.name + '胜' + '</span><span>' + data.bet.teamB.odds.toFixed(2) + '</span></p></div></div></a>';
 		htmlStr += '<div class="guess-tip"><p>实际结算赔率以竞猜结束的赔率为准 <a href="##"><em class="more-guess-rule">更多规则</em></a></p></div>';
 		htmlStr += '</section>';
 		htmlStr += '</div></div>';
@@ -277,7 +298,7 @@ function renderReviews(reviewsData, type) {
 	var result;
 	topicId = reviewsData.topic_id;
 	allpage = reviewsData.cmt_sum / 30;
-	//时间戳转换
+	//评论时间戳转换
 	function getDatediff(timeStamp) {
 		var minute = 1000 * 60;
 		var hour = minute * 60;
@@ -364,11 +385,11 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-	//$.get('data/living.json', function (res) {
-	//    if (res.code == 10000) {
-	//        renderData(res.data);
-	//    }
-	//});
+	$.get('data/living.json', function (res) {
+	    if (res.code == 10000) {
+	        renderData(res.data);
+	    }
+	});
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {
