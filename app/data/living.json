@@ -124,11 +124,8 @@
         "odds": 1.2
       },
       "userList": [ ],
-      "ranking":
-      {
-        "money":
-        [
-
+      "ranking": {
+        "money":[
           {
             "uname": "不会飞的小超人",
             "avtar": "http://files.15w.com/user/2016/0913/56183757665615.jpg",

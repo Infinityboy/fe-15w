@@ -222,10 +222,11 @@ function renderData(data) {
 		var minute = 1000 * 60;
 		var hour = minute * 60;
 		var day = hour * 24;
-
-		var dayBefore = createTime / day;
-		var hourBefore = createTime / hour;
-		var minBefore = createTime / minute;
+		var now = new Date().getTime();
+		var diffValue = createTime - now/1000;
+		var dayBefore = diffValue / day;
+		var hourBefore = diffValue / hour;
+		var minBefore = diffValue / minute;
 		if (dayBefore >= 1) {
 			dateStr = "剩余" + parseInt(dayBefore) + "天";
 		}
@@ -242,10 +243,10 @@ function renderData(data) {
 
 
 	if (data.bet !== 'undefined' && data.bet) {
-		if (data.bet.status.type == 2) {
-			statusType = '赔&nbsp率';
-		} else {
+		if (data.bet.status.type == 1||data.bet.status.type == 3||data.bet.status.type == 5||data.bet.status.type == 6) {
 			statusType = data.bet.status.message;
+		} else {
+			statusType = formatDate(data.bet.etimes);
 		}
 
 
@@ -265,11 +266,7 @@ function renderData(data) {
 			htmlStr += '<div class="game-head-icon"><img class="team-icon" src="' + data.bet.teamA.logo + '" alt=""/>' + '</div>';
 		}
 		htmlStr += '<div class="team-name">' + data.bet.teamA.name + '</div>';
-		if (data.bet.status.type == 5) {
-			htmlStr += '<div class="guess-game-time">&nbsp' + data.bet.teamA.score + ':' + data.bet.teamB.score + '&nbsp</div>';
-		} else {
-			htmlStr += '<div class="guess-game-time">' + formatDate(data.bet.etimes) + '</div>';
-		}
+		htmlStr += '<div class="guess-game-time">' + statusType + '</div>';
 		htmlStr += '<div class="team-name">' + data.bet.teamB.name + '</div>';
 		if (data.bet.status.type == 5) {
 			if (data.bet.teamA.score - data.bet.teamB.score < 0) {
@@ -283,15 +280,67 @@ function renderData(data) {
 		htmlStr += '</div>';
 		htmlStr += '<div class="guess-option">';
 		htmlStr += '<a href="" class="team-win-left" data-id="' + data.bet.gameId + '"  data-team="1" data-teamname="' + data.bet.teamA.name + '" data-odd="' + data.bet.teamA.odds + '"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + data.bet.teamA.odds.toFixed(2) + '</span></p></a>';
-		htmlStr += '<div class="team-state"><span>' + statusType + '</span></div>';
+		htmlStr += '<div class="team-state"><span>赔&nbsp率</span></div>';
 		htmlStr += '<a href="" class="team-win-right" data-id="' + data.bet.gameId + '"  data-team="2" data-teamname="' + data.bet.teamB.name + '" data-odd="' + data.bet.teamB.odds + '"><p><span>' + data.teamB.name + '胜' + '</span><span>' + data.bet.teamB.odds.toFixed(2) + '</span></p></div></div></a>';
-		htmlStr += '<div class="guess-tip"><p>实际结算赔率以竞猜结束的赔率为准 <a href="##"><em class="more-guess-rule">更多规则</em></a></p></div>';
+		htmlStr += '<div class="guess-tip"><p>实际结算赔率以竞猜结束的赔率为准 <a href="##"><em class="more-guess-rule">更多规则&gt;&gt;</em></a></p></div>';
 		htmlStr += '</section>';
+	if(data.bet.status.type == 5){
+		htmlStr+= '<section class="richers" >';
+		htmlStr+= '<div class="richers-title clearfix"><p>土豪榜</p><a href="##">如何上榜？</a></div>';
+		if(data.bet.ranking.money.length>0){
+			var rankHeadImg;
+			$.each(data.bet.ranking.money,function(richIdx,item){
+
+				if(richIdx == 0){
+					rankHeadImg = '<img src="images/first_2x.png" alt=""/>';
+				}else if(richIdx == 1){
+					rankHeadImg = '<img src="images/Second_2x.png" alt=""/>';
+				}else if(richIdx == 2){
+					rankHeadImg = '<img src="images/Third_2x.png" alt=""/>';
+				}else{
+					rankHeadImg = '<span>'+(richIdx+1)+'</span>';
+				}
+				htmlStr+= '<a href="###" class="richers-skip" data-id="'+item.dataId+'" data-type="'+item.articleType+'">';
+				htmlStr+= '<div class="richers-list">';
+				htmlStr+= '<div class="richers-rank" >'+rankHeadImg+'</div>';
+				htmlStr+= '<div class="richers-rank-head"><img src="'+item.avtar+'" alt=""/></div>';
+				htmlStr+= '<div class="richers-list-pact"><span>'+item.uname+'</span></div>';
+				htmlStr+= '<div class="richers-grades"><span>投注'+item.money+'竞币</span></div></div></a>';
+
+			});
+		}
+		htmlStr+= '</section>';
+	}else{
+		htmlStr+= '<section class="richers" >';
+		htmlStr+= '<div class="richers-title clearfix"><p>收入榜</p><a href="##">如何上榜？</a></div>';
+		if(data.bet.ranking.money.length>0){
+			var rankHeadImgs;
+			$.each(data.bet.ranking.money,function(richIdx,item){
+
+				if(richIdx == 0){
+					rankHeadImgs = '<img src="images/first_2x.png" alt=""/>';
+				}else if(richIdx == 1){
+					rankHeadImgs = '<img src="images/Second_2x.png" alt=""/>';
+				}else if(richIdx == 2){
+					rankHeadImgs = '<img src="images/Third_2x.png" alt=""/>';
+				}else{
+					rankHeadImgs = '<span>'+(richIdx+1)+'</span>';
+				}
+				htmlStr+= '<a href="###" class="richers-skip" data-id="'+item.dataId+'" data-type="'+item.articleType+'">';
+				htmlStr+= '<div class="richers-list">';
+				htmlStr+= '<div class="richers-rank" >'+rankHeadImgs+'</div>';
+				htmlStr+= '<div class="richers-rank-head"><img src="'+item.avtar+'" alt=""/></div>';
+				htmlStr+= '<div class="richers-list-pact"><span>'+item.uname+'</span></div>';
+				htmlStr+= '<div class="richers-grades"><span>获得'+item.money+'竞币</span></div></div></a>';
+			});
+		}
+		htmlStr+= '</section>';
+	}
+
 		htmlStr += '</div></div>';
 	}
 	$('#box').html(htmlStr);
 }
-
 function renderReviews(reviewsData, type) {
 	var newReview = $('.new-reciews');
 	var htmlReview;

@@ -744,11 +744,21 @@ header .header-teams .header-teams-middle {
     align-items: center;
 }
 .team-name,.guess-game-time{
-    font-size: 0.8rem;
+    font-size: 1rem;
+}
+.team-name,.team-state{
     color: #666666;
 }
-.game-head-icon,.team-name,.guess-game-time,.team-win-left,.team-win-right,.team-state{
+.guess-game-time{
+    color: #999999;
+}
+.game-head-icon,.team-name,.team-win-left,.team-win-right,.team-state{
     flex: 1;
+    align-self: center;
+    text-align: center;
+}
+.guess-game-time{
+    flex: 2.6;
     align-self: center;
     text-align: center;
 }
@@ -788,12 +798,12 @@ header .header-teams .header-teams-middle {
     color: #333333;
     border: 1px solid #333333;
 }
-.guess-tip p,.team-state{
-    font-size: 0.8rem;
+.guess-tip p{
+    font-size: 0.75rem;
     color: #666666;
 }
 .team-state{
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 .more-guess-rule{
     color: #333333;
@@ -802,5 +812,102 @@ header .header-teams .header-teams-middle {
     background-color: transparent;
     border: 1px solid #cacaca ;
     color: #cacaca;
+}
+.guess-tip{
+    padding-bottom: 0.8rem;
+}
+.richers{
+    background-color: #ffffff;
+}
+.richers :nth-child(2) .richers-list{
+    border-top: 1px solid #dadada;
+}
+.richers-title{
+
+    padding: 4.5% 4%;
+}
+.richers-title :first-child{
+    color: #333333;
+    font-size: 1rem;
+    display: inline;
+}
+.richers-title :last-child{
+    color: #999999;
+    font-size: 0.8rem;
+    float: right;
+    padding-top: 0.2rem;
+}
+.richers-skip {
+    padding: 0 2%;
+    display: block;
+}
+.richers-list{
+    /*display: table;*/
+    display: flex;
+    padding: 2% 2%;
+    border-bottom: 1px solid #dadada;
+}
+
+.richers-rank{
+    /*display: table-cell;*/
+    flex: 1;
+    padding: 0.4rem 0.2rem 0.4rem 0;
+}
+.richers-rank span,.richers-rank-head img,.richers-player-pact span,.richers-grades span{
+    display: inline-block;
+    vertical-align: middle;
+
+}
+.richers-rank img{
+    width: 70%;
+
+}
+.richers-rank span{
+    color: #666666;
+    text-align: right;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    padding-left: 0.7rem;
+}
+.richers-rank-head{
+
+    border-radius: 50%;
+    /*display: table-cell;*/
+    flex: 1.2;
+    margin: 0 -0.4rem;
+}
+.richers-rank-head img{
+    width: 80%;
+    margin-top: 0.8rem;
+    border-radius: 50%;
+}
+.richers-list-pact{
+    color: #999999;
+    /*display: table-cell;*/
+    flex: 5;
+    line-height: 4.2rem;
+    font-size: 0.8rem;
+    padding-left: 0.3rem;
+
+}
+.richers-list-pact span{
+    display: block;
+    width: 45%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    line-height: 4.2rem;
+}
+
+.richers-grades{
+    flex: 1;
+    position: absolute;
+    right: 1rem;
+    line-height: 4.2rem;
+}
+.richers-grades span{
+    font-size: 0.8rem;
+    color: #666666;
+    line-height: 4.2rem;
 }
 /************guess结束**************/
