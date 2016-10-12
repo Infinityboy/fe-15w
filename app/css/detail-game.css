@@ -1,12 +1,12 @@
 header {
     border-top: 1px solid #f2ebf3;
-    background-image: url('../images/ditu.png');
+    background-image: url('../images/head-bg.png');
 }
 
 header .header-scores {
     width: 100%;
     height: 3rem;
-    margin-top: 2rem;
+    margin-top: 1.6rem;
     position: relative;
     display: table;
 }
@@ -39,6 +39,7 @@ header .header-scores img {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
+    background-color: #ffffff;
 }
 
 .header-scores > div {
@@ -55,7 +56,7 @@ header .header-scores img {
 header .header-teams {
     width: 100%;
     height: 0.7rem;
-    margin-top: 0.35rem;
+    margin-top: 1rem;
     position: relative;
     font-size: 0.7rem;
     display: table;
@@ -272,7 +273,7 @@ header .header-teams .header-teams-middle {
     height: 2rem;
     position: relative;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     display: table;
     width: 100%;
 }
@@ -281,26 +282,33 @@ header .header-teams .header-teams-middle {
     width: 33%;
     display: table-cell;
     text-align: center;
-    vertical-align: middle;
 }
 
 .supporters img {
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .supporters-leftNumber {
-    font-size: 0.68rem;
+    height: 0.8rem;
+    font-size: 0.8rem;
     color: #ffffff;
     text-align: center;
+    padding-top: 0.2rem;
+    padding-left: 0.8rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .supporters-rightNumber {
     height: 0.8rem;
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     color: #ffffff;
     text-align: center;
-    padding-left: 0.2rem;
+    padding-top: 0.2rem;
+    padding-right: 0.8rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .supporters > div {
@@ -760,14 +768,14 @@ header .header-teams .header-teams-middle {
 }
 .win-icon-left{
     position: absolute;
-    left: 2.2rem;
+    left: 3.5rem;
     top: 0.8rem;
     width: 2rem;
     height: 2rem;
 }
 .win-icon-right{
     position: absolute;
-    right: 2.2rem;
+    left: 3.5rem;
     top: 0.8rem;
     width: 2rem;
     height: 2rem;

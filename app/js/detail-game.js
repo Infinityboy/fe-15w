@@ -62,7 +62,7 @@ Jn.showGameTab = function (tabNum) {
 };
 
 function renderData(data) {
-	var htmlStr = '<header><section class="header-scores">';
+	var htmlStr = '<header id="header-h"><section class="header-scores">';
 	htmlStr += '<div><img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/></div>';
 	htmlStr += '<div class="game-score"><span><b>' + data.teamA.score + '</b> </span><span><b>:</b></span>';
 	htmlStr += ' <span><b>' + data.teamB.score + '</b></span></div> ';
@@ -86,7 +86,7 @@ function renderData(data) {
 	htmlStr += '<span class="supporters-leftNumber supp" id="supporters-leftNumber"> ' + data.teamA.support_numbber + '</span></a>';
 	htmlStr += '<div class="space-holder"></div>';
 	htmlStr += '<a href="##" class="sp sp-right" data-id="' + data.dataId + '" data-team="' + data.teamB.teamId + '">';
-	htmlStr += '<img class="supporters-rightlogo" src="images/zan_2x.png"/><span class="supporters-rightNumber supp" id="supporters-rightNumber">' + data.teamB.support_numbber + '</span></a></section> ';
+	htmlStr += '<span class="supporters-rightNumber supp" id="supporters-rightNumber">' + data.teamB.support_numbber + '</span><img class="supporters-rightlogo" src="images/zan_2x.png"/></a></section> ';
 	htmlStr += '</header>';
 
 	//比赛数据替换为直播平台
@@ -370,11 +370,11 @@ $(function () {
 	//    }
 	//});
 
-
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {
 		e.preventDefault();
 		var dataUrl = $(this).data('url');
+
 		try {
 			$(this).addClass('selected');
 			$(this).parent().addClass('selected').siblings('.deck').removeClass('selected');
