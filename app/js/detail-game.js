@@ -341,7 +341,7 @@ function renderData(data) {
 		htmlStr+= '</section>';
 	}
 
-		htmlStr += '</div>';
+		htmlStr += '</div></div></div>';
 	}
 	$('#box').html(htmlStr);
 }
