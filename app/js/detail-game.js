@@ -61,6 +61,12 @@ Jn.showGameTab = function (tabNum) {
 	}
 };
 
+Jn.getHeaderHeight = function(){
+	var headerHeight = $('#header-h').height();
+	return headerHeight;
+	Jnapp.jn_sendHeaderHeight(headerHeight);
+};
+
 function renderData(data) {
 	var htmlStr = '<header id="header-h"><section class="header-scores">';
 	htmlStr += '<div><img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/></div>';
@@ -602,6 +608,15 @@ $(function () {
 		e.preventDefault();
 		try {
 			Jnapp.jn_showPage(200);
+		} catch (e) {
+
+		}
+	});
+	//如何上榜跳转
+	$(document).on('click', '.richers-title a', function (e) {
+		e.preventDefault();
+		try {
+			Jnapp.jn_showPage(201);
 		} catch (e) {
 
 		}
