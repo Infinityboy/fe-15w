@@ -346,7 +346,8 @@ function renderData(data) {
 	$('#box').html(htmlStr);
 
 	try{
-		var headerHeight = $('#header-h').height();
+		var headerHeight = $(window).height();
+		alert(headerHeight);
 		Jnapp.jn_sendHeaderHeight(headerHeight+'');
 	}catch (e){
 
@@ -445,11 +446,11 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-	//$.get('data/living.json', function (res) {
-	//    if (res.code == 10000) {
-	//        renderData(res.data);
-	//    }
-	//});
+	$.get('data/living.json', function (res) {
+	    if (res.code == 10000) {
+	        renderData(res.data);
+	    }
+	});
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {
