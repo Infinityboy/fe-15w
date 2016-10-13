@@ -279,9 +279,9 @@ function renderData(data) {
 		}
 		htmlStr += '</div>';
 		htmlStr += '<div class="guess-option">';
-		htmlStr += '<a href="" class="team-win-left" data-id="' + data.bet.gameId + '"  data-team="1" data-teamname="' + data.bet.teamA.name + '" data-odd="' + data.bet.teamA.odds + '"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + data.bet.teamA.odds.toFixed(2) + '</span></p></a>';
+		htmlStr += '<a href="" class="team-win-left" data-id="' + data.bet.gameId + '"  data-team="1" data-teamname="' + data.bet.teamA.name + '" data-odd="' + data.bet.teamA.odds + '"><p><span>' + data.bet.teamA.name + '胜' + '</span><span>' + new Number(data.bet.teamA.odds).toFixed(2) + '</span></p></a>';
 		htmlStr += '<div class="team-state"><span>赔&nbsp率</span></div>';
-		htmlStr += '<a href="" class="team-win-right" data-id="' + data.bet.gameId + '"  data-team="2" data-teamname="' + data.bet.teamB.name + '" data-odd="' + data.bet.teamB.odds + '"><p><span>' + data.teamB.name + '胜' + '</span><span>' + data.bet.teamB.odds.toFixed(2) + '</span></p></div></div></a>';
+		htmlStr += '<a href="" class="team-win-right" data-id="' + data.bet.gameId + '"  data-team="2" data-teamname="' + data.bet.teamB.name + '" data-odd="' + data.bet.teamB.odds + '"><p><span>' + data.teamB.name + '胜' + '</span><span>' + new Number(data.bet.teamB.odds).toFixed(2) + '</span></p></div></div></a>';
 		htmlStr += '<div class="guess-tip"><p>实际结算赔率以竞猜结束的赔率为准 <a href="##"><em class="more-guess-rule">更多规则&gt;&gt;</em></a></p></div>';
 		htmlStr += '</section>';
 	if(data.bet.status.type == 5){
@@ -438,11 +438,11 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-	//$.get('data/living.json', function (res) {
-	//    if (res.code == 10000) {
-	//        renderData(res.data);
-	//    }
-	//});
+	$.get('data/living.json', function (res) {
+	    if (res.code == 10000) {
+	        renderData(res.data);
+	    }
+	});
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {

@@ -2,167 +2,138 @@
   "code": 10000,
   "message": "success",
   "data": {
-    "dataId": "5605022344",
-    "title": "2016年LPL夏季赛7月31日15：00 IM VS VG",
-    "gameTime": "07月31日 15:00",
-    "gameType": "BO3",
-    "changyanSid": "11/1923",
-    "excerpt": "2016年LPL夏季赛7月31日15：00 IM VS VG",
-    "startTime": 1469948400,
-    "endTime": 1469958060,
-    "thumbnail": "http://files.15w.com/image/2016/0410/14602378391759.jpg",
-    "shareUrl": "http://m.15w.com/lol/match/5605022344.html",
-    "cover": "http://files.15w.com/image/2016/0410/14602378391759.jpg",
-    "state": 1,
+    "dataId": "5605025644",
+    "title": "2016全球总决赛八强赛 SSG VS C9",
+    "gameTime": "10月14日 06:00",
+    "gameType": "BO5",
+    "changyanSid": "11\/2088",
+    "excerpt": "2016全球总决赛八强赛 SSG VS C9",
+    "startTime": 1476396000,
+    "endTime": 0,
+    "thumbnail": "http:\/\/files.15w.com\/image\/2016\/0929\/1475121792545.jpg",
+    "shareUrl": "http:\/\/m.15w.com\/lol\/match\/5605025644.html",
+    "cover": "http:\/\/files.15w.com\/image\/2016\/0929\/1475121792545.jpg",
+    "state": 3,
     "teamA": {
-      "name": "IM",
-      "logo": "http://files.15w.com/image/2016/0520/14637239426647.png",
-      "support_numbber": "308",
+      "name": "SSG",
+      "logo": "http:\/\/files.15w.com\/image\/2016\/0923\/14746371673794.png",
+      "support_numbber": "232",
       "score": "0",
-      "teamId": "5604987283"
+      "teamId": "5604987343"
     },
     "teamB": {
-      "name": "VG",
-      "logo": "http://files.15w.com/image/2016/0412/1460450189360.png",
-      "support_numbber": "20",
-      "score": "2",
-      "teamId": "5604985782"
+      "name": "C9",
+      "logo": "http:\/\/files.15w.com\/image\/2016\/0923\/14746360643958.png",
+      "support_numbber": "93",
+      "score": "0",
+      "teamId": "5604986823"
     },
-    "relateVideos": [
-      {
-        "thumbnail": "http://files.15w.com/image/2016/0731/14699662992835.jpg",
-        "title": "LPL2016夏季赛常规赛第9周 IM VS VG_1",
-        "tagName": "",
-        "tagColor": "",
-        "articleType": 6,
-        "updateTime": 1469966316,
-        "extra": "5605000183"
-      },
-      {
-        "thumbnail": "http://files.15w.com/image/2016/0731/14699662992835.jpg",
-        "title": "LPL2016夏季赛常规赛第9周 IM VS VG_2",
-        "tagName": "",
-        "tagColor": "",
-        "articleType": 6,
-        "updateTime": 1469966328,
-        "extra": "5605000203"
-      }
-    ],
+    "relateVideos": [],
     "recomendVideos": [
       {
-        "title": "欧洲LCS夏季赛H2k VS Fnatic 延期至16日",
-        "updateTime": 1471227545,
-        "thumbnail": "http://files.15w.com/image/2016/0815/14712275429615.jpg",
-        "excerpt": "根据欧洲媒体消息，因为技术性的问题超过2个小时都解决不了比赛无法进行，所以拳头公司决定将这场附加赛延期至16日。",
-        "articleType": 0,
-        "extra": "5606465065",
+        "title": "全球首创竞技主题邮轮 电竞德州扑嘉年华",
+        "updateTime": 1476326230,
+        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/1013\/14763260303383.jpg",
+        "excerpt": "朋友，你听说过南洋杯“移动的城堡”邮轮站吗？",
+        "articleType": 5,
+        "extra": "http:\/\/www.15w.com\/pages\/nycyl.html",
         "tagName": "",
         "tagColor": ""
       },
       {
-        "title": "老外怎么看：恭喜Uzi首次进入LPL总决赛",
-        "updateTime": 1471189046,
-        "thumbnail": "http://files.15w.com/image/2016/0813/1471101267864.jpg",
-        "excerpt": "LPL夏季赛半决赛可谓是精彩至极，竟出现蓝色方全胜的魔咒！",
+        "title": "守望先锋全球玩家突破2000万 暴雪赚翻了",
+        "updateTime": 1476323875,
+        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/1013\/14763238731893.jpg",
+        "excerpt": "暴雪在最近的一次发布会上正式宣布了《守望先锋》玩家数量突破2000万的消息，这对2016年发售的游戏来说绝对是佼佼者。",
         "articleType": 0,
-        "extra": "5606464225",
-        "tagName": "专栏",
-        "tagColor": "#d559da"
+        "extra": "5606588885",
+        "tagName": "",
+        "tagColor": ""
       },
       {
-        "title": "LPL半决赛综述 EDGRNG会师决赛",
-        "updateTime": 1471188825,
-        "thumbnail": "http://files.15w.com/image/2016/0814/14711897534247.jpg",
-        "excerpt": "EDG和RNG在今日的半决赛中分别战胜对手，他们将在8月26日决出总冠军。",
+        "title": "无心玩家问答：我们与SKT的八强赛55开",
+        "updateTime": 1476322614,
+        "thumbnail": "http:\/\/files.15w.com\/image\/2016\/1013\/14763224053607.jpg",
+        "excerpt": "无心：对SKT，最重要的还是BP，我认为我们个人实力还是不虚SKT的，只要Banpick和沟通方面做好的话，应该是可以(赢)的。",
         "articleType": 0,
-        "extra": "5606464205",
-        "tagName": "赛事",
-        "tagColor": "#e03131"
+        "extra": "5606588625",
+        "tagName": "",
+        "tagColor": ""
       }
     ],
     "originSrc": [
       {
-        "link": "http://m.panda.tv/room.html?roomid=7000",
-        "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
+        "link": "https:\/\/m.douyu.com\/288016",
+        "logo": "http:\/\/api.15w.com\/client\/app\/jn\/static\/img\/logo\/douyu.jpg"
       },
       {
-        "link": "http://m.douyu.com/424559",
-        "logo": "http://api.15w.com/client/app/jn/static/img/logo/douyu.jpg"
+        "link": "http:\/\/m.quanmin.tv\/v\/177",
+        "logo": "http:\/\/api.15w.com\/client\/app\/jn\/static\/img\/logo\/quanmin.jpg"
       },
       {
-        "link": "http://m.panda.tv/room.html?roomid=7000",
-        "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
+        "link": "http:\/\/star.longzhu.com\/m\/lol2016?from=livebanner3",
+        "logo": "http:\/\/api.15w.com\/client\/app\/jn\/static\/img\/logo\/longzhu.jpg"
       },
       {
-        "link": "http://m.douyu.com/424559",
-        "logo": "http://api.15w.com/client/app/jn/static/img/logo/douyu.jpg"
-      },
-      {
-        "link": "http://m.panda.tv/room.html?roomid=7000",
-        "logo": "http://api.15w.com/client/app/jn/static/img/logo/panda.jpg"
+        "link": "http:\/\/m.huya.com\/s6",
+        "logo": "http:\/\/api.15w.com\/client\/app\/jn\/static\/img\/logo\/huya.jpg"
       }
     ],
     "bet": {
-      "name": "test",
-      "stimes": "1474300800",
-      "etimes": "1475164800",
-      "bestOf": 1,
-      "joinNum": 3,
-      "gameId": "5605001863",
+      "name": "2016全球总决赛八强赛 SSG VS C9",
+      "stimes": "1476085710",
+      "etimes": "1476395400",
+      "bestOf": 5,
+      "joinNum": 581,
+      "gameId": "5605003904",
       "teamA": {
-        "teamId": "5604986823",
-        "logo": "http://files.15w.com/image/2016/0923/14746360643958.png",
-        "name": "C9",
-        "score": "3",
-        "odds": 7
+        "teamId": "5604987343",
+        "logo": "http:\/\/files.15w.com\/image\/2016\/0923\/14746371673794.png",
+        "name": "SSG",
+        "score": "",
+        "odds": "1.28"
       },
       "teamB": {
-        "teamId": "5604987283",
-        "logo": "http://files.15w.com/image/2016/0923/14746373201190.png",
-        "name": "IM",
-        "score": "1",
-        "odds": 1.2
+        "teamId": "5604986823",
+        "logo": "http:\/\/files.15w.com\/image\/2016\/0923\/14746360643958.png",
+        "name": "C9",
+        "score": "",
+        "odds": "3.22"
       },
-      "userList": [ ],
+      "userList": [],
       "ranking": {
-        "money":[
+        "money": [
+          {
+            "uname": "151*****670",
+            "avtar": "http:\/\/files.15w.com\/user\/avtar.jpg",
+            "money": "300.00"
+          },
           {
             "uname": "不会飞的小超人",
-            "avtar": "http://files.15w.com/user/2016/0913/56183757665615.jpg",
+            "avtar": "http:\/\/files.15w.com\/user\/2016\/0913\/56183757665615.jpg",
             "money": "100.00"
           },
-
           {
             "uname": "bbgvacs",
-            "avtar": "http://files.15w.com/user/2016/1010/56196261668301.jpg",
+            "avtar": "http:\/\/files.15w.com\/user\/2016\/1010\/56196261668301.jpg",
             "money": "100.00"
           },
-
           {
             "uname": "永嘉桥头公司",
-            "avtar": "http://files.15w.com/user/2016/1011/56196590868463.jpg",
+            "avtar": "http:\/\/files.15w.com\/user\/2016\/1011\/56196590868463.jpg",
             "money": "100.00"
           },
-
           {
             "uname": "倾听心声",
-            "avtar": "http://files.15w.com/user/2016/1012/56197103466181.jpg",
-            "money": "100.00"
-          },
-
-          {
-            "uname": "〆浅天ゞ",
-            "avtar": "http://files.15w.com/user/2016/1012/561971780670.jpg",
+            "avtar": "http:\/\/files.15w.com\/user\/2016\/1012\/56197103466181.jpg",
             "money": "100.00"
           }
         ],
-        "win": [ ]
+        "win": []
       },
-
-
-"status": {
+      "status": {
         "type": 2,
-        "message": "已结算"
+        "message": "已开盘"
       }
     }
   }
