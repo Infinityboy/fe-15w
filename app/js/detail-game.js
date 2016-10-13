@@ -61,12 +61,6 @@ Jn.showGameTab = function (tabNum) {
 	}
 };
 
-Jn.getHeaderHeight = function(){
-	var headerHeight = $('#header-h').height();
-	return headerHeight;
-	Jnapp.jn_sendHeaderHeight(headerHeight);
-};
-
 function renderData(data) {
 	var htmlStr = '<header id="header-h"><section class="header-scores">';
 	htmlStr += '<div><img class="header-scores-logo1eft" src="' + data.teamA.logo + '"/></div>';
@@ -350,6 +344,13 @@ function renderData(data) {
 		htmlStr += '</div></div></div>';
 	}
 	$('#box').html(htmlStr);
+
+	try{
+		var headerHeight = $('#header-h').height();
+		Jnapp.jn_sendHeaderHeight(headerHeight*1);
+	}catch (e){
+
+	}
 }
 function renderReviews(reviewsData, type) {
 	var newReview = $('.new-reciews');
