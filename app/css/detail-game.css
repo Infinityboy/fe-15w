@@ -910,4 +910,12 @@ header .header-teams .header-teams-middle {
     color: #666666;
     line-height: 4.2rem;
 }
+.non-richer{
+    padding: 4rem 0;
+}
+.non-richer>p{
+    text-align: center;
+    color: #666666;
+    font-size: 1rem;
+}
 /************guess结束**************/
