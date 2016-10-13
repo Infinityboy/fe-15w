@@ -341,7 +341,7 @@ function renderData(data) {
 		htmlStr+= '</section>';
 	}
 
-		htmlStr += '</div></div>';
+		htmlStr += '</div>';
 	}
 	$('#box').html(htmlStr);
 }
@@ -438,11 +438,11 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-	//$.get('data/living.json', function (res) {
-	//    if (res.code == 10000) {
-	//        renderData(res.data);
-	//    }
-	//});
+	$.get('data/living.json', function (res) {
+	    if (res.code == 10000) {
+	        renderData(res.data);
+	    }
+	});
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {
