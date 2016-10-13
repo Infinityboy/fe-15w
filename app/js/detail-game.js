@@ -286,10 +286,10 @@ function renderData(data) {
 		htmlStr += '</section>';
 	if(data.bet.status.type == 5){
 		htmlStr+= '<section class="richers" >';
-		htmlStr+= '<div class="richers-title clearfix"><p>土豪榜</p><a href="##">如何上榜？</a></div>';
-		if(data.bet.ranking.money.length>0){
+		htmlStr+= '<div class="richers-title clearfix"><p>收入榜</p><a href="##">如何上榜？</a></div>';
+		if(data.bet.ranking.win.length>0){
 			var rankHeadImg;
-			$.each(data.bet.ranking.money,function(richIdx,item){
+			$.each(data.bet.ranking.win,function(richIdx,item){
 
 				if(richIdx == 0){
 					rankHeadImg = '<img src="images/first_2x.png" alt=""/>';
@@ -305,17 +305,17 @@ function renderData(data) {
 				htmlStr+= '<div class="richers-rank" >'+rankHeadImg+'</div>';
 				htmlStr+= '<div class="richers-rank-head"><img src="'+item.avtar+'" alt=""/></div>';
 				htmlStr+= '<div class="richers-list-pact"><span>'+item.uname+'</span></div>';
-				htmlStr+= '<div class="richers-grades"><span>投注'+item.money+'竞币</span></div></div></a>';
+				htmlStr+= '<div class="richers-grades"><span>获得'+item.money+'竞币</span></div></div></a>';
 
 			});
 		}else{
-            htmlStr+= '<div class="non-richer"><p>暂无土豪上榜</p><div>'
+            htmlStr+= '<div class="non-richer"><p>暂无收入信息</p><div>'
         }
 		htmlStr+= '</section>';
 	}else{
 		htmlStr+= '<section class="richers" >';
-		htmlStr+= '<div class="richers-title clearfix"><p>收入榜</p><a href="##">如何上榜？</a></div>';
-		if(data.bet.ranking.win.length>0){
+		htmlStr+= '<div class="richers-title clearfix"><p>土豪榜</p><a href="##">如何上榜？</a></div>';
+		if(data.bet.ranking.money.length>0){
 			var rankHeadImgs;
 			$.each(data.bet.ranking.money,function(richIdx,item){
 
@@ -333,10 +333,10 @@ function renderData(data) {
 				htmlStr+= '<div class="richers-rank" >'+rankHeadImgs+'</div>';
 				htmlStr+= '<div class="richers-rank-head"><img src="'+item.avtar+'" alt=""/></div>';
 				htmlStr+= '<div class="richers-list-pact"><span>'+item.uname+'</span></div>';
-				htmlStr+= '<div class="richers-grades"><span>获得'+item.money+'竞币</span></div></div></a>';
+				htmlStr+= '<div class="richers-grades"><span>投注'+item.money+'竞币</span></div></div></a>';
 			});
 		}else{
-            htmlStr+= '<div class="non-richer"><p>暂无收入信息上榜</p><div>'
+            htmlStr+= '<div class="non-richer"><p>暂无土豪上榜</p><div>'
         }
 		htmlStr+= '</section>';
 	}
@@ -438,11 +438,11 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-	$.get('data/living.json', function (res) {
-	    if (res.code == 10000) {
-	        renderData(res.data);
-	    }
-	});
+	//$.get('data/living.json', function (res) {
+	//    if (res.code == 10000) {
+	//        renderData(res.data);
+	//    }
+	//});
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {
