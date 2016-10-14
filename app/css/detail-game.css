@@ -799,7 +799,7 @@ header .header-teams .header-teams-middle {
     border: 1px solid #333333;
 }
 .guess-tip p{
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #666666;
 }
 .team-state{
@@ -807,6 +807,7 @@ header .header-teams .header-teams-middle {
 }
 .more-guess-rule{
     color: #333333;
+    font-family: PingFangSC-Medium, sans-serif;
 }
 .selectedGray{
     background-color: transparent;

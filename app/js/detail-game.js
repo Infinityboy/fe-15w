@@ -347,7 +347,6 @@ function renderData(data) {
 
 	try{
 		var headerHeight = $('#header-h').height();
-		alert(headerHeight);
 		Jnapp.jn_sendHeaderHeight(headerHeight+'');
 	}catch (e){
 
