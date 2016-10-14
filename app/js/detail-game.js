@@ -223,7 +223,7 @@ function renderData(data) {
 		var hour = minute * 60;
 		var day = hour * 24;
 		var now = new Date().getTime();
-		var diffValue = createTime - now/1000;
+		var diffValue = createTime*1000 - now;
 		var dayBefore = diffValue / day;
 		var hourBefore = diffValue / hour;
 		var minBefore = diffValue / minute;
