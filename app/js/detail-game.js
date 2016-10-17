@@ -41,11 +41,8 @@ Jn.addComment = function (reviewsData) {
 };
 
 Jn.refreshComment = function () {
-
-	//if ( pageTitle == '讨论' && !isLoading) {
-	//	isLoading = true;
 		Jnapp.jn_getComment(sourceId, sourceTitle);
-	//}
+
 
 };
 
@@ -356,7 +353,7 @@ function renderReviews(reviewsData, type) {
 	var htmlReview;
 	var result;
 	topicId = reviewsData.topic_id;
-	allpage = reviewsData.cmt_sum / 30;
+	allpage = Math.ceil(reviewsData.cmt_sum / 30);
 	//评论时间戳转换
 	function getDatediff(timeStamp) {
 		var minute = 1000 * 60;
@@ -427,9 +424,6 @@ function renderReviews(reviewsData, type) {
 			htmlMorereview += '<div class="reviews-box">';
 			htmlMorereview += '<div class="reviews-header"><img src="' + moreContent.passport.img_url + '" alt=""/>' + '</div>';
 			htmlMorereview += '<div class="reviews-right">';
-			htmlMorereview += '<span class="reviews-name">' + moreContent.passport.nickname + '</span>';
-			htmlMorereview += '<span class="reviews-time    ">' + result + '</span>';
-			htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
 			htmlMorereview += '<span class="reviews-name">' + moreContent.passport.nickname + '</span>';
 			htmlMorereview += '<span class="reviews-time">' + getDatediff(moreContent.create_time) + '</span>';
 			htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
