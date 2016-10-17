@@ -820,11 +820,8 @@ header .header-teams .header-teams-middle {
 .richers{
     background-color: #ffffff;
 }
-.richers :nth-child(2) .richers-list{
-    border-top: 1px solid #dadada;
-}
 .richers-title{
-
+    border-bottom: 1px solid #dadada;
     padding: 4.5% 4%;
 }
 .richers-title :first-child{
