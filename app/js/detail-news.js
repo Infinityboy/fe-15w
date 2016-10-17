@@ -62,17 +62,17 @@ function renderData(data) {
 }
 
 $(function () {
-      //$.ajax({
-      //   url: 'data/news.json',
-      //   type: "GET",
-      //   dataType: 'json',
-      //   success: function (str) {
-      //       renderData(str.data);
-      //   },
-      //   error: function (err) {
-      //       //alert('失败:' + err);
-      //   }
-      //});
+      $.ajax({
+         url: 'data/news.json',
+         type: "GET",
+         dataType: 'json',
+         success: function (str) {
+             renderData(str.data);
+         },
+         error: function (err) {
+             //alert('失败:' + err);
+         }
+      });
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
