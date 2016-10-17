@@ -424,7 +424,6 @@ function renderReviews(reviewsData, type) {
 
 	if (parseInt(type) === 1) {
 		var htmlMorereview = '<div>';
-		getDatediff(reviewsData.comments.create_time);
 		$.each(reviewsData.comments, function (index, moreContent) {
 			htmlMorereview += '<div class="reviews-box">';
 			htmlMorereview += '<div class="reviews-header"><img src="' + moreContent.passport.img_url + '" alt=""/>' + '</div>';
@@ -433,7 +432,7 @@ function renderReviews(reviewsData, type) {
 			htmlMorereview += '<span class="reviews-time    ">' + result + '</span>';
 			htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
 			htmlMorereview += '<span class="reviews-name">' + moreContent.passport.nickname + '</span>';
-			htmlMorereview += '<span class="reviews-time">' + result + '</span>';
+			htmlMorereview += '<span class="reviews-time">' + getDatediff(moreContent.comments.create_time) + '</span>';
 			htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
 		});
 		htmlMorereview += '</div>';
