@@ -364,7 +364,7 @@ function renderReviews(reviewsData, type) {
 		var hour = minute * 60;
 		var day = hour * 24;
 		var now = new Date().getTime();
-		var diffValue = now - timeStamp*1000;
+		var diffValue = now - timeStamp;
 		if (diffValue < 0) {
 			return;
 		}
