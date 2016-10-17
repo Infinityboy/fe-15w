@@ -397,7 +397,7 @@ function renderReviews(reviewsData, type) {
 					htmlReview += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
 					htmlReview += '<div class="reviews-right">';
 					htmlReview += '<span class="reviews-name">' + hotContent.passport.nickname + '</span>';
-					htmlReview += '<span class="reviews-time">' + getDatediff(hotContent.comments.create_time) + '</span>';
+					htmlReview += '<span class="reviews-time">' + getDatediff(hotContent.comments[hotIdx].create_time) + '</span>';
 					htmlReview += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
 				});
 				htmlReview += '</section>';
@@ -410,7 +410,7 @@ function renderReviews(reviewsData, type) {
 				htmlReview += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
 				htmlReview += '<div class="reviews-right">';
 				htmlReview += '<span class="reviews-name">' + content.passport.nickname + '</span>';
-				htmlReview += '<span class="reviews-time">' + getDatediff(content.comments.create_time) + '</span>';
+				htmlReview += '<span class="reviews-time">' + getDatediff(content.comments[idx].create_time) + '</span>';
 				htmlReview += '<p class="reviews-content">' + content.content + '</p></div></div>';
 			});
 			htmlReview += '</section>';
@@ -432,7 +432,7 @@ function renderReviews(reviewsData, type) {
 			htmlMorereview += '<span class="reviews-time    ">' + result + '</span>';
 			htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
 			htmlMorereview += '<span class="reviews-name">' + moreContent.passport.nickname + '</span>';
-			htmlMorereview += '<span class="reviews-time">' + getDatediff(moreContent.comments.create_time) + '</span>';
+			htmlMorereview += '<span class="reviews-time">' + getDatediff(moreContent.comments[index].create_time) + '</span>';
 			htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
 		});
 		htmlMorereview += '</div>';
