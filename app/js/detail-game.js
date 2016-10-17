@@ -391,19 +391,18 @@ function renderReviews(reviewsData, type) {
 			htmlReview = '<div>';
 			if (reviewsData.hots && reviewsData.hots.length > 0) {
 				htmlReview += '<section class="hot-reviews">';
-				getDatediff(reviewsData.hots.create_time);
 				htmlReview += '<div class="reviews-title"><span>热门讨论</span></div>';
 				$.each(reviewsData.hots, function (hotIdx, hotContent) {
 					htmlReview += '<div class="reviews-box">';
 					htmlReview += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
 					htmlReview += '<div class="reviews-right">';
 					htmlReview += '<span class="reviews-name">' + hotContent.passport.nickname + '</span>';
-					htmlReview += '<span class="reviews-time">' + result + '</span>';
+					htmlReview += '<span class="reviews-time">' + getDatediff(hotContent.comments.create_time) + '</span>';
 					htmlReview += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
 				});
 				htmlReview += '</section>';
 			}
-			getDatediff(reviewsData.comments.create_time);
+
 			htmlReview += '<section class="new-reciews">';
 			htmlReview += '<div class="reviews-title"><span>最新讨论</span></div>';
 			$.each(reviewsData.comments, function (idx, content) {
@@ -411,7 +410,7 @@ function renderReviews(reviewsData, type) {
 				htmlReview += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
 				htmlReview += '<div class="reviews-right">';
 				htmlReview += '<span class="reviews-name">' + content.passport.nickname + '</span>';
-				htmlReview += '<span class="reviews-time">' + result + '</span>';
+				htmlReview += '<span class="reviews-time">' + getDatediff(content.comments.create_time) + '</span>';
 				htmlReview += '<p class="reviews-content">' + content.content + '</p></div></div>';
 			});
 			htmlReview += '</section>';
