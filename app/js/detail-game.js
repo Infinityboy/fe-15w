@@ -5,7 +5,6 @@ var sourceId;
 var sourceTitle;
 var topicId;
 var allpage;
-var load = false;
 var pageTitle,
 	isLoading = false;
 var dateStr;
@@ -43,10 +42,10 @@ Jn.addComment = function (reviewsData) {
 
 Jn.refreshComment = function () {
 
-	if (load && pageTitle == '讨论' && !isLoading) {
-		isLoading = true;
+	//if ( pageTitle == '讨论' && !isLoading) {
+	//	isLoading = true;
 		Jnapp.jn_getComment(sourceId, sourceTitle);
-	}
+	//}
 
 };
 
@@ -550,7 +549,7 @@ $(function () {
 
 		//讨论无限加载
 		if (pageTitle == '讨论') {
-			load = true;
+			isLoading = true;
 		}
 		$(document).on('scroll', function (e) {
 			e.preventDefault();
@@ -562,9 +561,9 @@ $(function () {
 				page++;
 				if (page <= allpage) {
 					try {
-						if (load && pageTitle == '讨论' && !isLoading) {
-							isLoading = true;
+						if ( pageTitle == '讨论' && isLoading) {
 							Jnapp.jn_getMoreComment(sourceId + '', page + '', '30', topicId + '');
+							isLoading = false;
 						}
 					} catch (e) {
 
