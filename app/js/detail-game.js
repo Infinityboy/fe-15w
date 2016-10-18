@@ -1,13 +1,13 @@
 'use strict';
 
-var cacheData = null;
-var sourceId;
-var sourceTitle;
-var topicId;
-var allpage;
-var pageTitle,
-	isLoading = false;
-var dateStr;
+var cacheData = null,
+	sourceId,
+	sourceTitle,
+	topicId,
+	allpage,
+	pageTitle,
+	isLoading = false,
+    dateStr;
 
 window.Jn = {
 	setCookie: function (name, value, iDay) {
@@ -24,38 +24,36 @@ window.Jn = {
 			}
 		}
 		return '';
-	}
+	},
+
+    setData : function (data) {
+        if (data.key == 'gameInitDetail') {
+            renderData(data.content);
+        }
+    },
+
+    addComment : function (reviewsData) {
+        isLoading = false;
+        if (reviewsData.code == '10000') {
+            renderReviews(reviewsData.data, reviewsData.type);
+        }
+    },
+    refreshComment : function () {
+        Jnapp.jn_getComment(sourceId, sourceTitle);
+    },
+
+    showGameTab : function (tabNum) {
+        $('.box').data('id', tabNum + '');
+        $('.outer').children().eq(tabNum).addClass('selected').siblings().removeClass('selected');
+        $('.outContainer').children().eq(tabNum).show().siblings().hide();
+
+        var dataStatus = $('.guess').data('staus');
+        if (dataStatus !== 2) {
+            $('.guess-option a').addClass('selectedGray');
+        }
+    }
 };
 
-Jn.setData = function (data) {
-	if (data.key == 'gameInitDetail') {
-		renderData(data.content);
-	}
-};
-
-Jn.addComment = function (reviewsData) {
-	isLoading = false;
-	if (reviewsData.code == '10000') {
-		renderReviews(reviewsData.data, reviewsData.type);
-	}
-};
-
-Jn.refreshComment = function () {
-		Jnapp.jn_getComment(sourceId, sourceTitle);
-
-
-};
-
-Jn.showGameTab = function (tabNum) {
-	$('.box').data('id', tabNum + '');
-	$('.outer').children().eq(tabNum).addClass('selected').siblings().removeClass('selected');
-	$('.outContainer').children().eq(tabNum).show().siblings().hide();
-
-	var dataStatus = $('.guess').data('staus');
-	if (dataStatus !== 2) {
-		$('.guess-option a').addClass('selectedGray');
-	}
-};
 
 function renderData(data) {
 	var htmlStr = '<header id="header-h"><section class="header-scores">';
