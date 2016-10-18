@@ -899,7 +899,7 @@ header .header-teams .header-teams-middle {
     text-overflow:ellipsis;
     white-space:nowrap;
     line-height: 4.2rem;
-    padding-top: 0.1rem;
+    padding-top: 0.2rem;
 }
 
 .richers-grades{
@@ -912,7 +912,7 @@ header .header-teams .header-teams-middle {
     font-size: 0.8rem;
     color: #666666;
     line-height: 4.2rem;
-    padding-top: 0.1rem;
+    padding-top: 0.2rem;
 }
 .non-richer{
     padding: 4rem 0;
