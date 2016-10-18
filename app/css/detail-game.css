@@ -785,7 +785,7 @@ header .header-teams .header-teams-middle {
 }
 .win-icon-right{
     position: absolute;
-    left: 2.5rem;
+    right: 2.5rem;
     top: 0.8rem;
     width: 2rem;
     height: 2rem;
