@@ -64,10 +64,10 @@ function renderData(data) {
 	htmlStr += '</section>';
 
 	htmlStr += '<section class="header-teams">';
-	htmlStr += '<div class="header-teams-left">' + data.teamA.name + '</div> ';
+	htmlStr += '<div class="header-teams-left"><p>' + data.teamA.name +  '</p></div> ';
 
 	htmlStr += '<div class="header-teams-middle"><span>' + data.gameTime + ' ' + data.gameType + '</span></div> ';
-	htmlStr += '<div class="header-teams-right">' + data.teamB.name + '</div> </section> <section class="ProgressBar clearFix"> ';
+	htmlStr += '<div class="header-teams-right"><p>' + data.teamB.name +  '</p></div> </section> <section class="ProgressBar clearFix"> ';
 
 	// 单元长度为15px
 	var max = Math.max(data.teamA.support_numbber, data.teamB.support_numbber);
