@@ -843,9 +843,7 @@ header .header-teams .header-teams-middle {
     display: block;
 }
 .richers-list{
-    /*display: table;*/
     display: flex;
-    /*padding: 2% 2%;*/
     border-bottom: 1px solid #dadada;
 }
 
