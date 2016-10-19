@@ -817,6 +817,11 @@ header .header-teams .header-teams-middle {
     border: 1px solid #cacaca ;
     color: #cacaca;
 }
+.click-style{
+    color: #ffffff;
+    border: none ;
+    background-color: rgba(202, 202, 202,1);
+}
 .guess-tip{
     padding-bottom: 0.8rem;
 }

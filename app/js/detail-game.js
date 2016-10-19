@@ -586,6 +586,10 @@ $(function () {
 		var dataOdd = $(this).data('odd');
 		if ($('.guess').data('staus') == 2) {
 			try {
+				$(this).addClass('click-style');
+				setTimeout(function(){
+					$('.guess-option a').removeClass('click-style');
+				},300);
 				Jnapp.jn_betting(dataId + '', teamId * 1, teamName + '', dataOdd + '');
 			} catch (e) {
 
