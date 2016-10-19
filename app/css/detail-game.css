@@ -839,7 +839,7 @@ header .header-teams .header-teams-middle {
     padding-top: 0.2rem;
 }
 .richers-skip {
-    padding-left: 0.5rem;
+    padding-left: 0.8rem;
     display: block;
 }
 .richers-list{
@@ -903,7 +903,7 @@ header .header-teams .header-teams-middle {
 .richers-grades{
     flex: 1;
     position: absolute;
-    right: 0.5rem;
+    right: 0.8rem;
     line-height: 4.2rem;
 }
 .richers-grades span{
