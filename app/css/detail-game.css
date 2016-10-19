@@ -5,7 +5,7 @@ header {
 header .header-scores {
     width: 100%;
     height: 3rem;
-    padding-top: 3.2rem;
+    padding-top: 4rem;
     position: relative;
     display: table;
 }
@@ -35,8 +35,8 @@ header .header-scores {
 }
 
 header .header-scores img {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     background-color: #ffffff;
 }
@@ -55,7 +55,8 @@ header .header-scores img {
 header .header-teams {
     width: 100%;
     height: 0.7rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
     position: relative;
     font-size: 0.7rem;
     display: table;
@@ -63,7 +64,6 @@ header .header-teams {
 
 header .header-teams > div {
     display: table-cell;
-    width: 33%;
     text-align: center;
     vertical-align: middle;
 }
@@ -73,7 +73,8 @@ header .header-teams .header-teams-left {
     line-height: 1rem;
     color: #ffffff;
     font-size: 1rem;
-
+    width: 25%;
+    padding-left: 8%;
 }
 
 header .header-teams .header-teams-right {
@@ -81,12 +82,14 @@ header .header-teams .header-teams-right {
     line-height: 1rem;
     color: #ffffff;
     font-size: 1rem;
-
+    width: 25%;
+    padding-right: 8%;
 }
 
 header .header-teams .header-teams-middle {
     font-size: 1rem;
     color: #ffffff;
+    width: 50%;
 
 }
 
@@ -799,7 +802,7 @@ header .header-teams .header-teams-middle {
     border: 1px solid #333333;
 }
 .guess-tip p{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #666666;
 }
 .team-state{
@@ -813,6 +816,11 @@ header .header-teams .header-teams-middle {
     background-color: transparent;
     border: 1px solid #cacaca ;
     color: #cacaca;
+}
+.click-style{
+    color: #ffffff;
+    border: none ;
+    background-color: #dadada;
 }
 .guess-tip{
     padding-bottom: 0.8rem;
@@ -836,20 +844,18 @@ header .header-teams .header-teams-middle {
     padding-top: 0.2rem;
 }
 .richers-skip {
-    padding: 0 2%;
+    padding-left: 1rem;
     display: block;
 }
 .richers-list{
-    /*display: table;*/
     display: flex;
-    /*padding: 2% 2%;*/
     border-bottom: 1px solid #dadada;
 }
 
 .richers-rank{
     /*display: table-cell;*/
     flex: 1;
-    padding: 1.1rem 0.2rem 0.4rem 0;
+    padding: 0 0.2rem 0.4rem 0;
 }
 .richers-rank span,.richers-rank-head img,.richers-player-pact span,.richers-grades span{
     display: inline-block;
@@ -857,14 +863,15 @@ header .header-teams .header-teams-middle {
 
 }
 .richers-rank img{
-    width: 50%;
+    height: 2rem;
+    margin-top: 1.2rem;
 }
 .richers-rank span{
     color: #666666;
     text-align: right;
     font-size: 1.2rem;
-    line-height: 2rem;
-    padding-left: 0.7rem;
+    margin-top: 1.2rem;
+    padding-left: 0.3rem;
 }
 .richers-rank-head{
 
@@ -874,8 +881,9 @@ header .header-teams .header-teams-middle {
     margin: 0 -0.4rem;
 }
 .richers-rank-head img{
-    width: 60%;
-    margin-top: 1rem;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 1.2rem;
     border-radius: 50%;
 }
 .richers-list-pact{
@@ -894,7 +902,7 @@ header .header-teams .header-teams-middle {
     text-overflow:ellipsis;
     white-space:nowrap;
     line-height: 4.2rem;
-    padding-top: 0.1rem;
+    padding-top: 0.2rem;
 }
 
 .richers-grades{
@@ -907,7 +915,7 @@ header .header-teams .header-teams-middle {
     font-size: 0.8rem;
     color: #666666;
     line-height: 4.2rem;
-    padding-top: 0.1rem;
+    padding-top: 0.2rem;
 }
 .non-richer{
     padding: 4rem 0;
