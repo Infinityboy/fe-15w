@@ -820,7 +820,7 @@ header .header-teams .header-teams-middle {
 .click-style{
     color: #ffffff;
     border: none ;
-    background-color: rgba(202, 202, 202,1);
+    background-color: #dadada;
 }
 .guess-tip{
     padding-bottom: 0.8rem;
