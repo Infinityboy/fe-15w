@@ -280,7 +280,7 @@ function renderData(data) {
 		htmlStr += '</section>';
 	if(data.bet.status.type == 5){
 		htmlStr+= '<section class="richers" >';
-		htmlStr+= '<div class="richers-title clearfix"><p>收入榜</p><a href="##">如何上榜？</a></div>';
+		htmlStr+= '<div class="richers-title"><p>收入榜</p><a href="##">如何上榜？</a></div>';
 		if(data.bet.ranking.win.length>0){
 			var rankHeadImg;
 			$.each(data.bet.ranking.win,function(richIdx,item){
@@ -308,7 +308,7 @@ function renderData(data) {
 		htmlStr+= '</section>';
 	}else{
 		htmlStr+= '<section class="richers" >';
-		htmlStr+= '<div class="richers-title clearfix"><p>土豪榜</p><a href="##">如何上榜？</a></div>';
+		htmlStr+= '<div class="richers-title"><p>土豪榜</p><a href="##">如何上榜？</a></div>';
 		if(data.bet.ranking.money.length>0){
 			var rankHeadImgs;
 			$.each(data.bet.ranking.money,function(richIdx,item){
