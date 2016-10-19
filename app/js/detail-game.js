@@ -589,8 +589,8 @@ $(function () {
 				$(this).addClass('click-style');
 				setTimeout(function(){
 					$('.guess-option a').removeClass('click-style');
-				},300);
-				Jnapp.jn_betting(dataId + '', teamId * 1, teamName + '', dataOdd + '');
+					Jnapp.jn_betting(dataId + '', teamId * 1, teamName + '', dataOdd + '');
+				},150);
 			} catch (e) {
 
 			}
