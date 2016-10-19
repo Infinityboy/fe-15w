@@ -118,12 +118,14 @@ header .header-teams .header-teams-middle {
     display: block;
 }
 .border{
+    font-size: 1rem;
     color: #666666;
 }
 .outList.selected .border {
     height: 3.5rem;
     color: #333;
     border-bottom: 0.14rem solid #f7df34;
+    font-size: 1.1rem;
 }
 
 .live {
@@ -848,7 +850,9 @@ header .header-teams .header-teams-middle {
     display: flex;
     border-bottom: 1px solid #dadada;
 }
-
+.richers :last-child .richers-list{
+    border-bottom: 0;
+}
 .richers-rank{
     /*display: table-cell;*/
     flex: 1;
