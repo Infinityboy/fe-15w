@@ -25,16 +25,16 @@ function renderData(data) {
     htmlStr += '<div class="indent flat-content">' + content + '</div>';
 
     // 分享
-    try {
-        var shareData = Jnapp.jn_getShare();
-        if (typeof shareData == 'string') {
-            shareData = $.parseJSON(shareData);
-            htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="data:image/png;charset=utf-8;base64,'+ shareData.baseIcon+'" alt="loading..."/><p>' + shareData.title + '</p></div></div>';
-        }
-    } catch (ex) {
-
-    }
-
+    //try {
+    //    var shareData = Jnapp.jn_getShare();
+    //    if (typeof shareData == 'string') {
+    //        shareData = $.parseJSON(shareData);
+    //        htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="data:image/png;charset=utf-8;base64,'+ shareData.baseIcon+'" alt="loading..."/><p>' + shareData.title + '</p></div></div>';
+    //    }
+    //} catch (ex) {
+    //
+    //}
+    htmlStr += '<div class="share-short-issue"><p></p><p>分享给召唤师们</p><p></p></div>'
     htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq-space"><img src="images/qq_zone.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
     var news_list = data.relate_news;
     if (news_list.length > 0) {
@@ -62,7 +62,7 @@ function renderData(data) {
     $('.indent p strong').parent().css('margin','1.75rem 0 1.25rem 0');
     $('.indent p img').parent().css({'padding':'0','margin':'1.5rem 0'});
     if($('.indent p img').parent().next().children()){
-        $('.indent p img').parent().next().css('margin','0.5rem 0 1.25rem 0');
+        $('.indent p img').parent().next().css('margin','1.5rem 0 1.25rem 0');
     }
 }
 
