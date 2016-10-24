@@ -59,6 +59,11 @@ function renderData(data) {
         htmlStr += '</ul></div><section class="line"></section>';
     }
     $('#newsDetail').html(htmlStr);
+    $('.indent p strong').parent().css('margin','1.75rem 0 1.25rem 0');
+    $('.indent p img').parent().css({'padding':'0','margin':'1.5rem 0'});
+    if($('.indent p img').parent().next().children()){
+        $('.indent p img').parent().next().css('margin','0.5rem 0 1.25rem 0');
+    }
 }
 
 $(function () {
