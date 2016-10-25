@@ -13,17 +13,17 @@ Jn.setData = function (data) {
 };
 
 $(function () {
-    // $.ajax({
-    //     url: 'data/detail-topic.json',
-    //     type: "GET",
-    //     dataType: 'json',
-    //     success: function (str) {
-    //         renderData(str.data);
-    //     },
-    //     error: function (err) {
-    //         alert('失败:' + err);
-    //     }
-    // });
+     //$.ajax({
+     //    url: 'data/detail-topic.json',
+     //    type: "GET",
+     //    dataType: 'json',
+     //    success: function (str) {
+     //        renderData(str.data);
+     //    },
+     //    error: function (err) {
+     //        alert('失败:' + err);
+     //    }
+     //});
 
     // 图片查看大图
     $(document).on('click', '.detailsCon img', function (e) {
@@ -100,27 +100,28 @@ function renderData(data) {
     var htmlStr = '<div class="allcontain detailWrap" style=""><div class="banner" style="background: url(' + banner + ') no-repeat center top; background-size: auto 100%;"></div>';
     htmlStr += '<div class="container"><div class="wrap"><div class="left"><div class="details"><h1>' + title + '</h1><div class="detailsTit">';
     htmlStr += '<div class="pic"><img src="' + avatar + '"></div>';
-    htmlStr += '<div class="ti">作者：' + data.author + '</div><p>';
+    htmlStr += '<div class="ti">作者' + data.author + '</div>';
     if(data.time){
         htmlStr += '<span class="art-time"><i></i>' + time + '</span>';
     }
-    htmlStr += '<span>来源 <a href="#" target="_blank" class="f-blue">' + data['source'] + '</a></span></p></div>';
+    htmlStr += '</div>';
 
     // 文章正文
-    htmlStr += content;
+    htmlStr += '<div class="indent">' + content + '</div>';
     htmlStr += '</div></div></div></div>';
 
-    try {
-        var shareData = Jnapp.jn_getShare();
-        if (typeof shareData == 'string') {
-            shareData = $.parseJSON(shareData);
-            htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="data:image/png;charset=utf-8;base64,'+ shareData.baseIcon+'" alt="loading..."/><p>' + shareData.title + '</p></div></div>';
-        }
-    } catch (ex) {
+    //try {
+    //    var shareData = Jnapp.jn_getShare();
+    //    if (typeof shareData == 'string') {
+    //        shareData = $.parseJSON(shareData);
+    //        htmlStr += '<div class="excerpt-share"><div class="video-excerpt"><div class="video-excerpt-tip"><img src="data:image/png;charset=utf-8;base64,'+ shareData.baseIcon+'" alt="loading..."/><p>' + shareData.title + '</p></div></div>';
+    //    }
+    //} catch (ex) {
+    //
+    //}
 
-    }
-
-    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq-space"><img src="images/qq_zone.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
+    htmlStr += '<div class="share-short-issue"><p></p><p>分享给召唤师们</p><p></p></div>'
+    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a><a href="" class="maintext-share-qq-space"><img src="images/qq_zone.png" /></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /></a></div></div>';
 
 
     if (data.pastlist.length > 0) {

@@ -52,15 +52,14 @@ body {
 }
 
 .video-header {
-    margin-bottom: .4rem;
     background: #fff;
-    padding: .8rem;
+    padding: 1rem 0.75rem 0;
 }
 
 .content h1 {
     font-weight: 400;
-    font-size: 1.1rem;
-    line-height: 1.2;
+    font-size: 1.25rem;
+    font-family: PingFangSC-Regular, sans-serif;
 }
 
 .video-meta {
@@ -90,8 +89,9 @@ body {
 }
 /**********ios7/8的视频详情页分享上方图片的遗留问题结束************/
 .excerpt {
-    margin-top: .8rem;
+    margin-top: 1rem;
     color: #999;
+    font-size: 0.85rem;
 }
 
 header{
@@ -145,11 +145,10 @@ header .player img {
 
 /**********问题开始**************/
 .video-question {
-    margin-top: .5rem;
+    margin: .5rem 0;
     color: #333333;
     font-size: .9rem;
     background-color: #ffffff;
-    margin-bottom: .5rem;
 }
 
 .video-question ul {
@@ -199,9 +198,9 @@ header .player img {
     background: url("../images/play_num.png");
     display: inline-block;
     vertical-align: middle;
-    width: .85rem;
+    width: 1.2rem;
     background-size: 100% auto;
-    height: .85rem;
+    height: 1.2rem;
     float: none;
     margin-right: .3rem;
     margin-top: -3px;

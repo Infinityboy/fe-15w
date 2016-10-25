@@ -35,7 +35,7 @@ function renderData(data) {
     //
     //}
     htmlStr += '<div class="share-short-issue"><p></p><p>分享给召唤师们</p><p></p></div>'
-    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /><p class="sharename">微信</p></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /><p class="sharename">朋友圈</p></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /><p class="sharename">微博</p></a><a href="" class="maintext-share-qq-space"><img src="images/qq_zone.png" /><p class="sharename">空间</p></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /><p class="sharename">QQ</p></a></div></div>';
+    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a><a href="" class="maintext-share-qq-space"><img src="images/qq_zone.png" /></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /></a></div></div>';
     var news_list = data.relate_news;
     if (news_list.length > 0) {
         htmlStr += '<div class="list"><h3>相关新闻</h3><ul id="news_list">';
@@ -59,11 +59,8 @@ function renderData(data) {
         htmlStr += '</ul></div><section class="line"></section>';
     }
     $('#newsDetail').html(htmlStr);
-    $('.indent p strong').parent().css('margin','1.75rem 0 1.25rem 0');
+    $('.indent p strong').parent().css('margin','1.5rem 0 1.25rem 0');
     $('.indent p img').parent().css({'padding':'0','margin':'1.5rem 0'});
-    if($('.indent p img').parent().next().children()){
-        $('.indent p img').parent().next().css('margin','1.5rem 0 1.25rem 0');
-    }
 }
 
 $(function () {
