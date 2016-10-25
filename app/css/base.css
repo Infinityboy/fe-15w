@@ -228,7 +228,7 @@ header .title {
 
 .list h3 {
     color: #e03131;
-    padding: .65rem .8rem;
+    padding: .65rem .8rem 0;
     font-size: 1rem;
     font-weight: normal;
     line-height: 1;
@@ -240,25 +240,45 @@ header .title {
     background: #ffffff;
     border-top: 1px solid #efefef;
     padding: 0.8rem;
-    position: relative;
+    /*position: relative;*/
     margin-bottom: 0.125rem;
 }
 
 .list li:first-child {
     border-top: none;
 }
-
+.news-left{
+    overflow: hidden;
+    display: table-cell;
+    width: 100%;
+}
+.news-left span{
+    margin-right: 0.5rem;
+}
+.news-right{
+    display: table-cell;
+    vertical-align: middle;
+}
 .list li a {
-    display: block;
+    /*display: block;*/
+    display: table;
 }
 
-.list li img {
+.news-right img {
     width: 6rem;
     height: 4.5rem;
-    margin-right: .5rem;
-    float: left;
+    margin-left: .5rem;
+    float: right;
+}
+.list-review{
+    color: #9a9a9a;
+    font-size: 0.65rem;
 }
 
+.list-review img{
+    width: 0.9rem;
+    vertical-align: middle;
+}
 .list-into {
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
@@ -306,9 +326,9 @@ header .title {
     color: #9a9a9a;
     font-size: .65rem;
     line-height: 1;
-    position: absolute;
-    right: 0.8rem;
-    bottom: .8rem;
+    /*position: absolute;*/
+    /*left: 0.8rem;*/
+    /*bottom: .8rem;*/
 }
 .line{
     height: .8rem;

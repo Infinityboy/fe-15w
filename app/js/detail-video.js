@@ -16,6 +16,34 @@ function isIOS(ua) {
     return ua.indexOf('iPhone') > 0;
 }
 
+function getDatediff(timeStamp) {
+    var result;
+    var minute = 1000 * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var now = new Date().getTime();
+    var diffValue = now - timeStamp*1000;
+    if (diffValue < 0) {
+        return;
+    }
+    var dayBefore = diffValue / day;
+    var hourBefore = diffValue / hour;
+    var minBefore = diffValue / minute;
+    if (dayBefore >= 1) {
+        var date = new Date(timeStamp*1000);
+        result =  (date.getMonth() + 1) + '-' + date.getDate();
+    }
+    else if (hourBefore >= 1) {
+        result = "" + parseInt(hourBefore) + "小时前";
+    }
+    else if (minBefore >= 1) {
+        result = "" + parseInt(minBefore) + "分钟前";
+    } else {
+        result = "刚刚";
+    }
+    return result;
+}
+
 function renderData(content) {
     var data = content;
     cacheData = data;
@@ -129,22 +157,19 @@ function renderData(content) {
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="list"><h3>视频推荐</h3><ul> ';
         $.each(data.recomendVideos, function (index, item) {
-            htmlStr += '<li class="clearFix"><a href="##" class="list-item"  data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
-            htmlStr += '<p class="list-title">' + item.title + '</p> ';
+            htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><div class="news-left"><p class="list-title">' + item.title + '</p>';
 
             if (item.tagColor && item.tagName) {
-                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
             }
-            var date = new Date();
-            var dateStr;
+            htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
+
             if (item.updateTime) {
-                date = new Date(item.updateTime * 1000);
+                htmlStr += '<span class="list-time">' + getDatediff(item.updateTime) + '</span>';
             }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+            //dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
-            htmlStr += '<span class="list-time">' + dateStr + '</span>';
-
-            htmlStr += '</a></li>';
+            htmlStr += '</div><div class="news-right clearfix"><img class="fl" src="' + item.thumbnail + '"/></div></a></li>';
 
         });
         htmlStr += '</ul></section><section class="line"></section></div>';
@@ -154,9 +179,9 @@ function renderData(content) {
 
 $(function () {
 
-     $.get('data/video-detail.json', function (res) {
-        renderData(res.content);
-     });
+     //$.get('data/video-detail.json', function (res) {
+     //   renderData(res.content);
+     //});
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {

@@ -11,6 +11,34 @@ Jn.setData = function (data) {
     }
 };
 
+function getDatediff(timeStamp) {
+    var result;
+    var minute = 1000 * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var now = new Date().getTime();
+    var diffValue = now - timeStamp*1000;
+    if (diffValue < 0) {
+        return;
+    }
+    var dayBefore = diffValue / day;
+    var hourBefore = diffValue / hour;
+    var minBefore = diffValue / minute;
+    if (dayBefore >= 1) {
+        var date = new Date(timeStamp*1000);
+        result =  (date.getMonth() + 1) + '-' + date.getDate();
+    }
+    else if (hourBefore >= 1) {
+        result = "" + parseInt(hourBefore) + "小时前";
+    }
+    else if (minBefore >= 1) {
+        result = "" + parseInt(minBefore) + "分钟前";
+    } else {
+        result = "刚刚";
+    }
+    return result;
+}
+
 function renderData(data) {
     cacheData = data;
 
@@ -40,20 +68,19 @@ function renderData(data) {
     if (news_list.length > 0) {
         htmlStr += '<div class="list"><h3>相关新闻</h3><ul id="news_list">';
         $.each(news_list, function (index, item) {
-            htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/><p class="list-title">' + item.title + '</p>';
+            htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><div class="news-left"><p class="list-title">' + item.title + '</p>';
 
             if (item.tagColor && item.tagName) {
                 htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
             }
+            htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
 
-            var date = new Date();
-            var dateStr;
             if (item.updateTime) {
-                date = new Date(item.updateTime * 1000);
+                htmlStr += '<span class="list-time">' + getDatediff(item.updateTime) + '</span>';
             }
-            dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-            htmlStr += '<span class="list-time">' + dateStr + '</span>';
-            htmlStr += '</a></li>';
+            //dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+            htmlStr += '</div><div class="news-right"><img class="fl" src="' + item.thumbnail + '"/></div></a></li>';
         });
 
         htmlStr += '</ul></div><section class="line"></section>';
