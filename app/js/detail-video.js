@@ -162,11 +162,11 @@ function renderData(content) {
             if (item.tagColor && item.tagName) {
                 htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
             }
-            
+
             if(item.comments){
                 htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
             }else{
-                htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp; 0</span>';
+                htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;0</span>';
             }
 
             if (item.updateTime) {

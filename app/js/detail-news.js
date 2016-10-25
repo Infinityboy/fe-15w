@@ -76,7 +76,7 @@ function renderData(data) {
             if(item.comments){
                 htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
             }else{
-                htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp; 0</span>';
+                htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;0</span>';
             }
 
 
@@ -91,7 +91,7 @@ function renderData(data) {
         htmlStr += '</ul></div><section class="line"></section>';
     }
     $('#newsDetail').html(htmlStr);
-    $('.indent p strong').parent().css('margin','1.5rem 0 1.25rem 0');
+    //$('.indent p strong').parent().css('margin','1.5rem 0 1.25rem 0');
     $('.indent p img').parent().css({'padding':'0','margin':'1.5rem 0'});
 }
 
