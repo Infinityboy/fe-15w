@@ -204,15 +204,19 @@ header .title {
     font-size: 0.85rem;
     padding-top: .72rem;
 }
+.meta .date {
+    font-size: 0.85rem;
+    display: block;
+}
 
-.video-meta .date, .meta .date {
+.video-meta .date{
     font-size: 0.85rem;
     /*display: block;*/
     padding: 1rem 0 ;
 }
 
 .meta{
-    padding: .8rem;
+    padding: .8rem .8rem 2rem;
     text-align: center;
 }
 
