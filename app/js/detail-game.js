@@ -159,23 +159,27 @@ function renderData(data) {
 		if (data.relateVideos.length > 0) {
 			htmlStr += '<div class="live" data-id="0">';
 			htmlStr += '<section class="list"><ul> ';
+
 			$.each(data.relateVideos, function (index, item) {
-				htmlStr += '<li class="clearfix"><a href="##" class="list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><img class="fl" src="' + item.thumbnail + '"/>';
-				htmlStr += '<p class="list-title">' + item.title + '</p> ';
+				htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><div class="news-left"><p class="list-title">' + item.title + '</p>';
+
 
 				if (item.tagColor && item.tagName) {
-					htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-color:' + item.tagColor + ';">' + item.tagName + '</span>';
+					htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
+				}
+				if(item.comments){
+					htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
+				}else{
+					htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;0</span>';
 				}
 
-				var date = new Date();
-				var dateStr;
+
 				if (item.updateTime) {
-					date = new Date(item.updateTime * 1000);
+					htmlStr += '<span class="list-time">' + getDatediff(item.updateTime) + '</span>';
 				}
-				dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+				//dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
-				htmlStr += '<span class="list-time">' + dateStr + '</span>';
-				htmlStr += '</a></li>';
+				htmlStr += '</div><div class="news-right"><img class="fl" src="' + item.thumbnail + '"/></div></a></li>';
 			});
 
 			htmlStr += '</ul></section></div>';
@@ -461,11 +465,11 @@ function renderReviews(reviewsData, type) {
 
 $(function () {
 
-	//$.get('data/living.json', function (res) {
-	//    if (res.code == 10000) {
-	//        renderData(res.data);
-	//    }
-	//});
+	$.get('data/living.json', function (res) {
+	    if (res.code == 10000) {
+	        renderData(res.data);
+	    }
+	});
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {

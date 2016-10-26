@@ -41,17 +41,17 @@ function getDatediff(timeStamp) {
 }
 
 $(function () {
-     //$.ajax({
-     //    url: 'data/detail-topic.json',
-     //    type: "GET",
-     //    dataType: 'json',
-     //    success: function (str) {
-     //        renderData(str.data);
-     //    },
-     //    error: function (err) {
-     //        alert('失败:' + err);
-     //    }
-     //});
+     $.ajax({
+         url: 'data/detail-topic.json',
+         type: "GET",
+         dataType: 'json',
+         success: function (str) {
+             renderData(str.data);
+         },
+         error: function (err) {
+             alert('失败:' + err);
+         }
+     });
 
     // 图片查看大图
     $(document).on('click', '.detailsCon img', function (e) {
@@ -149,7 +149,7 @@ function renderData(data) {
     //}
 
     htmlStr += '<div class="share-short-issue"><p></p><p>分享给召唤师们</p><p></p></div>'
-    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a><a href="" class="maintext-share-qq-space"><img src="images/qq_zone.png" /></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /></a></div></div>';
+    htmlStr += '<div class="maintext-share"><a href="#" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="#" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="#" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /></a><a href="#" class="maintext-share-qq"><img src="images/qq_zone.png" /></a><a href="#" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a></div></div>';
 
 
     if (data.pastlist.length > 0) {

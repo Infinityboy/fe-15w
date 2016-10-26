@@ -11,6 +11,21 @@ Jn.setData = function (data) {
     }
 };
 
+Jn.changeFontSize = function(fontStype){
+    var indent = document.querySelector('indent');
+    if(fontStype == 1){
+        indent.style.webkitTextSizeAdjust= '88%';
+    }else if(fontStype == 2){
+        indent.style.webkitTextSizeAdjust= '100%';
+    }else if(fontStype == 3){
+        indent.style.webkitTextSizeAdjust= '112%';
+    }else if(fontStype == 4){
+        indent.style.webkitTextSizeAdjust= '124%';
+    }else if(fontStype == 5){
+        indent.style.webkitTextSizeAdjust= '136%';
+    }
+}
+
 function getDatediff(timeStamp) {
     var result;
     var minute = 1000 * 60;
@@ -63,7 +78,25 @@ function renderData(data) {
     //
     //}
     htmlStr += '<div class="share-short-issue"><p></p><p>分享给召唤师们</p><p></p></div>'
-    htmlStr += '<div class="maintext-share"><a href="" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a><a href="" class="maintext-share-qq-space"><img src="images/qq_zone.png" /></a><a href="" class="maintext-share-qq"><img src="images/QQ_2x.png" /></a></div></div>';
+    htmlStr += '<div class="maintext-share"><a href="#" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="#" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /></a><a href="#" class="maintext-share-qq"><img src="images/qq_zone.png" /></a><a href="#" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a></div></div>';
+    //评论
+    //if ((reviewsData.hots && reviewsData.hots.length > 0) || (reviewsData.comments && reviewsData.comments.length > 0)) {
+    //        htmlStr += '<div class="list"><h3>竞猜评论</h3><ul id="news_list">';
+    //        htmlStr += '<section class="hot-reviews">';
+    //        $.each(reviewsData.hots, function (hotIdx, hotContent) {
+    //            htmlStr += '<div class="reviews-box">';
+    //            htmlStr += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
+    //            htmlStr += '<div class="reviews-right">';
+    //            htmlStr += '<span class="reviews-name">' + hotContent.passport.nickname + '</span>';
+    //            htmlStr += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
+    //            htmlStr += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
+    //        });
+    //        htmlStr += '</section>';
+    //} else {
+    //    htmlStr += '<p class="reviews-content"> 默认无评论图 </p></div></div>';
+    //}
+
+
     var news_list = data.relate_news;
     if (news_list.length > 0) {
         htmlStr += '<div class="list"><h3>相关新闻</h3><ul id="news_list">';
