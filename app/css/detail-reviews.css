@@ -1,0 +1,99 @@
+.hot-reviews{
+    background-color: #ffffff;
+}
+.reviews-box {
+    display: flex;
+    margin: 0 0.8rem;
+}
+
+.reviews-header {
+    padding: 0.6rem 0;
+    flex: 1;
+}
+
+.reviews-header img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.reviews-title {
+    padding: 0.6rem;
+    border-bottom: 0.5px solid #d8d8d8;
+}
+
+.reviews-title span {
+    color: #ff0000;
+    font-size: 0.8rem;
+}
+
+.reviews-right {
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 9;
+}
+
+.reviews-name, .reviews-time, .reviews-content {
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.reviews-name, .reviews-content {
+    font-size: 0.8rem;
+}
+.reviews-content{
+    color: #333333;
+    padding-bottom: 1.5rem;
+}
+.reviews-name {
+    color: #5896D4;;
+}
+
+.reviews-time {
+    font-size: 0.5rem;
+    color: #999999;
+    padding: 0.5rem 0;
+}
+
+.reviews-box-last {
+    display: flex;
+    margin: 0 0.8rem;
+}
+.show-all-reviews{
+    display: block;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-left: 2px solid #f0f0f1;
+}
+.show-all-reviews p{
+    color: #5896d4;
+    font-size: 0.75rem;
+}
+.reviews-children{
+    border-left: 2px solid #f0f0f1;
+    padding-left: 0.5rem;
+}
+.reviews-children .child-title{
+    color: #999999;
+    font-size: 0.8rem;
+    padding-bottom: 0.75rem;
+}
+.reviews-children .child-content{
+    font-size: 0.75rem;
+    color: #666666;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-bottom:  1rem;
+}
+.nickname-right{
+    float: right;
+}
+.reviews-zan{
+    margin-right: 1rem;
+}
+
+.nickname-right img{
+    width: 1rem;
+    vertical-align: middle;
+}

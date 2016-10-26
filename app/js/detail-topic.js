@@ -18,7 +18,7 @@ function getDatediff(timeStamp) {
     var hour = minute * 60;
     var day = hour * 24;
     var now = new Date().getTime();
-    var diffValue = now - timeStamp*1000;
+    var diffValue = now - timeStamp;
     if (diffValue < 0) {
         return;
     }
@@ -26,7 +26,7 @@ function getDatediff(timeStamp) {
     var hourBefore = diffValue / hour;
     var minBefore = diffValue / minute;
     if (dayBefore >= 1) {
-        var date = new Date(timeStamp*1000);
+        var date = new Date(timeStamp);
         result =  (date.getMonth() + 1) + '-' + date.getDate();
     }
     else if (hourBefore >= 1) {
@@ -41,17 +41,17 @@ function getDatediff(timeStamp) {
 }
 
 $(function () {
-     $.ajax({
-         url: 'data/detail-topic.json',
-         type: "GET",
-         dataType: 'json',
-         success: function (str) {
-             renderData(str.data);
-         },
-         error: function (err) {
-             alert('失败:' + err);
-         }
-     });
+     //$.ajax({
+     //    url: 'data/detail-topic.json',
+     //    type: "GET",
+     //    dataType: 'json',
+     //    success: function (str) {
+     //        renderData(str.data);
+     //    },
+     //    error: function (err) {
+     //        alert('失败:' + err);
+     //    }
+     //});
 
     // 图片查看大图
     $(document).on('click', '.detailsCon img', function (e) {
@@ -151,6 +151,8 @@ function renderData(data) {
     htmlStr += '<div class="share-short-issue"><p></p><p>分享给召唤师们</p><p></p></div>'
     htmlStr += '<div class="maintext-share"><a href="#" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="#" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="#" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /></a><a href="#" class="maintext-share-qq"><img src="images/qq_zone.png" /></a><a href="#" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a></div></div>';
 
+    //评论
+    htmlStr += '<div class="reviews"></div>';
 
     if (data.pastlist.length > 0) {
         htmlStr += '<div class="list"><h3>往期回顾</h3><ul id="news_list">';
@@ -169,7 +171,7 @@ function renderData(data) {
             }
 
             if (item.updateTime) {
-                htmlStr += '<span class="list-time">' + getDatediff(item.updateTime) + '</span>';
+                htmlStr += '<span class="list-time">' + getDatediff(item.updateTime*1000) + '</span>';
             }
             //dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
