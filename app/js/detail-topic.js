@@ -6,9 +6,16 @@
 'use strict';
 window.Jn = {};
 var cacheData = null;
+var renderRevData;
 Jn.setData = function (data) {
     if (data.key == 'topicInitDetail') {
         renderData(data.content);
+    }
+};
+
+Jn.addComment = function(reviewsData){
+    if (reviewsData.code == '10000') {
+        renderRevData(reviewsData.data);
     }
 };
 
@@ -116,6 +123,13 @@ $(function () {
 
         }
     });
+
+    //显示全部评论
+    $(document).on('click','.show-all-reviews',function(e){
+        e.preventDefault();
+        $(this).hide();
+        $('.center-more').show();
+    });
 });
 
 function renderData(data) {
@@ -124,8 +138,97 @@ function renderData(data) {
     var content = data.content ? data.content : '';
     var banner = data.banner;
     var avatar = data.avatar;
+    var htmlStr = '';
 
-    var htmlStr = '<div class="allcontain detailWrap" style=""><div class="banner" style="background: url(' + banner + ') no-repeat center top; background-size: auto 100%;"></div>';
+    function moreReview(comments){
+        if(comments.length>0){
+            $.each(comments,function(childIndex,childContent){
+                if(comments.length > 1 && comments.length < 4){
+                    htmlStr += '<div class="reviews-children"><p class="child-title clearfix">' + (childIndex+1) +'.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="images/review-zan_2x.png" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
+                }else{
+                    if(childIndex == 0){
+                        htmlStr += '<div class="reviews-children" ><p class="child-title">1.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="images/review-zan_2x.png" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
+                    }else if(childIndex > 0 && childIndex < comments.length-2){
+                        htmlStr += '<div><div class="reviews-children center-more" style="display: none" ><p class="child-title clearfix">' + (childIndex+1) +'.&nbsp;'+ childContent.passport.nickname +  '</p><p class="child-content">' + childContent.content + '</p></div><a href="#" class="show-all-reviews"><p>显示全部评论</p></a></div>';
+                    } else if(childIndex == comments.length-2){
+                        htmlStr += '<div class="reviews-children" ><p class="child-title clearfix">' + (comments.length-1) +'.&ensp;'+ childContent.passport.nickname + '<a href="#" class="nickname-right"><img src="images/review-zan_2x.png" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
+                    }else if(childIndex == comments.length-1){
+                        htmlStr += '<div class="reviews-children" ><p class="child-title clearfix">' + comments.length +'.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="images/review-zan_2x.png" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
+                    }
+
+                }
+            });
+        }
+    }
+
+    renderRevData = function(reviewsData){
+        if (reviewsData) {
+            htmlStr += '<div class="list"><h3>竞猜评论</h3><ul id="news_list">';
+            htmlStr += '<section class="hot-reviews">';
+            if(reviewsData.hots.length >= 5){
+                $.each(reviewsData.hots, function (hotIdx, hotContent) {
+                    if(hotIdx<5){
+                        htmlStr += '<div class="reviews-box">';
+                        htmlStr += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
+                        htmlStr += '<div class="reviews-right">';
+                        htmlStr += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan"><img src="images/review-zan_2x.png" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                        htmlStr += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
+                        moreReview(hotContent.comments);
+                        htmlStr += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
+                    }
+                });
+            }else{
+                if(reviewsData.hots.length == 0){
+                    if(reviewsData.comments.length>0){
+                        $.each(reviewsData.comments, function (idx, content) {
+                            if(idx<5){
+                                htmlStr += '<div class="reviews-box">';
+                                htmlStr += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
+                                htmlStr += '<div class="reviews-right">';
+                                htmlStr += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan"><img src="images/review-zan_2x.png" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                                htmlStr += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
+                                moreReview(content.comments);
+                                htmlStr += '<p class="reviews-content">' + content.content + '</p></div></div>';
+                            }
+                        });
+                    }
+                }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
+                    $.each(reviewsData.hots, function (hotIdx, hotContent) {
+                        htmlStr += '<div class="reviews-box">';
+                        htmlStr += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
+                        htmlStr += '<div class="reviews-right">';
+                        htmlStr += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan"><img src="images/review-zan_2x.png" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                        htmlStr += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
+                        moreReview(hotContent.comments);
+                        htmlStr += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
+                    });
+
+                    if(reviewsData.comments.length>0){
+                        $.each(reviewsData.comments, function (idx, content) {
+                            if(idx<5-reviewsData.hots.length){
+                                htmlStr += '<div class="reviews-box">';
+                                htmlStr += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
+                                htmlStr += '<div class="reviews-right">';
+                                htmlStr += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan"><img src="images/review-zan_2x.png" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                                htmlStr += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
+                                moreReview(content.comments);
+                                htmlStr += '<p class="reviews-content">' + content.content + '</p></div></div>';
+                            }
+                        });
+                    }
+
+                }
+            }
+            //htmlStr += '</div></div>';
+
+            htmlStr += '</section></div>';
+        } else {
+            htmlStr += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
+        }
+        //$('.reviews').html(htmlStr);
+    }
+
+    htmlStr += '<div class="allcontain detailWrap" style=""><div class="banner" style="background: url(' + banner + ') no-repeat center top; background-size: auto 100%;"></div>';
     htmlStr += '<div class="container"><div class="wrap"><div class="left"><div class="details"><h1>' + title + '</h1><div class="detailsTit">';
     htmlStr += '<div class="pic"><img src="' + avatar + '"></div>';
     htmlStr += '<div class="ti">作者' + data.author + '</div>';
@@ -152,8 +255,9 @@ function renderData(data) {
     htmlStr += '<div class="maintext-share"><a href="#" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="#" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="#" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /></a><a href="#" class="maintext-share-qq"><img src="images/qq_zone.png" /></a><a href="#" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a></div></div>';
 
     //评论
-    htmlStr += '<div class="reviews"></div>';
+    htmlStr += '<div class="reviews">';
     Jnapp.jn_getComment("");
+    htmlStr += '</div>';
 
     if (data.pastlist.length > 0) {
         htmlStr += '<div class="list"><h3>往期回顾</h3><ul id="news_list">';

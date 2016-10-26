@@ -108,8 +108,6 @@
                         });
                     }
                 }
-
-
                     //htmlRev += '</div></div>';
 
             htmlRev += '</section>';
