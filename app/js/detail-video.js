@@ -156,6 +156,7 @@ function renderData(content) {
 
     //评论
     htmlStr += '<div class="reviews"></div>';
+    Jnapp.jn_getComment("");
 
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="list"><h3>视频推荐</h3><ul> ';

@@ -1,4 +1,15 @@
-$(function(){
+'use strict'
+window.Jn = {};
+var result;
+
+Jn.addComment = function(reviewsData){
+    isLoading = false;
+    if (reviewsData.code == '10000') {
+        renderData(reviewsData.data);
+    }
+};
+
+
     var htmlStr = '';
     function getDatediff(timeStamp) {
         var minute = 1000 * 60;
@@ -88,12 +99,15 @@ $(function(){
                 });
                 htmlStr += '</section>';
             } else {
-                htmlStr += '<p class="reviews-content"> 默认无评论图 </p></div></div>';
+                htmlStr += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
             }
 
             $('.reviews').html(htmlStr);
         }
 
+
+
+$(function(){
 
 
     //$.ajax({
@@ -111,7 +125,7 @@ $(function(){
     $(document).on('click','.show-all-reviews',function(){
         $(this).hide();
         $('.center-more').show();
-
     });
-
 });
+
+

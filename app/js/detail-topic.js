@@ -153,6 +153,7 @@ function renderData(data) {
 
     //评论
     htmlStr += '<div class="reviews"></div>';
+    Jnapp.jn_getComment("");
 
     if (data.pastlist.length > 0) {
         htmlStr += '<div class="list"><h3>往期回顾</h3><ul id="news_list">';

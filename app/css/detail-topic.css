@@ -1,7 +1,9 @@
 .banner {
     min-height: 8rem;
 }
-
+.content{
+    padding-top: 4rem;
+}
 .container {
     position: relative;
     overflow: hidden;
