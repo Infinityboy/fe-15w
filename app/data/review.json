@@ -2761,291 +2761,292 @@
     "expert": [
 
     ],
-    "hots": [
-      {
-        "attachments": [
-
-        ],
-        "comment_id": 1188495664,
-        "comments": [
-
-        ],
-        "content": "老徐老徐.我想知道男刀的另一把刀在谁身上",
-        "create_time": 1477229095000,
-        "elite": false,
-        "floor_count": 0,
-        "from": "",
-        "hide": false,
-        "hide_floor": false,
-        "highlight": false,
-        "ip": "111.128.195.42",
-        "ip_location": "福建省",
-        "metadata": "{\"clientPort\":\"55043\"}",
-        "metadataAsJson": {
-          "clientPort": "55043"
-        },
-        "oppose_count": 0,
-        "passport": {
-          "expired": false,
-          "fee": 0,
-          "followers_count": 0,
-          "from": "",
-          "grant": false,
-          "img_url": "http://sucimg.itc.cn/avatarimg/412381081_1464271903564_c55",
-          "is_official": false,
-          "is_shared": false,
-          "nickname": "Startbegi",
-          "platform_id": 3,
-          "user_id": 412381081
-        },
-        "quick": false,
-        "reply_count": 0,
-        "reply_id": 0,
-        "score": 0,
-        "status": 0,
-        "support_count": 18,
-        "top": false,
-        "userScore": {
-          "isvId": 0,
-          "level": 2,
-          "levelUp": 0,
-          "privilege": {
-
-          },
-          "score": 2,
-          "title": "冒泡",
-          "userId": 0
-        },
-        "user_id": 412381081
-      },
-      {
-        "attachments": [
-
-        ],
-        "comment_id": 1189586587,
-        "comments": [
-
-        ],
-        "content": "老徐呐，你说魔抗鞋不是有抗性提升么，狼人的大招有1.8秒的硬控并且攻击5次，那么问题来了，狼人会控制满1.8秒或者攻击5次么？",
-        "create_time": 1477294111000,
-        "elite": false,
-        "floor_count": 0,
-        "from": "",
-        "hide": false,
-        "hide_floor": false,
-        "highlight": false,
-        "ip": "180.127.112.66",
-        "ip_location": "江苏省连云港市",
-        "metadata": "{\"clientPort\":\"23072\"}",
-        "metadataAsJson": {
-          "clientPort": "23072"
-        },
-        "oppose_count": 0,
-        "passport": {
-          "expired": false,
-          "fee": 0,
-          "followers_count": 0,
-          "from": "",
-          "grant": false,
-          "img_url": "http://sucimg.itc.cn/avatarimg/487197176_1469898797367_c55",
-          "is_official": false,
-          "is_shared": false,
-          "nickname": "口干巴爹",
-          "platform_id": 3,
-          "user_id": 487197176
-        },
-        "quick": false,
-        "reply_count": 0,
-        "reply_id": 0,
-        "score": 0,
-        "status": 0,
-        "support_count": 2,
-        "top": false,
-        "userScore": {
-          "isvId": 0,
-          "level": 2,
-          "levelUp": 0,
-          "privilege": {
-
-          },
-          "score": 3,
-          "title": "冒泡",
-          "userId": 0
-        },
-        "user_id": 487197176
-      },
-      {
-        "attachments": [
-
-        ],
-        "comment_id": 1187952381,
-        "comments": [
-
-        ],
-        "content": "暴怒骑士的大招和亡灵战神的大招互撞会怎么样？  赞我让徐老师看到。",
-        "create_time": 1477179457000,
-        "elite": false,
-        "floor_count": 0,
-        "from": "",
-        "hide": false,
-        "hide_floor": false,
-        "highlight": false,
-        "ip": "42.85.173.75",
-        "ip_location": "辽宁省",
-        "metadata": "{\"reportReason\":\"4\",\"clientPort\":\"7234\"}",
-        "metadataAsJson": {
-          "reportReason": "4",
-          "clientPort": "7234"
-        },
-        "oppose_count": 59,
-        "passport": {
-          "expired": false,
-          "fee": 0,
-          "followers_count": 0,
-          "from": "",
-          "grant": false,
-          "img_url": "http://photo.pic.sohu.com/images/oldblog/person/11111.gif",
-          "is_official": false,
-          "is_shared": false,
-          "nickname": "1234564233",
-          "platform_id": 3,
-          "user_id": 256892642
-        },
-        "quick": false,
-        "reply_count": 0,
-        "reply_id": 0,
-        "score": 0,
-        "status": 0,
-        "support_count": 400,
-        "top": false,
-        "userScore": {
-          "isvId": 0,
-          "level": 2,
-          "levelUp": 0,
-          "privilege": {
-
-          },
-          "score": 10,
-          "title": "冒泡",
-          "userId": 0
-        },
-        "user_id": 256892642
-      },
-      {
-        "attachments": [
-
-        ],
-        "comment_id": 1188440923,
-        "comments": [
-
-        ],
-        "content": "周董，我是不会玩魔法王座的，别宣传了！首充只需要1元钱，我一角都不会充，地表带我超神？被宇天虐成狗！",
-        "create_time": 1477218821000,
-        "elite": false,
-        "floor_count": 0,
-        "from": "",
-        "hide": false,
-        "hide_floor": false,
-        "highlight": false,
-        "ip": "120.42.172.98",
-        "ip_location": "福建省泉州市",
-        "metadata": "{\"reportReason\":\"2\",\"clientPort\":\"1258\"}",
-        "metadataAsJson": {
-          "reportReason": "2",
-          "clientPort": "1258"
-        },
-        "oppose_count": 1,
-        "passport": {
-          "expired": false,
-          "fee": 0,
-          "followers_count": 0,
-          "from": "",
-          "grant": false,
-          "img_url": "http://sucimg.itc.cn/avatarimg/277608386_1439108851895_c55",
-          "is_official": false,
-          "is_shared": false,
-          "nickname": "遺忘",
-          "platform_id": 3,
-          "user_id": 277608386
-        },
-        "quick": false,
-        "reply_count": 0,
-        "reply_id": 0,
-        "score": 0,
-        "status": 0,
-        "support_count": 19,
-        "top": false,
-        "userScore": {
-          "isvId": 0,
-          "level": 2,
-          "levelUp": 0,
-          "privilege": {
-
-          },
-          "score": 15,
-          "title": "冒泡",
-          "userId": 0
-        },
-        "user_id": 277608386
-      },
-      {
-        "attachments": [
-
-        ],
-        "comment_id": 1188369909,
-        "comments": [
-
-        ],
-        "content": "不同阵营的6个瞎子围成一圈，同时Q中前方瞎子  同时二段  会咋样 赞我 让徐老湿看到",
-        "create_time": 1477202870000,
-        "elite": false,
-        "floor_count": 0,
-        "from": "",
-        "hide": false,
-        "hide_floor": false,
-        "highlight": false,
-        "ip": "175.7.79.202",
-        "ip_location": "湖南省",
-        "metadata": "{\"reportReason\":\"2\",\"clientPort\":\"6345\"}",
-        "metadataAsJson": {
-          "reportReason": "2",
-          "clientPort": "6345"
-        },
-        "oppose_count": 19,
-        "passport": {
-          "expired": false,
-          "fee": 0,
-          "followers_count": 0,
-          "from": "",
-          "grant": false,
-          "img_url": "http://sucimg.itc.cn/avatarimg/503989752_1472968357085_c55",
-          "is_official": false,
-          "is_shared": false,
-          "nickname": "吾一刀天下亡",
-          "platform_id": 3,
-          "user_id": 503989752
-        },
-        "quick": false,
-        "reply_count": 0,
-        "reply_id": 0,
-        "score": 0,
-        "status": 0,
-        "support_count": 75,
-        "top": false,
-        "userScore": {
-          "isvId": 0,
-          "level": 2,
-          "levelUp": 0,
-          "privilege": {
-
-          },
-          "score": 2,
-          "title": "冒泡",
-          "userId": 0
-        },
-        "user_id": 503989752
-      }
-    ],
+    "hots":[],
+//    "hots": [
+//      {
+//        "attachments": [
+//
+//        ],
+//        "comment_id": 1188495664,
+//        "comments": [
+//
+//        ],
+//        "content": "老徐老徐.我想知道男刀的另一把刀在谁身上",
+//        "create_time": 1477229095000,
+//        "elite": false,
+//        "floor_count": 0,
+//        "from": "",
+//        "hide": false,
+//        "hide_floor": false,
+//        "highlight": false,
+//        "ip": "111.128.195.42",
+//        "ip_location": "福建省",
+//        "metadata": "{\"clientPort\":\"55043\"}",
+//        "metadataAsJson": {
+//          "clientPort": "55043"
+//        },
+//        "oppose_count": 0,
+//        "passport": {
+//          "expired": false,
+//          "fee": 0,
+//          "followers_count": 0,
+//          "from": "",
+//          "grant": false,
+//          "img_url": "http://sucimg.itc.cn/avatarimg/412381081_1464271903564_c55",
+//          "is_official": false,
+//          "is_shared": false,
+//          "nickname": "Startbegi",
+//          "platform_id": 3,
+//          "user_id": 412381081
+//        },
+//        "quick": false,
+//        "reply_count": 0,
+//        "reply_id": 0,
+//        "score": 0,
+//        "status": 0,
+//        "support_count": 18,
+//        "top": false,
+//        "userScore": {
+//          "isvId": 0,
+//          "level": 2,
+//          "levelUp": 0,
+//          "privilege": {
+//
+//          },
+//          "score": 2,
+//          "title": "冒泡",
+//          "userId": 0
+//        },
+//        "user_id": 412381081
+//      },
+//      {
+//        "attachments": [
+//
+//        ],
+//        "comment_id": 1189586587,
+//        "comments": [
+//
+//        ],
+//        "content": "老徐呐，你说魔抗鞋不是有抗性提升么，狼人的大招有1.8秒的硬控并且攻击5次，那么问题来了，狼人会控制满1.8秒或者攻击5次么？",
+//        "create_time": 1477294111000,
+//        "elite": false,
+//        "floor_count": 0,
+//        "from": "",
+//        "hide": false,
+//        "hide_floor": false,
+//        "highlight": false,
+//        "ip": "180.127.112.66",
+//        "ip_location": "江苏省连云港市",
+//        "metadata": "{\"clientPort\":\"23072\"}",
+//        "metadataAsJson": {
+//          "clientPort": "23072"
+//        },
+//        "oppose_count": 0,
+//        "passport": {
+//          "expired": false,
+//          "fee": 0,
+//          "followers_count": 0,
+//          "from": "",
+//          "grant": false,
+//          "img_url": "http://sucimg.itc.cn/avatarimg/487197176_1469898797367_c55",
+//          "is_official": false,
+//          "is_shared": false,
+//          "nickname": "口干巴爹",
+//          "platform_id": 3,
+//          "user_id": 487197176
+//        },
+//        "quick": false,
+//        "reply_count": 0,
+//        "reply_id": 0,
+//        "score": 0,
+//        "status": 0,
+//        "support_count": 2,
+//        "top": false,
+//        "userScore": {
+//          "isvId": 0,
+//          "level": 2,
+//          "levelUp": 0,
+//          "privilege": {
+//
+//          },
+//          "score": 3,
+//          "title": "冒泡",
+//          "userId": 0
+//        },
+//        "user_id": 487197176
+//      },
+//      {
+//        "attachments": [
+//
+//        ],
+//        "comment_id": 1187952381,
+//        "comments": [
+//
+//        ],
+//        "content": "暴怒骑士的大招和亡灵战神的大招互撞会怎么样？  赞我让徐老师看到。",
+//        "create_time": 1477179457000,
+//        "elite": false,
+//        "floor_count": 0,
+//        "from": "",
+//        "hide": false,
+//        "hide_floor": false,
+//        "highlight": false,
+//        "ip": "42.85.173.75",
+//        "ip_location": "辽宁省",
+//        "metadata": "{\"reportReason\":\"4\",\"clientPort\":\"7234\"}",
+//        "metadataAsJson": {
+//          "reportReason": "4",
+//          "clientPort": "7234"
+//        },
+//        "oppose_count": 59,
+//        "passport": {
+//          "expired": false,
+//          "fee": 0,
+//          "followers_count": 0,
+//          "from": "",
+//          "grant": false,
+//          "img_url": "http://photo.pic.sohu.com/images/oldblog/person/11111.gif",
+//          "is_official": false,
+//          "is_shared": false,
+//          "nickname": "1234564233",
+//          "platform_id": 3,
+//          "user_id": 256892642
+//        },
+//        "quick": false,
+//        "reply_count": 0,
+//        "reply_id": 0,
+//        "score": 0,
+//        "status": 0,
+//        "support_count": 400,
+//        "top": false,
+//        "userScore": {
+//          "isvId": 0,
+//          "level": 2,
+//          "levelUp": 0,
+//          "privilege": {
+//
+//          },
+//          "score": 10,
+//          "title": "冒泡",
+//          "userId": 0
+//        },
+//        "user_id": 256892642
+//      },
+//      {
+//        "attachments": [
+//
+//        ],
+//        "comment_id": 1188440923,
+//        "comments": [
+//
+//        ],
+//        "content": "周董，我是不会玩魔法王座的，别宣传了！首充只需要1元钱，我一角都不会充，地表带我超神？被宇天虐成狗！",
+//        "create_time": 1477218821000,
+//        "elite": false,
+//        "floor_count": 0,
+//        "from": "",
+//        "hide": false,
+//        "hide_floor": false,
+//        "highlight": false,
+//        "ip": "120.42.172.98",
+//        "ip_location": "福建省泉州市",
+//        "metadata": "{\"reportReason\":\"2\",\"clientPort\":\"1258\"}",
+//        "metadataAsJson": {
+//          "reportReason": "2",
+//          "clientPort": "1258"
+//        },
+//        "oppose_count": 1,
+//        "passport": {
+//          "expired": false,
+//          "fee": 0,
+//          "followers_count": 0,
+//          "from": "",
+//          "grant": false,
+//          "img_url": "http://sucimg.itc.cn/avatarimg/277608386_1439108851895_c55",
+//          "is_official": false,
+//          "is_shared": false,
+//          "nickname": "遺忘",
+//          "platform_id": 3,
+//          "user_id": 277608386
+//        },
+//        "quick": false,
+//        "reply_count": 0,
+//        "reply_id": 0,
+//        "score": 0,
+//        "status": 0,
+//        "support_count": 19,
+//        "top": false,
+//        "userScore": {
+//          "isvId": 0,
+//          "level": 2,
+//          "levelUp": 0,
+//          "privilege": {
+//
+//          },
+//          "score": 15,
+//          "title": "冒泡",
+//          "userId": 0
+//        },
+//        "user_id": 277608386
+//      },
+//      {
+//        "attachments": [
+//
+//        ],
+//        "comment_id": 1188369909,
+//        "comments": [
+//
+//        ],
+//        "content": "不同阵营的6个瞎子围成一圈，同时Q中前方瞎子  同时二段  会咋样 赞我 让徐老湿看到",
+//        "create_time": 1477202870000,
+//        "elite": false,
+//        "floor_count": 0,
+//        "from": "",
+//        "hide": false,
+//        "hide_floor": false,
+//        "highlight": false,
+//        "ip": "175.7.79.202",
+//        "ip_location": "湖南省",
+//        "metadata": "{\"reportReason\":\"2\",\"clientPort\":\"6345\"}",
+//        "metadataAsJson": {
+//          "reportReason": "2",
+//          "clientPort": "6345"
+//        },
+//        "oppose_count": 19,
+//        "passport": {
+//          "expired": false,
+//          "fee": 0,
+//          "followers_count": 0,
+//          "from": "",
+//          "grant": false,
+//          "img_url": "http://sucimg.itc.cn/avatarimg/503989752_1472968357085_c55",
+//          "is_official": false,
+//          "is_shared": false,
+//          "nickname": "吾一刀天下亡",
+//          "platform_id": 3,
+//          "user_id": 503989752
+//        },
+//        "quick": false,
+//        "reply_count": 0,
+//        "reply_id": 0,
+//        "score": 0,
+//        "status": 0,
+//        "support_count": 75,
+//        "top": false,
+//        "userScore": {
+//          "isvId": 0,
+//          "level": 2,
+//          "levelUp": 0,
+//          "privilege": {
+//
+//          },
+//          "score": 2,
+//          "title": "冒泡",
+//          "userId": 0
+//        },
+//        "user_id": 503989752
+//      }
+//    ],
     "mode": 0,
     "outer_cmt_sum": 4160,
     "participation_sum": 34568,

@@ -137,10 +137,7 @@ $(function(){
     //    }
     //});
 
-    $(document).on('click','.show-all-reviews',function(){
-        $(this).hide();
-        $('.center-more').show();
-    });
+
 });
 
 
