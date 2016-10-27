@@ -237,15 +237,14 @@ header .title {
     font-size: 1rem;
     line-height: 1;
     background-color: #ffffff;
-    /*border-bottom: 1px solid #efefef;*/
 }
 
 .list li {
-    background: #ffffff;
+    background: #fff;
     border-top: 1px solid #efefef;
-    padding: 0.8rem;
-    /*position: relative;*/
-    margin-bottom: 0.125rem;
+    margin-bottom: 0.2rem;
+    padding-left: .8rem;
+    line-height: 1;
 }
 
 .list li:first-child {
@@ -253,7 +252,6 @@ header .title {
 }
 .news-left{
     overflow: hidden;
-    display: table-cell;
     width: 100%;
 }
 .news-left span{
@@ -264,23 +262,22 @@ header .title {
     vertical-align: middle;
 }
 .list li a {
-    /*display: block;*/
     display: table;
 }
 
 .news-right img {
-    width: 6rem;
-    height: 4.5rem;
+    width: 8rem;
+    height: 5.5rem;
     margin-left: .5rem;
     float: right;
 }
 .list-review{
     color: #9a9a9a;
-    font-size: 0.65rem;
+    font-size: 0.5rem;
 }
 
 .list-review img{
-    width: 0.9rem;
+    width: 0.6rem;
     vertical-align: middle;
 }
 .list-into {
@@ -290,18 +287,18 @@ header .title {
 }
 
 .list-title {
-    display: inline-block;
-    overflow:hidden;
-    /*white-space:nowrap;*/
+    overflow: hidden;
     white-space: pre-wrap;
     text-overflow: ellipsis;
-    min-height: 3.13rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #444;
     display: -webkit-box;
-    -webkit-line-clamp:2;
-    -webkit-box-orient:vertical;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     word-break: break-all;
+    line-height: 1.5;
+    padding-top: .8rem;
+    font-weight: bold;
 }
 
 .list-excerpt {
@@ -318,17 +315,15 @@ header .title {
 
 .list-tag {
     color: #b6b6b6;
-    border: 1px solid #b6b6b6;
-    border-radius: 3px;
     text-align: center;
-    padding: .15em .3rem .1rem;
+    padding: .15em .3rem .1rem 0;
     font-size: 0.5rem;
     line-height: 1;
 }
 
 .list-time {
     color: #9a9a9a;
-    font-size: .65rem;
+    font-size: .5rem;
     line-height: 1;
     /*position: absolute;*/
     /*left: 0.8rem;*/
