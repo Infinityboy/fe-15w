@@ -1,8 +1,8 @@
 .banner {
     min-height: 8rem;
 }
-.content{
-    padding-top: 4rem;
+#content{
+    margin-top: 4rem;
 }
 .container {
     position: relative;

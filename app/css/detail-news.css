@@ -5,7 +5,9 @@
  * Time: 下午13:38
  */
 
-
+#newsDetail{
+    margin-top: 4rem;
+}
 .maintext p {
     font-size: 0.6rem;
 }
