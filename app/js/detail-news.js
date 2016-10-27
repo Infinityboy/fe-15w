@@ -130,7 +130,7 @@ function renderData(data) {
                         });
                         htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
                     }else{
-                        htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png" alt=""/></div></div>';
+                        htmlRev += '<div class="reviews-box" style="margin: 0 auto"><img src="images/picture_2x.png" alt="" style="max-width: 100%;"/></div></div>';
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -160,7 +160,7 @@ function renderData(data) {
             }
             //htmlStr += '</div></div>';
         } else {
-            htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png" alt=""/></div></div>';
+            htmlRev += '<div class="reviews-box"  style="margin: 0 auto" ><img src="images/picture_2x.png" alt="" style="max-width: 100%;" /></div></div>';
         }
         $('.reviews').html(htmlRev);
     }
