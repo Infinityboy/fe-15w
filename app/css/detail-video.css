@@ -283,18 +283,18 @@ header .player img {
     position: relative;
 }
 .look-time img{
-    width: 1.2rem;
-    height: 1.2rem;
+    width: .8rem;
+    height: .8rem;
     border-radius: 50%;
     position: absolute;
     left: 0.3rem;
-    bottom: 0.5rem;
+    bottom: 0.4rem;
 }
 .look-time span{
     position: absolute;
-    color: #ffffff;
-    font-size: 0.8rem;
-    margin-left: 1.5rem;
+    color: #fff;
+    font-size: 0.5rem;
+    margin-left: .8rem;
     left: 1rem;
     bottom: 0.4rem;
 }
