@@ -90,9 +90,13 @@
     float: right;
 }
 .reviews-zan{
+    color: #999999;
+    font-size: 0.8rem;
     margin-right: 1rem;
 }
-
+.reviewed{
+    color: #efd200;
+}
 .nickname-right img{
     width: 1rem;
     vertical-align: middle;
