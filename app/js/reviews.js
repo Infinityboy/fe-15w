@@ -9,8 +9,6 @@
 //    }
 //};
 
-
-
     function getDatediff(timeStamp) {
         var minute = 1000 * 60;
         var hour = minute * 60;

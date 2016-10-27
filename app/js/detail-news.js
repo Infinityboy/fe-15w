@@ -335,9 +335,11 @@ $(function () {
         try{
             if($(this).find('img').attr('src') == 'images/review-zan_2x.png'){
                 Jnapp.jn_clickLike(topic+'',commentId+'');
-                allZan.addClass('reviewed');
-                allZan.find('img').attr('src','images/review-click-zan_2x.png');
-                allZan.find('span').text(likeNUm);
+                $.each(allZan,function(idx,iteam){
+                    iteam.addClass('reviewed');
+                    iteam.find('img').attr('src','images/review-click-zan_2x.png');
+                    iteam.find('span').text(likeNUm);
+                });
             }
         }catch(e){
 

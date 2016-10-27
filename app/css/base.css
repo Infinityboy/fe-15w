@@ -111,6 +111,7 @@ body {
     color: #333;
     background: #eee;
     font-family: PingFangSC-Regular, sans-serif;
+    overflow-x: hidden;
 }
 
 .clearfix:after {
