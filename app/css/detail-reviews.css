@@ -90,9 +90,15 @@
     float: right;
 }
 .reviews-zan{
+    text-align: center;
     color: #999999;
     font-size: 0.8rem;
-    margin-right: 1rem;
+}
+.reviews-zan span{
+    vertical-align: middle;
+}
+.reviews-replay{
+    margin-left: 1rem;
 }
 .reviewed{
     color: #efd200;

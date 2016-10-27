@@ -147,12 +147,13 @@ $(function () {
         var topic = $(this).data('topic');
         var commentId = $(this).data('comment');
         var likeNUm = $(this).find('span').text()*1+1;
+        var allZan = $(".nickname-right .reviews-zan[data-topic=topic]");
         try{
             if($(this).find('img').attr('src') == 'images/review-zan_2x.png'){
                 Jnapp.jn_clickLike(topic+'',commentId+'');
-                $(this).addClass('reviewed');
-                $(this).find('img').attr('src','images/review-click-zan_2x.png');
-                $(this).find('span').text(likeNUm);
+                allZan.addClass('reviewed');
+                allZan.find('img').attr('src','images/review-click-zan_2x.png');
+                allZan.find('span').text(likeNUm);
             }
         }catch(e){
 
