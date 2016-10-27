@@ -151,7 +151,7 @@ function renderData(content) {
                 }
             }
             //htmlStr += '</div></div>';
-            htmlRev += '</section></div>';
+            htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
         } else {
             htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
         }
@@ -259,9 +259,14 @@ function renderData(content) {
     htmlStr += '<div class="maintext-share"><a href="#" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="#" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="#" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /></a><a href="#" class="maintext-share-qq"><img src="images/qq_zone.png" /></a><a href="#" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a></div></div>';
 
     //评论
-    htmlStr += '<div class="reviews">';
-    Jnapp.jn_getComment("");
-    htmlStr += '</div>';
+    htmlStr += '<div class="reviews"></div>';
+    try{
+        Jnapp.jn_getComment("");
+    }catch(e){
+
+    }
+
+
 
     if (data.recomendVideos.length > 0) {
         htmlStr += '<section class="list"><h3>视频推荐</h3><ul> ';
@@ -345,7 +350,7 @@ $(function () {
     });
 
     //评论跳转
-    $(document).on('click','.nickname-right .reviews-replay',function(e){
+    $(document).on('click','.nickname-right .reviews-replay,.get_more-review',function(e){
         e.preventDefault();
         try {
             Jnapp.jn_showPage(202);
@@ -359,11 +364,13 @@ $(function () {
         e.preventDefault();
         var topic = $(this).data('topic');
         var commentId = $(this).data('comment');
+        var likeNUm = $(this).text();
         try{
             if($(this).find('img').attr('src') == 'images/review-zan_2x.png'){
                 Jnapp.jn_clickLike(topic+'',commentId+'');
                 $(this).addClass('reviewed');
                 $(this).find('img').attr('src','images/review-click-zan_2x.png');
+                $(this).text('likeNUm+1');
             }
         }catch(e){
 

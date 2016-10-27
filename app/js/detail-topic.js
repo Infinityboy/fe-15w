@@ -132,7 +132,7 @@ $(function () {
     });
 
     //评论跳转
-    $(document).on('click','.nickname-right .reviews-replay',function(e){
+    $(document).on('click','.nickname-right .reviews-replay,.get_more-review',function(e){
         e.preventDefault();
         try {
             Jnapp.jn_showPage(202);
@@ -146,11 +146,13 @@ $(function () {
         e.preventDefault();
         var topic = $(this).data('topic');
         var commentId = $(this).data('comment');
+        var likeNUm = $(this).text();
         try{
             if($(this).children().find('img').attr('src') == 'images/review-zan_2x.png'){
                 Jnapp.jn_clickLike(topic+'',commentId+'');
                 $(this).addClass('reviewed');
                 $(this).children().find('img').attr('src','images/review-click-zan_2x.png');
+                $(this).text('likeNUm+1');
             }
         }catch(e){
 
@@ -258,7 +260,7 @@ function renderData(data) {
                 }
             }
             //htmlStr += '</div></div>';
-            htmlRev += '</section></div>';
+            htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
         } else {
             htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
         }

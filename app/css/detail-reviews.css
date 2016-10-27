@@ -66,7 +66,7 @@
     padding-bottom: 1rem;
     border-left: 2px solid #f0f0f1;
 }
-.show-all-reviews p{
+.show-all-reviews p,.get_more-review p{
     color: #5896d4;
     font-size: 0.75rem;
 }
@@ -100,4 +100,9 @@
 .nickname-right img{
     width: 1rem;
     vertical-align: middle;
+}
+.get_more-review{
+    display: block;
+    text-align: center;
+    border-top: 0.5px solid #f3f3f3;
 }
