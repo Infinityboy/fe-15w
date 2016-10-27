@@ -261,7 +261,7 @@ function renderData(content) {
     //评论
     htmlStr += '<div class="reviews"></div>';
     try{
-        Jnapp.jn_getComment("");
+        Jnapp.jn_getComment("","");
     }catch(e){
 
     }
@@ -370,7 +370,7 @@ $(function () {
                 Jnapp.jn_clickLike(topic+'',commentId+'');
                 $(this).addClass('reviewed');
                 $(this).find('img').attr('src','images/review-click-zan_2x.png');
-                $(this).text('likeNUm+1');
+                $(this).text(likeNUm+1);
             }
         }catch(e){
 
