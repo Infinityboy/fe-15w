@@ -147,7 +147,7 @@ $(function () {
         var topic = $(this).data('topic');
         var commentId = $(this).data('comment');
         var likeNUm = $(this).find('span').text()*1+1;
-        var allZan = $(".nickname-right .reviews-zan[data-topic=topic]");
+        var allZan = $('[data-topic=topic]');
         try{
             if($(this).find('img').attr('src') == 'images/review-zan_2x.png'){
                 Jnapp.jn_clickLike(topic+'',commentId+'');
@@ -205,8 +205,8 @@ function renderData(data) {
     }
 
     renderRevData = function(reviewsData,topicId){
+        htmlRev += '<div class="list"><h3>竞猜评论</h3><ul id="news_list">';
         if (reviewsData) {
-            htmlRev += '<div class="list"><h3>竞猜评论</h3><ul id="news_list">';
             htmlRev += '<section class="hot-reviews">';
             if(reviewsData.hots.length >= 5){
                 $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -237,7 +237,7 @@ function renderData(data) {
                         });
                         htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
                     }else{
-                        htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
+                        htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png" alt=""/></div></div>';
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -268,7 +268,7 @@ function renderData(data) {
             //htmlStr += '</div></div>';
 
         } else {
-            htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
+            htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png" alt=""/></div></div>';
         }
         $('.reviews').html(htmlRev);
     }

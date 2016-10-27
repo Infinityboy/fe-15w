@@ -279,3 +279,22 @@ header .player img {
 .progress-bar {
     height: .7rem;
 }
+.news-right{
+    position: relative;
+}
+.look-time img{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 0.3rem;
+    bottom: 0.5rem;
+}
+.look-time span{
+    position: absolute;
+    color: #ffffff;
+    font-size: 0.8rem;
+    margin-left: 1.5rem;
+    left: 1rem;
+    bottom: 0.4rem;
+}
