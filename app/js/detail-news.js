@@ -62,21 +62,22 @@ function renderData(data) {
     var time = data.time ? data.time : '';
     var content = data.content ? data.content : '';
     var htmlStr = '';
+    var htmlRev = '';
 
     function moreReview(comments){
         if(comments.length>0){
             $.each(comments,function(childIndex,childContent){
                 if(comments.length > 1 && comments.length < 4){
-                    htmlStr += '<div class="reviews-children"><p class="child-title clearfix">' + (childIndex+1) +'.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
+                    htmlRev += '<div class="reviews-children"><p class="child-title clearfix">' + (childIndex+1) +'.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="' + lick(Jnapp.jn_getLikeStatus(childContent.comment_id)) + '" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
                 }else{
                     if(childIndex == 0){
-                        htmlStr += '<div class="reviews-children" ><p class="child-title">1.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
+                        htmlRev += '<div class="reviews-children" ><p class="child-title">1.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="' + lick(Jnapp.jn_getLikeStatus(childContent.comment_id)) + '" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
                     }else if(childIndex > 0 && childIndex < comments.length-2){
-                        htmlStr += '<div><div class="reviews-children center-more" style="display: none" ><p class="child-title clearfix">' + (childIndex+1) +'.&nbsp;'+ childContent.passport.nickname +  '</p><p class="child-content">' + childContent.content + '</p></div><a href="#" class="show-all-reviews"><p>显示全部评论</p></a></div>';
+                        htmlRev += '<div><div class="reviews-children center-more" style="display: none" ><p class="child-title clearfix">' + (childIndex+1) +'.&nbsp;'+ childContent.passport.nickname +  '</p><p class="child-content">' + childContent.content + '</p></div><a href="#" class="show-all-reviews"><p>显示全部评论</p></a></div>';
                     } else if(childIndex == comments.length-2){
-                        htmlStr += '<div class="reviews-children" ><p class="child-title clearfix">' + (comments.length-1) +'.&ensp;'+ childContent.passport.nickname + '<a href="#" class="nickname-right"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
+                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + (comments.length-1) +'.&ensp;'+ childContent.passport.nickname + '<a href="#" class="nickname-right"><img src="' + lick(Jnapp.jn_getLikeStatus(childContent.comment_id)) + '" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
                     }else if(childIndex == comments.length-1){
-                        htmlStr += '<div class="reviews-children" ><p class="child-title clearfix">' + comments.length +'.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
+                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + comments.length +'.&ensp;'+ childContent.passport.nickname +  '<a href="#" class="nickname-right"><img src="' + lick(Jnapp.jn_getLikeStatus(childContent.comment_id)) + '" alt=""></a></p><p class="child-content">' + childContent.content + '</p></div>';
                     }
 
                 }
@@ -96,18 +97,18 @@ function renderData(data) {
 
     renderRevData = function(reviewsData,topicId){
         if (reviewsData) {
-            htmlStr += '<div class="list"><h3>竞猜评论</h3><ul id="news_list">';
-            htmlStr += '<section class="hot-reviews">';
+            htmlRev += '<div class="list"><h3>竞猜评论</h3><ul id="news_list">';
+            htmlRev += '<section class="hot-reviews">';
             if(reviewsData.hots.length >= 5){
                 $.each(reviewsData.hots, function (hotIdx, hotContent) {
                     if(hotIdx<5){
-                        htmlStr += '<div class="reviews-box">';
-                        htmlStr += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
-                        htmlStr += '<div class="reviews-right">';
-                        htmlStr += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + hotContent.comment_id + '"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
-                        htmlStr += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
+                        htmlRev += '<div class="reviews-box">';
+                        htmlRev += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
+                        htmlRev += '<div class="reviews-right">';
+                        htmlRev += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + hotContent.comment_id + '"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                        htmlRev += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
                         moreReview(hotContent.comments);
-                        htmlStr += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
+                        htmlRev += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
                     }
                 });
             }else{
@@ -115,47 +116,47 @@ function renderData(data) {
                     if(reviewsData.comments.length>0){
                         $.each(reviewsData.comments, function (idx, content) {
                             if(idx<5){
-                                htmlStr += '<div class="reviews-box">';
-                                htmlStr += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
-                                htmlStr += '<div class="reviews-right">';
-                                htmlStr += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + content.comment_id + '"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
-                                htmlStr += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
+                                htmlRev += '<div class="reviews-box">';
+                                htmlRev += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
+                                htmlRev += '<div class="reviews-right">';
+                                htmlRev += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + content.comment_id + '"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                                htmlRev += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
                                 moreReview(content.comments);
-                                htmlStr += '<p class="reviews-content">' + content.content + '</p></div></div>';
+                                htmlRev += '<p class="reviews-content">' + content.content + '</p></div></div>';
                             }
                         });
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
-                        htmlStr += '<div class="reviews-box">';
-                        htmlStr += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
-                        htmlStr += '<div class="reviews-right">';
-                        htmlStr += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + hotContent.comment_id + '"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
-                        htmlStr += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
+                        htmlRev += '<div class="reviews-box">';
+                        htmlRev += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
+                        htmlRev += '<div class="reviews-right">';
+                        htmlRev += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + hotContent.comment_id + '"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                        htmlRev += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
                         moreReview(hotContent.comments);
-                        htmlStr += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
+                        htmlRev += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
                     });
                     if(reviewsData.comments.length>0){
                         $.each(reviewsData.comments, function (idx, content) {
                             if(idx<5-reviewsData.hots.length){
-                                htmlStr += '<div class="reviews-box">';
-                                htmlStr += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
-                                htmlStr += '<div class="reviews-right">';
-                                htmlStr += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan" data-topic="' + topicId + ' data-comment="' + content.comment_id + '"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
-                                htmlStr += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
+                                htmlRev += '<div class="reviews-box">';
+                                htmlRev += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
+                                htmlRev += '<div class="reviews-right">';
+                                htmlRev += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right"><a href="#" class="reviews-zan" data-topic="' + topicId + ' data-comment="' + content.comment_id + '"><img src="' + lick(Jnapp.jn_getLikeStatus(hotContent.comment_id)) + '" alt=""></a><a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                                htmlRev += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
                                 moreReview(content.comments);
-                                htmlStr += '<p class="reviews-content">' + content.content + '</p></div></div>';
+                                htmlRev += '<p class="reviews-content">' + content.content + '</p></div></div>';
                             }
                         });
                     }
                 }
             }
             //htmlStr += '</div></div>';
-            htmlStr += '</section></div>';
+            htmlRev += '</section></div>';
         } else {
-            htmlStr += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
+            htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
         }
-        //$('.reviews').html(htmlStr);
+        $('.reviews').html(htmlRev);
     }
 
 
@@ -164,7 +165,7 @@ function renderData(data) {
 
 
 
-    var htmlStr = '<header><h1 class="title">' + title + '</h1>';
+    htmlStr += '<header><h1 class="title">' + title + '</h1>';
     htmlStr += '<div class="meta"><span class="date">' + time + '</span><span class="author color-blue ml5">';
     htmlStr += data.author + '</span></div></header>';
 
@@ -183,9 +184,13 @@ function renderData(data) {
     htmlStr += '<div class="share-short-issue"><p></p><p>分享给召唤师们</p><p></p></div>'
     htmlStr += '<div class="maintext-share"><a href="#" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="#" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /></a><a href="#" class="maintext-share-qq"><img src="images/qq_zone.png" /></a><a href="#" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a></div></div>';
     //评论
-    htmlStr += '<div class="reviews">';
-    Jnapp.jn_getComment("");
-    htmlStr += '</div>';
+    htmlStr += '<div class="reviews"></div>';
+    try{
+        Jnapp.jn_getComment("");
+    }catch(e){
+
+    }
+
 
 
 
@@ -307,7 +312,11 @@ $(function () {
     //评论跳转
     $(document).on('click','.nickname-right .reviews-replay',function(e){
         e.preventDefault();
-        //Jnapp.
+        try {
+            Jnapp.jn_showPage(202);
+        } catch (e) {
+
+        }
     });
 
     //点赞
@@ -315,9 +324,15 @@ $(function () {
         e.preventDefault();
         var topic = $(this).data('topic');
         var commentId = $(this).data('comment');
-        if($(this).children().attr('src') == 'images/review-zan_2x.png'){
-            Jnapp.jn_clickLike(topic+'',commentId+'');
+        try{
+            if($(this).children().find('img').attr('src') == 'images/review-zan_2x.png'){
+                Jnapp.jn_clickLike(topic+'',commentId+'');
+                $(this).children().find('img').attr('src','images/review-click-zan_2x.png');
+            }
+        }catch(e){
+
         }
+
     });
 
 });
