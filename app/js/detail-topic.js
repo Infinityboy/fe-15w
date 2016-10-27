@@ -219,6 +219,7 @@ function renderData(data) {
                         htmlRev += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
                     }
                 });
+                htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
             }else{
                 if(reviewsData.hots.length == 0){
                     if(reviewsData.comments.length>0){
@@ -233,6 +234,9 @@ function renderData(data) {
                                 htmlRev += '<p class="reviews-content">' + content.content + '</p></div></div>';
                             }
                         });
+                        htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
+                    }else{
+                        htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -257,10 +261,11 @@ function renderData(data) {
                             }
                         });
                     }
+                    htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
                 }
             }
             //htmlStr += '</div></div>';
-            htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
+
         } else {
             htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
         }
