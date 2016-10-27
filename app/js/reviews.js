@@ -8,7 +8,7 @@
 //        renderData(reviewsData.data);
 //    }
 //};
-
+var htmlRev;
     function getDatediff(timeStamp) {
         var minute = 1000 * 60;
         var hour = minute * 60;
@@ -121,17 +121,17 @@
 $(function(){
 
 
-    //$.ajax({
-    //    url: 'data/review.json',
-    //    type: "GET",
-    //    dataType: 'json',
-    //    success: function (reviews) {
-    //        renderData(reviews.data);
-    //    },
-    //    error: function (err) {
-    //        alert('失败:' + err);
-    //    }
-    //});
+    $.ajax({
+        url: 'data/review.json',
+        type: "GET",
+        dataType: 'json',
+        success: function (reviews) {
+            renderData(reviews.data);
+        },
+        error: function (err) {
+            alert('失败:' + err);
+        }
+    });
 
 
 });

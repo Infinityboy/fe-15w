@@ -58,3 +58,46 @@
     vertical-align: middle;
     width: 100%;
 }
+.flat-content p {
+    font-size: 0.85rem;
+    color: #333333;
+    padding: 0 0.75rem 1.5rem;
+    text-align: justify;
+    word-break: break-all;
+}
+
+.flat-content p img{
+    width: 100%;
+}
+
+.flat-content p.ti, h4 {
+    font-size: 1rem;
+    text-indent: 0;
+    font-weight: 600;
+    font-family: PingFangSC-Medium, sans-serif;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+}
+.flat-content p.cimg-desc{
+    text-align: center;
+    color: #999999;
+    padding-bottom: 1.25rem;
+    margin-top: -0.5rem;
+}
+.flat-content p.cimg{
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+.flat-content p.cimg img:nth-child(2){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(3){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(4){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(5){
+    margin-top: 1rem;
+}
