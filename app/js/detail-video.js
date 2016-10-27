@@ -370,14 +370,14 @@ $(function () {
         var topic = $(this).data('topic');
         var commentId = $(this).data('comment');
         var likeNUm = $(this).find('span').text()*1+1;
-        var allZan = $('.nickname-right .reviews-zan[data-comment=commentId]');
+        var allZan = $(".nickname-right a[data-comment='" + commentId + "']");
         try{
             if($(this).find('img').attr('src') == 'images/review-zan_2x.png'){
                 Jnapp.jn_clickLike(topic+'',commentId+'');
                 $.each(allZan,function(idx,iteam){
-                    iteam.addClass('reviewed');
-                    iteam.find('img').attr('src','images/review-click-zan_2x.png');
-                    iteam.find('span').text(likeNUm);
+                    $(iteam).addClass('reviewed');
+                    $(iteam).find('img').attr('src','images/review-click-zan_2x.png');
+                    $(iteam).find('span').text(likeNUm);
                 });
             }
         }catch(e){
