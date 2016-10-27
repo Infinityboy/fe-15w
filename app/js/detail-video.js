@@ -370,7 +370,7 @@ $(function () {
         var topic = $(this).data('topic');
         var commentId = $(this).data('comment');
         var likeNUm = $(this).find('span').text()*1+1;
-        var allZan = $('[data-topic=topic]');
+        var allZan = $('.nickname-right .reviews-zan[data-comment=commentId]');
         try{
             if($(this).find('img').attr('src') == 'images/review-zan_2x.png'){
                 Jnapp.jn_clickLike(topic+'',commentId+'');
