@@ -68,16 +68,16 @@ function renderData(data) {
         if(comments.length>0){
             $.each(comments,function(childIndex,childContent){
                 if(comments.length > 1 && comments.length < 4){
-                    htmlRev += '<div class="reviews-children"><p class="child-title clearfix">' + (childIndex+1) +'.&ensp;'+ childContent.passport.nickname +  '<span class="nickname-right">' + lick(Jnapp.jn_getLikeStatus(childContent,childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
+                    htmlRev += '<div class="reviews-children"><p class="child-title clearfix">' + (childIndex+1) +'.&ensp;'+ childContent.passport.nickname +  '<span class="nickname-right">' + lick(childContent,Jnapp.jn_getLikeStatus(childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
                 }else{
                     if(childIndex == 0){
-                        htmlRev += '<div class="reviews-children" ><p class="child-title">1.&ensp;'+ childContent.passport.nickname +  '<span  class="nickname-right">' + lick(Jnapp.jn_getLikeStatus(childContent,childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
+                        htmlRev += '<div class="reviews-children" ><p class="child-title">1.&ensp;'+ childContent.passport.nickname +  '<span  class="nickname-right">' + lick(childContent,Jnapp.jn_getLikeStatus(childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
                     }else if(childIndex > 0 && childIndex < comments.length-2){
                         htmlRev += '<div><div class="reviews-children center-more" style="display: none" ><p class="child-title clearfix">' + (childIndex+1) +'.&nbsp;'+ childContent.passport.nickname +  '</p><p class="child-content">' + childContent.content + '</p></div><a href="#" class="show-all-reviews"><p>显示全部评论</p></a></div>';
                     } else if(childIndex == comments.length-2){
-                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + (comments.length-1) +'.&ensp;'+ childContent.passport.nickname + '<span  class="nickname-right">' + lick(Jnapp.jn_getLikeStatus(childContent,childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
+                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + (comments.length-1) +'.&ensp;'+ childContent.passport.nickname + '<span  class="nickname-right">' + lick(childContent,Jnapp.jn_getLikeStatus(childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
                     }else if(childIndex == comments.length-1){
-                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + comments.length +'.&ensp;'+ childContent.passport.nickname +  '<span  class="nickname-right">' + lick(Jnapp.jn_getLikeStatus(childContent,childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
+                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + comments.length +'.&ensp;'+ childContent.passport.nickname +  '<span  class="nickname-right">' + lick(childContent,Jnapp.jn_getLikeStatus(childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
                     }
 
                 }
