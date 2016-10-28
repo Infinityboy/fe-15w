@@ -16,7 +16,21 @@ Jn.addComment = function(reviewsData){
         renderRevData(reviewsData.data,reviewsData.data.topic_id);
     }
 };
+Jn.changeFontSize = function(fontStype){
+    var indent = $('.indent p');
+    if(fontStype == "1"){
+        indent.css('font-size','89%');
+    }else if(fontStype == "2"){
+        indent.css('font-size','114%');
+    }else if(fontStype == "3"){
+        indent.css('font-size','160%');
+    }else if(fontStype == "4"){
+        indent.css('font-size','180%');
+    }else if(fontStype == "5"){
+        indent.css('font-size','200%');
+    }
 
+}
 function getDatediff(timeStamp) {
     var result;
     var minute = 1000 * 60;
@@ -119,7 +133,7 @@ function renderData(data,fontStype) {
                         });
                         htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
                     }else{
-                        htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="max-width: 100%;"/></div></div>';
+                        htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="margin；0 auto;max-width: 100%;"/></div></div>';
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -149,7 +163,7 @@ function renderData(data,fontStype) {
             }
             //htmlStr += '</div></div>';
         } else {
-            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="max-width: 100%;" /></div></div>';
+            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="margin；0 auto;max-width: 100%;" /></div></div>';
         }
         $('.reviews').html(htmlRev);
 
