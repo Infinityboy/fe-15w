@@ -110,14 +110,7 @@ h1 {
 .art-time {
     color: #999;
 }
-.leaderCon :before{
-    content: "“";
-    color: #666666;
-    font-size: 1.8rem;
-    position: absolute;
-    left: -1rem;
-    top: -0.3rem !important;
-}
+
 .themeBlue .leaderCon span {
     background: #0c82fb;
 }

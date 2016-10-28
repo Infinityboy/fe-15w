@@ -31,11 +31,23 @@ html{
     padding-left: 0!important;
     padding-right: 0!important;
 }
+.leaderCon {
+    text-indent: 1em !important;
+    position: relative;
+}
+
 .leaderCon span{
     margin-right: 0.8rem;
     font-weight: bold;
 }
-
+.leaderCon :before{
+    content: "“";
+    color: #666666;
+    font-size: 1.8rem;
+    position: absolute;
+    left: -1rem;
+    top: -0.3rem !important;
+}
 
 
 

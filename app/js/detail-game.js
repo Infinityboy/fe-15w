@@ -207,15 +207,16 @@ function renderData(data) {
 		htmlStr += '<section class="list"><ul>';
 		$.each(data.recomendVideos, function (index, item) {
 			htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><div class="news-left"><p class="list-title">' + item.title + '</p>';
-			if (item.tagColor && item.tagName) {
-				htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
-			}
+
 			if(item.comments){
 				htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
 			}else{
 				htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;0</span>';
 			}
 
+			if (item.tagColor && item.tagName) {
+				htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
+			}
 
 			if (item.updateTime) {
 				htmlStr += '<span class="list-time">' + getDatediff(item.updateTime) + '</span>';

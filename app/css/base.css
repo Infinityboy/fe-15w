@@ -244,7 +244,6 @@ header .title {
     height: 5.5rem;
     float: right;
     margin-left: 0.5rem;
-    border: 1px solid #f3f3f3;
 }
 
 .list-review,.list-tag{
@@ -253,7 +252,7 @@ header .title {
 }
 
 .list-review img{
-    width: 0.6rem;
+    width: 0.5rem;
     vertical-align: middle;
 }
 

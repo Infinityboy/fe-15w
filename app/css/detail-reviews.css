@@ -81,14 +81,14 @@ html{
 .reviews-children .child-title{
     color: #999999;
     font-size: 0.8rem;
-    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 .reviews-children .child-content{
     font-size: 0.75rem;
     color: #666666;
     word-wrap: break-word;
     word-break: break-all;
-    padding-bottom:  1rem;
+    margin-bottom:  1rem;
 }
 .nickname-right{
     float: right;
@@ -108,11 +108,11 @@ html{
     color: #efd200;
 }
 .nickname-right img{
-    height: 0.8rem;
+    height: 0.75rem;
     vertical-align: middle;
 }
 .reviews-replay img{
-    height: 0.7rem;
+    height: 0.65rem;
 }
 .get_more-review{
     display: block;
