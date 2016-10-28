@@ -21,7 +21,7 @@ Jn.changeFontSize = function(fontStype){
     if(fontStype == "1"){
         indent.css('font-size','89%');
     }else if(fontStype == "2"){
-        indent.css('font-size','114%');
+        indent.css('font-size','130%');
     }else if(fontStype == "3"){
         indent.css('font-size','160%');
     }else if(fontStype == "4"){
@@ -133,7 +133,7 @@ function renderData(data,fontStype) {
                         });
                         htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
                     }else{
-                        htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="margin；0 auto;max-width: 100%;"/></div></div>';
+                        htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="height: 1.25rem; margin;0 auto;max-width: 100%;"/></div></div>';
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -163,7 +163,7 @@ function renderData(data,fontStype) {
             }
             //htmlStr += '</div></div>';
         } else {
-            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="margin；0 auto;max-width: 100%;" /></div></div>';
+            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="height: 1.25rem; margin;0 auto;max-width: 100%;" /></div></div>';
         }
         $('.reviews').html(htmlRev);
 
@@ -211,7 +211,7 @@ function renderData(data,fontStype) {
             htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><div class="news-left"><p class="list-title">' + item.title + '</p>';
 
             if (item.tagColor && item.tagName) {
-                htmlStr += '<span class="list-tag" style="color:' + item.tagColor + ';border-Color:' + item.tagColor + ';">' + item.tagName + '</span>';
+                htmlStr += '<span class="list-tag">' + item.tagName + '</span>';
             }
             if(item.comments){
                 htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
@@ -238,7 +238,7 @@ function renderData(data,fontStype) {
     if(fontStype == 1){
         indent.css('font-size','89%');
     }else if(fontStype == 2){
-        indent.css('font-size','114%');
+        indent.css('font-size','130%');
     }else if(fontStype == 3){
         indent.css('font-size','160%');
     }else if(fontStype == 4){

@@ -60,6 +60,7 @@ body {
     font-weight: 400;
     font-size: 1.25rem;
     font-family: PingFangSC-Regular, sans-serif;
+    line-height: 1.2;
 }
 
 .video-meta {
@@ -197,12 +198,12 @@ header .player img {
     background: url("../images/play_num.png");
     display: inline-block;
     vertical-align: middle;
-    width: 1.2rem;
+    width: 1rem;
     background-size: 100% auto;
-    height: 1.2rem;
+    height: 1rem;
     float: none;
     margin-right: .3rem;
-    margin-top: -3px;
+    margin-top: -6px;
 }
 
 /**********答案开始**************/
@@ -282,6 +283,7 @@ header .player img {
 .news-right{
     position: relative;
 }
+
 .look-time img{
     width: .8rem;
     height: .8rem;
