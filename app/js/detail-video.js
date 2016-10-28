@@ -128,7 +128,7 @@ function renderData(content) {
                         });
                         htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
                     }else{
-                        htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;"/></div></div>';
+                        htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;" /><a class="soft-t" href="##"><p class="soft" style="color:#999999;margin-top:0.75rem;text-align: center">快来抢沙发吧</p></a></div></div>';
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -158,7 +158,7 @@ function renderData(content) {
             }
             //htmlStr += '</div></div>';
         } else {
-            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;" /></div></div>';
+            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;" /><a class="soft-t" href="##"><p class="soft" style="color:#999999;margin-top:0.75rem;text-align: center">快来抢沙发吧</p></a></div></div>';
         }
         $('.reviews').html(htmlRev);
     }
@@ -358,7 +358,7 @@ $(function () {
     });
 
     //评论跳转
-    $(document).on('click','.nickname-right .reviews-replay,.get_more-review',function(e){
+    $(document).on('click','.nickname-right .reviews-replay,.get_more-review,.soft-t',function(e){
         e.preventDefault();
         try {
             Jnapp.jn_showPage(202);
