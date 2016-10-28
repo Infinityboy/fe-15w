@@ -1,12 +1,12 @@
 'use strict';
 
 var cacheData = null,
-	sourceId,
-	sourceTitle,
-	topicId,
-	allpage,
+	//sourceId,
+	//sourceTitle,
+	//topicId,
+	//allpage,
 	pageTitle,
-	isLoading = false,
+	//isLoading = false,
     dateStr;
 
 window.Jn = {
@@ -32,15 +32,15 @@ window.Jn = {
         }
     },
 
-    addComment : function (reviewsData) {
-        isLoading = false;
-        if (reviewsData.code == '10000') {
-            renderReviews(reviewsData.data, reviewsData.type);
-        }
-    },
-    refreshComment : function () {
-        Jnapp.jn_getComment(sourceId, sourceTitle);
-    },
+    //addComment : function (reviewsData) {
+    //    isLoading = false;
+    //    if (reviewsData.code == '10000') {
+    //        renderReviews(reviewsData.data, reviewsData.type);
+    //    }
+    //},
+    //refreshComment : function () {
+    //    Jnapp.jn_getComment(sourceId, sourceTitle);
+    //},
 
     showGameTab : function (tabNum) {
         $('.box').data('id', tabNum + '');
@@ -114,9 +114,9 @@ function renderData(data) {
 	if (data.state == '1') {
 		//正在直播
 		if (data.bet !== 'undefined' && data.bet) {
-			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
 		} else {
-			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
 		}
 		htmlStr += '<div class="live" data-id="0">';
 		htmlStr += '<p class="live-tip">请选择直播平台</p>';
@@ -132,9 +132,9 @@ function renderData(data) {
 	} else if (data.state == '3') {
 		//未直播将要直播
 		if (data.bet !== 'undefined' && data.bet) {
-			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
 		} else {
-			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
 		}
 		htmlStr += '<div class="live" data-id="0">';
 		htmlStr += '<p class="live-tip">请选择直播平台</p>';
@@ -151,9 +151,9 @@ function renderData(data) {
 	} else if (data.state == '2') {
 		//直播结束回放视频列表
 		if (data.bet !== 'undefined' && data.bet) {
-			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="3"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
 		} else {
-			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">讨论</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
 		}
 
 		if (data.relateVideos.length > 0) {
@@ -190,20 +190,20 @@ function renderData(data) {
 		htmlStr += '<div class="live" data-id="0" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;display:block;background-color: #ffffff;">';
 	}
 
-	sourceId = data.changyanSid;
-	sourceTitle = data.title;
-	try {
-		Jnapp.jn_getComment(sourceId, sourceTitle);
-	} catch (e) {
-
-	}
-
-	htmlStr += '<div class="reviews" data-id="1">';
-	htmlStr += '</div>';
+	//sourceId = data.changyanSid;
+	//sourceTitle = data.title;
+	//try {
+	//	Jnapp.jn_getComment(sourceId, sourceTitle);
+	//} catch (e) {
+    //
+	//}
+    //
+	//htmlStr += '<div class="reviews" data-id="1">';
+	//htmlStr += '</div>';
 
 	//相关新闻
 	if (data.recomendVideos.length > 0) {
-		htmlStr += '<div class="news" data-id="2">';
+		htmlStr += '<div class="news" data-id="1">';
 		htmlStr += '<section class="list"><ul>';
 		$.each(data.recomendVideos, function (index, item) {
 			htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><div class="news-left"><p class="list-title">' + item.title + '</p>';
@@ -227,7 +227,7 @@ function renderData(data) {
 		htmlStr += ' </ul></section></div>';
 	}
 	else {
-		htmlStr += '<div class="news" data-id="2" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;background-color: #ffffff;">暂无新闻数据</div>';
+		htmlStr += '<div class="news" data-id="1" style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;background-color: #ffffff;">暂无新闻数据</div>';
 	}
 
 
@@ -275,7 +275,7 @@ function renderData(data) {
 		}
 
 
-		htmlStr += '<div class="guess" data-id="3" data-staus="' + data.bet.status.type + '" >';
+		htmlStr += '<div class="guess" data-id="2" data-staus="' + data.bet.status.type + '" >';
 		htmlStr += '<section class="live-byword-listbox">';
 		htmlStr += '<div class="guess-nums"><p>' + data.bet.joinNum + '参与</p></div>';
 		htmlStr += '<div class="guess-container">';
@@ -377,90 +377,90 @@ function renderData(data) {
 
 	}
 }
-function renderReviews(reviewsData, type) {
-	var newReview = $('.new-reciews');
-	var htmlReview;
-	var result;
-	topicId = reviewsData.topic_id;
-	allpage = Math.ceil(reviewsData.cmt_sum / 30);
-	//评论时间戳转换
-	function getDatediff(timeStamp) {
-		var minute = 1000 * 60;
-		var hour = minute * 60;
-		var day = hour * 24;
-		var now = new Date().getTime();
-		var diffValue = now - timeStamp;
-		if (diffValue < 0) {
-			return;
-		}
-		var dayBefore = diffValue / day;
-		var hourBefore = diffValue / hour;
-		var minBefore = diffValue / minute;
-		if (dayBefore >= 1) {
-			result = "" + parseInt(dayBefore) + "天前";
-		}
-		else if (hourBefore >= 1) {
-			result = "" + parseInt(hourBefore) + "小时前";
-		}
-		else if (minBefore >= 1) {
-			result = "" + parseInt(minBefore) + "分钟前";
-		} else {
-			result = "刚刚";
-		}
-		return result;
-	}
-
-	// 首屏数据
-	if (parseInt(type) === 0) {
-		if ((reviewsData.hots && reviewsData.hots.length > 0) || (reviewsData.comments && reviewsData.comments.length > 0)) {
-			htmlReview = '<div>';
-			if (reviewsData.hots && reviewsData.hots.length > 0) {
-				htmlReview += '<section class="hot-reviews">';
-				htmlReview += '<div class="reviews-title"><span>热门讨论</span></div>';
-				$.each(reviewsData.hots, function (hotIdx, hotContent) {
-					htmlReview += '<div class="reviews-box">';
-					htmlReview += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
-					htmlReview += '<div class="reviews-right">';
-					htmlReview += '<span class="reviews-name">' + hotContent.passport.nickname + '</span>';
-					htmlReview += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
-					htmlReview += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
-				});
-				htmlReview += '</section>';
-			}
-
-			htmlReview += '<section class="new-reciews">';
-			htmlReview += '<div class="reviews-title"><span>最新讨论</span></div>';
-			$.each(reviewsData.comments, function (idx, content) {
-				htmlReview += '<div class="reviews-box">';
-				htmlReview += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
-				htmlReview += '<div class="reviews-right">';
-				htmlReview += '<span class="reviews-name">' + content.passport.nickname + '</span>';
-				htmlReview += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
-				htmlReview += '<p class="reviews-content">' + content.content + '</p></div></div>';
-			});
-			htmlReview += '</section>';
-			htmlReview += '</div>';
-			$('.reviews').html(htmlReview);
-		} else {
-			$('.reviews').html('<div style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;background-color: #ffffff;">暂无讨论数据</div>');
-		}
-
-	}
-
-	if (parseInt(type) === 1) {
-		var htmlMorereview = '<div>';
-		$.each(reviewsData.comments, function (index, moreContent) {
-			htmlMorereview += '<div class="reviews-box">';
-			htmlMorereview += '<div class="reviews-header"><img src="' + moreContent.passport.img_url + '" alt=""/>' + '</div>';
-			htmlMorereview += '<div class="reviews-right">';
-			htmlMorereview += '<span class="reviews-name">' + moreContent.passport.nickname + '</span>';
-			htmlMorereview += '<span class="reviews-time">' + getDatediff(moreContent.create_time) + '</span>';
-			htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
-		});
-		htmlMorereview += '</div>';
-		newReview.append(htmlMorereview);
-	}
-}
+//function renderReviews(reviewsData, type) {
+//	var newReview = $('.new-reciews');
+//	var htmlReview;
+//	var result;
+//	topicId = reviewsData.topic_id;
+//	allpage = Math.ceil(reviewsData.cmt_sum / 30);
+//	//评论时间戳转换
+//	function getDatediff(timeStamp) {
+//		var minute = 1000 * 60;
+//		var hour = minute * 60;
+//		var day = hour * 24;
+//		var now = new Date().getTime();
+//		var diffValue = now - timeStamp;
+//		if (diffValue < 0) {
+//			return;
+//		}
+//		var dayBefore = diffValue / day;
+//		var hourBefore = diffValue / hour;
+//		var minBefore = diffValue / minute;
+//		if (dayBefore >= 1) {
+//			result = "" + parseInt(dayBefore) + "天前";
+//		}
+//		else if (hourBefore >= 1) {
+//			result = "" + parseInt(hourBefore) + "小时前";
+//		}
+//		else if (minBefore >= 1) {
+//			result = "" + parseInt(minBefore) + "分钟前";
+//		} else {
+//			result = "刚刚";
+//		}
+//		return result;
+//	}
+//
+//	// 首屏数据
+//	if (parseInt(type) === 0) {
+//		if ((reviewsData.hots && reviewsData.hots.length > 0) || (reviewsData.comments && reviewsData.comments.length > 0)) {
+//			htmlReview = '<div>';
+//			if (reviewsData.hots && reviewsData.hots.length > 0) {
+//				htmlReview += '<section class="hot-reviews">';
+//				htmlReview += '<div class="reviews-title"><span>热门讨论</span></div>';
+//				$.each(reviewsData.hots, function (hotIdx, hotContent) {
+//					htmlReview += '<div class="reviews-box">';
+//					htmlReview += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
+//					htmlReview += '<div class="reviews-right">';
+//					htmlReview += '<span class="reviews-name">' + hotContent.passport.nickname + '</span>';
+//					htmlReview += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
+//					htmlReview += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
+//				});
+//				htmlReview += '</section>';
+//			}
+//
+//			htmlReview += '<section class="new-reciews">';
+//			htmlReview += '<div class="reviews-title"><span>最新讨论</span></div>';
+//			$.each(reviewsData.comments, function (idx, content) {
+//				htmlReview += '<div class="reviews-box">';
+//				htmlReview += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
+//				htmlReview += '<div class="reviews-right">';
+//				htmlReview += '<span class="reviews-name">' + content.passport.nickname + '</span>';
+//				htmlReview += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
+//				htmlReview += '<p class="reviews-content">' + content.content + '</p></div></div>';
+//			});
+//			htmlReview += '</section>';
+//			htmlReview += '</div>';
+//			$('.reviews').html(htmlReview);
+//		} else {
+//			$('.reviews').html('<div style="height: 10rem;font-size: 0.9rem;line-height:10rem; text-align: center;background-color: #ffffff;">暂无讨论数据</div>');
+//		}
+//
+//	}
+//
+//	if (parseInt(type) === 1) {
+//		var htmlMorereview = '<div>';
+//		$.each(reviewsData.comments, function (index, moreContent) {
+//			htmlMorereview += '<div class="reviews-box">';
+//			htmlMorereview += '<div class="reviews-header"><img src="' + moreContent.passport.img_url + '" alt=""/>' + '</div>';
+//			htmlMorereview += '<div class="reviews-right">';
+//			htmlMorereview += '<span class="reviews-name">' + moreContent.passport.nickname + '</span>';
+//			htmlMorereview += '<span class="reviews-time">' + getDatediff(moreContent.create_time) + '</span>';
+//			htmlMorereview += '<p class="reviews-content">' + moreContent.content + '</p></div></div>';
+//		});
+//		htmlMorereview += '</div>';
+//		newReview.append(htmlMorereview);
+//	}
+//}
 
 
 $(function () {
@@ -558,7 +558,7 @@ $(function () {
 	// tab切换 切换外层选项卡
 	$(document).on('click', '.outList a', function (e) {
 		e.preventDefault();
-		var page = 1;
+		//var page = 1;
 		pageTitle = $(this).text();
 
 		if (!$(this).hasClass('selected')) {
@@ -571,29 +571,31 @@ $(function () {
 		}
 
 		//讨论无限加载
-		if (pageTitle == '讨论') {
-			isLoading = true;
-		}
-		$(document).on('scroll', function (e) {
-			e.preventDefault();
-			var $scrollTop = $(window).scrollTop(),
-				$documentHeight = $(document).height(),
-				$winHeight = $(window).height(),
-				$dis = $scrollTop + $winHeight;
-			if ($dis >= $documentHeight) {
-				page++;
-				if (page <= allpage) {
-					try {
-						if ( pageTitle == '讨论' && isLoading) {
-							Jnapp.jn_getMoreComment(sourceId + '', page + '', '30', topicId + '');
-							isLoading = false;
-						}
-					} catch (e) {
+	//	if (pageTitle == '讨论') {
+	//		isLoading = true;
+	//	}
+	//	$(document).on('scroll', function (e) {
+	//		e.preventDefault();
+	//		var $scrollTop = $(window).scrollTop(),
+	//			$documentHeight = $(document).height(),
+	//			$winHeight = $(window).height(),
+	//			$dis = $scrollTop + $winHeight;
+	//		if ($dis >= $documentHeight) {
+	//			page++;
+	//			if (page <= allpage) {
+	//				try {
+	//					if ( pageTitle == '讨论' && isLoading) {
+	//						Jnapp.jn_getMoreComment(sourceId + '', page + '', '30', topicId + '');
+	//						isLoading = false;
+	//					}
+	//				} catch (e) {
+    //
+	//				}
+	//			}
+	//		}
+	//	});
+    //
 
-					}
-				}
-			}
-		});
 
 	});
 

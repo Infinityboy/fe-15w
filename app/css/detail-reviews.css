@@ -111,6 +111,9 @@ html{
     height: 0.8rem;
     vertical-align: middle;
 }
+.reviews-replay img{
+    height: 0.7rem;
+}
 .get_more-review{
     display: block;
     text-align: center;
