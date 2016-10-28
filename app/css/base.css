@@ -278,18 +278,6 @@ header .title {
     height: 3.4rem;
 }
 
-.list-excerpt {
-    font-size: 0.8rem;
-    color: #9a9a9a;
-    line-height: 1rem;
-    word-break: break-all;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-}
-
 .list-time {
     color: #9a9a9a;
     font-size: 0.52rem;

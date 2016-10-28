@@ -189,6 +189,7 @@ header .header-teams .header-teams-middle {
 .live-wrap {
     width: 100%;
     display: table;
+    padding-bottom: 1rem;
 }
 
 .live-button {
@@ -197,7 +198,6 @@ header .header-teams .header-teams-middle {
     height: 2rem;
     line-height: 2rem;
     background-color: #8e9fb7;
-    /*background-color: #e41619;选中状态*/
     border-radius: 0 0 6px 6px;
     font-size: 0.9rem;
     color: #ffffff;
@@ -983,7 +983,7 @@ header .header-teams .header-teams-middle {
 }
 
 .news-left span{
-    margin-right: 0.52rem;
+    margin-right: 0.65rem;
 }
 
 .news-right{
@@ -996,23 +996,7 @@ header .header-teams .header-teams-middle {
     width: 100%;
 }
 
-.news-right img {
-    width: 8rem;
-    height: 5.5rem;
-    float: right;
-    margin-left: 0.5rem;
-    border: 1px solid #f3f3f3;
-}
 
-.list-review,.list-tag{
-    color: #9a9a9a;
-    font-size: 0.55rem;
-}
-
-.list-review img{
-    width: 0.6rem;
-    vertical-align: middle;
-}
 
 .list-into {
     margin-top: 0.2rem;
@@ -1024,33 +1008,40 @@ header .header-teams .header-teams-middle {
     overflow: hidden;
     white-space: pre-wrap;
     text-overflow: ellipsis;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #444;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-break: break-all;
     line-height: 1.4;
-    padding: .4rem 0 .5rem;
-    height: 3.4rem;
-}
-
-.list-excerpt {
-    font-size: 0.8rem;
-    color: #9a9a9a;
-    line-height: 1rem;
-    word-break: break-all;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
+    padding: .4rem 0 0;
+    margin-bottom: .8rem;
+    height: 4.5rem;
 }
 
 .list-time {
     color: #9a9a9a;
-    font-size: 0.52rem;
+    font-size: 0.65rem;
     line-height: 1;
+}
+
+.news-right img {
+    width: 10rem;
+    height: 6.875rem;
+    float: right;
+    margin-left: 0.5rem;
+    border: 1px solid #f3f3f3;
+}
+
+.list-review,.list-tag{
+    color: #9a9a9a;
+    font-size: 0.65rem;
+}
+
+.list-review img{
+    width: 0.6rem;
+    vertical-align: middle;
 }
 
 .line{
