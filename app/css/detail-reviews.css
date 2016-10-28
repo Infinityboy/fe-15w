@@ -44,7 +44,7 @@
 }
 .reviews-content{
     color: #333333;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
 }
 .reviews-name {
     color: #5896D4;;
@@ -53,7 +53,7 @@
 .reviews-time {
     font-size: 0.5rem;
     color: #999999;
-    padding: 0.2rem 0;
+    padding-bottom: 0.1rem;
 }
 
 .reviews-box-last {

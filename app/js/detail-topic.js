@@ -8,26 +8,10 @@ window.Jn = {};
 var cacheData = null;
 var renderRevData;
 Jn.setData = function (data) {
-    if (data.key == 'topicInitDetail') {
-        renderData(data.content);
+    if (data.key == 'newsInitDetail') {
+        renderData(data.content,data.fontSize);
     }
 };
-
-Jn.changeFontSize = function(fontStype){
-    var indent = $('.indent p');
-    if(fontStype == 1){
-        indent.css('font-size','89%');
-    }else if(fontStype == 2){
-        indent.css('font-size','100%');
-    }else if(fontStype == 3){
-        indent.css('font-size','154%');
-    }else if(fontStype == 4){
-        indent.css('font-size','176%');
-    }else if(fontStype == 5){
-        indent.css('font-size','198%');
-    }
-
-}
 
 Jn.addComment = function(reviewsData){
     if (reviewsData.code == '10000') {
@@ -63,7 +47,7 @@ function getDatediff(timeStamp) {
     return result;
 }
 
-function renderData(data) {
+function renderData(data,fontStype) {
     cacheData = data;
     var title = data.title ? data.title : '';
     var content = data.content ? data.content : '';
@@ -99,7 +83,7 @@ function renderData(data) {
             aStr = '<a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'</span><img src="images/review-zan_2x.png" alt=""></a>';
 
         }else if(lickStatus == '1'){
-            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count*1+1+'</span><img src="images/review-click-zan_2x.png" alt=""></a>';
+            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+(coms.support_count*1+1)+'</span><img src="images/review-click-zan_2x.png" alt=""></a>';
         }
         return aStr;
     }
@@ -237,6 +221,19 @@ function renderData(data) {
     }
 
     $('#content').html(htmlStr);
+
+    var indent = $('.indent p');
+    if(fontStype == 1){
+        indent.css('font-size','89%');
+    }else if(fontStype == 2){
+        indent.css('font-size','114%');
+    }else if(fontStype == 3){
+        indent.css('font-size','160%');
+    }else if(fontStype == 4){
+        indent.css('font-size','180%');
+    }else if(fontStype == 5){
+        indent.css('font-size','200%');
+    }
 
 }
 

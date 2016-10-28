@@ -5,9 +5,10 @@
 window.Jn = {};
 var cacheData = null;
 var renderRevData;
+var font;
 Jn.setData = function (data) {
     if (data.key == 'newsInitDetail') {
-        renderData(data.content);
+        renderData(data.content,data.fontSize);
     }
 };
 Jn.addComment = function(reviewsData){
@@ -15,21 +16,7 @@ Jn.addComment = function(reviewsData){
         renderRevData(reviewsData.data,reviewsData.data.topic_id);
     }
 };
-Jn.changeFontSize = function(fontStype){
-    var indent = $('.indent p');
-    if(fontStype == 1){
-        indent.css('font-size','89%');
-    }else if(fontStype == 2){
-        indent.css('font-size','100%');
-    }else if(fontStype == 3){
-        indent.css('font-size','154%');
-    }else if(fontStype == 4){
-        indent.css('font-size','176%');
-    }else if(fontStype == 5){
-        indent.css('font-size','198%');
-    }
 
-}
 function getDatediff(timeStamp) {
     var result;
     var minute = 1000 * 60;
@@ -58,7 +45,7 @@ function getDatediff(timeStamp) {
     return result;
 }
 
-function renderData(data) {
+function renderData(data,fontStype) {
     cacheData = data;
     var title = data.title ? data.title : '';
     var time = data.time ? data.time : '';
@@ -93,7 +80,7 @@ function renderData(data) {
             aStr = '<a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'</span><img src="images/review-zan_2x.png" alt=""></a>';
 
         }else if(lickStatus == '1'){
-            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count*1+1+'</span><img src="images/review-click-zan_2x.png" alt=""></a>';
+            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+(coms.support_count*1+1)+'</span><img src="images/review-click-zan_2x.png" alt=""></a>';
         }
         return aStr;
     }
@@ -165,6 +152,7 @@ function renderData(data) {
             htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="max-width: 100%;" /></div></div>';
         }
         $('.reviews').html(htmlRev);
+
     }
 
 
@@ -232,13 +220,18 @@ function renderData(data) {
 
     //}
 
-    window.onload = function(){
-        try{
-            Jnapp.jn_pageLoadEnd();
-        }catch(e){
-
-        }
-    };
+    var indent = $('.indent p');
+    if(fontStype == 1){
+        indent.css('font-size','89%');
+    }else if(fontStype == 2){
+        indent.css('font-size','114%');
+    }else if(fontStype == 3){
+        indent.css('font-size','160%');
+    }else if(fontStype == 4){
+        indent.css('font-size','180%');
+    }else if(fontStype == 5){
+        indent.css('font-size','200%');
+    }
 
 }
 
