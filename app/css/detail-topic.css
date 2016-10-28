@@ -2,7 +2,9 @@
 /*.container .left .details {*/
     /*padding: .8rem;*/
 /*}*/
-
+html{
+    font-size: 20px;
+}
 .video-excerpt{
     display: table;
     width: 100%;
