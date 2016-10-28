@@ -35,7 +35,7 @@ h1 {
     line-height: 1.2;
 }
 .leaderCon {
-    padding: 0.5rem 0.75rem;
+    padding: 0rem 0.75rem;
     margin-top: 0.5rem;
     position: relative;
     overflow: hidden;
@@ -108,8 +108,8 @@ h1 {
     color: #666666;
     font-size: 1.8rem;
     position: absolute;
-    left: -1.2rem;
-    top: -0.6rem;
+    left: -1rem;
+    top: 0.6rem;
 }
 .themeBlue .leaderCon span {
     background: #0c82fb;

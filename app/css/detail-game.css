@@ -946,3 +946,114 @@ header .header-teams .header-teams-middle {
     }
 }
 /************0.5px结束**************/
+
+/*************游戏详情相关模块开始***********/
+.news{
+    display: none;
+}
+.list {
+    margin-top: .72rem;
+    background: #f3f3f3;
+}
+
+.list h3 {
+    color: #666666;
+    padding: 1.78rem .8rem;
+    font-size: 0.9rem;
+    line-height: 1;
+    background-color: #ffffff;
+}
+
+.list li {
+    background: #fff;
+    border-top: 1px solid #efefef;
+    margin-bottom: 0.2rem;
+    padding-left: .8rem;
+    line-height: 1;
+}
+
+.list li:first-child {
+    border-top: none;
+}
+
+.news-left{
+    overflow: hidden;
+    width: 54%;
+    display: table-cell;
+}
+
+.news-left span{
+    margin-right: 0.52rem;
+}
+
+.news-right{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.list li a {
+    display: table;
+    width: 100%;
+}
+
+.news-right img {
+    width: 8rem;
+    height: 5.5rem;
+    float: right;
+    margin-left: 0.5rem;
+    border: 1px solid #f3f3f3;
+}
+
+.list-review,.list-tag{
+    color: #9a9a9a;
+    font-size: 0.55rem;
+}
+
+.list-review img{
+    width: 0.6rem;
+    vertical-align: middle;
+}
+
+.list-into {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    float: left;
+}
+
+.list-title {
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+    color: #444;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    line-height: 1.4;
+    padding: .4rem 0 .5rem;
+    height: 3.4rem;
+}
+
+.list-excerpt {
+    font-size: 0.8rem;
+    color: #9a9a9a;
+    line-height: 1rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.list-time {
+    color: #9a9a9a;
+    font-size: 0.52rem;
+    line-height: 1;
+}
+
+.line{
+    height: .8rem;
+}
+/*************游戏详情相关模块结束***********/
