@@ -23,6 +23,9 @@
     width: auto;
     float: none;
 }
+.details{
+    background-color: #ffffff;
+}
 h1 {
     position: relative;
     overflow: hidden;
