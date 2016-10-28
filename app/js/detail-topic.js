@@ -99,7 +99,7 @@ function renderData(data,fontStype) {
             aStr = '<a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'</span><img src="images/review-zan_2x.png" alt=""></a>';
 
         }else if(lickStatus == '1'){
-            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+(coms.support_count*1+1)+'</span><img src="images/review-click-zan_2x.png" alt=""></a>';
+            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'</span><img src="images/review-click-zan_2x.png" alt=""></a>';
         }
         return aStr;
     }
