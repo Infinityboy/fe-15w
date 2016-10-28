@@ -170,11 +170,6 @@ function renderData(data,fontStype) {
     }
 
 
-
-
-
-
-
     htmlStr += '<header><h1 class="title">' + title + '</h1>';
     htmlStr += '<div class="meta"><span class="date">' + time + '</span><span class="author color-blue ml5">';
     htmlStr += data.author + '</span></div></header>';
@@ -250,17 +245,17 @@ function renderData(data,fontStype) {
 }
 
 $(function () {
-      //$.ajax({
-      //   url: 'data/news.json',
-      //   type: "GET",
-      //   dataType: 'json',
-      //   success: function (str) {
-      //       renderData(str.data);
-      //   },
-      //   error: function (err) {
-      //       //alert('失败:' + err);
-      //   }
-      //});
+      $.ajax({
+        url: 'data/news.json',
+        type: "GET",
+        dataType: 'json',
+        success: function (str) {
+            renderData(str.data);
+        },
+        error: function (err) {
+            //alert('失败:' + err);
+        }
+      });
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {

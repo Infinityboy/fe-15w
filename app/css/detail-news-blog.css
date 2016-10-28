@@ -19,12 +19,13 @@
     padding-bottom: 1.25rem;
     border-left: none;
     margin-bottom: 0;
+    line-height: 1;
 }
 .flat-content p.cimg-desc{
     text-align: center;
     color: #999999;
     padding-bottom: 1.25rem;
-    margin-top: -0.5rem;
+    margin-top: -1rem;
     font-size: 0.75rem;
 }
 .flat-content p.cimg{
