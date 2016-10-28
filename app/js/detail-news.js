@@ -133,7 +133,7 @@ function renderData(data,fontStype) {
                         });
                         htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
                     }else{
-                        htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;" /><a class="soft-t" href="##"><p class="soft" style="color:#999999;margin-top:0.75rem;text-align: center">快来抢沙发吧</p></a></div></div>';
+                        htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem;display:flex;flex-direction:column;justifycontent:center;align-item:center;" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;display:block;" /><a style="display:block;"class="soft-t" href="##"><p class="soft" style="font-size:0.9rem;color:#999999;margin-top:0.75rem;text-align: center">快来抢沙发吧</p></a></div></div>';
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -163,7 +163,7 @@ function renderData(data,fontStype) {
             }
             //htmlStr += '</div></div>';
         } else {
-            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;" /><a class="soft-t" href="##"><p class="soft" style="color:#999999;margin-top:0.75rem;text-align: center">快来抢沙发吧</p></a></div></div>';
+            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem;display:flex;flex-direction:column;justifycontent:center;align-item:center;" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;display:block;" /><a style="display:block;"class="soft-t" href="##"><p class="soft" style="font-size:0.9rem;color:#999999;margin-top:0.75rem;text-align: center">快来抢沙发吧</p></a></div></div>';
         }
         $('.reviews').html(htmlRev);
 
