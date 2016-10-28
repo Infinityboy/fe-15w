@@ -110,7 +110,7 @@ function renderData(content) {
                         htmlRev += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
                     }
                 });
-                htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
+                htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
             }else{
                 if(reviewsData.hots.length == 0){
                     if(reviewsData.comments.length>0){
@@ -126,7 +126,7 @@ function renderData(content) {
 
                             }
                         });
-                        htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
+                        htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
                     }else{
                         htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;"/></div></div>';
                     }
@@ -153,7 +153,7 @@ function renderData(content) {
                             }
                         });
                     }
-                    htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
+                    htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
                 }
             }
             //htmlStr += '</div></div>';
@@ -183,7 +183,7 @@ function renderData(content) {
 
     // 播放次数
     if (data.views) {
-        htmlStr += '<span class="date"><em class="play-num"></em>' + data.views + '播放&ensp;</span>';
+        htmlStr += '<span class="date"><em class="play-num"></em>' + data.views + '&ensp;</span>';
     }
 
     // 作者
@@ -279,14 +279,16 @@ function renderData(content) {
         $.each(data.recomendVideos, function (index, item) {
             htmlStr += '<li class="clearFix"><a href="###" class="clearfix list-item" data-type="' + item.articleType + '" data-id="' + item.extra + '"><div class="news-left"><p class="list-title">' + item.title + '</p>';
 
-            if (item.tagColor && item.tagName) {
-                htmlStr += '<span class="list-tag">' + item.tagName + '</span>';
-            }
+
 
             if(item.comments){
                 htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
             }else{
                 htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;0</span>';
+            }
+
+            if (item.tagColor && item.tagName) {
+                htmlStr += '<span class="list-tag">' + item.tagName + '</span>';
             }
 
             if (item.updateTime) {
@@ -349,7 +351,7 @@ $(function () {
     });
 
     //显示全部评论
-    $(document).on('click','.show-all-reviews,.get_more-review',function(e){
+    $(document).on('click','.show-all-reviews',function(e){
         e.preventDefault();
         $(this).hide();
         $('.center-more').show();

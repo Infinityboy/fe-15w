@@ -115,7 +115,7 @@ function renderData(data,fontStype) {
                         htmlRev += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
                     }
                 });
-                htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
+                htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
             }else{
                 if(reviewsData.hots.length == 0){
                     if(reviewsData.comments.length>0){
@@ -131,7 +131,7 @@ function renderData(data,fontStype) {
 
                             }
                         });
-                        htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
+                        htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
                     }else{
                         htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;"/></div></div>';
                     }
@@ -158,7 +158,7 @@ function renderData(data,fontStype) {
                             }
                         });
                     }
-                    htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
+                    htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
                 }
             }
             //htmlStr += '</div></div>';
@@ -322,7 +322,7 @@ $(function () {
     }
 
     //显示全部评论
-    $(document).on('click','.show-all-reviews,.get_more-review',function(e){
+    $(document).on('click','.show-all-reviews',function(e){
         e.preventDefault();
         $(this).hide();
         $('.center-more').show();
