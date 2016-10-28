@@ -174,7 +174,7 @@ function renderData(data,fontStype) {
     }
 
 
-    htmlStr += '<div class="allcontain detailWrap" style=""><div class="banner" style="background: url(' + banner + ') no-repeat center top; background-size: auto 100%;"></div>';
+    htmlStr += '<div class="allcontain detailWrap" style=""><div class="banner"><img src="'+ banner+'" alt=""></div>';
     htmlStr += '<div class="container"><div class="wrap"><div class="left"><div class="details"><h1>' + title + '</h1><div class="detailsTit">';
     htmlStr += '<div class="pic"><img src="' + avatar + '"></div>';
     htmlStr += '<div class="ti">作者' + data.author + '</div>';
@@ -258,17 +258,17 @@ function renderData(data,fontStype) {
 
 
 $(function () {
-        $.ajax({
-        url: 'data/detail-topic.json',
-        type: "GET",
-        dataType: 'json',
-        success: function (str) {
-            renderData(str.data);
-        },
-        error: function (err) {
-            alert('失败:' + err);
-        }
-    });
+    //    $.ajax({
+    //    url: 'data/detail-topic.json',
+    //    type: "GET",
+    //    dataType: 'json',
+    //    success: function (str) {
+    //        renderData(str.data);
+    //    },
+    //    error: function (err) {
+    //        alert('失败:' + err);
+    //    }
+    //});
 
     // 图片查看大图
     $(document).on('click', '.detailsCon img', function (e) {
