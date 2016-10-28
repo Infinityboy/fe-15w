@@ -952,8 +952,8 @@ header .header-teams .header-teams-middle {
     display: none;
 }
 .list {
-    margin-top: .72rem;
     background: #f3f3f3;
+    margin-top: 0;
 }
 
 .list h3 {

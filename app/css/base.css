@@ -168,11 +168,11 @@ header .title {
 
 .video-meta,.meta {
     color: #999999;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     padding-top: .72rem;
 }
 .meta .date {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     display: block;
     margin-bottom: .2rem;
 }
@@ -253,7 +253,7 @@ header .title {
 }
 
 .list-review img{
-    width: 0.6rem;
+    width: 0.65rem;
     vertical-align: middle;
 }
 

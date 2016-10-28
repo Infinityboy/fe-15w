@@ -151,9 +151,9 @@ function renderData(data) {
 	} else if (data.state == '2') {
 		//直播结束回放视频列表
 		if (data.bet !== 'undefined' && data.bet) {
-			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
+			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li><li class="outList " data-id="2"><a href="##"><div class="border">竞猜</div></a></li></ul><div class="outContainer ">';
 		} else {
-			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">直播</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
+			htmlStr += '<div id="wrap"><ul class="outer"><li class="outList selected" data-id="0"><a href="##"><div class="border">视频</div></a></li><li class="outList " data-id="1"><a href="##"><div class="border">新闻</div></a></li></ul><div class="outContainer ">';
 		}
 
 		if (data.relateVideos.length > 0) {
@@ -465,11 +465,11 @@ function renderData(data) {
 
 $(function () {
 
-	// $.get('data/living.json', function (res) {
-	//    if (res.code == 10000) {
-	//        renderData(res.data);
-	//    }
-	// });
+	 //$.get('data/living.json', function (res) {
+	 //   if (res.code == 10000) {
+	 //       renderData(res.data);
+	 //   }
+	 //});
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {

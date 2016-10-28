@@ -96,10 +96,10 @@ function renderData(data,fontStype) {
     function lick(coms,lickStatus,topicId){
         var aStr;
         if(lickStatus == '0'){
-            aStr = '<a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'</span><img src="images/review-zan_2x.png" alt=""></a>';
+            aStr = '<a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'&ensp;</span><img src="images/review-zan_2x.png" alt=""></a>';
 
         }else if(lickStatus == '1'){
-            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'</span><img src="images/review-click-zan_2x.png" alt=""></a>';
+            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'&ensp;</span><img src="images/review-click-zan_2x.png" alt=""></a>';
         }
         return aStr;
     }
@@ -258,6 +258,7 @@ function renderData(data,fontStype) {
 
 
 $(function () {
+
     //    $.ajax({
     //    url: 'data/detail-topic.json',
     //    type: "GET",
