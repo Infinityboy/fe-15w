@@ -133,7 +133,7 @@ function renderData(data,fontStype) {
                         });
                         htmlRev += '</section><a href="#" class="get_more-review"><p>显示全部评论</p></a></div>';
                     }else{
-                        htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="height: 1.25rem; margin;0 auto;"/></div></div>';
+                        htmlRev += '<div class="reviews-box" style="padding-bottom: 1rem"><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;"/></div></div>';
                     }
                 }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
@@ -163,7 +163,7 @@ function renderData(data,fontStype) {
             }
             //htmlStr += '</div></div>';
         } else {
-            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="height: 1.25rem; margin;0 auto;" /></div></div>';
+            htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;" /></div></div>';
         }
         $('.reviews').html(htmlRev);
 
@@ -250,17 +250,17 @@ function renderData(data,fontStype) {
 }
 
 $(function () {
-      $.ajax({
-         url: 'data/news.json',
-         type: "GET",
-         dataType: 'json',
-         success: function (str) {
-             renderData(str.data);
-         },
-         error: function (err) {
-             //alert('失败:' + err);
-         }
-      });
+      //$.ajax({
+      //   url: 'data/news.json',
+      //   type: "GET",
+      //   dataType: 'json',
+      //   success: function (str) {
+      //       renderData(str.data);
+      //   },
+      //   error: function (err) {
+      //       //alert('失败:' + err);
+      //   }
+      //});
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
