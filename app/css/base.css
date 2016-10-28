@@ -243,6 +243,7 @@ header .title {
     width: 8rem;
     height: 5.5rem;
     float: right;
+    margin-left: 0.5rem;
 }
 
 .list-review,.list-tag{

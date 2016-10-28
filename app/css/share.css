@@ -30,7 +30,7 @@
     text-align: center;
 }
 .share-short-issue p:nth-child(1),.share-short-issue p:nth-child(3){
-    background-color: #dadada;
+    background-color: #ffffff;
     height:1px;
     width: 4rem;
     text-align: center;
@@ -43,6 +43,36 @@
     font-size: 0.8rem;
     margin: 0 1rem;
 }
+
+.share-short-issue p{
+    color: #333333;
+    font-size: 0.8rem;
+    margin: 0 1rem;
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+    .share-short-issue { border:none;position:relative;}
+    .share-short-issue p:nth-child(1):after , .share-short-issue p:nth-child(3):after{
+        content: ''; position: absolute; bottom:1.25rem;
+        width:25%; height:1px;
+        background: #dadada;
+        -webkit-transform: scale(1, 0.5);
+        transform: scale(1, 0.5);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+    .share-short-issue p:nth-child(1):after{
+        left:1rem;
+        margin-right: 1rem;
+    }
+    .share-short-issue p:nth-child(3):after{
+        right:1rem;
+        margin-left: 1rem;
+    }
+}
+
+
 .maintext-share {
     flex-direction: row;
     text-align: center;

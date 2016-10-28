@@ -7,7 +7,7 @@
 }
 
 .flat-content p img{
-    width: 100%;
+    max-width: 100%;
 }
 
 .flat-content p.ti, h4 {
@@ -43,5 +43,26 @@
     margin-top: 1rem;
 }
 .flat-content p.cimg img:nth-child(5){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(6){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(7){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(8){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(9){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(10){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(11){
+    margin-top: 1rem;
+}
+.flat-content p.cimg img:nth-child(12){
     margin-top: 1rem;
 }

@@ -258,7 +258,7 @@ function renderData(data,fontStype) {
 
 
 $(function () {
-        //$.ajax({
+    //    $.ajax({
     //    url: 'data/detail-topic.json',
     //    type: "GET",
     //    dataType: 'json',
