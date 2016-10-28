@@ -465,11 +465,11 @@ function renderData(data) {
 
 $(function () {
 
-	//$.get('data/living.json', function (res) {
+	// $.get('data/living.json', function (res) {
 	//    if (res.code == 10000) {
 	//        renderData(res.data);
 	//    }
-	//});
+	// });
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {
