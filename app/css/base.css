@@ -200,9 +200,9 @@ header .title {
 }
 
 .list h3 {
-    color: #333333;
+    color: #666666;
     padding: 1.25rem .8rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1;
     background-color: #ffffff;
 }
@@ -221,12 +221,12 @@ header .title {
 
 .news-left{
     overflow: hidden;
-    width: 50%;
+    width: 54%;
     display: table-cell;
 }
 
 .news-left span{
-    margin-right: 0.5rem;
+    margin-right: 0.55rem;
 }
 
 .news-right{
@@ -236,18 +236,18 @@ header .title {
 
 .list li a {
     display: table;
+    width: 100%;
 }
 
 .news-right img {
     width: 8rem;
     height: 5.5rem;
-    margin-left: .5rem;
     float: right;
 }
 
 .list-review,.list-tag{
     color: #9a9a9a;
-    font-size: 0.5rem;
+    font-size: 0.55rem;
 }
 
 .list-review img{
@@ -265,17 +265,15 @@ header .title {
     overflow: hidden;
     white-space: pre-wrap;
     text-overflow: ellipsis;
-    font-size: 0.8rem;
+    font-size: 0.83rem;
     color: #444;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-break: break-all;
     line-height: 1.5;
-    padding-top: .8rem;
-    padding-bottom: 0.8rem;
-    height: 2.4rem;
-    text-align: justify;
+    padding: .1rem 0 .5rem;
+    height: 3.4rem;
 }
 
 .list-excerpt {
@@ -292,7 +290,7 @@ header .title {
 
 .list-time {
     color: #9a9a9a;
-    font-size: .5rem;
+    font-size: 0.55rem;
     line-height: 1;
     /*position: absolute;*/
     /*left: 0.8rem;*/

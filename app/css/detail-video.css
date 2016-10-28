@@ -283,20 +283,23 @@ header .player img {
 .news-right{
     position: relative;
 }
-
+.look-time{
+    position: absolute;
+    right: 0;
+    margin-right: 6.9rem;
+    bottom: 0.3rem;
+    width: 8rem;
+}
 .look-time img{
     width: .8rem;
     height: .8rem;
     border-radius: 50%;
-    position: absolute;
-    left: 0.8rem;
-    bottom: 0.4rem;
 }
 .look-time span{
-    position: absolute;
     color: #fff;
     font-size: 0.5rem;
-    margin-left: .8rem;
-    left: 1.6rem;
-    bottom: 0.45rem;
+    margin-left: 8.3rem;
+    display: block;
+    padding-top: 0.2rem;
+
 }
