@@ -1042,6 +1042,7 @@ header .header-teams .header-teams-middle {
 .list-review img{
     width: 0.6rem;
     vertical-align: middle;
+    margin-bottom: 0.1rem;
 }
 
 .line{
