@@ -108,7 +108,7 @@ var htmlRev;
                 }
                     //htmlRev += '</div></div>';
 
-            htmlRev += '</section>';
+            htmlRev += '</section></section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
             } else {
                 htmlRev += '<div class="reviews-box"><img src="images/picture_2x.png>" alt=""></div>';
             }
