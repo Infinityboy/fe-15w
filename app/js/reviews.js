@@ -121,17 +121,17 @@ var htmlRev;
 $(function(){
 
 
-    $.ajax({
-        url: 'data/review.json',
-        type: "GET",
-        dataType: 'json',
-        success: function (reviews) {
-            renderData(reviews.data);
-        },
-        error: function (err) {
-            alert('失败:' + err);
-        }
-    });
+    //$.ajax({
+    //    url: 'data/review.json',
+    //    type: "GET",
+    //    dataType: 'json',
+    //    success: function (reviews) {
+    //        renderData(reviews.data);
+    //    },
+    //    error: function (err) {
+    //        alert('失败:' + err);
+    //    }
+    //});
 
 
 });

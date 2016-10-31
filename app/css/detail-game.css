@@ -1014,10 +1014,10 @@ header .header-teams .header-teams-middle {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-break: break-all;
-    line-height: 1.4;
+    line-height: 1.3;
     padding: .4rem 0 0;
-    margin-bottom: 0.55rem;
-    height: 4.5rem;
+    margin-bottom: 0.6rem;
+    height: 4.1rem;
 }
 
 .list-time {
