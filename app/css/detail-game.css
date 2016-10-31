@@ -1031,7 +1031,7 @@ header .header-teams .header-teams-middle {
     height: 6.875rem;
     float: right;
     margin-left: 0.5rem;
-    border: 1px solid #f3f3f3;
+    margin-right: -0.05rem;
 }
 
 .list-review,.list-tag{
