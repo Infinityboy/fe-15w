@@ -210,9 +210,10 @@ function renderData(data,fontStype) {
             }
             if(item.comments){
                 htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
-            }else{
-                htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;0</span>';
             }
+            //else{
+            //    htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;0</span>';
+            //}
 
 
             if (item.updateTime) {
@@ -245,6 +246,8 @@ function renderData(data,fontStype) {
 }
 
 $(function () {
+
+
       //$.ajax({
       //  url: 'data/news.json',
       //  type: "GET",
@@ -256,6 +259,7 @@ $(function () {
       //      //alert('失败:' + err);
       //  }
       //});
+
 
     // 相关新闻
     $(document).on('click', '.list-item', function (e) {
