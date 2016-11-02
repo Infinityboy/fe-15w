@@ -270,7 +270,7 @@ $(function () {
     //    error: function (err) {
     //        alert('失败:' + err);
     //    }
-    //});
+    // });
 
     // 图片查看大图
     $(document).on('click', '.detailsCon img', function (e) {

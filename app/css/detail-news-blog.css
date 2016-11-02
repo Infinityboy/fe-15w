@@ -11,7 +11,7 @@
     max-width: 100%;
 }
 
-.flat-content p.ti, h4 {
+.flat-content p.ti, h4{
     font-size: 1rem;
     text-indent: 0;
     font-weight: 600;
@@ -66,4 +66,7 @@
 }
 .flat-content p.cimg img:nth-child(12){
     margin-top: 1rem;
+}
+h2,h3,h5,h6,section,ul,ol,dl{
+    padding:0 0.75rem !important;
 }
