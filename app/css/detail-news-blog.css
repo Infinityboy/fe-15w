@@ -67,6 +67,6 @@
 .flat-content p.cimg img:nth-child(12){
     margin-top: 1rem;
 }
-h2,h3,h5,h6,section,ul,ol,dl{
+h2,h3,h5,h6,ul,ol,dl{
     padding:0 0.75rem !important;
 }
