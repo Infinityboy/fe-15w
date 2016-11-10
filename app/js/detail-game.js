@@ -142,7 +142,7 @@ function renderData(data) {
 		htmlStr += '<div class="live-wrap">';
 		$.each(data.originSrc, function (index, liveList) {
 			htmlStr += '<div class="deck no-select">';
-			htmlStr += '<a href="###">';
+			htmlStr += '<a href="###" data-url="' + liveList.link + '">';
 			htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
 			htmlStr += '<span class="live-button">即将开始</span>';
 			htmlStr += '</a></div>';
@@ -603,14 +603,14 @@ $(function () {
 	});
 
 	// 直播跳转
-	$(document).on('click', '.play-icon', function (e) {
-		e.preventDefault();
-		try {
-			Jnapp.jn_related(5, $(this).data('url'));
-		} catch (e) {
-
-		}
-	});
+	// $(document).on('click', '.play-icon', function (e) {
+	// 	e.preventDefault();
+	// 	try {
+	// 		Jnapp.jn_related(5, $(this).data('url'));
+	// 	} catch (e) {
+    //
+	// 	}
+	// });
 
 
 	//竞猜下注
