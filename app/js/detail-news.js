@@ -8,26 +8,26 @@ var renderRevData;
 var font;
 Jn.setData = function (data) {
     if (data.key == 'newsInitDetail') {
-        renderData(data.content,data.fontSize);
+        renderData(data.content, data.fontSize);
     }
 };
-Jn.addComment = function(reviewsData){
+Jn.addComment = function (reviewsData) {
     if (reviewsData.code == '10000') {
-        renderRevData(reviewsData.data,reviewsData.data.topic_id);
+        renderRevData(reviewsData.data, reviewsData.data.topic_id);
     }
 };
-Jn.changeFontSize = function(fontStype){
+Jn.changeFontSize = function (fontStype) {
     var indent = $('.indent p');
-    if(fontStype == "1"){
-        indent.css('font-size','89%');
-    }else if(fontStype == "2"){
-        indent.css('font-size','130%');
-    }else if(fontStype == "3"){
-        indent.css('font-size','160%');
-    }else if(fontStype == "4"){
-        indent.css('font-size','180%');
-    }else if(fontStype == "5"){
-        indent.css('font-size','200%');
+    if (fontStype == "1") {
+        indent.css('font-size', '89%');
+    } else if (fontStype == "2") {
+        indent.css('font-size', '130%');
+    } else if (fontStype == "3") {
+        indent.css('font-size', '160%');
+    } else if (fontStype == "4") {
+        indent.css('font-size', '180%');
+    } else if (fontStype == "5") {
+        indent.css('font-size', '200%');
     }
 
 }
@@ -46,7 +46,7 @@ function getDatediff(timeStamp) {
     var minBefore = diffValue / minute;
     if (dayBefore >= 1) {
         var date = new Date(timeStamp);
-        result =  (date.getMonth() + 1) + '-' + date.getDate();
+        result = (date.getMonth() + 1) + '-' + date.getDate();
     }
     else if (hourBefore >= 1) {
         result = "" + parseInt(hourBefore) + "小时前";
@@ -59,7 +59,7 @@ function getDatediff(timeStamp) {
     return result;
 }
 
-function renderData(data,fontStype) {
+function renderData(data, fontStype) {
     cacheData = data;
     var title = data.title ? data.title : '';
     var time = data.time ? data.time : '';
@@ -67,20 +67,20 @@ function renderData(data,fontStype) {
     var htmlStr = '';
     var htmlRev = '';
 
-    function moreReview(comments,topicI){
-        if(comments.length>0){
-            $.each(comments,function(childIndex,childContent){
-                if(comments.length > 1 && comments.length < 4){
-                    htmlRev += '<div class="reviews-children"><p class="child-title clearfix">' + (childIndex+1) +'&ensp;'+ childContent.passport.nickname +  '<span class="nickname-right">' + lick(childContent,Jnapp.jn_getLikeStatus(childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
-                }else{
-                    if(childIndex == 0){
-                        htmlRev += '<div class="reviews-children" ><p class="child-title">1&ensp;'+ childContent.passport.nickname +  '<span  class="nickname-right">' + lick(childContent,Jnapp.jn_getLikeStatus(childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
-                    }else if(childIndex > 0 && childIndex < comments.length-2){
-                        htmlRev += '<div><div class="reviews-children center-more" style="display: none" ><p class="child-title clearfix">' + (childIndex+1) +'&nbsp;'+ childContent.passport.nickname +  '</p><p class="child-content">' + childContent.content + '</p></div><a href="#" class="show-all-reviews"><p>显示全部评论</p></a></div>';
-                    } else if(childIndex == comments.length-2){
-                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + (comments.length-1) +'&ensp;'+ childContent.passport.nickname + '<span  class="nickname-right">' + lick(childContent,Jnapp.jn_getLikeStatus(childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
-                    }else if(childIndex == comments.length-1){
-                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + comments.length +'&ensp;'+ childContent.passport.nickname +  '<span  class="nickname-right">' + lick(childContent,Jnapp.jn_getLikeStatus(childContent.comment_id),topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
+    function moreReview(comments, topicI) {
+        if (comments.length > 0) {
+            $.each(comments, function (childIndex, childContent) {
+                if (comments.length > 1 && comments.length < 4) {
+                    htmlRev += '<div class="reviews-children"><p class="child-title clearfix">' + (childIndex + 1) + '&ensp;' + childContent.passport.nickname + '<span class="nickname-right">' + lick(childContent, Jnapp.jn_getLikeStatus(childContent.comment_id), topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
+                } else {
+                    if (childIndex == 0) {
+                        htmlRev += '<div class="reviews-children" ><p class="child-title">1&ensp;' + childContent.passport.nickname + '<span  class="nickname-right">' + lick(childContent, Jnapp.jn_getLikeStatus(childContent.comment_id), topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
+                    } else if (childIndex > 0 && childIndex < comments.length - 2) {
+                        htmlRev += '<div><div class="reviews-children center-more" style="display: none" ><p class="child-title clearfix">' + (childIndex + 1) + '&nbsp;' + childContent.passport.nickname + '</p><p class="child-content">' + childContent.content + '</p></div><a href="#" class="show-all-reviews"><p>显示全部评论</p></a></div>';
+                    } else if (childIndex == comments.length - 2) {
+                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + (comments.length - 1) + '&ensp;' + childContent.passport.nickname + '<span  class="nickname-right">' + lick(childContent, Jnapp.jn_getLikeStatus(childContent.comment_id), topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
+                    } else if (childIndex == comments.length - 1) {
+                        htmlRev += '<div class="reviews-children" ><p class="child-title clearfix">' + comments.length + '&ensp;' + childContent.passport.nickname + '<span  class="nickname-right">' + lick(childContent, Jnapp.jn_getLikeStatus(childContent.comment_id), topicI) + '</span></p><p class="child-content">' + childContent.content + '</p></div>';
                     }
 
                 }
@@ -88,72 +88,72 @@ function renderData(data,fontStype) {
         }
     }
 
-    function lick(coms,lickStatus,topicId){
+    function lick(coms, lickStatus, topicId) {
         var aStr;
-        if(lickStatus == '0'){
-            aStr = '<a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'</span><img src="images/review-zan_2x.png" alt=""></a>';
+        if (lickStatus == '0') {
+            aStr = '<a href="#" class="reviews-zan" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>' + coms.support_count + '</span><img src="images/review-zan_2x.png" alt=""></a>';
 
-        }else if(lickStatus == '1'){
-            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>'+coms.support_count+'</span><img src="images/review-click-zan_2x.png" alt=""></a>';
+        } else if (lickStatus == '1') {
+            aStr = '<a href="#" class="reviews-zan reviewed" data-topic="' + topicId + '" data-comment="' + coms.comment_id + '"><span>' + coms.support_count + '</span><img src="images/review-click-zan_2x.png" alt=""></a>';
         }
         return aStr;
     }
 
-    renderRevData = function(reviewsData,topicId){
+    renderRevData = function (reviewsData, topicId) {
         htmlRev += '<div class="list"><h3>精彩评论</h3><ul id="news_list">';
         if (reviewsData) {
             htmlRev += '<section class="hot-reviews">';
-            if(reviewsData.hots.length >= 5){
+            if (reviewsData.hots.length >= 5) {
                 $.each(reviewsData.hots, function (hotIdx, hotContent) {
-                    if(hotIdx<5){
+                    if (hotIdx < 5) {
                         htmlRev += '<div class="reviews-box">';
                         htmlRev += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
                         htmlRev += '<div class="reviews-right">';
-                        htmlRev += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right">'+lick(hotContent,Jnapp.jn_getLikeStatus(hotContent.comment_id),topicId)+'<a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                        htmlRev += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right">' + lick(hotContent, Jnapp.jn_getLikeStatus(hotContent.comment_id), topicId) + '<a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
                         htmlRev += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
-                        moreReview(hotContent.comments,topicId);
+                        moreReview(hotContent.comments, topicId);
                         htmlRev += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
                     }
                 });
                 htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
-            }else{
-                if(reviewsData.hots.length == 0){
-                    if(reviewsData.comments.length>0){
+            } else {
+                if (reviewsData.hots.length == 0) {
+                    if (reviewsData.comments.length > 0) {
                         $.each(reviewsData.comments, function (idx, content) {
-                            if(idx<5){
+                            if (idx < 5) {
                                 htmlRev += '<div class="reviews-box">';
                                 htmlRev += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
                                 htmlRev += '<div class="reviews-right">';
-                                htmlRev += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right">' + lick(content,Jnapp.jn_getLikeStatus(content.comment_id),topicId) + '<a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                                htmlRev += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right">' + lick(content, Jnapp.jn_getLikeStatus(content.comment_id), topicId) + '<a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
                                 htmlRev += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
-                                moreReview(content.comments,topicId);
+                                moreReview(content.comments, topicId);
                                 htmlRev += '<p class="reviews-content">' + content.content + '</p></div></div>';
 
                             }
                         });
                         htmlRev += '</section><a href="#" class="get_more-review"><p>查看更多评论</p></a></div>';
-                    }else{
+                    } else {
                         htmlRev += '<div class="reviews-box"  style="padding-bottom: 1rem;display:flex;flex-direction:column;justifycontent:center;align-item:center;" ><img src="images/picture_2x.png" alt="" style="height: 6.25rem; margin:0 auto;display:block;" /><a style="display:block;"class="soft-t" href="##"><p class="soft" style="font-size:0.9rem;color:#999999;margin-top:0.75rem;text-align: center">快来抢沙发吧</p></a></div></div>';
                     }
-                }else if(reviewsData.hots.length > 0 &&reviewsData.hots.length<5 ){
+                } else if (reviewsData.hots.length > 0 && reviewsData.hots.length < 5) {
                     $.each(reviewsData.hots, function (hotIdx, hotContent) {
                         htmlRev += '<div class="reviews-box">';
                         htmlRev += '<div class="reviews-header"><img src="' + hotContent.passport.img_url + '" alt=""/>' + '</div>';
                         htmlRev += '<div class="reviews-right">';
-                        htmlRev += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right">' + lick(hotContent,Jnapp.jn_getLikeStatus(hotContent.comment_id),topicId) + '<a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                        htmlRev += '<p class="clearfix"><span class="reviews-name">' + hotContent.passport.nickname + '</span><span class="nickname-right">' + lick(hotContent, Jnapp.jn_getLikeStatus(hotContent.comment_id), topicId) + '<a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
                         htmlRev += '<span class="reviews-time">' + getDatediff(hotContent.create_time) + '</span>';
-                        moreReview(hotContent.comments,topicId);
+                        moreReview(hotContent.comments, topicId);
                         htmlRev += '<p class="reviews-content">' + hotContent.content + '</p></div></div>';
                     });
-                    if(reviewsData.comments.length>0){
+                    if (reviewsData.comments.length > 0) {
                         $.each(reviewsData.comments, function (idx, content) {
-                            if(idx<5-reviewsData.hots.length){
+                            if (idx < 5 - reviewsData.hots.length) {
                                 htmlRev += '<div class="reviews-box">';
                                 htmlRev += '<div class="reviews-header"><img src="' + content.passport.img_url + '" alt=""/>' + '</div>';
                                 htmlRev += '<div class="reviews-right">';
-                                htmlRev += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right">' + lick(content,Jnapp.jn_getLikeStatus(content.comment_id),topicId) + '<a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
+                                htmlRev += '<p class="clearfix"><span class="reviews-name">' + content.passport.nickname + '</span><span class="nickname-right">' + lick(content, Jnapp.jn_getLikeStatus(content.comment_id), topicId) + '<a href="#" class="reviews-replay"><img src="images/Reply_2x.png" alt=""></a></span></p>';
                                 htmlRev += '<span class="reviews-time">' + getDatediff(content.create_time) + '</span>';
-                                moreReview(content.comments,topicId);
+                                moreReview(content.comments, topicId);
                                 htmlRev += '<p class="reviews-content">' + content.content + '</p></div></div>';
                             }
                         });
@@ -190,13 +190,11 @@ function renderData(data,fontStype) {
     htmlStr += '<div class="maintext-share"><a href="#" class="maintext-share-weixin"><img src="images/news_btn_weixin_nor.png" /></a><a href="#" class="maintext-share-frident"><img src="images/news_btn_pyq_nor.png" /></a><a href="" class="maintext-share-qq-space"><img src="images/QQ_2x.png" /></a><a href="#" class="maintext-share-qq"><img src="images/qq_zone.png" /></a><a href="#" class="maintext-share-weibo"><img src="images/news_btn_weibo_nor.png" /></a></div></div>';
     //评论
     htmlStr += '<div class="reviews"></div>';
-    try{
-        Jnapp.jn_getComment("","");
-    }catch(e){
+    try {
+        Jnapp.jn_getComment("", "");
+    } catch (e) {
 
     }
-
-
 
 
     var news_list = data.relate_news;
@@ -208,7 +206,7 @@ function renderData(data,fontStype) {
             if (item.tagColor && item.tagName) {
                 htmlStr += '<span class="list-tag">' + item.tagName + '</span>';
             }
-            if(item.comments){
+            if (item.comments) {
                 htmlStr += '<span class="list-review"><img src="images/Reply_2x.png" alt="">&ensp;' + item.comments + '</span>';
             }
             //else{
@@ -217,7 +215,7 @@ function renderData(data,fontStype) {
 
 
             if (item.updateTime) {
-                htmlStr += '<span class="list-time">' + getDatediff(item.updateTime*1000) + '</span>';
+                htmlStr += '<span class="list-time">' + getDatediff(item.updateTime * 1000) + '</span>';
             }
             //dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
@@ -231,16 +229,16 @@ function renderData(data,fontStype) {
     //}
 
     var indent = $('.indent p');
-    if(fontStype == 1){
-        indent.css('font-size','89%');
-    }else if(fontStype == 2){
-        indent.css('font-size','130%');
-    }else if(fontStype == 3){
-        indent.css('font-size','160%');
-    }else if(fontStype == 4){
-        indent.css('font-size','180%');
-    }else if(fontStype == 5){
-        indent.css('font-size','200%');
+    if (fontStype == 1) {
+        indent.css('font-size', '89%');
+    } else if (fontStype == 2) {
+        indent.css('font-size', '130%');
+    } else if (fontStype == 3) {
+        indent.css('font-size', '160%');
+    } else if (fontStype == 4) {
+        indent.css('font-size', '180%');
+    } else if (fontStype == 5) {
+        indent.css('font-size', '200%');
     }
 
 }
@@ -248,17 +246,17 @@ function renderData(data,fontStype) {
 $(function () {
 
 
-      //$.ajax({
-      //  url: 'data/news.json',
-      //  type: "GET",
-      //  dataType: 'json',
-      //  success: function (str) {
-      //      renderData(str.data);
-      //  },
-      //  error: function (err) {
-      //      //alert('失败:' + err);
-      //  }
-      //});
+    // $.ajax({
+    //  url: 'data/news.json',
+    //  type: "GET",
+    //  dataType: 'json',
+    //  success: function (str) {
+    //      renderData(str.data);
+    //  },
+    //  error: function (err) {
+    //      //alert('失败:' + err);
+    //  }
+    // });
 
 
     // 相关新闻
@@ -326,14 +324,14 @@ $(function () {
     }
 
     //显示全部评论
-    $(document).on('click','.show-all-reviews',function(e){
+    $(document).on('click', '.show-all-reviews', function (e) {
         e.preventDefault();
         $(this).hide();
         $('.center-more').show();
     });
 
     //评论跳转
-    $(document).on('click','.nickname-right .reviews-replay,.get_more-review,.soft-t',function(e){
+    $(document).on('click', '.nickname-right .reviews-replay,.get_more-review,.soft-t', function (e) {
         e.preventDefault();
         try {
             Jnapp.jn_showPage(202);
@@ -343,22 +341,22 @@ $(function () {
     });
 
     //点赞
-    $(document).on('click','.nickname-right .reviews-zan',function(e){
+    $(document).on('click', '.nickname-right .reviews-zan', function (e) {
         e.preventDefault();
         var topic = $(this).data('topic');
         var commentId = $(this).data('comment');
-        var likeNUm = $(this).find('span').text()*1+1;
+        var likeNUm = $(this).find('span').text() * 1 + 1;
         var allZan = $(".nickname-right a[data-comment='" + commentId + "']");
-        try{
-            if($(this).find('img').attr('src') == 'images/review-zan_2x.png'){
-                Jnapp.jn_clickLike(topic+'',commentId+'');
-                $.each(allZan,function(idx,iteam){
+        try {
+            if ($(this).find('img').attr('src') == 'images/review-zan_2x.png') {
+                Jnapp.jn_clickLike(topic + '', commentId + '');
+                $.each(allZan, function (idx, iteam) {
                     $(iteam).addClass('reviewed');
-                    $(iteam).find('img').attr('src','images/review-click-zan_2x.png');
+                    $(iteam).find('img').attr('src', 'images/review-click-zan_2x.png');
                     $(iteam).find('span').text(likeNUm);
                 });
             }
-        }catch(e){
+        } catch (e) {
 
         }
 

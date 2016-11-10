@@ -7,7 +7,7 @@ var cacheData = null,
 	//allpage,
 	pageTitle,
 	//isLoading = false,
-    dateStr;
+	dateStr;
 
 window.Jn = {
 	setCookie: function (name, value, iDay) {
@@ -26,32 +26,32 @@ window.Jn = {
 		return '';
 	},
 
-    setData : function (data) {
-        if (data.key == 'gameInitDetail') {
-            renderData(data.content);
-        }
-    },
+	setData : function (data) {
+		if (data.key == 'gameInitDetail') {
+			renderData(data.content);
+		}
+	},
 
-    //addComment : function (reviewsData) {
-    //    isLoading = false;
-    //    if (reviewsData.code == '10000') {
-    //        renderReviews(reviewsData.data, reviewsData.type);
-    //    }
-    //},
-    //refreshComment : function () {
-    //    Jnapp.jn_getComment(sourceId, sourceTitle);
-    //},
+	//addComment : function (reviewsData) {
+	//    isLoading = false;
+	//    if (reviewsData.code == '10000') {
+	//        renderReviews(reviewsData.data, reviewsData.type);
+	//    }
+	//},
+	//refreshComment : function () {
+	//    Jnapp.jn_getComment(sourceId, sourceTitle);
+	//},
 
-    showGameTab : function (tabNum) {
-        $('.box').data('id', tabNum + '');
-        $('.outer').children().eq(tabNum).addClass('selected').siblings().removeClass('selected');
-        $('.outContainer').children().eq(tabNum).show().siblings().hide();
+	showGameTab : function (tabNum) {
+		$('.box').data('id', tabNum + '');
+		$('.outer').children().eq(tabNum).addClass('selected').siblings().removeClass('selected');
+		$('.outContainer').children().eq(tabNum).show().siblings().hide();
 
-        var dataStatus = $('.guess').data('staus');
-        if (dataStatus !== 2) {
-            $('.guess-option a').addClass('selectedGray');
-        }
-    }
+		var dataStatus = $('.guess').data('staus');
+		if (dataStatus !== 2) {
+			$('.guess-option a').addClass('selectedGray');
+		}
+	}
 };
 
 function getDatediff(timeStamp) {
@@ -196,9 +196,9 @@ function renderData(data) {
 	//try {
 	//	Jnapp.jn_getComment(sourceId, sourceTitle);
 	//} catch (e) {
-    //
+	//
 	//}
-    //
+	//
 	//htmlStr += '<div class="reviews" data-id="1">';
 	//htmlStr += '</div>';
 
@@ -337,8 +337,8 @@ function renderData(data) {
 
 			});
 		}else{
-            htmlStr+= '<div class="non-richer"><p>暂无收入信息</p><div>'
-        }
+			htmlStr+= '<div class="non-richer"><p>暂无收入信息</p><div>'
+		}
 		htmlStr+= '</section>';
 	}else{
 		htmlStr+= '<section class="richers" >';
@@ -364,8 +364,8 @@ function renderData(data) {
 				htmlStr+= '<div class="richers-grades"><span>投注'+item.money+'竞币</span></div></div></a>';
 			});
 		}else{
-            htmlStr+= '<div class="non-richer"><p>暂无土豪上榜</p><div>'
-        }
+			htmlStr+= '<div class="non-richer"><p>暂无土豪上榜</p><div>'
+		}
 		htmlStr+= '</section>';
 	}
 
@@ -467,12 +467,12 @@ function renderData(data) {
 
 
 $(function () {
-
-	 //$.get('data/living.json', function (res) {
+     //
+	 // $.get('data/living.json', function (res) {
 	 //   if (res.code == 10000) {
 	 //       renderData(res.data);
 	 //   }
-	 //});
+	 // });
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {
@@ -482,7 +482,7 @@ $(function () {
 		try {
 			$(this).addClass('selected');
 			$(this).parent().addClass('selected').siblings('.deck').removeClass('selected');
-			Jnapp.jn_related(5, dataUrl + '');
+			Jnapp.jn_related(24, dataUrl + '');
 		} catch (e) {
 
 		}
@@ -592,12 +592,12 @@ $(function () {
 	//						isLoading = false;
 	//					}
 	//				} catch (e) {
-    //
+	//
 	//				}
 	//			}
 	//		}
 	//	});
-    //
+	//
 
 
 	});
