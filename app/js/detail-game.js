@@ -484,7 +484,7 @@ $(function () {
 		try {
 			$(this).addClass('selected');
 			$(this).parent().addClass('selected').siblings('.deck').removeClass('selected');
-			if(dataPlat && dataPlayId){
+			if(dataPlat && dataPlayId && dataPlat!=='undefined' && dataPlayId!=='undefined'){
 				Jnapp.jn_live(dataPlat+'',dataPlayId+'');
 			}else{
 				Jnapp.jn_related(24, dataUrl + '');
