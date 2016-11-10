@@ -123,7 +123,7 @@ function renderData(data) {
 		htmlStr += '<section class="live-list clearfix">';
 		htmlStr += '<div class="live-wrap">';
 		$.each(data.originSrc, function (i, liveList) {
-			htmlStr += '<div class="deck select"><a href="###" data-url="' + liveList.link + '"><div class="deck-item">';
+			htmlStr += '<div class="deck select"><a href="###" data-url="' + liveList.link + '" data-plat="' + liveList.plat + '" data-playid=" + liveList.playid + "><div class="deck-item">';
 			htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
 			htmlStr += '<span class="live-button">观看直播</span></div></a></div>';
 		});
@@ -142,7 +142,7 @@ function renderData(data) {
 		htmlStr += '<div class="live-wrap">';
 		$.each(data.originSrc, function (index, liveList) {
 			htmlStr += '<div class="deck no-select">';
-			htmlStr += '<a href="###" data-url="' + liveList.link + '">';
+			htmlStr += '<a href="###" data-url="' + liveList.link + '" data-plat="' + liveList.plat + '" data-playid=" + liveList.playid + ">';
 			htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
 			htmlStr += '<span class="live-button">即将开始</span>';
 			htmlStr += '</a></div>';
@@ -478,11 +478,17 @@ $(function () {
 	$(document).on('click', '.deck>a', function (e) {
 		e.preventDefault();
 		var dataUrl = $(this).data('url');
+		var dataPlat = $(this).data('plat');
+		var dataPlayId = $(this).data('playid');
 
 		try {
 			$(this).addClass('selected');
 			$(this).parent().addClass('selected').siblings('.deck').removeClass('selected');
-			Jnapp.jn_related(24, dataUrl + '');
+			if(dataPlat && dataPlayId){
+				Jnapp.jn_live(dataPlat+'',dataPlayId+'');
+			}else{
+				Jnapp.jn_related(24, dataUrl + '');
+			}
 		} catch (e) {
 
 		}
