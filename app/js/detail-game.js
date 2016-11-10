@@ -123,7 +123,7 @@ function renderData(data) {
 		htmlStr += '<section class="live-list clearfix">';
 		htmlStr += '<div class="live-wrap">';
 		$.each(data.originSrc, function (i, liveList) {
-			htmlStr += '<div class="deck select"><a href="###" data-url="' + liveList.link + '" data-plat="' + liveList.plat + '" data-playid=" + liveList.playid + "><div class="deck-item">';
+			htmlStr += '<div class="deck select"><a href="###" data-url="' + liveList.link + '" data-plat="' + liveList.plat + '" data-playid="' + liveList.playId + '"><div class="deck-item">';
 			htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
 			htmlStr += '<span class="live-button">观看直播</span></div></a></div>';
 		});
@@ -142,7 +142,7 @@ function renderData(data) {
 		htmlStr += '<div class="live-wrap">';
 		$.each(data.originSrc, function (index, liveList) {
 			htmlStr += '<div class="deck no-select">';
-			htmlStr += '<a href="###" data-url="' + liveList.link + '" data-plat="' + liveList.plat + '" data-playid=" + liveList.playid + ">';
+			htmlStr += '<a href="###" data-url="' + liveList.link + '" data-plat="' + liveList.plat + '" data-playid="' + liveList.playId + '">';
 			htmlStr += '<div class="deck-img"><img src="' + liveList.logo + '" alt=""/>' + '</div>';
 			htmlStr += '<span class="live-button">即将开始</span>';
 			htmlStr += '</a></div>';
