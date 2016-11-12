@@ -41,19 +41,7 @@ h1 {
     font-weight: 600;
     line-height: 1.2;
 }
-.leaderCon {
-    padding: 0rem 0.75rem;
-    margin-top: 0.5rem;
-    position: relative;
-    overflow: hidden;
-    color: #666666;
-    font-size: 0.85rem;
-    border-left: 4px solid #dadada;
-    margin-left: 0.75rem;
-    text-indent: 1em !important;
-    text-align: justify;
-    position: relative;
-}
+
 .detailsCon h2 {
     margin-top: 1.5rem;
     font-size: 1rem;

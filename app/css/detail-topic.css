@@ -32,8 +32,16 @@ html{
     padding-right: 0!important;
 }
 .leaderCon {
-    text-indent: 1em !important;
+    padding: 0rem 0.75rem;
+    margin-top: 0.5rem;
     position: relative;
+    overflow: hidden;
+    color: #666666;
+    font-size: 0.85rem;
+    border-left: 4px solid #dadada;
+    margin-left: 0.75rem;
+    text-indent: 2.65em !important;
+    text-align: justify;
 }
 
 .leaderCon span{
@@ -45,7 +53,7 @@ html{
     color: #666666;
     font-size: 1.8rem;
     position: absolute;
-    left: -1rem;
+    left: -1.55rem !important;
     top: -0.3rem !important;
 }
 
