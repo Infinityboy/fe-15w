@@ -312,18 +312,18 @@ function renderData(data) {
 		htmlStr += '<a href="" class="team-win-right" data-id="' + data.bet.gameId + '"  data-team="2" data-teamname="' + data.bet.teamB.name + '" data-odd="' + data.bet.teamB.odds + '"><p><span>' + data.teamB.name + '胜' + '</span><span>' + new Number(data.bet.teamB.odds).toFixed(2) + '</span></p></div></div></a>';
 		htmlStr += '<div class="guess-tip"><p>实际结算赔率以竞猜结束的赔率为准 <a href="##"><em class="more-guess-rule">更多规则&gt;&gt;</em></a></p></div>';
 		htmlStr += '</section>';
-	if(data.bet.status.type == 5){
+	if(data.bet.status.type === 5){
 		htmlStr+= '<section class="richers" >';
 		htmlStr+= '<div class="richers-title"><p>收入榜</p><a href="##">如何上榜？</a></div>';
 		if(data.bet.ranking.win.length>0){
 			var rankHeadImg;
 			$.each(data.bet.ranking.win,function(richIdx,item){
 
-				if(richIdx == 0){
+				if(richIdx === 0){
 					rankHeadImg = '<img src="images/first_2x.png" alt=""/>';
-				}else if(richIdx == 1){
+				}else if(richIdx === 1){
 					rankHeadImg = '<img src="images/Second_2x.png" alt=""/>';
-				}else if(richIdx == 2){
+				}else if(richIdx === 2){
 					rankHeadImg = '<img src="images/Third_2x.png" alt=""/>';
 				}else{
 					rankHeadImg = '<span>'+(richIdx+1)+'</span>';
@@ -337,7 +337,7 @@ function renderData(data) {
 
 			});
 		}else{
-			htmlStr+= '<div class="non-richer"><p>暂无收入信息</p><div>'
+			htmlStr+= '<div class="non-richer"><p>暂无收入信息</p><div>';
 		}
 		htmlStr+= '</section>';
 	}else{
@@ -347,11 +347,11 @@ function renderData(data) {
 			var rankHeadImgs;
 			$.each(data.bet.ranking.money,function(richIdx,item){
 
-				if(richIdx == 0){
+				if(richIdx === 0){
 					rankHeadImgs = '<img src="images/first_2x.png" alt=""/>';
-				}else if(richIdx == 1){
+				}else if(richIdx === 1){
 					rankHeadImgs = '<img src="images/Second_2x.png" alt=""/>';
-				}else if(richIdx == 2){
+				}else if(richIdx === 2){
 					rankHeadImgs = '<img src="images/Third_2x.png" alt=""/>';
 				}else{
 					rankHeadImgs = '<span>'+(richIdx+1)+'</span>';
@@ -467,12 +467,12 @@ function renderData(data) {
 
 
 $(function () {
-     //
-	 // $.get('data/living.json', function (res) {
-	 //   if (res.code == 10000) {
-	 //       renderData(res.data);
-	 //   }
-	 // });
+
+	 $.get('data/living.json', function (res) {
+	   if (res.code == 10000) {
+	       renderData(res.data);
+	   }
+	 });
 
 	//观看直播
 	$(document).on('click', '.deck>a', function (e) {
